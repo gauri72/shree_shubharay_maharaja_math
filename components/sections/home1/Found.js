@@ -4,17 +4,30 @@ export default function Found() {
         <>
         {/*Found One Start */}
         <section className="found-one">
+            <div className="divine-border--found divine-border--found-top" role="presentation"></div>
+            <div className="divine-border--found-vertical divine-border--found-vertical--gold divine-border--found-left" role="presentation"></div>
+            <div className="divine-border--found-vertical divine-border--found-vertical--gold divine-border--found-right" role="presentation"></div>
+            <div className="divine-border--found-vertical divine-border--found-vertical--maroon divine-border--found-left" role="presentation"></div>
+            <div className="divine-border--found-vertical divine-border--found-vertical--maroon divine-border--found-right" role="presentation"></div>
+            <span className="found-one__corner found-one__corner--tl" aria-hidden="true"></span>
+            <span className="found-one__corner found-one__corner--tr" aria-hidden="true"></span>
+            <span className="found-one__corner found-one__corner--bl found-one__corner--gold" aria-hidden="true"></span>
+            <span className="found-one__corner found-one__corner--br found-one__corner--gold" aria-hidden="true"></span>
+            <div className="divine-border--found divine-border--found-bottom divine-border--found-bottom--gold" role="presentation"></div>
             <div className="found-one__bg">
                 <div className="found-one__shape-1 float-bob-y">
-                    <img src="assets/images/shapes/found-one-shape-1.png" alt=""/>
+                    <img src="assets/images/shapes/found-one-shape-1-mala.png" alt=""/>
+                </div>
+                <div className="found-one__shape-2 float-bob-y">
+                    <img src="assets/images/shapes/found-one-shape-2-parayan.png" alt=""/>
                 </div>
             </div>
             <div className="container">
                 <div className="section-title text-center sec-title-animation animation-style1">
                     <div className="section-title__tagline-box">
-                        <span className="section-title__tagline">Our Sadhana</span>
+                        <span className="section-title__tagline">आमची साधना</span>
                     </div>
-                    <h2 className="section-title__title title-animation">Paths Of Devotion <br/> We <span>Walk</span> Together
+                    <h2 className="section-title__title title-animation">श्रद्धेने जपलेली <br/> <span>भक्तीची परंपरा</span>
                     </h2>
                 </div>
                 <div className="row">
@@ -28,15 +41,15 @@ export default function Found() {
                                 </div>
                             </div>
                             <div className="found-one__content">
-                                <h4 className="found-one__title"><Link href="/sadhana">Daily Aarti &amp; Darshan</Link></h4>
-                                <p className="found-one__text">Every day begins and ends with aarti at the Math,
-                                    open to all devotees who come for darshan and quiet prayer.</p>
+                                <h4 className="found-one__title"><Link href="/sadhana">दैनिक आरती व दर्शन</Link></h4>
+                                <p className="found-one__text">रोज दोन वेळा आरती होते — सकाळी आणि संध्याकाळी.
+                                    दर्शन व प्रार्थनेसाठी येणाऱ्या सर्व भाविकांसाठी मठ नेहमी खुला असतो.</p>
                                 <div className="found-one__highlight">
                                     <i className="icon-clock"></i>
-                                    <span>Morning &amp; Evening, Every Day</span>
+                                    <span>सकाळ व संध्याकाळ, दररोज</span>
                                 </div>
                                 <div className="found-one__btn-box">
-                                    <Link href="/sadhana" className="found-one__btn thm-btn">Learn More<span><i
+                                    <Link href="/sadhana" className="found-one__btn thm-btn">अधिक वाचा<span><i
                                                 className="icon-arrow-right"></i></span></Link>
                                 </div>
                             </div>
@@ -53,15 +66,15 @@ export default function Found() {
                                 </div>
                             </div>
                             <div className="found-one__content">
-                                <h4 className="found-one__title"><Link href="/sadhana">Jap &amp; Mantra Sadhana</Link></h4>
-                                <p className="found-one__text">A quiet, steady practice of chanting that has guided
-                                    devotees toward focus and inner peace for generations.</p>
+                                <h4 className="found-one__title"><Link href="/sadhana">जप, मंत्र साधना व पारायण</Link></h4>
+                                <p className="found-one__text">जप, मंत्रसाधना आणि ग्रंथांचे पारायण ही आमची रोजची
+                                    साधना आहे. यामुळे मन एकाग्र होते आणि शांती मिळते.</p>
                                 <div className="found-one__highlight">
                                     <i className="icon-hand"></i>
-                                    <span>A Simple Daily Discipline</span>
+                                    <span>एक साधी नियमित साधना</span>
                                 </div>
                                 <div className="found-one__btn-box">
-                                    <Link href="/sadhana" className="found-one__btn thm-btn">Learn More<span><i
+                                    <Link href="/sadhana" className="found-one__btn thm-btn">अधिक वाचा<span><i
                                                 className="icon-arrow-right"></i></span></Link>
                                 </div>
                             </div>
@@ -78,15 +91,15 @@ export default function Found() {
                                 </div>
                             </div>
                             <div className="found-one__content">
-                                <h4 className="found-one__title"><Link href="/sadhana">Festivals &amp; Rath Yatra</Link></h4>
-                                <p className="found-one__text">Our biggest celebration of the year — a chariot
-                                    procession on Ashadhi Ekadashi that brings the whole community together.</p>
+                                <h4 className="found-one__title"><Link href="/sadhana">उत्सव व रथयात्रा</Link></h4>
+                                <p className="found-one__text">आषाढी व कार्तिकी एकादशीला रथयात्रा काढली जाते —
+                                    वर्षातील आमचे सर्वात मोठे उत्सव. या दिवशी संपूर्ण समाज एकत्र येतो व उत्सवात सहभागी होतो.</p>
                                 <div className="found-one__highlight">
                                     <i className="icon-calender"></i>
-                                    <span>Ashadhi &amp; Kartiki Ekadashi</span>
+                                    <span>आषाढी व कार्तिकी एकादशी</span>
                                 </div>
                                 <div className="found-one__btn-box">
-                                    <Link href="/sadhana" className="found-one__btn thm-btn">Learn More<span><i
+                                    <Link href="/sadhana" className="found-one__btn thm-btn">अधिक वाचा<span><i
                                                 className="icon-arrow-right"></i></span></Link>
                                 </div>
                             </div>

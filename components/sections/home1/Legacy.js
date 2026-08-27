@@ -12,6 +12,7 @@ const SHUBHARAY_MAHARAJ_PAGE = {
 
 const BUWA_GHARANE_PAGE = {
     image: "assets/images/resources/book-buwa-family.png",
+    mobileImage: "assets/images/resources/book-buwa-family-mobile.png",
     name: "बुवा घराणे",
     title: "गुरुपरंपरा, संत सान्निध्य आणि मठाची वास्तू",
     text: "राओजी बुवांनी एकनाथी भागवतातील वचनाने प्रेरित होऊन स्वीकारलेल्या सेवाव्रताचे पालन पुढे संपूर्ण घराण्याने केले; त्यांच्या पत्नी लक्ष्मीबाई यांनी स्वयंपाकगृहाची जबाबदारी स्वीकारली आणि बुवा घराण्यातील कोणीतरी सदैव या सेवेत कार्यरत राहील, असा आशीर्वाद महाराजांकडून प्राप्त झाला. इ.स. २००१ मध्ये मठाच्या नवीन वास्तुरूपाची (नववास्तूची) उभारणी करण्यात आली. कालांतराने शंकर महाराज मठात तब्बल सत्तावीस वर्षे एका आसनावर तपस्येस बसले; तेथे नोकरीच्या शोधात असलेल्या व विश्रांतीसाठी येणाऱ्या लोकांशी ते आपुलकीने संवाद साधत, म्हणून ती जागा आजही 'बेकार हॉल' या नावाने ओळखली जाते. मुख्य गाभाऱ्यात पांडुरंग, स्वामी समर्थ, राम-लक्ष्मण-सीता-हनुमान तसेच एकाच लाकडी ओंडक्यातून कोरलेली विशेष गणराय मूर्ती प्रतिष्ठापित असून, स्वामी समर्थ, शंकर महाराज, शुभराय महाराज व जयकृष्ण बुवा यांच्या पादुकाही येथे जतन करण्यात आल्या आहेत. मणिक प्रभूंसारख्या थोर सत्पुरुषांनीही या मठास भेट देऊन आशीर्वाद दिल्याची नोंद आहे. पुढील पिढीत स्वामी समर्थ स्वतः मठाच्या द्वारी येऊन 'जेवायला मिळेल का?' असे विचारत घरातील सर्वांसमवेत भोजन ग्रहण करून काही काळ वास्तव्यास राहिले होते.",
@@ -27,7 +28,7 @@ const SHUBHANGI_MAI_PAGE = {
 const PAGES = [
     { image: SHUBHARAY_MAHARAJ_PAGE.image, name: SHUBHARAY_MAHARAJ_PAGE.name },
     { image: null, name: SHUBHARAY_MAHARAJ_PAGE.name, title: SHUBHARAY_MAHARAJ_PAGE.title, text: SHUBHARAY_MAHARAJ_PAGE.text },
-    { image: BUWA_GHARANE_PAGE.image, name: BUWA_GHARANE_PAGE.name },
+    { image: BUWA_GHARANE_PAGE.image, mobileImage: BUWA_GHARANE_PAGE.mobileImage, name: BUWA_GHARANE_PAGE.name },
     { image: null, name: BUWA_GHARANE_PAGE.name, title: BUWA_GHARANE_PAGE.title, text: BUWA_GHARANE_PAGE.text },
     { image: SHUBHANGI_MAI_PAGE.image, name: SHUBHANGI_MAI_PAGE.name },
     { image: null, name: SHUBHANGI_MAI_PAGE.name, title: SHUBHANGI_MAI_PAGE.title, text: SHUBHANGI_MAI_PAGE.text },
@@ -54,7 +55,14 @@ CoverPage.displayName = "CoverPage"
 const PortraitPage = forwardRef(({ page, index }, ref) => (
     <div className="legacy-book-page legacy-book-page--portrait" ref={ref}>
         <div className="legacy-book-page__photo legacy-book-page__photo--full">
-            <img src={page.image} alt={page.name} />
+            {page.mobileImage ? (
+                <>
+                    <img className="legacy-book-page__photo-img--desktop" src={page.image} alt={page.name} />
+                    <img className="legacy-book-page__photo-img--mobile" src={page.mobileImage} alt={page.name} />
+                </>
+            ) : (
+                <img src={page.image} alt={page.name} />
+            )}
             <span className="legacy-book-page__photo-frame" aria-hidden="true"></span>
         </div>
         <span className="legacy-book-page__number">{index}</span>

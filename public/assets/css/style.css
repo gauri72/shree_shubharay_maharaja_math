@@ -3510,10 +3510,6 @@ ul {
       padding: 21px 25px 23px;
   }
 
-  .found-one__shape-1 img {
-      opacity: .10;
-  }
-
   .donate-one__text br {
       display: none;
   }
@@ -3674,10 +3670,6 @@ ul {
 
   .about-One {
       padding: 140px 0 139px;
-  }
-
-  .found-one__shape-1 img {
-      opacity: .10;
   }
 
   .donate-one__text br {
@@ -4078,10 +4070,6 @@ ul {
 
   .about-One {
       padding: 140px 0 139px;
-  }
-
-  .found-one__shape-1 img {
-      opacity: .10;
   }
 
   .who-we-are__left {
@@ -4566,10 +4554,6 @@ ul {
 
   .about-One {
       padding: 140px 0 133px;
-  }
-
-  .found-one__shape-1 img {
-      opacity: .10;
   }
 
   .donate-one__single {
@@ -8312,21 +8296,192 @@ ul {
   }
 }
 
-/* Shubharay Math charity-fund → sadhana section — red & gold theme */
+/* Shubharay Math charity-fund → sadhana section — gold theme */
+.found-one {
+  background-color: #3D0A0C;
+}
+
 .found-one__bg {
-  background-color: #5C1012;
+  background-color: #F2A90A;
+}
+
+/* Namaste line-art sketch reads directly on the gold background — undo the dark-bg invert filter */
+.found-one__shape-1 {
+  top: 75px;
+  left: 60px;
+}
+
+.found-one__shape-1 img {
+  width: 220px;
+  height: auto;
+  filter: none;
+}
+
+.found-one__shape-2 {
+  position: absolute;
+  top: 75px;
+  right: 60px;
+  left: auto;
+}
+
+.found-one__shape-2 img {
+  width: 220px;
+  height: auto;
+  filter: none;
+}
+
+/* Ornamental border — maroon strip with gold Om/swastik motif, matching the Welcome section */
+.divine-border--found {
+  position: absolute;
+  left: 0;
+  right: 0;
+  z-index: 3;
+  height: 30px;
+  background-color: #3D0A0C;
+  background-image:
+    radial-gradient(circle at 50% 50%, rgba(232, 199, 102, 0.12) 0%, transparent 70%),
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='30' viewBox='0 0 100 30'%3E%3Cg fill='%23E8C766'%3E%3Ctext x='25' y='22' font-size='19' text-anchor='middle' font-family='Noto Sans Devanagari, Arial, sans-serif'%3E%E0%A5%90%3C/text%3E%3C/g%3E%3Cg transform='translate(75 15)' stroke='%23E8C766' stroke-width='2.4' stroke-linecap='square' fill='none'%3E%3Cpath d='M0 -8 L0 8 M-8 0 L8 0'/%3E%3Cpath d='M0 -8 L5 -8'/%3E%3Cpath d='M8 0 L8 5'/%3E%3Cpath d='M0 8 L-5 8'/%3E%3Cpath d='M-8 0 L-8 -5'/%3E%3C/g%3E%3Cg fill='%23E8C766' opacity='0.85'%3E%3Ccircle cx='0' cy='15' r='1.6'/%3E%3Ccircle cx='50' cy='15' r='1.6'/%3E%3Ccircle cx='100' cy='15' r='1.6'/%3E%3C/g%3E%3C/svg%3E");
+  background-repeat: repeat-x, repeat-x;
+  background-position: center, center;
+  background-size: 100% 100%, 100px 30px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.32);
+}
+
+.divine-border--found:before,
+.divine-border--found:after {
+  content: none;
+}
+
+.divine-border--found-top {
+  top: 0;
+}
+
+.divine-border--found-bottom {
+  bottom: 0;
+}
+
+.divine-border--found-bottom--gold {
+  background-color: #F2A90A;
+  background-image:
+    radial-gradient(circle at 50% 50%, rgba(61, 10, 12, 0.12) 0%, transparent 70%),
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='30' viewBox='0 0 100 30'%3E%3Cg fill='%233D0A0C'%3E%3Ctext x='25' y='22' font-size='19' text-anchor='middle' font-family='Noto Sans Devanagari, Arial, sans-serif'%3E%E0%A5%90%3C/text%3E%3C/g%3E%3Cg transform='translate(75 15)' stroke='%233D0A0C' stroke-width='2.4' stroke-linecap='square' fill='none'%3E%3Cpath d='M0 -8 L0 8 M-8 0 L8 0'/%3E%3Cpath d='M0 -8 L5 -8'/%3E%3Cpath d='M8 0 L8 5'/%3E%3Cpath d='M0 8 L-5 8'/%3E%3Cpath d='M-8 0 L-8 -5'/%3E%3C/g%3E%3Cg fill='%233D0A0C' opacity='0.85'%3E%3Ccircle cx='0' cy='15' r='1.6'/%3E%3Ccircle cx='50' cy='15' r='1.6'/%3E%3Ccircle cx='100' cy='15' r='1.6'/%3E%3C/g%3E%3C/svg%3E");
+}
+
+.divine-border--found-vertical {
+  position: absolute;
+  z-index: 2;
+  width: 30px;
+  background-color: #3D0A0C;
+  background-image:
+    radial-gradient(circle at 50% 50%, rgba(232, 199, 102, 0.12) 0%, transparent 70%),
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='30' height='100' viewBox='0 0 30 100'%3E%3Cg fill='%23E8C766'%3E%3Ctext x='15' y='32' font-size='19' text-anchor='middle' font-family='Noto Sans Devanagari, Arial, sans-serif'%3E%E0%A5%90%3C/text%3E%3C/g%3E%3Cg transform='translate(15 75)' stroke='%23E8C766' stroke-width='2.4' stroke-linecap='square' fill='none'%3E%3Cpath d='M0 -8 L0 8 M-8 0 L8 0'/%3E%3Cpath d='M0 -8 L5 -8'/%3E%3Cpath d='M8 0 L8 5'/%3E%3Cpath d='M0 8 L-5 8'/%3E%3Cpath d='M-8 0 L-8 -5'/%3E%3C/g%3E%3Cg fill='%23E8C766' opacity='0.85'%3E%3Ccircle cx='15' cy='0' r='1.6'/%3E%3Ccircle cx='15' cy='50' r='1.6'/%3E%3Ccircle cx='15' cy='100' r='1.6'/%3E%3C/g%3E%3C/svg%3E");
+  background-repeat: repeat-y, repeat-y;
+  background-position: top center, top center;
+  background-size: 100% 100%, 30px 100px;
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.32);
+}
+
+.divine-border--found-vertical:before,
+.divine-border--found-vertical:after {
+  content: none;
+}
+
+.divine-border--found-vertical--gold {
+  top: 30px;
+  height: calc(50% - 30px);
+}
+
+.divine-border--found-vertical--maroon {
+  top: 50%;
+  bottom: 0;
+  height: auto;
+  background-color: #F2A90A;
+  background-image:
+    radial-gradient(circle at 50% 50%, rgba(61, 10, 12, 0.12) 0%, transparent 70%),
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='30' height='100' viewBox='0 0 30 100'%3E%3Cg fill='%233D0A0C'%3E%3Ctext x='15' y='32' font-size='19' text-anchor='middle' font-family='Noto Sans Devanagari, Arial, sans-serif'%3E%E0%A5%90%3C/text%3E%3C/g%3E%3Cg transform='translate(15 75)' stroke='%233D0A0C' stroke-width='2.4' stroke-linecap='square' fill='none'%3E%3Cpath d='M0 -8 L0 8 M-8 0 L8 0'/%3E%3Cpath d='M0 -8 L5 -8'/%3E%3Cpath d='M8 0 L8 5'/%3E%3Cpath d='M0 8 L-5 8'/%3E%3Cpath d='M-8 0 L-8 -5'/%3E%3C/g%3E%3Cg fill='%233D0A0C' opacity='0.85'%3E%3Ccircle cx='15' cy='0' r='1.6'/%3E%3Ccircle cx='15' cy='50' r='1.6'/%3E%3Ccircle cx='15' cy='100' r='1.6'/%3E%3C/g%3E%3C/svg%3E");
+}
+
+.divine-border--found-left {
+  left: 0;
+}
+
+.divine-border--found-right {
+  right: 0;
+}
+
+.found-one__corner {
+  position: absolute;
+  z-index: 4;
+  width: 30px;
+  height: 30px;
+  background-color: #3D0A0C;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.32);
+  pointer-events: none;
+}
+
+.found-one__corner--gold {
+  background-color: #F2A90A;
+}
+
+.found-one__corner--tl {
+  top: 0;
+  left: 0;
+}
+
+.found-one__corner--tr {
+  top: 0;
+  right: 0;
+}
+
+.found-one__corner--bl {
+  bottom: 0;
+  left: 0;
+}
+
+.found-one__corner--br {
+  bottom: 0;
+  right: 0;
+}
+
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+  .found-one__shape-1 {
+    top: 65px;
+    left: 30px;
+  }
+
+  .found-one__shape-2 {
+    top: 65px;
+    right: 30px;
+  }
+
+  .found-one__shape-1 img,
+  .found-one__shape-2 img {
+    width: 200px;
+  }
+}
+
+@media (max-width: 767px) {
+  .divine-border--found-vertical,
+  .found-one__corner,
+  .found-one__shape-1,
+  .found-one__shape-2 {
+    display: none;
+  }
 }
 
 .found-one .section-title__tagline {
-  color: #FFC93C;
+  color: #000000;
+  font-weight: 700;
+  text-shadow: none;
 }
 
 .found-one .section-title__title {
-  color: #FFFFFF;
+  color: #000000;
+  text-shadow: none;
 }
 
 .found-one .section-title__title span {
-  color: #FFC93C;
+  color: #5C1012;
 }
 
 .found-one__title a {
@@ -8340,6 +8495,7 @@ ul {
 .found-one__highlight {
   display: flex;
   align-items: center;
+  justify-content: center;
   gap: 10px;
   margin-bottom: 18px;
   padding-top: 15px;
@@ -8358,25 +8514,26 @@ ul {
   background-color: #5C1012;
   border-color: #5C1012;
   color: #FFF8E7;
+  box-shadow: 0 8px 20px rgba(92, 16, 18, 0.35);
 }
 
 .found-one__btn-box .thm-btn::after {
-  background-color: #FFC93C;
+  background-color: #3D0A0C;
 }
 
 .found-one__btn-box .thm-btn span {
-  background-color: #FFC93C;
-  color: #5C1012;
+  background-color: #F2A90A;
+  color: #3D0A0C;
 }
 
 .found-one__btn-box .thm-btn:hover {
-  border-color: #5C1012;
-  color: #5C1012;
+  border-color: #3D0A0C;
+  color: #FFF8E7;
 }
 
 .found-one__btn-box .thm-btn:hover span {
-  background-color: #5C1012;
-  color: #FFC93C;
+  background-color: #FFFFFF;
+  color: #3D0A0C;
 }
 
 /* Tablet & mobile: reduce top/bottom spacing on the sadhana (charity-fund) section */
@@ -9802,6 +9959,20 @@ ul {
 .legacy-book-page__photo--full img {
   height: 100%;
   width: 100%;
+}
+
+.legacy-book-page__photo-img--mobile {
+  display: none;
+}
+
+@media (max-width: 767px) {
+  .legacy-book-page__photo-img--desktop {
+    display: none;
+  }
+
+  .legacy-book-page__photo-img--mobile {
+    display: block;
+  }
 }
 
 /* ===== Portrait page — image only, filling the page ===== */
