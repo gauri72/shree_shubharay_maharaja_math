@@ -44,7 +44,7 @@ export default function Footer1() {
                                     <span className="footer-widget__title-ornament"><span></span></span>
                                     <ul className="footer-widget__services-list footer-widget__services-list--icon list-unstyled">
                                         <li><Link href="/about"><i className="icon-arrow-right"></i><span>आमच्याविषयी</span></Link></li>
-                                        <li><Link href="/sadhana"><i className="icon-arrow-right"></i><span>साधना</span></Link></li>
+                                        <li><Link href="/sadhana"><i className="icon-arrow-right"></i><span>नित्य साधना</span></Link></li>
                                         <li><Link href="/gallery"><i className="icon-arrow-right"></i><span>छायाचित्र दालन</span></Link></li>
                                         <li><Link href="/events"><i className="icon-arrow-right"></i><span>आगामी उत्सव</span></Link></li>
                                     </ul>

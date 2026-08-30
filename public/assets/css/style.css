@@ -281,7 +281,7 @@ ul {
   width: 25px;
   height: 25px;
   border-radius: 100%;
-  border: 1px solid #5C1012;
+  border: 1px solid #3D0A0C;
   opacity: 1;
   transition: width 200ms ease-out, height 200ms ease-out, opacity 200ms ease-out, border-color 200ms ease-out, transform 150ms ease-out;
   position: fixed;
@@ -296,7 +296,7 @@ ul {
   width: 10px;
   height: 10px;
   border-radius: 100%;
-  background-color: #FFC93C;
+  background-color: #F2A90A;
   opacity: .6;
   position: fixed;
   transform: translate(-50%, -50%);
@@ -306,7 +306,7 @@ ul {
 }
 
 .custom-cursor__hover {
-  background-color: #5C1012;
+  background-color: #3D0A0C;
   opacity: 0.5;
 }
 
@@ -340,8 +340,8 @@ ul {
 .section-title__tagline {
   position: relative;
   display: inline-block;
-  font-size: 16px;
-  line-height: 16px;
+  font-size: 18px;
+  line-height: 1.4;
   color: var(--anity-base);
   font-weight: 400;
   text-transform: uppercase;
@@ -372,8 +372,8 @@ ul {
 .section-title-two__tagline {
   position: relative;
   display: inline-block;
-  font-size: 16px;
-  line-height: 16px;
+  font-size: 18px;
+  line-height: 1.4;
   color: var(--anity-base);
   font-weight: 400;
 }
@@ -528,8 +528,8 @@ ul {
   bottom: -12px;
   border-radius: 50%;
   border: 4px solid transparent;
-  border-top-color: #FFC93C;
-  border-right-color: #5C1012;
+  border-top-color: #F2A90A;
+  border-right-color: #3D0A0C;
   animation: preloaderSpin 1.2s linear infinite;
 }
 
@@ -550,7 +550,7 @@ ul {
 
 .preloader__text {
   margin: 0;
-  color: #FFC93C;
+  color: #F2A90A;
   font-size: 14px;
   letter-spacing: 0.08em;
   text-transform: uppercase;
@@ -578,7 +578,7 @@ ul {
 
   .preloader__image:before {
     animation: none;
-    border-color: #FFC93C;
+    border-color: #F2A90A;
   }
 
   .preloader__image:after {
@@ -594,13 +594,13 @@ ul {
   width: 48px;
   height: 48px;
   border-radius: 50%;
-  background-color: #FFC93C;
+  background-color: #F2A90A;
   border: none;
   position: fixed;
   bottom: 30px;
   right: 30px;
   z-index: 999992;
-  color: #5C1012;
+  color: #3D0A0C;
   font-size: 18px;
   cursor: pointer;
   opacity: 0;
@@ -610,13 +610,13 @@ ul {
 }
 
 .scroll-to-top:hover {
-  background-color: #5C1012;
-  color: #FFC93C;
+  background-color: #3D0A0C;
+  color: #F2A90A;
   transform: translateY(-4px);
 }
 
 .scroll-to-top:focus-visible {
-  outline: 3px solid #5C1012;
+  outline: 3px solid #3D0A0C;
   outline-offset: 3px;
 }
 
@@ -635,20 +635,20 @@ ul {
 
 .scroll-to-top__ring-track {
   fill: none;
-  stroke: rgba(92, 16, 18, 0.2);
+  stroke: rgba(61, 10, 12, 0.2);
   stroke-width: 3;
 }
 
 .scroll-to-top__ring-progress {
   fill: none;
-  stroke: #5C1012;
+  stroke: #3D0A0C;
   stroke-width: 3;
   stroke-linecap: round;
   transition: stroke-dashoffset 0.15s ease-out, stroke 0.3s ease;
 }
 
 .scroll-to-top:hover .scroll-to-top__ring-progress {
-  stroke: #FFC93C;
+  stroke: #F2A90A;
 }
 
 .scroll-to-top i {
@@ -691,7 +691,7 @@ ul {
 .main-menu__top {
   position: relative;
   display: block;
-  background-color: #5C1012;
+  background-color: #3D0A0C;
 }
 
 .main-menu__top-inner {
@@ -760,7 +760,7 @@ ul {
 }
 
 .main-menu__contact-list li .text p a:hover {
-  color: #FFC93C;
+  color: #F2A90A;
 }
 
 .main-menu__top-right {
@@ -2370,7 +2370,7 @@ ul {
   left: -100px;
   width: 380px;
   height: 380px;
-  background: radial-gradient(circle, rgba(92, 16, 18, 0.12) 0%, rgba(92, 16, 18, 0) 70%);
+  background: radial-gradient(circle, rgba(61, 10, 12, 0.12) 0%, rgba(61, 10, 12, 0) 70%);
   animation: welcomeOrbDrift1 16s ease-in-out infinite;
 }
 
@@ -2379,7 +2379,7 @@ ul {
   right: -80px;
   width: 460px;
   height: 460px;
-  background: radial-gradient(circle, rgba(92, 16, 18, 0.14) 0%, rgba(92, 16, 18, 0) 72%);
+  background: radial-gradient(circle, rgba(61, 10, 12, 0.14) 0%, rgba(61, 10, 12, 0) 72%);
   animation: welcomeOrbDrift2 20s ease-in-out infinite;
 }
 
@@ -2855,7 +2855,7 @@ ul {
 }
 
 .cta-one__btn-1 span {
-  background-color: #5C1012;
+  background-color: #3D0A0C;
 }
 
 .cta-one__btn-2 {
@@ -2870,7 +2870,7 @@ ul {
 }
 
 .cta-one__btn-2 span {
-  background-color: #5C1012;
+  background-color: #3D0A0C;
 }
 
 .donate-two__single-2 .donate-two__btn-2 {
@@ -6222,7 +6222,7 @@ ul {
 /* Shubharay Math logo lockup */
 .main-header .main-menu__wrapper,
 .stricky-header .main-menu__wrapper {
-  background-color: #FFC93C;
+  background-color: #F2A90A;
 }
 
 .main-header .main-menu__wrapper-inner,
@@ -6258,7 +6258,7 @@ ul {
   border-radius: 50%;
   object-fit: cover;
   object-position: top center;
-  border: 3px solid #5C1012;
+  border: 3px solid #3D0A0C;
   box-shadow: 0 4px 14px rgba(0, 0, 0, 0.2);
 }
 
@@ -6323,43 +6323,43 @@ ul {
 /* Shubharay Math header hover accent override (red shade) */
 .main-header .main-menu__call-icon:hover,
 .stricky-header .main-menu__call-icon:hover {
-  background-color: #5C1012;
+  background-color: #3D0A0C;
   color: var(--anity-white);
 }
 
 .main-header .main-menu__btn-box .thm-btn:hover:after,
 .stricky-header .main-menu__btn-box .thm-btn:hover:after {
-  background-color: #5C1012;
+  background-color: #3D0A0C;
 }
 
 .main-header .main-menu__btn-box .thm-btn:hover,
 .stricky-header .main-menu__btn-box .thm-btn:hover {
-  border: 1px solid #5C1012;
+  border: 1px solid #3D0A0C;
   color: var(--anity-white);
 }
 
 .main-header .main-menu__btn-box .thm-btn:hover span,
 .stricky-header .main-menu__btn-box .thm-btn:hover span {
   background-color: var(--anity-white);
-  color: #5C1012;
+  color: #3D0A0C;
 }
 
 /* Shubharay Math header — restrict palette to yellow / red / white / black */
 .main-header .main-menu__call-icon,
 .stricky-header .main-menu__call-icon {
-  background-color: #5C1012;
+  background-color: #3D0A0C;
   color: var(--anity-white);
 }
 
 .main-header .main-menu__call-sub-title,
 .stricky-header .main-menu__call-sub-title {
-  color: #5C1012;
+  color: #3D0A0C;
   font-weight: 600;
 }
 
 .main-header .main-menu__call-number a:hover,
 .stricky-header .main-menu__call-number a:hover {
-  color: #5C1012;
+  color: #3D0A0C;
 }
 
 /* Desktop nav links — soft pill highlight instead of underline (design/spacing unchanged) */
@@ -6377,7 +6377,7 @@ ul {
   height: 100%;
   width: 100%;
   border-radius: 24px;
-  background-color: rgba(92, 16, 18, 0.08);
+  background-color: rgba(61, 10, 12, 0.08);
   position: absolute;
   top: 0;
   bottom: auto;
@@ -6394,7 +6394,7 @@ ul {
 .main-header .main-menu .main-menu__list>li:hover>a,
 .stricky-header .main-menu__list>li.current>a,
 .stricky-header .main-menu__list>li:hover>a {
-  color: #5C1012;
+  color: #3D0A0C;
   transform: translateY(-1px);
 }
 
@@ -6410,22 +6410,22 @@ ul {
 .main-header .main-menu .main-menu__list>li:hover>a::after,
 .stricky-header .main-menu__list>li.current>a::after,
 .stricky-header .main-menu__list>li:hover>a::after {
-  color: #5C1012;
+  color: #3D0A0C;
 }
 
 .main-header .main-menu__btn-box .thm-btn,
 .stricky-header .main-menu__btn-box .thm-btn {
-  border-color: #5C1012;
+  border-color: #3D0A0C;
 }
 
 .main-header .main-menu__btn-box .thm-btn span,
 .stricky-header .main-menu__btn-box .thm-btn span {
-  background-color: #5C1012;
+  background-color: #3D0A0C;
 }
 
 .main-header .main-menu__social a:hover,
 .stricky-header .main-menu__social a:hover {
-  color: #5C1012;
+  color: #3D0A0C;
 }
 
 @media (max-width: 1199px) {
@@ -6437,27 +6437,27 @@ ul {
     width: 42px;
     height: 42px;
     border-radius: 50%;
-    background-color: #5C1012;
+    background-color: #3D0A0C;
     color: #ffffff;
   }
 
   .main-header .mobile-nav__toggler:hover,
   .stricky-header .mobile-nav__toggler:hover {
-    background-color: #FFC93C;
-    color: #5C1012;
+    background-color: #F2A90A;
+    color: #3D0A0C;
   }
 }
 
 /* Shubharay Math mobile/tablet nav — red panel with gold/white accents */
 .mobile-nav__content {
-  background-color: #5C1012;
+  background-color: #3D0A0C;
 }
 
 .shubharay-logo--mobile .shubharay-logo__img {
   width: 56px;
   height: 56px;
   min-width: 56px;
-  border-color: #FFC93C;
+  border-color: #F2A90A;
 }
 
 .shubharay-logo--mobile .shubharay-logo__title {
@@ -6471,8 +6471,8 @@ ul {
 }
 
 .mobile-nav__close:hover {
-  background-color: #FFC93C;
-  color: #5C1012;
+  background-color: #F2A90A;
+  color: #3D0A0C;
 }
 
 .mobile-nav__content .main-menu__list>li:not(:last-child),
@@ -6490,7 +6490,7 @@ ul {
 .mobile-nav__content .main-menu__list>li>a:hover,
 .mobile-nav__content .main-menu__list>li>ul>li>a:hover,
 .mobile-nav__content .main-menu__list>li>ul>li>ul>li>a:hover {
-  color: #FFC93C;
+  color: #F2A90A;
 }
 
 .mobile-nav__contact li {
@@ -6502,15 +6502,15 @@ ul {
 }
 
 .mobile-nav__contact li a:hover {
-  color: #FFC93C;
+  color: #F2A90A;
   text-decoration: underline;
 }
 
 .mobile-nav__contact li>i {
   flex-shrink: 0;
   font-size: 13px;
-  color: #5C1012;
-  background-color: #FFC93C;
+  color: #3D0A0C;
+  background-color: #F2A90A;
 }
 
 .mobile-nav__contact li.mobile-nav__contact--inline {
@@ -6545,7 +6545,7 @@ ul {
 }
 
 .mobile-nav__social a:hover {
-  color: #FFC93C;
+  color: #F2A90A;
 }
 
 /* Shubharay Math header — full responsive tuning */
@@ -6768,9 +6768,9 @@ ul {
 
 /* Shubharay Math footer */
 .site-footer--shubharay {
-  --footer-bg: #5C1012;
+  --footer-bg: #3D0A0C;
   --footer-bg-rgb: 92, 16, 18;
-  --footer-accent: #FFC93C;
+  --footer-accent: #F2A90A;
   --footer-accent-rgb: 255, 201, 60;
   --footer-text: #ffffff;
   --footer-text-rgb: 255, 255, 255;
@@ -6786,7 +6786,7 @@ ul {
   left: 0;
   right: 0;
   height: 3px;
-  background: linear-gradient(90deg, rgba(255, 201, 60, 0) 0%, rgba(255, 201, 60, 0.9) 50%, rgba(255, 201, 60, 0) 100%);
+  background: linear-gradient(90deg, rgba(242, 169, 10, 0) 0%, rgba(242, 169, 10, 0.9) 50%, rgba(242, 169, 10, 0) 100%);
 }
 
 .site-footer--shubharay .site-footer__top-inner {
@@ -6864,6 +6864,7 @@ ul {
 .site-footer--shubharay .footer-widget__services-list--icon li a span {
   position: relative;
   display: inline-block;
+  min-width: 84px;
 }
 
 .site-footer--shubharay .footer-widget__services-list--icon li a span:after {
@@ -7192,6 +7193,13 @@ ul {
   }
 }
 
+/* Tablet — align the "Seva & Offerings" title with the logo lockup beside it */
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+  .site-footer--shubharay .site-footer__top-inner .row > div:nth-child(2) {
+    margin-top: 10px;
+  }
+}
+
 @media (max-width: 767px) {
   .site-footer--shubharay .site-footer__top-inner {
     padding: 32px 0 6px;
@@ -7345,8 +7353,8 @@ ul {
 }
 
 .main-slider-charoli--gold {
-  --charoli-ink: #FFC93C;
-  --charoli-rule: rgba(255, 201, 60, 0.5);
+  --charoli-ink: #F2A90A;
+  --charoli-rule: rgba(242, 169, 10, 0.5);
 }
 
 /* Frame: straight rules drawn as CSS gradients (they stretch cleanly), with the
@@ -7549,7 +7557,7 @@ ul {
 }
 
 .banner-slider-nav-four--gold {
-  --nav-ink: #FFC93C;
+  --nav-ink: #F2A90A;
 }
 
 /* small diamond between the two marks */
@@ -7705,15 +7713,15 @@ ul {
   /* Verse moves onto a solid maroon band below the image; ink is gold on both slides there */
   .main-slider-charoli,
   .main-slider-charoli--gold {
-    --charoli-ink: #FFC93C;
-    --charoli-rule: rgba(255, 201, 60, 0.45);
+    --charoli-ink: #F2A90A;
+    --charoli-rule: rgba(242, 169, 10, 0.45);
     position: static;
     transform: none;
     order: 2;
     width: 100%;
     max-width: none;
     padding: 26px 18px 30px;
-    background: linear-gradient(155deg, #6b1416 0%, #4a0d0f 100%);
+    background: linear-gradient(155deg, #5A1013 0%, #3D0A0C 100%);
   }
 
   .main-slider-charoli__frame {
@@ -7734,7 +7742,7 @@ ul {
   /* arrows join the verse band — bare chevrons have no contrast over the image */
   .banner-slider-nav-four,
   .banner-slider-nav-four--gold {
-    --nav-ink: #FFC93C;
+    --nav-ink: #F2A90A;
     position: static;
     order: 3;
     left: auto;
@@ -7744,7 +7752,7 @@ ul {
     max-width: none;
     height: auto;
     padding: 0 0 26px;
-    background: #4A0D0F;
+    background: #3D0A0C;
     gap: 22px;
   }
 
@@ -7762,7 +7770,7 @@ ul {
 .welcome-one .section-title__tagline {
   color: #000000;
   font-weight: 700;
-  font-size: 18px;
+  font-size: 19px;
   text-shadow: none;
 }
 
@@ -7786,7 +7794,7 @@ ul {
 }
 
 .welcome-one .section-title__title span {
-  color: #5C1012;
+  color: #3D0A0C;
 }
 
 .welcome-one__content .text {
@@ -7826,22 +7834,22 @@ ul {
 }
 
 .welcome-one__content .list-item li .icon {
-  color: #5C1012;
+  color: #3D0A0C;
   background-color: #FFFFFF;
   border: 1px solid rgba(232, 199, 102, 0.7);
-  box-shadow: 0 6px 16px rgba(92, 16, 18, 0.16);
+  box-shadow: 0 6px 16px rgba(61, 10, 12, 0.16);
 }
 
 .welcome-one__content .list-item li .icon::before {
-  background-color: #5C1012;
+  background-color: #3D0A0C;
 }
 
 /* Welcome-section buttons — maroon / gold / white combination */
 .welcome-one .thm-btn {
-  background-color: #5C1012;
-  border-color: #5C1012;
+  background-color: #3D0A0C;
+  border-color: #3D0A0C;
   color: var(--anity-white);
-  box-shadow: 0 8px 20px rgba(92, 16, 18, 0.35);
+  box-shadow: 0 8px 20px rgba(61, 10, 12, 0.35);
 }
 
 .welcome-one .thm-btn::after {
@@ -8147,29 +8155,29 @@ ul {
 
 /* Shubharay Math about section — red & gold theme */
 .about-One__provide-box {
-  background-color: #FFC93C;
+  background-color: #F2A90A;
 }
 
 .about-One__provide-icon span {
-  color: #5C1012;
+  color: #3D0A0C;
 }
 
 .about-One__provide-count span {
-  color: #5C1012;
+  color: #3D0A0C;
 }
 
 .about-One__provide-count-text {
-  color: #5C1012;
+  color: #3D0A0C;
   font-weight: 600;
 }
 
 .about-One__shape-1 {
-  background-color: #5C1012;
+  background-color: #3D0A0C;
   opacity: 0.35;
 }
 
 .about-One .section-title__tagline {
-  color: #5C1012;
+  color: #3D0A0C;
 }
 
 .about-One .section-title__title {
@@ -8178,45 +8186,45 @@ ul {
 
 .about-One__tab-box .tab-buttons .tab-btn span {
   color: #2b2b2b;
-  border: 1px solid rgba(92, 16, 18, 0.25);
+  border: 1px solid rgba(61, 10, 12, 0.25);
 }
 
 .about-One__tab-box .tab-buttons .tab-btn.active-btn span {
   color: #FFF8E7;
-  border: 1px solid #5C1012;
+  border: 1px solid #3D0A0C;
 }
 
 .about-One__tab-box .tab-buttons .tab-btn span:before {
-  background-color: #5C1012;
+  background-color: #3D0A0C;
 }
 
 .about-One__btn-box .thm-btn {
-  background-color: #5C1012;
-  border-color: #5C1012;
+  background-color: #3D0A0C;
+  border-color: #3D0A0C;
   color: #FFF8E7;
 }
 
 .about-One__btn-box .thm-btn::after {
-  background-color: #FFC93C;
+  background-color: #F2A90A;
 }
 
 .about-One__btn-box .thm-btn span {
-  background-color: #FFC93C;
-  color: #5C1012;
+  background-color: #F2A90A;
+  color: #3D0A0C;
 }
 
 .about-One__btn-box .thm-btn:hover {
-  border-color: #5C1012;
-  color: #5C1012;
+  border-color: #3D0A0C;
+  color: #3D0A0C;
 }
 
 .about-One__btn-box .thm-btn:hover span {
-  background-color: #5C1012;
-  color: #FFC93C;
+  background-color: #3D0A0C;
+  color: #F2A90A;
 }
 
 .about-One__need-help .icon span {
-  color: #5C1012;
+  color: #3D0A0C;
 }
 
 .about-One__need-help .content h4 a {
@@ -8224,7 +8232,7 @@ ul {
 }
 
 .about-One__need-help .content h4 a:hover {
-  color: #5C1012;
+  color: #3D0A0C;
 }
 
 /* Desktop & tablet: image 1 sits behind, image 2 overlaps on top */
@@ -8336,7 +8344,7 @@ ul {
 
 /* Namaste line-art sketch reads directly on the gold background — undo the dark-bg invert filter */
 .found-one__shape-1 {
-  top: 54px;
+  top: 100px;
   left: 180px;
 }
 
@@ -8348,7 +8356,7 @@ ul {
 
 .found-one__shape-2 {
   position: absolute;
-  top: 54px;
+  top: 100px;
   right: 180px;
   left: auto;
 }
@@ -8454,12 +8462,12 @@ ul {
 
 @media only screen and (min-width: 768px) and (max-width: 991px) {
   .found-one__shape-1 {
-    top: 65px;
+    top: 95px;
     left: 30px;
   }
 
   .found-one__shape-2 {
-    top: 65px;
+    top: 95px;
     right: 30px;
   }
 
@@ -8490,7 +8498,7 @@ ul {
 }
 
 .found-one .section-title__title span {
-  color: #5C1012;
+  color: #3D0A0C;
 }
 
 .found-one__title a {
@@ -8498,7 +8506,7 @@ ul {
 }
 
 .found-one__title a:hover {
-  color: #5C1012;
+  color: #3D0A0C;
 }
 
 /* keep all three cards level: description is exactly two lines */
@@ -8517,22 +8525,22 @@ ul {
   gap: 10px;
   margin-bottom: 18px;
   padding-top: 15px;
-  border-top: 1px solid rgba(92, 16, 18, 0.15);
-  color: #5C1012;
-  font-size: 14px;
+  border-top: 1px solid rgba(61, 10, 12, 0.15);
+  color: #3D0A0C;
+  font-size: 15px;
   font-weight: 700;
 }
 
 .found-one__highlight i {
-  color: #5C1012;
+  color: #3D0A0C;
   font-size: 18px;
 }
 
 .found-one__btn-box .thm-btn {
-  background-color: #5C1012;
-  border-color: #5C1012;
+  background-color: #3D0A0C;
+  border-color: #3D0A0C;
   color: #FFF8E7;
-  box-shadow: 0 8px 20px rgba(92, 16, 18, 0.35);
+  box-shadow: 0 8px 20px rgba(61, 10, 12, 0.35);
 }
 
 .found-one__btn-box .thm-btn::after {
@@ -8569,7 +8577,7 @@ ul {
 
 /* Shubharay Math join-us section — red & gold theme */
 .donation-one {
-  background-color: #5C1012;
+  background-color: #3D0A0C;
 }
 
 .donation-one__wrapper {
@@ -8588,7 +8596,7 @@ ul {
 .donation-one__content-box {
   position: relative;
   width: 100%;
-  background-color: #5C1012;
+  background-color: #3D0A0C;
   overflow: hidden;
 }
 
@@ -8752,7 +8760,7 @@ ul {
 }
 
 .donation-one__content-box .section-title-two__tagline {
-  color: #FFC93C;
+  color: #F2A90A;
 }
 
 .donation-one__content-box .section-title-two__title {
@@ -8760,7 +8768,7 @@ ul {
 }
 
 .donation-one__content-box .section-title-two__title span {
-  color: #FFC93C;
+  color: #F2A90A;
   display: inline-block;
   margin-top: 14px;
 }
@@ -8790,8 +8798,8 @@ ul {
   width: 22px;
   height: 22px;
   border-radius: 50%;
-  background-color: #FFC93C;
-  color: #5C1012;
+  background-color: #F2A90A;
+  color: #3D0A0C;
   font-size: 11px;
   flex-shrink: 0;
 }
@@ -8804,7 +8812,7 @@ ul {
 
 .donation-one__btn span {
   background-color: #FFFFFF;
-  color: #5C1012;
+  color: #3D0A0C;
 }
 
 .donation-one__btn::after {
@@ -8812,11 +8820,11 @@ ul {
 }
 
 .donation-one__btn:hover {
-  color: #5C1012;
+  color: #3D0A0C;
 }
 
 .donation-one__btn:hover span {
-  background-color: #5C1012;
+  background-color: #3D0A0C;
   color: #FFFFFF;
 }
 
@@ -9032,7 +9040,7 @@ ul {
   }
 
   .donation-one__supports li {
-    font-size: 14px;
+    font-size: 15px;
   }
 }
 
@@ -9065,7 +9073,7 @@ ul {
 }
 
 .donate-one__single .donate-one__title a:hover {
-  color: #5C1012;
+  color: #3D0A0C;
 }
 
 .donate-one__single .donate-one__text {
@@ -9080,20 +9088,20 @@ ul {
 
 .donate-one__single .donate-one__btn span {
   background-color: #FFFFFF;
-  color: #5C1012;
+  color: #3D0A0C;
 }
 
 .donate-one__single .donate-one__btn::after {
-  background-color: #5C1012;
+  background-color: #3D0A0C;
 }
 
 .donate-one__single .donate-one__btn:hover {
   color: #FFFFFF;
-  border-color: #5C1012;
+  border-color: #3D0A0C;
 }
 
 .donate-one__single .donate-one__btn:hover span {
-  background-color: #5C1012;
+  background-color: #3D0A0C;
   color: #FFFFFF;
 }
 
@@ -9108,7 +9116,7 @@ ul {
 }
 
 .donate-one__single-2 .donate-one__title a:hover {
-  color: #FFC93C;
+  color: #F2A90A;
 }
 
 .donate-one__single-2 .donate-one__text {
@@ -9123,21 +9131,21 @@ ul {
 
 .donate-one__single-2 .donate-one__btn span {
   background-color: #FFFFFF;
-  color: #5C1012;
+  color: #3D0A0C;
 }
 
 .donate-one__single-2 .donate-one__btn::after {
-  background-color: #FFC93C;
+  background-color: #F2A90A;
 }
 
 .donate-one__single-2 .donate-one__btn:hover {
   color: #FFFFFF;
-  border-color: #FFC93C;
+  border-color: #F2A90A;
 }
 
 .donate-one__single-2 .donate-one__btn:hover span {
-  background-color: #FFC93C;
-  color: #5C1012;
+  background-color: #F2A90A;
+  color: #3D0A0C;
 }
 
 @media only screen and (min-width: 992px) and (max-width: 1199px) {
@@ -9192,7 +9200,7 @@ ul {
 /* Shubharay Math who-we-are section — consistent red theme background, creative quote-style copy */
 .who-we-are {
   position: relative;
-  background-color: #5C1012;
+  background-color: #3D0A0C;
   padding: 140px 0 140px;
   overflow: hidden;
   z-index: 1;
@@ -9202,7 +9210,7 @@ ul {
   content: "";
   position: absolute;
   inset: 0;
-  background-image: radial-gradient(rgba(255, 201, 60, 0.06) 1.5px, transparent 1.5px);
+  background-image: radial-gradient(rgba(242, 169, 10, 0.06) 1.5px, transparent 1.5px);
   background-size: 26px 26px;
   pointer-events: none;
   z-index: 0;
@@ -9214,7 +9222,7 @@ ul {
 }
 
 .who-we-are .section-title__tagline {
-  color: #FFC93C;
+  color: #F2A90A;
   font-weight: 700;
 }
 
@@ -9245,9 +9253,9 @@ ul {
 }
 
 .who-we-are__btn {
-  background-color: #FFC93C;
-  border-color: #FFC93C;
-  color: #5C1012;
+  background-color: #F2A90A;
+  border-color: #F2A90A;
+  color: #3D0A0C;
 }
 
 .who-we-are__btn::after {
@@ -9255,18 +9263,18 @@ ul {
 }
 
 .who-we-are__btn span {
-  background-color: #5C1012;
-  color: #FFC93C;
+  background-color: #3D0A0C;
+  color: #F2A90A;
 }
 
 .who-we-are__btn:hover {
   border-color: #FFFFFF;
-  color: #5C1012;
+  color: #3D0A0C;
 }
 
 .who-we-are__btn:hover span {
   background-color: #FFFFFF;
-  color: #5C1012;
+  color: #3D0A0C;
 }
 
 /* Right — credibility stat panel: white frame lifts off the red backdrop, matching the site's card convention */
@@ -9286,7 +9294,7 @@ ul {
   left: 0;
   right: 0;
   height: 6px;
-  background: linear-gradient(90deg, #5C1012 0%, #FFC93C 50%, #5C1012 100%);
+  background: linear-gradient(90deg, #3D0A0C 0%, #F2A90A 50%, #3D0A0C 100%);
 }
 
 .who-we-are__stat-list {
@@ -9303,8 +9311,8 @@ ul {
   gap: 20px;
   padding: 22px;
   background-color: #FBF4E9;
-  border: 1px solid rgba(92, 16, 18, 0.08);
-  border-left: 4px solid #5C1012;
+  border: 1px solid rgba(61, 10, 12, 0.08);
+  border-left: 4px solid #3D0A0C;
   border-radius: 10px;
   transition: all 350ms ease;
 }
@@ -9314,10 +9322,10 @@ ul {
 }
 
 .who-we-are__stat-card:hover {
-  border-color: rgba(92, 16, 18, 0.16);
-  border-left-color: #FFC93C;
+  border-color: rgba(61, 10, 12, 0.16);
+  border-left-color: #F2A90A;
   transform: translateX(6px);
-  box-shadow: 0 15px 35px rgba(92, 16, 18, 0.12);
+  box-shadow: 0 15px 35px rgba(61, 10, 12, 0.12);
 }
 
 .who-we-are__stat-icon {
@@ -9328,7 +9336,7 @@ ul {
   height: 52px;
   flex-shrink: 0;
   border-radius: 50%;
-  background-color: #5C1012;
+  background-color: #3D0A0C;
   transition: transform 350ms ease;
 }
 
@@ -9338,7 +9346,7 @@ ul {
 
 .who-we-are__stat-icon span {
   font-size: 22px;
-  color: #FFC93C;
+  color: #F2A90A;
 }
 
 .who-we-are__stat-body {
@@ -9355,13 +9363,13 @@ ul {
 .who-we-are__stat-value h3 {
   font-size: 30px;
   font-weight: 800;
-  color: #5C1012;
+  color: #3D0A0C;
   line-height: 1em;
   margin: 0;
 }
 
 .who-we-are__stat-value span {
-  font-size: 13px;
+  font-size: 14px;
   font-weight: 700;
   letter-spacing: 0.4px;
   text-transform: uppercase;
@@ -9587,7 +9595,7 @@ ul {
 
 .event-one__single:hover {
   transform: translateY(-8px);
-  box-shadow: 0px 20px 50px rgba(92, 16, 18, 0.12);
+  box-shadow: 0px 20px 50px rgba(61, 10, 12, 0.12);
 }
 
 .event-one__img-box {
@@ -9607,7 +9615,7 @@ ul {
   content: "";
   position: absolute;
   inset: 0;
-  background-color: #5C1012;
+  background-color: #3D0A0C;
   opacity: 0.18;
   mix-blend-mode: multiply;
   pointer-events: none;
@@ -9684,7 +9692,7 @@ ul {
 }
 
 .event-one__title a:hover {
-  color: #5C1012;
+  color: #3D0A0C;
 }
 
 .event-one .event-one__text {
@@ -9749,7 +9757,7 @@ ul {
 /* Shubharay Math cta-one section — themed closing call-to-action */
 .cta-one {
   position: relative;
-  background-color: #5C1012;
+  background-color: #3D0A0C;
   padding: 130px 0 130px;
   overflow: hidden;
   z-index: 1;
@@ -9759,7 +9767,7 @@ ul {
   content: "";
   position: absolute;
   inset: 0;
-  background-image: radial-gradient(rgba(255, 201, 60, 0.1) 1.5px, transparent 1.5px);
+  background-image: radial-gradient(rgba(242, 169, 10, 0.1) 1.5px, transparent 1.5px);
   background-size: 26px 26px;
   pointer-events: none;
   z-index: 0;
@@ -9778,8 +9786,8 @@ ul {
 .cta-one__tagline {
   display: inline-block;
   margin-bottom: 16px;
-  color: #FFC93C;
-  font-size: 15px;
+  color: #F2A90A;
+  font-size: 18px;
   font-weight: 700;
   letter-spacing: 0.6px;
   text-transform: uppercase;
@@ -9814,9 +9822,9 @@ ul {
 }
 
 .cta-one__btn-1 {
-  background-color: #FFC93C;
-  border: 1px solid #FFC93C;
-  color: #5C1012;
+  background-color: #F2A90A;
+  border: 1px solid #F2A90A;
+  color: #3D0A0C;
   padding: 13px 34px;
 }
 
@@ -9825,18 +9833,18 @@ ul {
 }
 
 .cta-one__btn-1 span {
-  background-color: #5C1012;
-  color: #FFC93C;
+  background-color: #3D0A0C;
+  color: #F2A90A;
 }
 
 .cta-one__btn-1:hover {
   border-color: #FFFFFF;
-  color: #5C1012;
+  color: #3D0A0C;
 }
 
 .cta-one__btn-1:hover span {
   background-color: #FFFFFF;
-  color: #5C1012;
+  color: #3D0A0C;
 }
 
 .cta-one__btn-2 {
@@ -9847,7 +9855,7 @@ ul {
 }
 
 .cta-one__btn-2::after {
-  background-color: #FFC93C;
+  background-color: #F2A90A;
 }
 
 .cta-one__btn-2 span {
@@ -9856,13 +9864,13 @@ ul {
 }
 
 .cta-one__btn-2:hover {
-  border-color: #FFC93C;
-  color: #5C1012;
+  border-color: #F2A90A;
+  color: #3D0A0C;
 }
 
 .cta-one__btn-2:hover span {
-  background-color: #FFC93C;
-  color: #5C1012;
+  background-color: #F2A90A;
+  color: #3D0A0C;
 }
 
 @media only screen and (min-width: 992px) and (max-width: 1199px) {
@@ -9945,7 +9953,7 @@ ul {
   content: "";
   position: absolute;
   inset: 0;
-  background-color: #5C1012;
+  background-color: #3D0A0C;
   opacity: 0.18;
   mix-blend-mode: multiply;
   pointer-events: none;
@@ -10049,7 +10057,7 @@ ul {
 /* Shubharay Math — Mantra Strip (between header and hero) */
 .mantra-strip {
   position: relative;
-  background: #5C1012;
+  background: #3D0A0C;
   overflow: hidden;
   padding: 9px 0;
 }
@@ -10240,7 +10248,7 @@ ul {
   height: 30px;
   background-color: #F2A90A;
   background-image:
-    radial-gradient(circle at 50% 50%, rgba(92, 16, 18, 0.14) 0%, transparent 70%),
+    radial-gradient(circle at 50% 50%, rgba(61, 10, 12, 0.14) 0%, transparent 70%),
     url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='30' viewBox='0 0 100 30'%3E%3Cg fill='%235C1012'%3E%3Ctext x='25' y='22' font-size='19' text-anchor='middle' font-family='Noto Sans Devanagari, Arial, sans-serif'%3E%E0%A5%90%3C/text%3E%3C/g%3E%3Cg transform='translate(75 15)' stroke='%235C1012' stroke-width='2.4' stroke-linecap='square' fill='none'%3E%3Cpath d='M0 -8 L0 8 M-8 0 L8 0'/%3E%3Cpath d='M0 -8 L5 -8'/%3E%3Cpath d='M8 0 L8 5'/%3E%3Cpath d='M0 8 L-5 8'/%3E%3Cpath d='M-8 0 L-8 -5'/%3E%3C/g%3E%3Cg fill='%235C1012' opacity='0.85'%3E%3Ccircle cx='0' cy='15' r='1.6'/%3E%3Ccircle cx='50' cy='15' r='1.6'/%3E%3Ccircle cx='100' cy='15' r='1.6'/%3E%3C/g%3E%3C/svg%3E");
   background-repeat: repeat-x, repeat-x;
   background-position: center, center;
@@ -10270,7 +10278,7 @@ ul {
   width: 30px;
   background-color: #F2A90A;
   background-image:
-    radial-gradient(circle at 50% 50%, rgba(92, 16, 18, 0.14) 0%, transparent 70%),
+    radial-gradient(circle at 50% 50%, rgba(61, 10, 12, 0.14) 0%, transparent 70%),
     url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='30' height='100' viewBox='0 0 30 100'%3E%3Cg fill='%235C1012'%3E%3Ctext x='15' y='32' font-size='19' text-anchor='middle' font-family='Noto Sans Devanagari, Arial, sans-serif'%3E%E0%A5%90%3C/text%3E%3C/g%3E%3Cg transform='translate(15 75)' stroke='%235C1012' stroke-width='2.4' stroke-linecap='square' fill='none'%3E%3Cpath d='M0 -8 L0 8 M-8 0 L8 0'/%3E%3Cpath d='M0 -8 L5 -8'/%3E%3Cpath d='M8 0 L8 5'/%3E%3Cpath d='M0 8 L-5 8'/%3E%3Cpath d='M-8 0 L-8 -5'/%3E%3C/g%3E%3Cg fill='%235C1012' opacity='0.85'%3E%3Ccircle cx='15' cy='0' r='1.6'/%3E%3Ccircle cx='15' cy='50' r='1.6'/%3E%3Ccircle cx='15' cy='100' r='1.6'/%3E%3C/g%3E%3C/svg%3E");
   background-repeat: repeat-y, repeat-y;
   background-position: top center, top center;
@@ -10407,15 +10415,15 @@ ul {
   width: 100%;
   height: 100%;
   background:
-    radial-gradient(circle at 8% 8%, rgba(92, 16, 18, 0.06) 0%, transparent 40%),
-    radial-gradient(circle at 92% 92%, rgba(92, 16, 18, 0.05) 0%, transparent 40%),
+    radial-gradient(circle at 8% 8%, rgba(61, 10, 12, 0.06) 0%, transparent 40%),
+    radial-gradient(circle at 92% 92%, rgba(61, 10, 12, 0.05) 0%, transparent 40%),
     linear-gradient(135deg, #FFFBF0 0%, #FBF2D9 55%, #F5E7C6 100%);
-  border: 2px solid rgba(92, 16, 18, 0.3);
+  border: 2px solid rgba(61, 10, 12, 0.3);
   box-shadow:
-    inset 0 0 0 1px rgba(92, 16, 18, 0.08),
+    inset 0 0 0 1px rgba(61, 10, 12, 0.08),
     inset -14px 0 22px -16px rgba(0, 0, 0, 0.4),
     inset 14px 0 22px -16px rgba(0, 0, 0, 0.4),
-    inset 0 -4px 8px -4px rgba(92, 16, 18, 0.16);
+    inset 0 -4px 8px -4px rgba(61, 10, 12, 0.16);
   overflow: hidden;
   border-radius: 10px;
   padding: 20px;
@@ -10457,7 +10465,7 @@ ul {
   position: absolute;
   inset: 0;
   z-index: 1;
-  border: 3px solid #5C1012;
+  border: 3px solid #3D0A0C;
   border-radius: 6px;
   pointer-events: none;
 }
@@ -10468,7 +10476,7 @@ ul {
   position: absolute;
   width: 18px;
   height: 18px;
-  border: 2px solid #5C1012;
+  border: 2px solid #3D0A0C;
   background: #FFFBF0;
   transform: rotate(45deg);
 }
@@ -10602,8 +10610,8 @@ ul {
   width: 220px;
   height: 220px;
   border-radius: 50%;
-  background: rgba(92, 16, 18, 0.1);
-  border: 5px solid #5C1012;
+  background: rgba(61, 10, 12, 0.1);
+  border: 5px solid #3D0A0C;
   box-shadow:
     0 3px 4px rgba(0, 0, 0, 0.45),
     0 1px 0 rgba(255, 255, 255, 0.15),
@@ -10674,7 +10682,7 @@ ul {
   padding: 18px 44px;
   border: none;
   border-radius: 999px;
-  background: #5C1012;
+  background: #3D0A0C;
   color: #F3D68A;
   font-size: 20px;
   font-weight: 700;
@@ -10798,7 +10806,7 @@ ul {
   height: 58px;
   border-radius: 50%;
   border: 2px solid #E8C766;
-  background: radial-gradient(circle at 35% 30%, #8a2226 0%, #5C1012 55%, #3D0A0C 100%);
+  background: radial-gradient(circle at 35% 30%, #6E1518 0%, #3D0A0C 60%, #2C0708 100%);
   color: #F3D68A;
   cursor: pointer;
   box-shadow: 0 6px 16px rgba(0, 0, 0, 0.45), inset 0 1px 0 rgba(255, 255, 255, 0.15), inset 0 -3px 6px rgba(0, 0, 0, 0.4);
@@ -11197,7 +11205,7 @@ ul {
 }
 
 .home-gallery .section-title__title span {
-  color: #5C1012;
+  color: #3D0A0C;
 }
 
 /* Grid — editorial 4x3 mosaic: 4 big tiles + 2 small accents, large images, no gaps
@@ -11374,10 +11382,10 @@ ul {
 }
 
 .home-gallery__btn.thm-btn {
-  background-color: #5C1012;
-  border-color: #5C1012;
+  background-color: #3D0A0C;
+  border-color: #3D0A0C;
   color: #FFF8E7;
-  box-shadow: 0 8px 20px rgba(92, 16, 18, 0.35);
+  box-shadow: 0 8px 20px rgba(61, 10, 12, 0.35);
 }
 
 .home-gallery__btn.thm-btn::after {
@@ -11482,6 +11490,176 @@ ul {
     opacity: 1;
     transform: translateY(0);
   }
+}
+
+/*==============================================
+    Home page — consistent vertical section spacing
+    across desktop / tablet / mobile.
+    Applies to the standard content sections; the full-bleed
+    Donation split panel and structural strips are excluded.
+===============================================*/
+.welcome-one,
+.found-one,
+.legacy-One,
+.event-one,
+.home-gallery,
+.cta-one {
+  padding-top: 100px;
+  padding-bottom: 100px;
+}
+
+@media only screen and (min-width: 992px) and (max-width: 1199px) {
+  .welcome-one,
+  .found-one,
+  .legacy-One,
+  .event-one,
+  .home-gallery,
+  .cta-one {
+    padding-top: 100px;
+    padding-bottom: 100px;
+  }
+}
+
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+  .welcome-one,
+  .found-one,
+  .legacy-One,
+  .event-one,
+  .home-gallery,
+  .cta-one {
+    padding-top: 80px;
+    padding-bottom: 80px;
+  }
+}
+
+@media only screen and (max-width: 767px) {
+  .welcome-one,
+  .found-one,
+  .legacy-One,
+  .event-one,
+  .home-gallery,
+  .cta-one {
+    padding-top: 60px;
+    padding-bottom: 60px;
+  }
+}
+
+/*==============================================
+    Home page — unified CTA button styling.
+    Every PRIMARY button shares one recipe; every SECONDARY
+    button shares one recipe. Two context variants only:
+    · on light sections  -> maroon-fill primary
+    · on maroon sections -> gold-fill primary + ghost secondary
+===============================================*/
+
+/* ---- PRIMARY on light background (Welcome content, Found, HomeGallery) ---- */
+.welcome-one__content .thm-btn,
+.found-one__btn-box .thm-btn,
+.home-gallery__btn.thm-btn {
+  background-color: #3D0A0C;
+  border: 1px solid #3D0A0C;
+  color: #FFFFFF;
+  box-shadow: 0 8px 20px rgba(61, 10, 12, 0.35);
+}
+
+.welcome-one__content .thm-btn::after,
+.found-one__btn-box .thm-btn::after,
+.home-gallery__btn.thm-btn::after {
+  background-color: #2C0708;
+}
+
+.welcome-one__content .thm-btn span,
+.found-one__btn-box .thm-btn span,
+.home-gallery__btn.thm-btn span {
+  background-color: #F2A90A;
+  color: #3D0A0C;
+}
+
+.welcome-one__content .thm-btn:hover,
+.found-one__btn-box .thm-btn:hover,
+.home-gallery__btn.thm-btn:hover {
+  border-color: #2C0708;
+  color: #FFFFFF;
+}
+
+.welcome-one__content .thm-btn:hover span,
+.found-one__btn-box .thm-btn:hover span,
+.home-gallery__btn.thm-btn:hover span {
+  background-color: #FFFFFF;
+  color: #3D0A0C;
+}
+
+/* ---- PRIMARY on maroon background (Event, CTA primary, Welcome visit-card) ---- */
+.event-one__btn,
+.cta-one__btn-1,
+.welcome-one .visit-card .thm-btn {
+  background-color: #F2A90A;
+  border: 1px solid #F2A90A;
+  color: #3D0A0C;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.30);
+  padding: 7px 25px 7px;
+  padding-right: 9px;
+}
+
+.event-one__btn::after,
+.cta-one__btn-1::after,
+.welcome-one .visit-card .thm-btn::after {
+  background-color: #FFFFFF;
+}
+
+.event-one__btn span,
+.cta-one__btn-1 span,
+.welcome-one .visit-card .thm-btn span {
+  background-color: #3D0A0C;
+  color: #F2A90A;
+}
+
+.event-one__btn:hover,
+.cta-one__btn-1:hover,
+.welcome-one .visit-card .thm-btn:hover {
+  border-color: #FFFFFF;
+  color: #3D0A0C;
+}
+
+.event-one__btn:hover span,
+.cta-one__btn-1:hover span,
+.welcome-one .visit-card .thm-btn:hover span {
+  background-color: #3D0A0C;
+  color: #FFFFFF;
+}
+
+/* ---- SECONDARY on maroon background (CTA secondary, Donation) ---- */
+.cta-one__btn-2,
+.donation-one__btn {
+  background-color: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.6);
+  color: #FFFFFF;
+  box-shadow: none;
+  padding: 7px 25px 7px;
+  padding-right: 9px;
+}
+
+.cta-one__btn-2::after,
+.donation-one__btn::after {
+  background-color: #F2A90A;
+}
+
+.cta-one__btn-2 span,
+.donation-one__btn span {
+  background-color: #FFFFFF;
+  color: #3D0A0C;
+}
+
+.cta-one__btn-2:hover,
+.donation-one__btn:hover {
+  border-color: #F2A90A;
+  color: #3D0A0C;
+}
+
+.cta-one__btn-2:hover span,
+.donation-one__btn:hover span {
+  background-color: #3D0A0C;
+  color: #FFFFFF;
 }
 
 /* The End */
