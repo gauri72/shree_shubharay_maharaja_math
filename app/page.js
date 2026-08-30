@@ -3,6 +3,7 @@ import MantraStrip from "@/components/sections/home1/MantraStrip"
 import Banner from "@/components/sections/home1/Banner"
 import Welcome from "@/components/sections/home1/Welcome"
 import Gallery from "@/components/sections/home1/Gallery"
+import HomeGallery from "@/components/sections/home1/HomeGallery"
 import Legacy from "@/components/sections/home1/Legacy"
 import Cta from "@/components/sections/home1/Cta"
 import Found from "@/components/sections/home1/Found"
@@ -20,8 +21,9 @@ export default function Home() {
                 <Welcome />
                 <Legacy />
                 <Found />
-                <Donation />
                 <Event />
+                <Donation />
+                <HomeGallery />
                 <Cta />
             </Layout>
 

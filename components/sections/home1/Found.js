@@ -5,15 +5,13 @@ export default function Found() {
         {/*Found One Start */}
         <section className="found-one">
             <div className="divine-border--found divine-border--found-top" role="presentation"></div>
-            <div className="divine-border--found-vertical divine-border--found-vertical--gold divine-border--found-left" role="presentation"></div>
-            <div className="divine-border--found-vertical divine-border--found-vertical--gold divine-border--found-right" role="presentation"></div>
-            <div className="divine-border--found-vertical divine-border--found-vertical--maroon divine-border--found-left" role="presentation"></div>
-            <div className="divine-border--found-vertical divine-border--found-vertical--maroon divine-border--found-right" role="presentation"></div>
+            <div className="divine-border--found-vertical divine-border--found-left" role="presentation"></div>
+            <div className="divine-border--found-vertical divine-border--found-right" role="presentation"></div>
             <span className="found-one__corner found-one__corner--tl" aria-hidden="true"></span>
             <span className="found-one__corner found-one__corner--tr" aria-hidden="true"></span>
-            <span className="found-one__corner found-one__corner--bl found-one__corner--gold" aria-hidden="true"></span>
-            <span className="found-one__corner found-one__corner--br found-one__corner--gold" aria-hidden="true"></span>
-            <div className="divine-border--found divine-border--found-bottom divine-border--found-bottom--gold" role="presentation"></div>
+            <span className="found-one__corner found-one__corner--bl" aria-hidden="true"></span>
+            <span className="found-one__corner found-one__corner--br" aria-hidden="true"></span>
+            <div className="divine-border--found divine-border--found-bottom" role="presentation"></div>
             <div className="found-one__bg">
                 <div className="found-one__shape-1 float-bob-y">
                     <img src="assets/images/shapes/found-one-shape-1-mala.png" alt=""/>
@@ -42,8 +40,8 @@ export default function Found() {
                             </div>
                             <div className="found-one__content">
                                 <h4 className="found-one__title"><Link href="/sadhana">दैनिक आरती व दर्शन</Link></h4>
-                                <p className="found-one__text">रोज दोन वेळा आरती होते — सकाळी आणि संध्याकाळी.
-                                    दर्शन व प्रार्थनेसाठी येणाऱ्या सर्व भाविकांसाठी मठ नेहमी खुला असतो.</p>
+                                <p className="found-one__text">सकाळी व संध्याकाळी रोज आरती होते. दर्शनासाठी
+                                    मठ सर्व भाविकांना नेहमी खुला असतो.</p>
                                 <div className="found-one__highlight">
                                     <i className="icon-clock"></i>
                                     <span>सकाळ व संध्याकाळ, दररोज</span>
@@ -67,8 +65,8 @@ export default function Found() {
                             </div>
                             <div className="found-one__content">
                                 <h4 className="found-one__title"><Link href="/sadhana">जप, मंत्र साधना व पारायण</Link></h4>
-                                <p className="found-one__text">जप, मंत्रसाधना आणि ग्रंथांचे पारायण ही आमची रोजची
-                                    साधना आहे. यामुळे मन एकाग्र होते आणि शांती मिळते.</p>
+                                <p className="found-one__text">जप, मंत्रसाधना व ग्रंथपारायण ही रोजची साधना.
+                                    यामुळे मन एकाग्र होते व शांती लाभते.</p>
                                 <div className="found-one__highlight">
                                     <i className="icon-hand"></i>
                                     <span>एक साधी नियमित साधना</span>
@@ -92,8 +90,8 @@ export default function Found() {
                             </div>
                             <div className="found-one__content">
                                 <h4 className="found-one__title"><Link href="/sadhana">उत्सव व रथयात्रा</Link></h4>
-                                <p className="found-one__text">आषाढी व कार्तिकी एकादशीला रथयात्रा काढली जाते —
-                                    वर्षातील आमचे सर्वात मोठे उत्सव. या दिवशी संपूर्ण समाज एकत्र येतो व उत्सवात सहभागी होतो.</p>
+                                <p className="found-one__text">आषाढी व कार्तिकी एकादशीला रथयात्रा निघते.
+                                    वर्षातील हे सर्वात मोठे उत्सव, संपूर्ण समाज एकत्र येतो.</p>
                                 <div className="found-one__highlight">
                                     <i className="icon-calender"></i>
                                     <span>आषाढी व कार्तिकी एकादशी</span>

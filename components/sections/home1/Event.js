@@ -5,20 +5,20 @@ const events = [
     {
         img: "assets/images/event/event-1-1.jpg",
         date: "20 Oct 2026",
-        title: "Dussehra",
-        text: "Vijayadashami is observed with special puja at the Math, marking the triumph of good over evil.",
+        title: "दसरा",
+        text: "विजयादशमीनिमित्त मठात विशेष पूजा व आरती.",
     },
     {
         img: "assets/images/event/event-1-2.jpg",
         date: "08 Nov 2026",
-        title: "Diwali",
-        text: "Lamps, aarti and sweets shared with every devotee as the Math celebrates the festival of lights.",
+        title: "दिवाळी",
+        text: "दीपोत्सवात मठात आरती व नैवेद्य अर्पण.",
     },
     {
         img: "assets/images/event/event-1-3.jpg",
         date: "20 Nov 2026",
-        title: "Kartiki Ekadashi",
-        text: "One of our principal celebrations — a chariot procession and village circumambulation with thousands of devotees.",
+        title: "कार्तिकी एकादशी",
+        text: "मठाचा सर्वात मोठा उत्सव — रथयात्रा व गावप्रदक्षिणा.",
     },
 ]
 
@@ -28,12 +28,20 @@ export default function Event() {
 
         {/**Event One Start */}
         <section className="event-one">
+            <div className="divine-border--event divine-border--event-top" role="presentation"></div>
+            <div className="divine-border--event-vertical divine-border--event-left" role="presentation"></div>
+            <div className="divine-border--event-vertical divine-border--event-right" role="presentation"></div>
+            <span className="event-one__corner event-one__corner--tl" aria-hidden="true"></span>
+            <span className="event-one__corner event-one__corner--tr" aria-hidden="true"></span>
+            <span className="event-one__corner event-one__corner--bl" aria-hidden="true"></span>
+            <span className="event-one__corner event-one__corner--br" aria-hidden="true"></span>
+            <div className="divine-border--event divine-border--event-bottom" role="presentation"></div>
             <div className="container">
                 <div className="section-title text-center sec-title-animation animation-style1">
                     <div className="section-title__tagline-box">
-                        <span className="section-title__tagline">Our Events</span>
+                        <span className="section-title__tagline">उत्सव-परंपरा</span>
                     </div>
-                    <h2 className="section-title__title title-animation">Upcoming Festivals <br/>At The Math</h2>
+                    <h2 className="section-title__title title-animation">मठातील आगामी <br/>उत्सव व पर्वदिन</h2>
                 </div>
                 <div className="row">
                     {events.map((event, index) => (
@@ -47,12 +55,13 @@ export default function Event() {
                                     <div className="event-one__img">
                                         <img src={event.img} alt={event.title}/>
                                     </div>
-                                    <div className="event-one__date">
-                                        <p><span className="icon-calender"></span>{event.date}</p>
-                                    </div>
                                 </div>
                                 <div className="event-one__content">
                                     <h4 className="event-one__title"><Link href="/events">{event.title}</Link></h4>
+                                    <p className="event-one__date">
+                                        <span className="icon-calender" aria-hidden="true"></span>
+                                        <span>{event.date}</span>
+                                    </p>
                                     <p className="event-one__text">{event.text}</p>
                                 </div>
                             </div>
@@ -61,7 +70,7 @@ export default function Event() {
                 </div>
 
                 <div className="event-one__cta wow fadeInUp" data-wow-delay="300ms">
-                    <Link href="/events" className="event-one__btn thm-btn">View All Events<span><i
+                    <Link href="/events" className="event-one__btn thm-btn">सर्व उत्सव पाहा<span><i
                                 className="icon-arrow-right"></i></span></Link>
                 </div>
             </div>

@@ -2226,9 +2226,29 @@ ul {
   position: relative;
   display: block;
   overflow: hidden;
+  isolation: isolate;
   background-color: #F2A90A;
   padding: 120px 0;
   z-index: 100;
+}
+
+/* Enlarged ("zoomed") floral pattern held on its own layer at low opacity,
+   so it stays decorative and the copy over it reads cleanly on solid gold */
+.welcome-one::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  background-image: url("../images/backgrounds/section-bg.png");
+  background-repeat: repeat;
+  background-size: 780px auto;
+  opacity: 0.25;
+}
+
+.welcome-one > * {
+  position: relative;
+  z-index: 1;
 }
 
 @media (max-width: 991px) {
@@ -3588,9 +3608,8 @@ ul {
       width: 450px;
   }
 
-  .donation-one__content-box {
-      padding: 120px 0 120px;
-      padding-left: 20px;
+  .donation-one__content-inner {
+      padding: 120px 20px;
   }
 
   .donation-one__content-box .section-title-two__title {
@@ -4830,8 +4849,8 @@ ul {
       max-width: 100%;
   }
 
-  .donation-one__content-box {
-      padding: 120px 15px 120px;
+  .donation-one__content-inner {
+      padding: 120px 15px;
   }
 
   .donation-one__donate-box .donate-now {
@@ -8298,17 +8317,34 @@ ul {
 
 /* Shubharay Math charity-fund → sadhana section — gold theme */
 .found-one {
-  background-color: #3D0A0C;
+  background-color: #F2A90A;
 }
 
 .found-one__bg {
+  position: absolute;
+  inset: 0;
   background-color: #F2A90A;
+  height: 100%;
+  overflow: hidden;
+}
+
+/* Enlarged ("zoomed") floral pattern on its own low-opacity layer,
+   keeping it decorative so the section title over it stays readable on solid gold */
+.found-one__bg::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background-image: url("../images/backgrounds/section-bg.png");
+  background-repeat: repeat;
+  background-size: 780px auto;
+  opacity: 0.25;
 }
 
 /* Namaste line-art sketch reads directly on the gold background — undo the dark-bg invert filter */
 .found-one__shape-1 {
-  top: 75px;
-  left: 60px;
+  top: 54px;
+  left: 180px;
 }
 
 .found-one__shape-1 img {
@@ -8319,8 +8355,8 @@ ul {
 
 .found-one__shape-2 {
   position: absolute;
-  top: 75px;
-  right: 60px;
+  top: 54px;
+  right: 180px;
   left: auto;
 }
 
@@ -8360,15 +8396,10 @@ ul {
   bottom: 0;
 }
 
-.divine-border--found-bottom--gold {
-  background-color: #F2A90A;
-  background-image:
-    radial-gradient(circle at 50% 50%, rgba(61, 10, 12, 0.12) 0%, transparent 70%),
-    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='30' viewBox='0 0 100 30'%3E%3Cg fill='%233D0A0C'%3E%3Ctext x='25' y='22' font-size='19' text-anchor='middle' font-family='Noto Sans Devanagari, Arial, sans-serif'%3E%E0%A5%90%3C/text%3E%3C/g%3E%3Cg transform='translate(75 15)' stroke='%233D0A0C' stroke-width='2.4' stroke-linecap='square' fill='none'%3E%3Cpath d='M0 -8 L0 8 M-8 0 L8 0'/%3E%3Cpath d='M0 -8 L5 -8'/%3E%3Cpath d='M8 0 L8 5'/%3E%3Cpath d='M0 8 L-5 8'/%3E%3Cpath d='M-8 0 L-8 -5'/%3E%3C/g%3E%3Cg fill='%233D0A0C' opacity='0.85'%3E%3Ccircle cx='0' cy='15' r='1.6'/%3E%3Ccircle cx='50' cy='15' r='1.6'/%3E%3Ccircle cx='100' cy='15' r='1.6'/%3E%3C/g%3E%3C/svg%3E");
-}
-
 .divine-border--found-vertical {
   position: absolute;
+  top: 30px;
+  bottom: 30px;
   z-index: 2;
   width: 30px;
   background-color: #3D0A0C;
@@ -8384,21 +8415,6 @@ ul {
 .divine-border--found-vertical:before,
 .divine-border--found-vertical:after {
   content: none;
-}
-
-.divine-border--found-vertical--gold {
-  top: 30px;
-  height: calc(50% - 30px);
-}
-
-.divine-border--found-vertical--maroon {
-  top: 50%;
-  bottom: 0;
-  height: auto;
-  background-color: #F2A90A;
-  background-image:
-    radial-gradient(circle at 50% 50%, rgba(61, 10, 12, 0.12) 0%, transparent 70%),
-    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='30' height='100' viewBox='0 0 30 100'%3E%3Cg fill='%233D0A0C'%3E%3Ctext x='15' y='32' font-size='19' text-anchor='middle' font-family='Noto Sans Devanagari, Arial, sans-serif'%3E%E0%A5%90%3C/text%3E%3C/g%3E%3Cg transform='translate(15 75)' stroke='%233D0A0C' stroke-width='2.4' stroke-linecap='square' fill='none'%3E%3Cpath d='M0 -8 L0 8 M-8 0 L8 0'/%3E%3Cpath d='M0 -8 L5 -8'/%3E%3Cpath d='M8 0 L8 5'/%3E%3Cpath d='M0 8 L-5 8'/%3E%3Cpath d='M-8 0 L-8 -5'/%3E%3C/g%3E%3Cg fill='%233D0A0C' opacity='0.85'%3E%3Ccircle cx='15' cy='0' r='1.6'/%3E%3Ccircle cx='15' cy='50' r='1.6'/%3E%3Ccircle cx='15' cy='100' r='1.6'/%3E%3C/g%3E%3C/svg%3E");
 }
 
 .divine-border--found-left {
@@ -8492,6 +8508,15 @@ ul {
   color: #5C1012;
 }
 
+/* keep all three cards level: description is exactly two lines */
+.found-one .found-one__text {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  overflow: hidden;
+  min-height: calc(2 * 1.7em);
+}
+
 .found-one__highlight {
   display: flex;
   align-items: center;
@@ -8550,6 +8575,10 @@ ul {
 }
 
 /* Shubharay Math join-us section — red & gold theme */
+.donation-one {
+  background-color: #5C1012;
+}
+
 .donation-one__wrapper {
   align-items: stretch;
 }
@@ -8562,18 +8591,171 @@ ul {
   display: flex;
 }
 
+/* Right half — maroon image background, framed by a gold Om/swastik border */
 .donation-one__content-box {
-  background-color: #5C1012;
+  position: relative;
   width: 100%;
+  background-color: #5C1012;
+  overflow: hidden;
 }
 
+/* patterned layer, kept low-opacity like the other maroon sections */
+.donation-one__content-box::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: url("../images/backgrounds/section-bg-2.png");
+  background-repeat: repeat;
+  background-size: 1120px auto;
+  opacity: 0.5;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.donation-one__content-inner {
+  position: relative;
+  z-index: 5;
+  padding: 60px;
+}
+
+/* Left half — gold image background, framed by a maroon Om/swastik border.
+   Normal flow at every width; the flex parent stretches it to fill the column. */
 .donation-one__left-bg--qr {
-  background-color: #FFFFFF;
-  background-blend-mode: normal;
-  background-size: contain;
-  background-repeat: no-repeat;
-  background-position: center;
-  padding: 50px;
+  position: relative;
+  flex: 1 1 auto;
+  align-self: stretch;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #F2A90A;
+  padding: 40px;
+  overflow: hidden;
+}
+
+/* patterned layer, kept low-opacity like the other gold sections */
+.donation-one__left-bg--qr::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: url("../images/backgrounds/section-bg.png");
+  background-repeat: repeat;
+  background-size: 780px auto;
+  opacity: 0.25;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.donation-one__qr-img {
+  position: relative;
+  z-index: 5;
+  width: 100%;
+  max-width: 480px;
+  height: auto;
+  border-radius: 8px;
+  box-shadow: 0 10px 30px rgba(61, 10, 12, 0.35);
+}
+
+/* ---- Ornamental Om/swastik borders for the donate panels ---- */
+/* Gold panel: deep-maroon strip carrying a gold motif */
+.divine-border--donate-gold {
+  position: absolute;
+  left: 0;
+  right: 0;
+  z-index: 3;
+  height: 30px;
+  background-color: #3D0A0C;
+  background-image:
+    radial-gradient(circle at 50% 50%, rgba(232, 199, 102, 0.12) 0%, transparent 70%),
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='30' viewBox='0 0 100 30'%3E%3Cg fill='%23E8C766'%3E%3Ctext x='25' y='22' font-size='19' text-anchor='middle' font-family='Noto Sans Devanagari, Arial, sans-serif'%3E%E0%A5%90%3C/text%3E%3C/g%3E%3Cg transform='translate(75 15)' stroke='%23E8C766' stroke-width='2.4' stroke-linecap='square' fill='none'%3E%3Cpath d='M0 -8 L0 8 M-8 0 L8 0'/%3E%3Cpath d='M0 -8 L5 -8'/%3E%3Cpath d='M8 0 L8 5'/%3E%3Cpath d='M0 8 L-5 8'/%3E%3Cpath d='M-8 0 L-8 -5'/%3E%3C/g%3E%3Cg fill='%23E8C766' opacity='0.85'%3E%3Ccircle cx='0' cy='15' r='1.6'/%3E%3Ccircle cx='50' cy='15' r='1.6'/%3E%3Ccircle cx='100' cy='15' r='1.6'/%3E%3C/g%3E%3C/svg%3E");
+  background-repeat: repeat-x, repeat-x;
+  background-position: center, center;
+  background-size: 100% 100%, 100px 30px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.32);
+}
+
+.divine-border--donate-gold-top { top: 0; }
+.divine-border--donate-gold-bottom { bottom: 0; }
+
+.divine-border--donate-gold-vertical {
+  position: absolute;
+  top: 30px;
+  bottom: 30px;
+  z-index: 2;
+  width: 30px;
+  background-color: #3D0A0C;
+  background-image:
+    radial-gradient(circle at 50% 50%, rgba(232, 199, 102, 0.12) 0%, transparent 70%),
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='30' height='100' viewBox='0 0 30 100'%3E%3Cg fill='%23E8C766'%3E%3Ctext x='15' y='32' font-size='19' text-anchor='middle' font-family='Noto Sans Devanagari, Arial, sans-serif'%3E%E0%A5%90%3C/text%3E%3C/g%3E%3Cg transform='translate(15 75)' stroke='%23E8C766' stroke-width='2.4' stroke-linecap='square' fill='none'%3E%3Cpath d='M0 -8 L0 8 M-8 0 L8 0'/%3E%3Cpath d='M0 -8 L5 -8'/%3E%3Cpath d='M8 0 L8 5'/%3E%3Cpath d='M0 8 L-5 8'/%3E%3Cpath d='M-8 0 L-8 -5'/%3E%3C/g%3E%3Cg fill='%23E8C766' opacity='0.85'%3E%3Ccircle cx='15' cy='0' r='1.6'/%3E%3Ccircle cx='15' cy='50' r='1.6'/%3E%3Ccircle cx='15' cy='100' r='1.6'/%3E%3C/g%3E%3C/svg%3E");
+  background-repeat: repeat-y, repeat-y;
+  background-position: top center, top center;
+  background-size: 100% 100%, 30px 100px;
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.32);
+}
+
+.divine-border--donate-gold-left { left: 0; }
+.divine-border--donate-gold-right { right: 0; }
+
+/* Maroon panel: gold strip carrying a deep-maroon motif */
+.divine-border--donate-maroon {
+  position: absolute;
+  left: 0;
+  right: 0;
+  z-index: 3;
+  height: 30px;
+  background-color: #F2A90A;
+  background-image:
+    radial-gradient(circle at 50% 50%, rgba(61, 10, 12, 0.12) 0%, transparent 70%),
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='30' viewBox='0 0 100 30'%3E%3Cg fill='%233D0A0C'%3E%3Ctext x='25' y='22' font-size='19' text-anchor='middle' font-family='Noto Sans Devanagari, Arial, sans-serif'%3E%E0%A5%90%3C/text%3E%3C/g%3E%3Cg transform='translate(75 15)' stroke='%233D0A0C' stroke-width='2.4' stroke-linecap='square' fill='none'%3E%3Cpath d='M0 -8 L0 8 M-8 0 L8 0'/%3E%3Cpath d='M0 -8 L5 -8'/%3E%3Cpath d='M8 0 L8 5'/%3E%3Cpath d='M0 8 L-5 8'/%3E%3Cpath d='M-8 0 L-8 -5'/%3E%3C/g%3E%3Cg fill='%233D0A0C' opacity='0.85'%3E%3Ccircle cx='0' cy='15' r='1.6'/%3E%3Ccircle cx='50' cy='15' r='1.6'/%3E%3Ccircle cx='100' cy='15' r='1.6'/%3E%3C/g%3E%3C/svg%3E");
+  background-repeat: repeat-x, repeat-x;
+  background-position: center, center;
+  background-size: 100% 100%, 100px 30px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.32);
+}
+
+.divine-border--donate-maroon-top { top: 0; }
+.divine-border--donate-maroon-bottom { bottom: 0; }
+
+.divine-border--donate-maroon-vertical {
+  position: absolute;
+  top: 30px;
+  bottom: 30px;
+  z-index: 2;
+  width: 30px;
+  background-color: #F2A90A;
+  background-image:
+    radial-gradient(circle at 50% 50%, rgba(61, 10, 12, 0.12) 0%, transparent 70%),
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='30' height='100' viewBox='0 0 30 100'%3E%3Cg fill='%233D0A0C'%3E%3Ctext x='15' y='32' font-size='19' text-anchor='middle' font-family='Noto Sans Devanagari, Arial, sans-serif'%3E%E0%A5%90%3C/text%3E%3C/g%3E%3Cg transform='translate(15 75)' stroke='%233D0A0C' stroke-width='2.4' stroke-linecap='square' fill='none'%3E%3Cpath d='M0 -8 L0 8 M-8 0 L8 0'/%3E%3Cpath d='M0 -8 L5 -8'/%3E%3Cpath d='M8 0 L8 5'/%3E%3Cpath d='M0 8 L-5 8'/%3E%3Cpath d='M-8 0 L-8 -5'/%3E%3C/g%3E%3Cg fill='%233D0A0C' opacity='0.85'%3E%3Ccircle cx='15' cy='0' r='1.6'/%3E%3Ccircle cx='15' cy='50' r='1.6'/%3E%3Ccircle cx='15' cy='100' r='1.6'/%3E%3C/g%3E%3C/svg%3E");
+  background-repeat: repeat-y, repeat-y;
+  background-position: top center, top center;
+  background-size: 100% 100%, 30px 100px;
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.32);
+}
+
+.divine-border--donate-maroon-left { left: 0; }
+.divine-border--donate-maroon-right { right: 0; }
+
+/* shared corner blocks */
+.donation-one__corner {
+  position: absolute;
+  z-index: 4;
+  width: 30px;
+  height: 30px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.32);
+  pointer-events: none;
+}
+
+.donation-one__corner--gold { background-color: #3D0A0C; }
+.donation-one__corner--maroon { background-color: #F2A90A; }
+.donation-one__corner--tl { top: 0; left: 0; }
+.donation-one__corner--tr { top: 0; right: 0; }
+.donation-one__corner--bl { bottom: 0; left: 0; }
+.donation-one__corner--br { bottom: 0; right: 0; }
+
+
+@media only screen and (max-width: 767px) {
+  .donation-one__content-inner { padding: 44px 30px; }
+  .donation-one__left-bg--qr { padding: 44px 30px; }
 }
 
 .donation-one__content-box .section-title-two__tagline {
@@ -8586,6 +8768,8 @@ ul {
 
 .donation-one__content-box .section-title-two__title span {
   color: #FFC93C;
+  display: inline-block;
+  margin-top: 14px;
 }
 
 .donation-one__supports {
@@ -8644,37 +8828,47 @@ ul {
 }
 
 /* Tablet & mobile: divider line above the section, reduce spacing, center align content */
+/* Tablet & below: stack the QR panel above the content panel */
 @media only screen and (max-width: 1199px) {
   .donation-one {
     position: relative;
-    padding-top: 50px;
   }
 
-  .donation-one::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    height: 3px;
-    background: linear-gradient(90deg, rgba(255, 201, 60, 0) 0%, rgba(255, 201, 60, 0.9) 15%, rgba(255, 201, 60, 0.4) 50%, rgba(255, 201, 60, 0.9) 90%, rgba(255, 201, 60, 0) 100%);
+  .donation-one__wrapper {
+    flex-direction: column;
+    align-items: stretch;
   }
 
-  .donation-one__left {
-    min-height: 380px;
+  .donation-one__left,
+  .donation-one__right {
+    flex: 0 0 auto;
+    width: 100%;
+    max-width: 100%;
+    min-height: 0;
+    display: flex;
   }
 
+  /* stacked: the QR panel flows normally and fills the full width */
   .donation-one__left-bg--qr {
-    padding: 35px;
+    width: 100%;
+    padding: 56px 44px;
+  }
+
+  .donation-one__qr-img {
+    max-width: 340px;
   }
 
   .donation-one__content-box {
-    padding: 70px 40px;
     text-align: center;
+  }
+
+  .donation-one__content-inner {
+    padding: 64px 44px;
   }
 
   .donation-one__content-box .section-title-two.text-left {
     text-align: center;
+    width: 100%;
   }
 
   .donation-one__content-box .section-title-two__tagline-box {
@@ -8697,17 +8891,155 @@ ul {
   }
 }
 
-@media only screen and (max-width: 767px) {
-  .donation-one__left {
-    min-height: 300px;
-  }
-
+/* Tablet only: centre the whole content group on the right panel */
+@media only screen and (min-width: 768px) and (max-width: 1199px) {
   .donation-one__left-bg--qr {
-    padding: 25px;
+    padding-top: 72px;
+    padding-bottom: 72px;
   }
 
   .donation-one__content-box {
-    padding: 60px 25px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 40px 0;
+  }
+
+  .donation-one__content-inner {
+    width: 100%;
+    max-width: 620px;
+    margin: 0 auto;
+    padding: 64px 44px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .donation-one__content-inner > * {
+    width: 100%;
+  }
+
+  .donation-one__donate-box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .donation-one__supports {
+    justify-content: center;
+  }
+
+  .donation-one__btn-box {
+    display: flex;
+    justify-content: center;
+  }
+}
+
+@media only screen and (max-width: 767px) {
+  .donation-one {
+    padding-top: 0;
+  }
+
+  .donation-one__left-bg--qr {
+    padding: 64px 22px;
+  }
+
+  .donation-one__qr-img {
+    max-width: 260px;
+  }
+
+  /* centre the whole content group on the right panel */
+  .donation-one__content-box {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 88px 0;
+    text-align: center;
+  }
+
+  .donation-one__content-inner {
+    width: 100%;
+    max-width: 460px;
+    margin: 0 auto;
+    padding: 0 22px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .donation-one__content-inner > * {
+    width: 100%;
+  }
+
+  .donation-one__content-box .section-title-two.text-left {
+    text-align: center;
+  }
+
+  .donation-one__content-box .section-title-two__tagline-box {
+    display: flex;
+    justify-content: center;
+  }
+
+  .donation-one__donate-box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  /* one item per line */
+  .donation-one__supports {
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+  }
+
+  .donation-one__supports li {
+    justify-content: center;
+  }
+
+  .donation-one__btn-box {
+    display: flex;
+    justify-content: center;
+  }
+
+  .donation-one__content-box .section-title-two__title {
+    font-size: 30px;
+    line-height: 1.35;
+  }
+
+  /* no side (vertical) borders on mobile — keep only top & bottom */
+  .divine-border--donate-gold-vertical,
+  .divine-border--donate-maroon-vertical {
+    display: none;
+  }
+
+  .donation-one__corner {
+    display: none;
+  }
+}
+
+@media only screen and (max-width: 479px) {
+  .donation-one__left-bg--qr {
+    padding: 56px 16px;
+  }
+
+  .donation-one__content-box {
+    padding: 72px 0;
+  }
+
+  .donation-one__content-inner {
+    padding: 0 18px;
+  }
+
+  .donation-one__supports {
+    gap: 10px;
+  }
+
+  .donation-one__supports li {
+    font-size: 14px;
   }
 }
 
@@ -9113,16 +9445,137 @@ ul {
 /* Shubharay Math event-one section — standard white-card grid, same language as Sadhana cards */
 .event-one {
   position: relative;
-  padding: 140px 0 140px;
+  padding: 90px 0 80px;
+  background-color: #3D0A0C;
+  overflow: hidden;
+}
+
+.event-one::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: url("../images/backgrounds/section-bg-2.png");
+  background-repeat: repeat;
+  background-size: 1120px auto;
+  opacity: 0.5;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.event-one > .container {
+  position: relative;
+  z-index: 1;
 }
 
 .event-one .section-title__tagline {
-  color: #5C1012;
+  color: #F2A90A;
   font-weight: 700;
+}
+
+.event-one .section-title__title {
+  color: #FFF8E7;
+  text-shadow: none;
+}
+
+/* Ornamental border — gold strip with maroon Om/swastik motif, framing the maroon event section */
+.divine-border--event {
+  position: absolute;
+  left: 0;
+  right: 0;
+  z-index: 3;
+  height: 30px;
+  background-color: #F2A90A;
+  background-image:
+    radial-gradient(circle at 50% 50%, rgba(61, 10, 12, 0.12) 0%, transparent 70%),
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='30' viewBox='0 0 100 30'%3E%3Cg fill='%233D0A0C'%3E%3Ctext x='25' y='22' font-size='19' text-anchor='middle' font-family='Noto Sans Devanagari, Arial, sans-serif'%3E%E0%A5%90%3C/text%3E%3C/g%3E%3Cg transform='translate(75 15)' stroke='%233D0A0C' stroke-width='2.4' stroke-linecap='square' fill='none'%3E%3Cpath d='M0 -8 L0 8 M-8 0 L8 0'/%3E%3Cpath d='M0 -8 L5 -8'/%3E%3Cpath d='M8 0 L8 5'/%3E%3Cpath d='M0 8 L-5 8'/%3E%3Cpath d='M-8 0 L-8 -5'/%3E%3C/g%3E%3Cg fill='%233D0A0C' opacity='0.85'%3E%3Ccircle cx='0' cy='15' r='1.6'/%3E%3Ccircle cx='50' cy='15' r='1.6'/%3E%3Ccircle cx='100' cy='15' r='1.6'/%3E%3C/g%3E%3C/svg%3E");
+  background-repeat: repeat-x, repeat-x;
+  background-position: center, center;
+  background-size: 100% 100%, 100px 30px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.32);
+}
+
+.divine-border--event:before,
+.divine-border--event:after {
+  content: none;
+}
+
+.divine-border--event-top {
+  top: 0;
+}
+
+.divine-border--event-bottom {
+  bottom: 0;
+}
+
+.divine-border--event-vertical {
+  position: absolute;
+  top: 30px;
+  bottom: 30px;
+  z-index: 2;
+  width: 30px;
+  background-color: #F2A90A;
+  background-image:
+    radial-gradient(circle at 50% 50%, rgba(61, 10, 12, 0.12) 0%, transparent 70%),
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='30' height='100' viewBox='0 0 30 100'%3E%3Cg fill='%233D0A0C'%3E%3Ctext x='15' y='32' font-size='19' text-anchor='middle' font-family='Noto Sans Devanagari, Arial, sans-serif'%3E%E0%A5%90%3C/text%3E%3C/g%3E%3Cg transform='translate(15 75)' stroke='%233D0A0C' stroke-width='2.4' stroke-linecap='square' fill='none'%3E%3Cpath d='M0 -8 L0 8 M-8 0 L8 0'/%3E%3Cpath d='M0 -8 L5 -8'/%3E%3Cpath d='M8 0 L8 5'/%3E%3Cpath d='M0 8 L-5 8'/%3E%3Cpath d='M-8 0 L-8 -5'/%3E%3C/g%3E%3Cg fill='%233D0A0C' opacity='0.85'%3E%3Ccircle cx='15' cy='0' r='1.6'/%3E%3Ccircle cx='15' cy='50' r='1.6'/%3E%3Ccircle cx='15' cy='100' r='1.6'/%3E%3C/g%3E%3C/svg%3E");
+  background-repeat: repeat-y, repeat-y;
+  background-position: top center, top center;
+  background-size: 100% 100%, 30px 100px;
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.32);
+}
+
+.divine-border--event-vertical:before,
+.divine-border--event-vertical:after {
+  content: none;
+}
+
+.divine-border--event-left {
+  left: 0;
+}
+
+.divine-border--event-right {
+  right: 0;
+}
+
+.event-one__corner {
+  position: absolute;
+  z-index: 4;
+  width: 30px;
+  height: 30px;
+  background-color: #F2A90A;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.32);
+  pointer-events: none;
+}
+
+.event-one__corner--tl {
+  top: 0;
+  left: 0;
+}
+
+.event-one__corner--tr {
+  top: 0;
+  right: 0;
+}
+
+.event-one__corner--bl {
+  bottom: 0;
+  left: 0;
+}
+
+.event-one__corner--br {
+  bottom: 0;
+  right: 0;
+}
+
+@media (max-width: 767px) {
+  .divine-border--event-vertical,
+  .event-one__corner {
+    display: none;
+  }
 }
 
 .event-one .row {
   align-items: stretch;
+  row-gap: 30px;
 }
 
 .event-one__single {
@@ -9154,6 +9607,7 @@ ul {
   display: block;
   overflow: hidden;
   border-radius: var(--anity-bdr-radius);
+  aspect-ratio: 4 / 3;
 }
 
 .event-one__img::after {
@@ -9174,6 +9628,9 @@ ul {
 
 .event-one__img img {
   width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
   border-radius: var(--anity-bdr-radius);
   transition: transform 500ms ease;
 }
@@ -9182,31 +9639,36 @@ ul {
   transform: scale(1.08);
 }
 
-.event-one__date {
-  position: absolute;
-  left: 50%;
-  bottom: 15px;
-  transform: translateX(-50%);
-  border-radius: 10px;
-  background-color: var(--anity-white);
-  padding: 6px 16px;
-  z-index: 2;
-}
-
-.event-one__date p {
+.event-one .event-one__date {
+  position: static;
   display: flex;
   align-items: center;
-  gap: 8px;
-  margin: 0;
+  justify-content: center;
+  gap: 7px;
+  width: 100%;
+  margin: 0 0 14px;
+  padding: 0;
+  background: none;
+  border-radius: 0;
   font-size: 13px;
-  font-weight: 700;
-  letter-spacing: 0.4px;
-  color: #2b2b2b;
+  font-weight: 600;
+  letter-spacing: 0.3px;
+  color: #8a8a8a;
   white-space: nowrap;
 }
 
-.event-one__date p span {
-  color: #5C1012;
+.event-one .event-one__date p {
+  position: static;
+  display: contents;
+  color: inherit;
+  font-weight: inherit;
+  letter-spacing: inherit;
+}
+
+.event-one .event-one__date .icon-calender {
+  color: #F2A90A;
+  font-size: 15px;
+  line-height: 1;
 }
 
 .event-one__content {
@@ -9214,13 +9676,14 @@ ul {
   flex-direction: column;
   align-items: center;
   flex: 1;
-  padding-top: 22px;
+  padding-top: 20px;
 }
 
 .event-one__title {
+  margin-bottom: 10px;
   font-size: 20px;
   font-weight: 700;
-  line-height: 30px;
+  line-height: 1.5;
 }
 
 .event-one__title a {
@@ -9231,10 +9694,15 @@ ul {
   color: #5C1012;
 }
 
-.event-one__text {
-  margin-top: 12px;
+.event-one .event-one__text {
+  margin-top: 10px;
   margin-bottom: 0;
   color: #6b6b6b;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 1;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .event-one__cta {
@@ -9243,45 +9711,45 @@ ul {
 }
 
 .event-one__btn {
-  background-color: #5C1012;
-  border-color: #5C1012;
-  color: #FFFFFF;
+  background-color: #F2A90A;
+  border-color: #F2A90A;
+  color: #3D0A0C;
 }
 
 .event-one__btn::after {
-  background-color: #FFC93C;
+  background-color: #FFF8E7;
 }
 
 .event-one__btn span {
-  background-color: #FFC93C;
-  color: #5C1012;
+  background-color: #3D0A0C;
+  color: #F2A90A;
 }
 
 .event-one__btn:hover {
-  border-color: #FFC93C;
-  color: #5C1012;
+  border-color: #FFF8E7;
+  color: #3D0A0C;
 }
 
 .event-one__btn:hover span {
-  background-color: #5C1012;
-  color: #FFC93C;
+  background-color: #F2A90A;
+  color: #3D0A0C;
 }
 
 @media only screen and (min-width: 992px) and (max-width: 1199px) {
   .event-one {
-    padding: 90px 0 90px;
+    padding: 80px 0 70px;
   }
 }
 
 @media only screen and (min-width: 768px) and (max-width: 991px) {
   .event-one {
-    padding: 70px 0 70px;
+    padding: 80px 0 70px;
   }
 }
 
 @media only screen and (max-width: 767px) {
   .event-one {
-    padding: 60px 0 60px;
+    padding: 70px 0 60px;
   }
 }
 
@@ -9331,11 +9799,21 @@ ul {
 }
 
 .cta-one__text {
-  max-width: 560px;
+  max-width: 760px;
   margin: 20px auto 0;
   color: rgba(255, 255, 255, 0.82);
   font-size: 16px;
-  line-height: 1.75em;
+  line-height: 1.9em;
+}
+
+.cta-one__text br {
+  display: none;
+}
+
+@media only screen and (min-width: 768px) {
+  .cta-one__text br {
+    display: inline;
+  }
 }
 
 .cta-one__btn-box {
@@ -9698,9 +10176,54 @@ ul {
   padding: 90px 0;
   background-color: #3D0A0C;
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
   min-height: 100vh;
+}
+
+.legacy-One > .section-title {
+  position: relative;
+  z-index: 1;
+  margin-bottom: 48px;
+}
+
+.legacy-One .section-title__tagline {
+  color: #F2A90A;
+  font-weight: 700;
+}
+
+.legacy-One .section-title__title {
+  color: #FFF8E7;
+  text-shadow: none;
+}
+
+/* Desktop: force the heading onto a single line */
+@media (min-width: 992px) {
+  .legacy-One .section-title__title {
+    white-space: nowrap;
+  }
+
+  .legacy-One__title-break {
+    display: none;
+  }
+}
+
+.legacy-One::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: url("../images/backgrounds/section-bg-2.png");
+  background-repeat: repeat;
+  background-size: 1120px auto;
+  opacity: 0.5;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.legacy-One > .legacy-book-stage {
+  position: relative;
+  z-index: 1;
 }
 
 @media (max-width: 767px) {
@@ -9850,6 +10373,26 @@ ul {
   background: radial-gradient(ellipse at center, rgba(0, 0, 0, 0.6) 0%, transparent 72%);
   z-index: -1;
   pointer-events: none;
+  transition: transform 620ms cubic-bezier(0.22, 1, 0.36, 1), opacity 620ms ease;
+}
+
+/* Desktop: when the book is closed it fills only half the stage. The wrap itself is
+   already shifted, so here we just tighten the shadow to sit under the single cover
+   (right half for the front, left half for the back) and deepen it slightly. */
+@media (min-width: 992px) {
+  .legacy-book-stage--closed-front .legacy-book-wrap::after {
+    left: 52%;
+    right: 4%;
+    opacity: 0.95;
+    transform: translateY(4px);
+  }
+
+  .legacy-book-stage--closed-back .legacy-book-wrap::after {
+    left: 4%;
+    right: 52%;
+    opacity: 0.95;
+    transform: translateY(4px);
+  }
 }
 
 .legacy-book {
@@ -10164,6 +10707,41 @@ ul {
   transform: translateY(0);
 }
 
+/* Desktop only: when the book is fully closed (front cover / back cover), react-pageflip
+   renders a single page on one half of the flip area, leaving the book visually off-centre.
+   Slide the flip wrapper by half a page so the closed book sits centred on the stage, and
+   let it "present" itself with a gentle lift + angle. */
+@media (min-width: 992px) {
+  .legacy-book-wrap {
+    transition:
+      transform 620ms cubic-bezier(0.22, 1, 0.36, 1),
+      filter 620ms ease;
+    will-change: transform;
+  }
+
+  /* front cover — single page renders on the right half; shift left and tip toward the reader */
+  .legacy-book-stage--closed-front .legacy-book-wrap {
+    transform: translateX(-25%) translateY(-6px) rotateZ(-0.6deg) scale(1.02);
+    filter: drop-shadow(28px 34px 46px rgba(0, 0, 0, 0.55));
+  }
+
+  /* back cover — single page renders on the left half; mirror the tip */
+  .legacy-book-stage--closed-back .legacy-book-wrap {
+    transform: translateX(25%) translateY(-6px) rotateZ(0.6deg) scale(1.02);
+    filter: drop-shadow(-28px 34px 46px rgba(0, 0, 0, 0.55));
+  }
+
+  .legacy-book-stage--opened .legacy-book-wrap {
+    transform: translateX(0) translateY(0) rotateZ(0deg) scale(1);
+    filter: drop-shadow(0 26px 40px rgba(0, 0, 0, 0.45));
+  }
+
+  /* the closed cover glides in with a soft settle rather than a hard snap */
+  .legacy-book-stage--closed .legacy-book {
+    animation: legacyBookSettle 720ms cubic-bezier(0.22, 1, 0.36, 1);
+  }
+}
+
 /* Book itself: a gentle lid-lift when opening, a settling close when the cover returns */
 .legacy-book--closed {
   animation: legacyBookClose 600ms cubic-bezier(0.34, 1.4, 0.64, 1);
@@ -10171,6 +10749,13 @@ ul {
 
 .legacy-book--opened {
   animation: legacyBookOpen 700ms cubic-bezier(0.34, 1.4, 0.64, 1);
+}
+
+/* Closed-cover settle: a brief rise-and-return so the book feels set down, not teleported */
+@keyframes legacyBookSettle {
+  0%   { transform: rotateX(11deg) rotateY(0deg) scale(0.985); }
+  45%  { transform: rotateX(7deg) rotateY(0deg) scale(1.015); }
+  100% { transform: rotateX(11deg) rotateY(0deg) scale(1); }
 }
 
 @keyframes legacyBookOpen {
@@ -10183,6 +10768,21 @@ ul {
   0% { transform: rotateX(11deg) rotateY(6deg) scale(1.03); }
   50% { transform: rotateX(6deg) rotateY(0deg) scale(0.985); }
   100% { transform: rotateX(11deg) rotateY(0deg) scale(1); }
+}
+
+/* Keep the closed book centred, but drop the decorative lift/tilt/settle */
+@media (prefers-reduced-motion: reduce) and (min-width: 992px) {
+  .legacy-book-stage--closed-front .legacy-book-wrap {
+    transform: translateX(-25%);
+  }
+
+  .legacy-book-stage--closed-back .legacy-book-wrap {
+    transform: translateX(25%);
+  }
+
+  .legacy-book-stage--closed .legacy-book {
+    animation: none;
+  }
 }
 
 /* ===== StPageFlip internals — realistic shadow/gradient it injects during flip ===== */
@@ -10544,4 +11144,351 @@ ul {
     font-size: 18px;
   }
 }
+
+/*==============================================
+    Home Gallery — royal maroon/gold themed photo grid
+===============================================*/
+.home-gallery {
+  position: relative;
+  display: block;
+  padding: 80px 0 84px;
+  background-color: #F2A90A;
+  overflow: hidden;
+  z-index: 1;
+}
+
+/* Gold theme background: solid gold + enlarged low-opacity floral pattern,
+   matching the Found (sadhana) section */
+.home-gallery__bg {
+  position: absolute;
+  inset: 0;
+  background-color: #F2A90A;
+  overflow: hidden;
+  z-index: -1;
+}
+
+.home-gallery__bg::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background-image: url("../images/backgrounds/section-bg.png");
+  background-repeat: repeat;
+  background-size: 780px auto;
+  opacity: 0.25;
+}
+
+.home-gallery__bg::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background:
+    radial-gradient(circle at 10% 12%, rgba(61, 10, 12, 0.10), transparent 40%),
+    radial-gradient(circle at 90% 88%, rgba(61, 10, 12, 0.12), transparent 42%);
+}
+
+/* Section title — matches Found section ink treatment on gold */
+.home-gallery .section-title {
+  margin-bottom: 55px;
+}
+
+.home-gallery .section-title__tagline {
+  color: #000000;
+  font-weight: 700;
+}
+
+.home-gallery .section-title__title {
+  color: #000000;
+  text-shadow: none;
+}
+
+.home-gallery .section-title__title span {
+  color: #5C1012;
+}
+
+/* Grid — editorial 4x3 mosaic: 4 big tiles + 2 small accents, large images, no gaps
+   1 big (2x2)  ·  2 small (1x1)  ·  3 big (2x1 wide)
+   Row height scales fluidly with the viewport so tiles stay large but never overflow. */
+.home-gallery__grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(3, clamp(220px, 24vw, 300px));
+  gap: clamp(14px, 1.6vw, 24px);
+}
+
+.home-gallery__item:nth-child(1) { grid-column: 1 / span 2; grid-row: 1 / span 2; } /* gallery-1 — big */
+.home-gallery__item:nth-child(2) { grid-column: 3 / span 1; grid-row: 1; }          /* gallery-2 — small */
+.home-gallery__item:nth-child(4) { grid-column: 4 / span 1; grid-row: 1; }          /* gallery-4 — small */
+.home-gallery__item:nth-child(3) { grid-column: 3 / span 2; grid-row: 2; }          /* gallery-3 — big */
+.home-gallery__item:nth-child(5) { grid-column: 1 / span 2; grid-row: 3; }          /* gallery-5 — big */
+.home-gallery__item:nth-child(6) { grid-column: 3 / span 2; grid-row: 3; }          /* gallery-6 — big */
+
+.home-gallery__item {
+  position: relative;
+  overflow: hidden;
+  border-radius: 4px;
+  box-shadow: 0 22px 55px rgba(61, 10, 12, 0.28);
+  line-height: 0;
+  opacity: 0;
+  transform: translateY(46px) scale(0.96);
+  animation: homeGalleryReveal 0.9s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+
+.home-gallery__item:nth-child(1) { animation-delay: 0.05s; }
+.home-gallery__item:nth-child(2) { animation-delay: 0.15s; }
+.home-gallery__item:nth-child(3) { animation-delay: 0.25s; }
+.home-gallery__item:nth-child(4) { animation-delay: 0.35s; }
+.home-gallery__item:nth-child(5) { animation-delay: 0.45s; }
+.home-gallery__item:nth-child(6) { animation-delay: 0.55s; }
+
+@keyframes homeGalleryReveal {
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+.home-gallery__media {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+}
+
+.home-gallery__media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 900ms cubic-bezier(0.22, 1, 0.36, 1), filter 700ms ease;
+  filter: saturate(0.92);
+}
+
+.home-gallery__item::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(61, 10, 12, 0) 38%, rgba(61, 10, 12, 0.72) 100%);
+  opacity: 0.9;
+  transition: opacity 450ms ease;
+  z-index: 1;
+}
+
+/* Gold inner frame that draws in on hover */
+.home-gallery__frame {
+  position: absolute;
+  inset: 14px;
+  border: 1px solid rgba(242, 169, 10, 0.75);
+  border-radius: 2px;
+  pointer-events: none;
+  opacity: 0;
+  transform: scale(1.05);
+  transition: opacity 500ms ease, transform 500ms ease;
+  z-index: 3;
+}
+
+/* Ornamental gold corner ticks */
+.home-gallery__corner {
+  position: absolute;
+  width: 18px;
+  height: 18px;
+  border: 2px solid #F2A90A;
+  opacity: 0;
+  transition: opacity 500ms ease 0.08s, transform 500ms ease 0.08s;
+  z-index: 3;
+  pointer-events: none;
+}
+
+.home-gallery__corner--tl {
+  top: 14px;
+  left: 14px;
+  border-right: 0;
+  border-bottom: 0;
+  transform: translate(6px, 6px);
+}
+
+.home-gallery__corner--br {
+  bottom: 14px;
+  right: 14px;
+  border-left: 0;
+  border-top: 0;
+  transform: translate(-6px, -6px);
+}
+
+.home-gallery__caption {
+  position: absolute;
+  left: 26px;
+  bottom: 22px;
+  color: var(--anity-white);
+  font-family: var(--anity-font-two), 'Tiro Devanagari Marathi';
+  font-size: 21px;
+  line-height: 1.3;
+  letter-spacing: 0.5px;
+  z-index: 4;
+  opacity: 0;
+  transform: translateY(10px);
+  transition: opacity 450ms ease, transform 450ms ease;
+}
+
+.home-gallery__caption::before {
+  content: "";
+  position: absolute;
+  left: 2px;
+  bottom: -8px;
+  width: 34px;
+  height: 2px;
+  background-color: #F2A90A;
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 450ms ease 0.1s;
+}
+
+/* Hover state */
+.home-gallery__item:hover {
+  box-shadow: 0 30px 70px rgba(61, 10, 12, 0.42);
+}
+
+.home-gallery__item:hover .home-gallery__media img {
+  transform: scale(1.09);
+  filter: saturate(1.05);
+}
+
+.home-gallery__item:hover::after {
+  opacity: 1;
+}
+
+.home-gallery__item:hover .home-gallery__frame {
+  opacity: 1;
+  transform: scale(1);
+}
+
+.home-gallery__item:hover .home-gallery__corner {
+  opacity: 1;
+  transform: translate(0, 0);
+}
+
+.home-gallery__item:hover .home-gallery__caption {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.home-gallery__item:hover .home-gallery__caption::before {
+  transform: scaleX(1);
+}
+
+/* CTA button — maroon/gold, matching the Found section */
+.home-gallery__btn-box {
+  margin-top: 58px;
+}
+
+.home-gallery__btn.thm-btn {
+  background-color: #5C1012;
+  border-color: #5C1012;
+  color: #FFF8E7;
+  box-shadow: 0 8px 20px rgba(92, 16, 18, 0.35);
+}
+
+.home-gallery__btn.thm-btn::after {
+  background-color: #3D0A0C;
+}
+
+.home-gallery__btn.thm-btn span {
+  background-color: #F2A90A;
+  color: #3D0A0C;
+}
+
+.home-gallery__btn.thm-btn:hover {
+  border-color: #3D0A0C;
+  color: #FFF8E7;
+}
+
+.home-gallery__btn.thm-btn:hover span {
+  background-color: #FFFFFF;
+  color: #3D0A0C;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .home-gallery__item {
+    animation: none;
+    opacity: 1;
+    transform: none;
+  }
+}
+
+/* Tablet — keep the 4-column mosaic, slightly shorter rows */
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+  .home-gallery {
+    padding: 64px 0 68px;
+  }
+  .home-gallery__grid {
+    grid-template-rows: repeat(3, clamp(190px, 26vw, 240px));
+  }
+  .home-gallery__caption {
+    font-size: 19px;
+  }
+}
+
+/* Small tablet / large phone — 2-column layout, hero + wide big tiles stay prominent */
+@media only screen and (min-width: 576px) and (max-width: 767px) {
+  .home-gallery {
+    padding: 56px 0 60px;
+  }
+  .home-gallery__grid {
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: none;
+    grid-auto-rows: clamp(180px, 34vw, 230px);
+    gap: 16px;
+  }
+  .home-gallery__item:nth-child(n) {
+    grid-column: auto;
+    grid-row: auto;
+  }
+  .home-gallery__item:nth-child(1),
+  .home-gallery__item:nth-child(3),
+  .home-gallery__item:nth-child(5),
+  .home-gallery__item:nth-child(6) {
+    grid-column: 1 / span 2;
+  }
+  .home-gallery__caption {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Phone — single column, every image full width and generously tall */
+@media only screen and (max-width: 575px) {
+  .home-gallery {
+    padding: 48px 0 52px;
+  }
+  .home-gallery__grid {
+    grid-template-columns: 1fr;
+    grid-template-rows: none;
+    grid-auto-rows: clamp(200px, 58vw, 300px);
+    gap: 14px;
+  }
+  .home-gallery__item:nth-child(n) {
+    grid-column: 1 / -1;
+    grid-row: auto;
+  }
+  .home-gallery__frame {
+    inset: 10px;
+  }
+  .home-gallery__corner {
+    top: 10px;
+    left: 10px;
+  }
+  .home-gallery__corner--br {
+    top: auto;
+    left: auto;
+    bottom: 10px;
+    right: 10px;
+  }
+  .home-gallery__caption {
+    left: 18px;
+    bottom: 16px;
+    font-size: 18px;
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
 /* The End */

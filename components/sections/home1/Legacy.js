@@ -112,6 +112,7 @@ export default function Legacy() {
     const bookRef = useRef(null)
     const [pageIndex, setPageIndex] = useState(0)
     const [isOpen, setIsOpen] = useState(false)
+    const [closedSide, setClosedSide] = useState("front") // "front" | "back" | null
     const [isTablet, setIsTablet] = useState(false)
     const [isMobile, setIsMobile] = useState(false)
     const totalPages = PAGES.length + 2
@@ -138,7 +139,11 @@ export default function Legacy() {
 
     const handleFlip = (e) => {
         setPageIndex(e.data)
-        setIsOpen(e.data > 0)
+        // "Open" = showing an interior spread; first page (front cover) and last
+        // page (back cover) are single closed pages sitting on opposite halves.
+        const open = e.data > 0 && e.data < totalPages - 1
+        setIsOpen(open)
+        setClosedSide(e.data === 0 ? "front" : e.data === totalPages - 1 ? "back" : null)
     }
 
     return (
@@ -150,7 +155,15 @@ export default function Legacy() {
             <span className="legacy-One__corner legacy-One__corner--tr" aria-hidden="true"></span>
             <span className="legacy-One__corner legacy-One__corner--bl" aria-hidden="true"></span>
             <span className="legacy-One__corner legacy-One__corner--br" aria-hidden="true"></span>
-            <div className="legacy-book-stage">
+
+            <div className="section-title text-center sec-title-animation animation-style1">
+                <div className="section-title__tagline-box">
+                    <span className="section-title__tagline">आमचा वारसा</span>
+                </div>
+                <h2 className="section-title__title title-animation">पिढ्यानपिढ्या जपलेली <br className="legacy-One__title-break" /> गुरुपरंपरा</h2>
+            </div>
+
+            <div className={`legacy-book-stage${isOpen ? " legacy-book-stage--opened" : ` legacy-book-stage--closed legacy-book-stage--closed-${closedSide || "front"}`}`}>
                 <button
                     type="button"
                     className="legacy-book-arrow legacy-book-arrow--prev"
