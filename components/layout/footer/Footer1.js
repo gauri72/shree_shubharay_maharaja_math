@@ -1,5 +1,5 @@
 import Link from "next/link"
-import { SITE_PHONE_DISPLAY, SITE_PHONE_TEL, SITE_ADDRESS, SITE_MAP_URL, SOCIAL_LINKS } from "@/lib/siteInfo"
+import { SITE_PHONE_DISPLAY_MR, SITE_PHONE_TEL, SITE_ADDRESS_MR_LINE1, SITE_ADDRESS_MR_LINE2, SITE_MAP_URL, SOCIAL_LINKS } from "@/lib/siteInfo"
 
 export default function Footer1() {
     const year = new Date().getFullYear()
@@ -17,56 +17,55 @@ export default function Footer1() {
                                         <Link href="/" className="shubharay-logo">
                                             <img src="assets/images/resources/shubharay-maharaj.jpg" alt="Shubharay Math" className="shubharay-logo__img"/>
                                             <span className="shubharay-logo__text">
-                                                <span className="shubharay-logo__title">Shubharay</span>
-                                                <span className="shubharay-logo__subtitle">Math</span>
+                                                <span className="shubharay-logo__title">श्री शुभराय मठ</span>
                                             </span>
                                         </Link>
                                     </div>
-                                    <p className="footer-widget__about-text">A spiritual home dedicated to devotion, seva and
-                                        community upliftment, carrying forward Shri Shubharay Maharaj&apos;s teachings through
-                                        events, outreach and everyday acts of service.</p>
+                                    <p className="footer-widget__about-text">भक्ती, सेवा आणि समाजाच्या
+                                        उन्नतीसाठी समर्पित असलेले हे एक आध्यात्मिक स्थान. उत्सव, समाजकार्य आणि नित्य
+                                        सेवेच्या माध्यमातून श्री शुभराय महाराजांची शिकवण पुढे नेण्याचे कार्य येथे अखंड सुरू आहे.</p>
                                 </div>
                             </div>
                             <div className="col-xl-3 col-lg-6 col-md-6 wow fadeInUp" data-wow-delay="200ms">
                                 <div className="footer-widget__services">
-                                    <h4 className="footer-widget__title">Seva &amp; Offerings</h4>
+                                    <h4 className="footer-widget__title">सेवा व अर्पण</h4>
                                     <span className="footer-widget__title-ornament"><span></span></span>
                                     <ul className="footer-widget__services-list footer-widget__services-list--icon list-unstyled">
-                                        <li><i className="icon-love"></i>Daily Darshan &amp; Aarti</li>
-                                        <li><i className="icon-love"></i>Annadaan &amp; Food Seva</li>
-                                        <li><i className="icon-love"></i>Satsang &amp; Utsav</li>
-                                        <li><i className="icon-love"></i>Community Support</li>
+                                        <li><i className="icon-love"></i>नित्य दर्शन व आरती</li>
+                                        <li><i className="icon-love"></i>अन्नदान व भोजनसेवा</li>
+                                        <li><i className="icon-love"></i>सत्संग व उत्सव</li>
+                                        <li><i className="icon-love"></i>समाजसेवा व मदत</li>
                                     </ul>
                                 </div>
                             </div>
                             <div className="col-xl-2 col-lg-6 col-md-6 wow fadeInUp" data-wow-delay="300ms">
                                 <div className="footer-widget__links">
-                                    <h4 className="footer-widget__title">Links</h4>
+                                    <h4 className="footer-widget__title">उपयुक्त दुवे</h4>
                                     <span className="footer-widget__title-ornament"><span></span></span>
                                     <ul className="footer-widget__services-list footer-widget__services-list--icon list-unstyled">
-                                        <li><Link href="/about"><i className="icon-arrow-right"></i><span>Who We Are</span></Link></li>
-                                        <li><Link href="/sadhana"><i className="icon-arrow-right"></i><span>Practices</span></Link></li>
-                                        <li><Link href="/gallery"><i className="icon-arrow-right"></i><span>Gallery</span></Link></li>
-                                        <li><Link href="/events"><i className="icon-arrow-right"></i><span>Upcoming Events</span></Link></li>
+                                        <li><Link href="/about"><i className="icon-arrow-right"></i><span>आमच्याविषयी</span></Link></li>
+                                        <li><Link href="/sadhana"><i className="icon-arrow-right"></i><span>साधना</span></Link></li>
+                                        <li><Link href="/gallery"><i className="icon-arrow-right"></i><span>छायाचित्र दालन</span></Link></li>
+                                        <li><Link href="/events"><i className="icon-arrow-right"></i><span>आगामी उत्सव</span></Link></li>
                                     </ul>
                                 </div>
                             </div>
                             <div className="col-xl-3 col-lg-6 col-md-6 wow fadeInUp" data-wow-delay="400ms">
                                 <div className="footer-widget__contact">
-                                    <h3 className="footer-widget__title">Contact Info</h3>
+                                    <h3 className="footer-widget__title">संपर्क माहिती</h3>
                                     <span className="footer-widget__title-ornament"><span></span></span>
                                     <ul className="footer-widget__contact-list list-unstyled">
                                         <li>
                                             <div className="icon">
                                                 <span className="icon-call"></span>
                                             </div>
-                                            <p><Link href={SITE_PHONE_TEL}>{SITE_PHONE_DISPLAY}</Link></p>
+                                            <p><Link href={SITE_PHONE_TEL}>{SITE_PHONE_DISPLAY_MR}</Link></p>
                                         </li>
                                         <li className="footer-widget__contact-list--multiline">
                                             <div className="icon">
                                                 <span className="icon-pin-two"></span>
                                             </div>
-                                            <p><Link href={SITE_MAP_URL} target="_blank" rel="noopener noreferrer">Shri Shubharay Maharaj Math,<br/> Datta Chowk, Solapur.</Link></p>
+                                            <p><Link href={SITE_MAP_URL} target="_blank" rel="noopener noreferrer">{SITE_ADDRESS_MR_LINE1}<br/> {SITE_ADDRESS_MR_LINE2}</Link></p>
                                         </li>
                                     </ul>
                                     <div className="site-footer__social">

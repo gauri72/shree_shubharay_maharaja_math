@@ -3,7 +3,7 @@ import Link from "next/link"
 
 const galleryItems = [
     { src: "assets/images/gallery/gallery-1.png", label: "भक्तीचा सोहळा", position: "center 40%" },
-    { src: "assets/images/gallery/gallery-2.png", label: "मंगलमूर्ती चरणी", position: "center 35%" },
+    { src: "assets/images/gallery/gallery-2.png", label: "कट्यारधारी मारुती", position: "center 35%" },
     { src: "assets/images/gallery/gallery-3.png", label: "हिरवा शृंगार", position: "center 30%" },
     { src: "assets/images/gallery/gallery-4.png", label: "अर्पण भाव", position: "center 45%" },
     { src: "assets/images/gallery/gallery-5.png", label: "तपाची साधना", position: "center 20%" },
