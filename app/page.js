@@ -7,7 +7,6 @@ import HomeGallery from "@/components/sections/home1/HomeGallery"
 import Legacy from "@/components/sections/home1/Legacy"
 import Cta from "@/components/sections/home1/Cta"
 import Found from "@/components/sections/home1/Found"
-import Donation from "@/components/sections/home1/Donation"
 import Event from "@/components/sections/home1/Event"
 
 export default function Home() {
@@ -22,7 +21,6 @@ export default function Home() {
                 <Legacy />
                 <Found />
                 <Event />
-                <Donation />
                 <HomeGallery />
                 <Cta />
             </Layout>

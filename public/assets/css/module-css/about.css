@@ -960,3 +960,961 @@
 /*--------------------------------------------------------------
 # End
 --------------------------------------------------------------*/
+/*==============================================
+    Breadcrumb Bg Section
+===============================================*/
+.breadcrumb-bg-section {
+    position: relative;
+    display: block;
+    line-height: 0;
+}
+
+.breadcrumb-bg-section__img {
+    display: block;
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+}
+
+/*==============================================
+    About One — Gold panel framed by maroon Om/Swastik border
+    (mirrors the .cta-one / .divine-border--event house pattern, colours inverted)
+===============================================*/
+.about-One.about-One--ornate {
+    position: relative;
+    overflow: hidden;
+    background-color: #F2A90A;
+    padding: 96px 0 116px;
+    z-index: 1;
+}
+
+/* Enlarged ("zoomed") floral pattern on its own low-opacity layer, matching the
+   gold home-page sections (welcome-one, found-one) so copy over it stays readable */
+.about-One__bg {
+    position: absolute;
+    inset: 0;
+    background-image: url("../../images/backgrounds/section-bg.png");
+    background-repeat: repeat;
+    background-size: 780px auto;
+    opacity: 0.25;
+    z-index: 0;
+    pointer-events: none;
+}
+
+.about-One.about-One--ornate .container {
+    position: relative;
+    z-index: 1;
+}
+
+/* Horizontal maroon strips carrying gold Om + swastik motif */
+.divine-border--about {
+    position: absolute;
+    left: 0;
+    right: 0;
+    z-index: 3;
+    height: 30px;
+    background-color: #3D0A0C;
+    background-image:
+        radial-gradient(circle at 50% 50%, rgba(242, 169, 10, 0.14) 0%, transparent 70%),
+        url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='30' viewBox='0 0 100 30'%3E%3Cg fill='%23F2A90A'%3E%3Ctext x='25' y='22' font-size='19' text-anchor='middle' font-family='Noto Sans Devanagari, Arial, sans-serif'%3E%E0%A5%90%3C/text%3E%3C/g%3E%3Cg transform='translate(75 15)' stroke='%23F2A90A' stroke-width='2.4' stroke-linecap='square' fill='none'%3E%3Cpath d='M0 -8 L0 8 M-8 0 L8 0'/%3E%3Cpath d='M0 -8 L5 -8'/%3E%3Cpath d='M8 0 L8 5'/%3E%3Cpath d='M0 8 L-5 8'/%3E%3Cpath d='M-8 0 L-8 -5'/%3E%3C/g%3E%3Cg fill='%23F2A90A' opacity='0.85'%3E%3Ccircle cx='0' cy='15' r='1.6'/%3E%3Ccircle cx='50' cy='15' r='1.6'/%3E%3Ccircle cx='100' cy='15' r='1.6'/%3E%3C/g%3E%3C/svg%3E");
+    background-repeat: repeat-x, repeat-x;
+    background-position: center, center;
+    background-size: 100% 100%, 100px 30px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+}
+
+.divine-border--about-top { top: 0; }
+.divine-border--about-bottom { bottom: 0; }
+
+/* Vertical maroon strips */
+.divine-border--about-vertical {
+    position: absolute;
+    top: 30px;
+    bottom: 30px;
+    z-index: 2;
+    width: 30px;
+    background-color: #3D0A0C;
+    background-image:
+        radial-gradient(circle at 50% 50%, rgba(242, 169, 10, 0.14) 0%, transparent 70%),
+        url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='30' height='100' viewBox='0 0 30 100'%3E%3Cg fill='%23F2A90A'%3E%3Ctext x='15' y='32' font-size='19' text-anchor='middle' font-family='Noto Sans Devanagari, Arial, sans-serif'%3E%E0%A5%90%3C/text%3E%3C/g%3E%3Cg transform='translate(15 75)' stroke='%23F2A90A' stroke-width='2.4' stroke-linecap='square' fill='none'%3E%3Cpath d='M0 -8 L0 8 M-8 0 L8 0'/%3E%3Cpath d='M0 -8 L5 -8'/%3E%3Cpath d='M8 0 L8 5'/%3E%3Cpath d='M0 8 L-5 8'/%3E%3Cpath d='M-8 0 L-8 -5'/%3E%3C/g%3E%3Cg fill='%23F2A90A' opacity='0.85'%3E%3Ccircle cx='15' cy='0' r='1.6'/%3E%3Ccircle cx='15' cy='50' r='1.6'/%3E%3Ccircle cx='15' cy='100' r='1.6'/%3E%3C/g%3E%3C/svg%3E");
+    background-repeat: repeat-y, repeat-y;
+    background-position: top center, top center;
+    background-size: 100% 100%, 30px 100px;
+    box-shadow: 0 0 8px rgba(0, 0, 0, 0.3);
+}
+
+.divine-border--about-left { left: 0; }
+.divine-border--about-right { right: 0; }
+
+.about-One__corner {
+    position: absolute;
+    z-index: 4;
+    width: 30px;
+    height: 30px;
+    background-color: #3D0A0C;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+    pointer-events: none;
+}
+
+.about-One__corner--tl { top: 0; left: 0; }
+.about-One__corner--tr { top: 0; right: 0; }
+.about-One__corner--bl { bottom: 0; left: 0; }
+.about-One__corner--br { bottom: 0; right: 0; }
+
+/* --- Responsive --- */
+
+/* Large desktop / small desktop: keep content clear of the 30px side strips */
+@media (max-width: 1199px) {
+    .about-One.about-One--ornate {
+        padding: 90px 0 100px;
+    }
+    .about-One.about-One--ornate .container {
+        padding-left: 30px;
+        padding-right: 30px;
+    }
+}
+
+/* Tablet & below: stack the two columns, neutralise the desktop image offsets
+   (the base theme only resets these at <=767px, which breaks the 768-991 range) */
+@media (max-width: 991px) {
+    .about-One.about-One--ornate {
+        padding: 78px 0 86px;
+    }
+    /* Keep the ornamental border at full size — shrinking it distorted the Om
+       glyph and clipped the separator dots into stray "." marks */
+    .divine-border--about {
+        height: 30px;
+        background-size: 100% 100%, 100px 30px;
+    }
+    .divine-border--about-vertical {
+        top: 30px;
+        bottom: 30px;
+        width: 30px;
+        background-size: 100% 100%, 30px 100px;
+    }
+    .about-One__corner {
+        width: 30px;
+        height: 30px;
+    }
+    .about-One.about-One--ornate .container {
+        padding-left: 40px;
+        padding-right: 40px;
+    }
+
+    .about-One--ornate .row {
+        row-gap: 36px;
+    }
+    /* Show the two images side by side (flex row); the 240+ box and blur-shape
+       wrap onto their own full-width rows underneath */
+    .about-One--ornate .about-One__left {
+        margin-left: auto;
+        margin-right: auto;
+        max-width: 620px;
+        text-align: center;
+    }
+    .about-One--ornate .about-One__img-box {
+        display: flex;
+        flex-flow: row wrap;
+        align-items: stretch;
+        justify-content: center;
+        gap: 20px;
+    }
+    .about-One--ornate .about-One__img {
+        flex: 0 1 280px;
+        max-width: 280px;
+        margin: 0;
+    }
+    .about-One--ornate .about-One__img img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+    .about-One--ornate .about-One__img-2 {
+        position: relative;
+        top: 0;
+        right: auto;
+        left: 0;
+        flex: 0 1 280px;
+        max-width: 280px;
+        margin: 0;
+        width: auto;
+    }
+    .about-One--ornate .about-One__img-2 img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        border-radius: 20px;
+    }
+    /* 240+ box + blur shape drop to their own row below the images */
+    .about-One--ornate .about-One__provide-box {
+        flex: 1 1 100%;
+        margin: 30px auto 0;
+        max-width: 340px;
+        justify-content: center;
+        text-align: center;
+    }
+    .about-One--ornate .about-One__provide-content {
+        text-align: center;
+    }
+    .about-One--ornate .about-One__provide-count {
+        justify-content: center;
+    }
+    .about-One--ornate .about-One__shape-1 {
+        display: none;
+    }
+
+    /* Tablet: centre every element */
+    .about-One--ornate .about-One__img-box {
+        text-align: center;
+    }
+    .about-One--ornate .about-One__right {
+        margin-top: 8px;
+        text-align: center;
+    }
+    .about-One--ornate .section-title.text-left,
+    .about-One--ornate .section-title {
+        text-align: center;
+    }
+    .about-One--ornate .section-title__tagline-box {
+        display: flex;
+        justify-content: center;
+    }
+    /* Heading on a single line */
+    .about-One--ornate .section-title__title {
+        max-width: none;
+        margin-left: auto;
+        margin-right: auto;
+        white-space: nowrap;
+    }
+    .about-One--ornate .section-title__title br {
+        display: none;
+    }
+    .about-One--ornate .about-One__tab-box .tab-buttons {
+        justify-content: center;
+        align-items: center;
+    }
+    .about-One--ornate .tabs-content__inner {
+        text-align: center;
+    }
+    .about-One--ornate .about-One__btn-and-need-help {
+        flex-direction: column;
+        align-items: center;
+        gap: 22px;
+    }
+    /* Location icon stacked on top, centred above the text */
+    .about-One--ornate .about-One__need-help {
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        gap: 8px;
+    }
+    .about-One--ornate .about-One__need-help .icon {
+        top: 0;
+    }
+    .about-One--ornate .about-One__need-help .content,
+    .about-One--ornate .about-One__need-help .content p {
+        text-align: center;
+    }
+}
+
+/* Mobile: top & bottom ornamental border only (no side strips / corners), stack & centre everything */
+@media (max-width: 767px) {
+    .about-One.about-One--ornate {
+        padding: 54px 0 58px;
+    }
+    /* Keep only the horizontal (top + bottom) border */
+    .divine-border--about {
+        height: 26px;
+        background-size: 100% 100%, 100px 30px;
+    }
+    .divine-border--about-vertical,
+    .about-One__corner {
+        display: none;
+    }
+    .about-One.about-One--ornate .container {
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+
+    /* Reduce the first (portrait) image further */
+    .about-One--ornate .about-One__left {
+        max-width: 300px;
+    }
+    .about-One--ornate .about-One__img {
+        max-width: 260px;
+    }
+    /* Centre the second image */
+    .about-One--ornate .about-One__img-2 {
+        max-width: 220px;
+        margin: 20px auto 0;
+    }
+    /* Centre the icon + count group inside the maroon 240+ box */
+    .about-One--ornate .about-One__provide-box {
+        margin: 24px auto 0;
+        max-width: 300px;
+        justify-content: center;
+        text-align: center;
+    }
+    .about-One--ornate .about-One__provide-content {
+        text-align: center;
+    }
+    .about-One--ornate .about-One__provide-count {
+        justify-content: center;
+    }
+
+    .about-One--ornate .about-One__right {
+        margin-top: 12px;
+        text-align: center;
+    }
+    .about-One--ornate .section-title.text-left {
+        text-align: center;
+    }
+    .about-One--ornate .section-title__tagline-box {
+        display: flex;
+        justify-content: center;
+    }
+    /* Heading on a single line — scaled to fit the mobile width */
+    .about-One--ornate .section-title__title {
+        font-size: 22px;
+        line-height: 1.3em;
+        max-width: none;
+        margin-left: auto;
+        margin-right: auto;
+        white-space: nowrap;
+    }
+    .about-One--ornate .section-title__title br {
+        display: none;
+    }
+    .about-One--ornate .tabs-content__inner {
+        text-align: center;
+    }
+    .about-One--ornate .tabs-content__inner p[lang="mr"] {
+        font-size: 15.5px;
+        line-height: 2em;
+    }
+    .about-One--ornate .about-One__tab-box .tab-buttons {
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+    }
+    .about-One--ornate .about-One__tab-box .tab-buttons .tab-btn span {
+        width: 220px;
+    }
+    .about-One--ornate .about-One__btn-and-need-help {
+        flex-direction: column;
+        align-items: center;
+        gap: 22px;
+        margin-top: 32px;
+    }
+    /* Location icon stacked on top, centred above the address */
+    .about-One--ornate .about-One__need-help {
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        gap: 8px;
+    }
+    .about-One--ornate .about-One__need-help .icon {
+        top: 0;
+    }
+    .about-One--ornate .about-One__need-help .content,
+    .about-One--ornate .about-One__need-help .content p {
+        text-align: center;
+    }
+    .about-One--ornate .about-One__need-help .content h4 {
+        font-size: 15px;
+        line-height: 22px;
+    }
+}
+
+@media (max-width: 480px) {
+    .about-One--ornate .about-One__btn-box .thm-btn {
+        width: 100%;
+    }
+}
+
+/* --- CTA button — mirrors the home page's .welcome-one .thm-btn hover effect exactly
+   (maroon fill + maroon circle-reveal on the theme's own timing, white label kept,
+   icon circle flips white/maroon, base bounceright arrow animation on hover). --- */
+.about-One--ornate .about-One__btn-box .thm-btn {
+    background-color: #3D0A0C;
+    border-color: #3D0A0C;
+    color: var(--anity-white);
+    box-shadow: 0 8px 20px rgba(61, 10, 12, 0.35);
+}
+
+.about-One--ornate .about-One__btn-box .thm-btn::after {
+    background-color: #3D0A0C;
+}
+
+.about-One--ornate .about-One__btn-box .thm-btn span {
+    background-color: #F2A90A;
+    color: #3D0A0C;
+}
+
+.about-One--ornate .about-One__btn-box .thm-btn:hover {
+    border-color: #3D0A0C;
+    color: var(--anity-white);
+}
+
+.about-One--ornate .about-One__btn-box .thm-btn:hover span {
+    background-color: var(--anity-white);
+    color: #3D0A0C;
+}
+
+/* --- Colour combinations tuned for the gold panel --- */
+.about-One--ornate .section-title__tagline {
+    color: #3D0A0C;
+    font-weight: 700;
+}
+
+.about-One--ornate .section-title__title {
+    color: #3D0A0C;
+    text-shadow: 0 1px 0 rgba(255, 248, 231, 0.5);
+}
+
+/* Desktop: let the heading wrap on its own; the forced 3-line break is tablet/mobile only */
+@media (min-width: 992px) {
+    .about-One--ornate .section-title__title br {
+        display: none;
+    }
+}
+
+.about-One--ornate .about-One__provide-box {
+    background-color: #3D0A0C;
+}
+
+.about-One--ornate .about-One__provide-icon span,
+.about-One--ornate .about-One__provide-count h3,
+.about-One--ornate .about-One__provide-count span,
+.about-One--ornate .about-One__provide-count-text {
+    color: #F2A90A;
+}
+
+.about-One--ornate .about-One__provide-count h3 {
+    -webkit-text-fill-color: #F2A90A;
+}
+
+/* Devotional verse — maroon on gold */
+.about-One--ornate .tabs-content__inner p[lang="mr"] {
+    margin: 0;
+    color: #3D0A0C;
+    font-weight: 600;
+    font-size: 17px;
+    line-height: 2.15em;
+    letter-spacing: 0.2px;
+    text-shadow: 0 1px 0 rgba(255, 248, 231, 0.5);
+}
+
+/* Tab buttons recoloured to sit with the gold panel / maroon border */
+.about-One--ornate .tab-buttons .tab-btn span {
+    color: #3D0A0C;
+    border-color: rgba(61, 10, 12, 0.35);
+}
+
+.about-One--ornate .tab-buttons .tab-btn span:before {
+    background-color: #3D0A0C;
+}
+
+.about-One--ornate .tab-buttons .tab-btn:hover span {
+    color: #3D0A0C;
+    border-color: #3D0A0C;
+}
+
+.about-One--ornate .tab-buttons .tab-btn.active-btn span {
+    color: #F2A90A;
+    border-color: #3D0A0C;
+}
+
+/* Need-help block */
+.about-One--ornate .about-One__need-help .icon span {
+    color: #3D0A0C;
+}
+
+.about-One--ornate .about-One__need-help .content p {
+    color: rgba(61, 10, 12, 0.75);
+}
+
+.about-One--ornate .about-One__need-help .content h4 a {
+    color: #3D0A0C;
+}
+
+
+/*==============================================
+    Our Story — मंदिर कमान (temple-arch) 3D coverflow
+    Gold section (section-bg.png texture) + maroon Om/swastik border —
+    matches the About section. Maroon arches float against the gold canvas.
+    Theme: gold #F2A90A / maroon #3D0A0C / cream #FFF8E7
+===============================================*/
+.mandir {
+    position: relative;
+    overflow: hidden;
+    background-color: #F2A90A;
+    padding: 84px 0 80px;
+    z-index: 1;
+}
+
+/* floral pattern layer, low opacity like the other gold sections */
+.mandir__bg {
+    position: absolute;
+    inset: 0;
+    background-image: url("../../images/backgrounds/section-bg.png");
+    background-repeat: repeat;
+    background-size: 780px auto;
+    opacity: 0.22;
+    pointer-events: none;
+    z-index: 0;
+}
+
+/* slow-turning mandala halo behind the centre arch (maroon on gold) */
+.mandir__mandala {
+    position: absolute;
+    top: 62%;
+    left: 50%;
+    width: 640px;
+    height: 640px;
+    margin: -320px 0 0 -320px;
+    border-radius: 50%;
+    background:
+        repeating-conic-gradient(from 0deg,
+            rgba(61, 10, 12, 0.08) 0deg 1.6deg,
+            rgba(61, 10, 12, 0) 1.6deg 10deg);
+    -webkit-mask-image: radial-gradient(circle, transparent 40%, #000 52%, #000 66%, transparent 78%);
+    mask-image: radial-gradient(circle, transparent 40%, #000 52%, #000 66%, transparent 78%);
+    animation: mandirSpin 90s linear infinite;
+    pointer-events: none;
+    z-index: 0;
+}
+
+@keyframes mandirSpin {
+    to { transform: rotate(360deg); }
+}
+
+/* soft warm halo behind the focus arch */
+.mandir__haze {
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    width: 780px;
+    height: 460px;
+    margin-left: -390px;
+    background: radial-gradient(ellipse, rgba(255, 248, 231, 0.5) 0%, transparent 70%);
+    filter: blur(28px);
+    pointer-events: none;
+    z-index: 0;
+}
+
+.mandir .container {
+    position: relative;
+    z-index: 2;
+}
+
+@media (min-width: 768px) {
+    .mandir .container {
+        padding-left: 46px;
+        padding-right: 46px;
+    }
+}
+
+/* --- head — standard .section-title, gold-section colour overrides
+   (same convention as .found-one / .about-One) --- */
+.mandir__head {
+    margin-bottom: 52px;
+}
+
+.mandir .section-title__tagline {
+    color: #000000;
+    font-weight: 700;
+    text-shadow: none;
+}
+
+.mandir .section-title__title {
+    color: #000000;
+    text-shadow: none;
+}
+
+.mandir .section-title__title span {
+    color: #3D0A0C;
+}
+
+/* --- 3D stage --- */
+.mandir__stage {
+    position: relative;
+    height: 496px;
+    outline: none;
+    perspective: 1500px;
+    perspective-origin: 50% 46%;
+}
+
+.mandir__ring {
+    position: absolute;
+    inset: 0;
+    transform-style: preserve-3d;
+}
+
+.mandir__arch {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    width: 372px;
+    height: 456px;
+    margin-left: -186px;
+    transform-style: preserve-3d;
+    transform:
+        translateX(calc(var(--d) * 60%))
+        translateZ(calc(var(--ad) * -210px))
+        rotateY(calc(var(--d) * -36deg))
+        scale(calc(1 - (var(--ad) * 0.11)));
+    opacity: calc(1 - (var(--ad) * 0.42));
+    z-index: calc(10 - var(--ad));
+    transition:
+        transform 820ms cubic-bezier(0.22, 1, 0.36, 1),
+        opacity 640ms ease,
+        filter 640ms ease;
+    filter: brightness(calc(1 - (var(--ad) * 0.2)));
+    pointer-events: none;
+    will-change: transform;
+}
+
+.mandir__arch.is-far {
+    opacity: 0;
+    pointer-events: none;
+}
+
+.mandir__arch.is-active {
+    pointer-events: auto;
+}
+
+/* the arch face — maroon dome-topped niche, content vertically centred */
+.mandir__face {
+    position: relative;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 40px 32px;
+    text-align: center;
+    background:
+        radial-gradient(120% 80% at 50% 12%, #611a1e 0%, #3D0A0C 52%, #280607 100%);
+    border: 2px solid #F2A90A;
+    border-radius: 186px 186px 16px 16px;
+    box-shadow:
+        0 0 0 6px rgba(61, 10, 12, 0.18),
+        inset 0 1px 0 rgba(255, 231, 171, 0.35),
+        inset 0 0 0 1px rgba(242, 169, 10, 0.3),
+        inset 0 34px 60px rgba(0, 0, 0, 0.45),
+        inset 0 -30px 50px rgba(242, 169, 10, 0.12),
+        0 40px 72px rgba(61, 10, 12, 0.5);
+    overflow: hidden;
+}
+
+/* inner keyline echoing the arch */
+.mandir__face::before {
+    content: "";
+    position: absolute;
+    inset: 12px;
+    border: 1px solid rgba(242, 169, 10, 0.38);
+    border-radius: 176px 176px 8px 8px;
+    pointer-events: none;
+}
+
+/* faint diya glow rising from the base of the niche */
+.mandir__face::after {
+    content: "";
+    position: absolute;
+    left: 50%;
+    bottom: -60px;
+    width: 220px;
+    height: 160px;
+    margin-left: -110px;
+    background: radial-gradient(ellipse, rgba(242, 169, 10, 0.4) 0%, transparent 70%);
+    filter: blur(14px);
+    opacity: 0;
+    transition: opacity 700ms ease;
+    pointer-events: none;
+}
+
+.mandir__arch.is-active .mandir__face::after { opacity: 1; }
+
+/* golden halo behind the active maroon arch */
+.mandir__glow {
+    position: absolute;
+    inset: -34px -26px -18px;
+    border-radius: 210px 210px 46px 46px;
+    background:
+        radial-gradient(ellipse at 50% 30%, rgba(255, 248, 231, 0.85) 0%, rgba(255, 236, 190, 0.35) 34%, rgba(255, 236, 190, 0) 70%);
+    opacity: 0;
+    transform: scale(0.94);
+    transition: opacity 700ms ease, transform 700ms cubic-bezier(0.22, 1, 0.36, 1);
+    pointer-events: none;
+    z-index: -1;
+}
+
+.mandir__arch.is-active .mandir__glow {
+    opacity: 1;
+    transform: scale(1);
+    animation: mandirBreathe 5s ease-in-out infinite;
+}
+
+@keyframes mandirBreathe {
+    0%, 100% { opacity: 0.85; }
+    50% { opacity: 1; }
+}
+
+.mandir__kalash {
+    position: absolute;
+    top: -44px;
+    left: 50%;
+    width: 34px;
+    height: 46px;
+    margin-left: -17px;
+    color: #3D0A0C;
+    filter: drop-shadow(0 3px 8px rgba(0, 0, 0, 0.4)) drop-shadow(0 0 10px rgba(255, 236, 190, 0.6));
+    transition: transform 700ms cubic-bezier(0.22, 1, 0.36, 1);
+    z-index: 3;
+}
+
+.mandir__arch.is-active .mandir__kalash {
+    transform: translateY(-4px);
+    animation: mandirFloat 4.5s ease-in-out infinite;
+}
+
+@keyframes mandirFloat {
+    0%, 100% { transform: translateY(-4px); }
+    50% { transform: translateY(-11px); }
+}
+
+.mandir__base {
+    position: absolute;
+    left: -16px;
+    right: -16px;
+    bottom: -14px;
+    height: 14px;
+    border-radius: 4px;
+    background: linear-gradient(180deg, #F2A90A 0%, #b57d0a 55%, #3D0A0C 100%);
+    box-shadow: 0 12px 26px rgba(61, 10, 12, 0.5);
+    transform: translateZ(-6px);
+}
+
+/* --- arch content (gold / cream on maroon) --- */
+.mandir__arch-title {
+    margin: 0 0 12px;
+    color: #FFF8E7;
+    font-size: 25px;
+    line-height: 1.3;
+    font-weight: 700;
+}
+
+.mandir__place {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    margin-bottom: 16px;
+    padding: 5px 14px;
+    background: rgba(242, 169, 10, 0.14);
+    border: 1px solid rgba(242, 169, 10, 0.4);
+    border-radius: 16px;
+    color: #F2A90A;
+    font-size: 12.5px;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+}
+
+.mandir__place i {
+    font-size: 11px;
+}
+
+.mandir__face p {
+    margin: 0;
+    color: #FCF3E1;
+    font-size: 16px;
+    line-height: 1.9em;
+}
+
+.mandir__note {
+    display: block;
+    margin-top: 14px;
+    padding-top: 12px;
+    border-top: 1px solid rgba(242, 169, 10, 0.28);
+    color: #F2A90A;
+    font-size: 13px;
+    font-weight: 700;
+    font-style: italic;
+    letter-spacing: 0.4px;
+}
+
+/* --- nav arrows (maroon on gold) --- */
+.mandir__nav {
+    position: absolute;
+    top: 50%;
+    width: 48px;
+    height: 48px;
+    margin-top: -24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(61, 10, 12, 0.1);
+    border: 1px solid rgba(61, 10, 12, 0.4);
+    border-radius: 50%;
+    color: #3D0A0C;
+    font-size: 14px;
+    cursor: pointer;
+    transition: background-color 300ms ease, color 300ms ease, transform 300ms ease;
+    z-index: 20;
+}
+
+.mandir__nav:hover {
+    background: #3D0A0C;
+    color: #F2A90A;
+    transform: scale(1.08);
+}
+
+.mandir__nav--prev { left: 4px; }
+.mandir__nav--next { right: 4px; }
+.mandir__nav--prev i { transform: rotate(180deg); }
+
+/* --- chapter dots (maroon on gold) --- */
+.mandir__dots {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    margin-top: 32px;
+}
+
+.mandir__dot {
+    min-width: 40px;
+    padding: 6px 10px;
+    background: transparent;
+    border: 1px solid rgba(61, 10, 12, 0.28);
+    border-radius: 20px;
+    color: rgba(61, 10, 12, 0.6);
+    font-size: 12.5px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 280ms ease;
+}
+
+.mandir__dot:hover {
+    border-color: #3D0A0C;
+    color: #3D0A0C;
+}
+
+.mandir__dot.is-active {
+    background: #3D0A0C;
+    border-color: #3D0A0C;
+    color: #F2A90A;
+}
+
+/* --- Responsive --- */
+
+/* Tablet & small desktop */
+@media (max-width: 991px) {
+    .mandir { padding: 78px 0 74px; }
+    .mandir__head { margin-bottom: 50px; }
+    .mandir .section-title__title { font-size: 40px; }
+    .mandir__stage {
+        height: 468px;
+        perspective: 1200px;
+    }
+    .mandir__arch {
+        width: 344px;
+        height: 436px;
+        margin-left: -172px;
+        transform:
+            translateX(calc(var(--d) * 56%))
+            translateZ(calc(var(--ad) * -230px))
+            rotateY(calc(var(--d) * -34deg))
+            scale(calc(1 - (var(--ad) * 0.13)));
+    }
+    .mandir__face { padding: 36px 28px; }
+    .mandir__arch-title { font-size: 23px; }
+    .mandir__face p { font-size: 15px; line-height: 1.8em; }
+    .mandir__mandala { width: 600px; height: 600px; margin: -300px 0 0 -300px; }
+}
+
+/* Phones — drop the side border strips, single centred arch */
+@media (max-width: 767px) {
+    .mandir { padding: 56px 0 54px; }
+    .divine-border--about-vertical,
+    .about-One__corner {
+        display: none;
+    }
+    .mandir .container {
+        padding-left: 16px;
+        padding-right: 16px;
+    }
+
+    .mandir__head { margin-bottom: 45px; }
+    .mandir .section-title__title { font-size: 28px; }
+
+    .mandir__stage {
+        height: 496px;
+        perspective: 820px;
+    }
+    .mandir__arch {
+        width: 300px;
+        height: 468px;
+        margin-left: -150px;
+        transform:
+            translateX(calc(var(--d) * 66%))
+            translateZ(calc(var(--ad) * -280px))
+            rotateY(calc(var(--d) * -28deg))
+            scale(calc(1 - (var(--ad) * 0.18)));
+        opacity: calc(1 - (var(--ad) * 0.72));
+    }
+    .mandir__face {
+        padding: 32px 20px;
+        border-radius: 150px 150px 14px 14px;
+    }
+    .mandir__face::before { border-radius: 140px 140px 8px 8px; }
+    .mandir__face::after { width: 170px; margin-left: -85px; }
+    .mandir__kalash { width: 27px; height: 36px; margin-left: -13.5px; top: -34px; }
+    .mandir__arch-title { font-size: 19px; margin-bottom: 10px; }
+    .mandir__place { font-size: 11px; margin-bottom: 13px; padding: 4px 11px; }
+    .mandir__face p { font-size: 14px; line-height: 1.8em; }
+    .mandir__note { font-size: 12px; margin-top: 13px; padding-top: 12px; }
+
+    .mandir__nav {
+        width: 38px;
+        height: 38px;
+        margin-top: -19px;
+    }
+    .mandir__nav--prev { left: -6px; }
+    .mandir__nav--next { right: -6px; }
+
+    .mandir__dots { margin-top: 24px; gap: 6px; }
+    .mandir__dot {
+        min-width: 34px;
+        padding: 5px 8px;
+        font-size: 11.5px;
+    }
+    .mandir__mandala { width: 420px; height: 420px; margin: -210px 0 0 -210px; }
+    .mandir__haze { width: 520px; margin-left: -260px; }
+}
+
+/* Small phones */
+@media (max-width: 400px) {
+    .mandir__stage { height: 520px; }
+    .mandir__arch {
+        width: 268px;
+        height: 492px;
+        margin-left: -134px;
+    }
+    .mandir__face { padding: 30px 18px; }
+    .mandir__arch-title { font-size: 18px; }
+    .mandir__face p { font-size: 13.5px; line-height: 1.75em; }
+    .mandir__nav--prev { left: -10px; }
+    .mandir__nav--next { right: -10px; }
+    .mandir__dot { min-width: 30px; padding: 5px 6px; font-size: 11px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .mandir__mandala,
+    .mandir__glow,
+    .mandir__arch.is-active .mandir__kalash { animation: none; }
+    .mandir__arch { transition: opacity 200ms ease; }
+}

@@ -5,7 +5,7 @@
     position: relative;
     display: block;
     padding: 175px 0 168px;
-    background-color: var(--anity-black);
+    background-color: #3D0A0C;
     overflow: hidden;
     z-index: 1;
 }
@@ -14,26 +14,24 @@
     position: absolute;
     left: 200px;
     bottom: 220px;
-    opacity: .50;
-    z-index: -1;
+    opacity: .70;
+    z-index: 0;
 }
 
-.page-header__shape-1 img {
-    width: auto;
-    filter: drop-shadow(2px 4px 6px black);
-    opacity: 0.60;
+.page-header__shape-1 svg {
+    filter: drop-shadow(2px 4px 6px rgba(0, 0, 0, 0.35));
 }
 
 .page-header__shape-2 {
     position: absolute;
     right: 180px;
     bottom: 90px;
-    opacity: .50;
-    z-index: -1;
+    opacity: .70;
+    z-index: 0;
 }
 
-.page-header__shape-2 img {
-    width: auto;
+.page-header__shape-2 svg {
+    filter: drop-shadow(2px 4px 6px rgba(0, 0, 0, 0.35));
 }
 
 .page-header__bg {
@@ -42,13 +40,18 @@
     left: 0;
     right: 0;
     bottom: 0;
-    opacity: .20;
     background-repeat: no-repeat;
-    background-size: cover;
+    background-size: contain;
     background-position: center;
-    background-color: var(--anity-black);
-    background-blend-mode: luminosity;
     z-index: -1;
+}
+
+/* Wide screens have enough width to show the full banner edge-to-edge
+   without cropping either portrait, so cover reads better there. */
+@media (min-width: 1400px) {
+    .page-header__bg {
+        background-size: cover;
+    }
 }
 
 .page-header__inner {
@@ -61,7 +64,8 @@
     font-size: 50px;
     font-weight: 700;
     line-height: 60px;
-    color: var(--anity-white);
+    color: #FFF8E7;
+    text-shadow: 0 2px 10px rgba(61, 10, 12, 0.65);
     text-transform: uppercase;
     margin-bottom: 13px;
 }
@@ -82,7 +86,8 @@
     display: inline-block;
     font-size: 16px;
     font-weight: 400;
-    color: var(--anity-white);
+    color: #FFF8E7;
+    text-shadow: 0 1px 6px rgba(61, 10, 12, 0.65);
     text-transform: capitalize;
     -webkit-transition: all 500ms ease;
     transition: all 500ms ease;
@@ -91,20 +96,20 @@
 .thm-breadcrumb li span {
     position: relative;
     margin-left: 14px;
-    color: var(--anity-extra);
+    color: #F2A90A;
     margin-right: 14px;
 }
 
 .thm-breadcrumb li a {
     position: relative;
     display: inline-block;
-    color: var(--anity-white);
+    color: #FFF8E7;
     -webkit-transition: all 500ms ease;
     transition: all 500ms ease;
 }
 
 .thm-breadcrumb li:hover a {
-    color: var(--anity-extra);
+    color: #F2A90A;
 }
 
 
