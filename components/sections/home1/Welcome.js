@@ -26,7 +26,7 @@ export default function Welcome() {
                                         <span className="section-title__tagline">मठात आपले सहर्ष स्वागत आहे</span>
                                     </div>
                                     <h2 className="section-title__title title-animation">
-                                        श्रद्धा, परंपरा आणि सेवेचे पवित्र स्थान.
+                                        श्रद्धा, परंपरा आणि <br className="welcome-one__title-break" />सेवेचे पवित्र स्थान.
                                     </h2>
                                 </div>
                                 <div className="text">

@@ -15,7 +15,7 @@ const Divider = () => (
                 <ellipse cx="7" cy="12" rx="5" ry="3" />
                 <ellipse cx="17" cy="12" rx="5" ry="3" />
             </g>
-            <circle cx="12" cy="12" r="2.4" fill="#3D0A0C" />
+            <circle cx="12" cy="12" r="2.4" fill="#620208" />
         </svg>
     </span>
 )

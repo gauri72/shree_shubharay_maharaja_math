@@ -4,63 +4,94 @@ import { useCallback, useEffect, useRef, useState } from "react"
 const CHAPTERS = [
     {
         num: "०१",
-        title: "विद्येचा भक्कम पाया",
-        place: "जन्म व शिक्षण",
-        text: "शुभराय महाराजांचा जन्म एका सधन ऋग्वेदी ब्राह्मण कुटुंबात झाला. गुरुकुलात राहून त्यांनी वेद, शास्त्रे व पुराणांचा अभ्यास केला, आणि संगीत, ज्योतिष व शिल्प यांसारख्या अनेक कलाही आत्मसात केल्या.",
-        note: "लहानपणापासूनच अभ्यासाची आवड",
+        title: "राओजी बुवांचे आगमन",
+        place: "बारामती ते सोलापूर",
+        text: "बारामतीहून आलेल्या राओजी बुवांना महाराजांनी वाचनासाठी 'एकनाथी भागवत' दिले. ग्रंथातून एक पान खाली पडले — “संतांची सेवा हीच देवाला परम आवडती.” या संदेशाने प्रेरित होऊन राओजी बुवा मठातच वास्तव्यास राहिले.",
+        note: "एका वचनाने घडलेला निर्णय",
     },
     {
         num: "०२",
-        title: "दरबारातील मोठे पद",
-        place: "मलूर, म्हैसूर राज्य",
-        text: "पुढे ते टिपू सुलतान यांच्या राज्यात मलूर येथे कामाला लागले. त्यांची हुशारी व प्रामाणिकपणा पाहून टिपू सुलतान यांनी त्यांना नायब दिवाण — म्हणजे उपप्रधानमंत्र्यासारखे — मोठे पद दिले.",
-        note: "मान, सत्ता आणि वैभव मिळाले",
+        title: "बुवा दांपत्याची सेवा",
+        place: "शुभराय मठ",
+        text: "राओजी बुवा आपले धोतर अर्धे कापून नेसू लागले. पुढे त्यांच्या पत्नी लक्ष्मीबाई मठात आल्या आणि त्यांनी स्वयंपाकघराची जबाबदारी स्वीकारली.",
+        note: "पती-पत्नीने रुजवलेली सेवा",
     },
     {
         num: "०३",
-        title: "मनातून आलेली हाक",
-        place: "मलूर दरबार",
-        text: "पण दरबारातील राजकारण आणि कटकटी पाहून त्यांचे भाविक मन अस्वस्थ झाले. अशातच त्यांना मारुती बाप्पांची “उठ, चल उठ, उठ” अशी हाक ऐकू आली — जणू सारे सोडून निघण्याचा तो इशारा होता.",
-        note: "आयुष्याला कलाटणी देणारा क्षण",
+        title: "लक्ष्मीबाईंना दिलेले वचन",
+        place: "शुभराय मठ",
+        text: "महाराजांनी लक्ष्मीबाईंना त्यांची इच्छा विचारली, तेव्हा त्यांनी मागितले — बुवा वंशातील कोणीतरी सदैव भक्ती करत राहावी. महाराजांनी वचन दिले की वंशातील शेवटची व्यक्तीही देवाची सेवा करेल.",
+        note: "पिढ्यानपिढ्या जपलेले वचन",
     },
     {
         num: "०४",
-        title: "सारे सोडून प्रस्थान",
-        place: "मलूरहून निर्गमन",
-        text: "कोणालाही न सांगता त्यांनी पद आणि संपत्ती यांचा त्याग केला. हातात कट्यार घेतलेल्या मारुतीची मूर्ती सोबत घेऊन ते रात्रीच्या अंधारात घोड्यावरून शांतपणे निघून गेले.",
-        note: "मागे राहिला फक्त त्यागाचा आदर्श",
+        title: "शृंगेरी शंकराचार्यांची भेट",
+        place: "शुभराय मठ",
+        text: "मठ पारंपरिक संन्यासी नियम पाळत नाही, अशी तक्रार शृंगेरी शंकराचार्यांकडे गेली. त्यांनी पत्र पाठवून स्वतः मठाला भेट दिली. महाराजांनी केलेल्या यज्ञातून चमत्कारिकरीत्या औदुंबर वृक्ष प्रकट झालेला पाहून त्यांनी मठाच्या साधना-परंपरेस पूर्ण मान्यता दिली.",
+        note: "यज्ञातून प्रकटला औदुंबर वृक्ष",
     },
     {
         num: "०५",
-        title: "मैसाळगीतील सेवा",
-        place: "मैसाळगी गाव",
-        text: "जागृत मारुतीचे स्थान असलेल्या मैसाळगी गावात ते काही काळ राहिले. तिथल्या ३५० कन्नड भाषिक कुटुंबांना त्यांनी मराठी भजने आणि रोजची पूजा-अर्चा प्रेमाने शिकवली.",
-        note: "भाषेचा अडसर न मानता केलेली सेवा",
+        title: "श्री स्वामी समर्थांचे पदार्पण",
+        place: "पणजोबांचा काळ",
+        text: "शुभांगी माईंच्या पणजोबांच्या काळात श्री स्वामी समर्थ मठाच्या दारी आले. “जेवायला मिळेल का?” असे विचारत त्यांनी घरातून काही फेऱ्या मारल्या, एका खांबाजवळ विराजमान झाले आणि घरातील सर्वांसमवेत भोजन ग्रहण केले.",
+        note: "स्वामींचे लाभले सान्निध्य",
     },
     {
         num: "०६",
-        title: "गुरूंचा आशीर्वाद",
-        place: "आंध्र–कर्नाटक सीमा",
-        text: "प्रवासात आंध्र–कर्नाटकच्या सीमेजवळ त्यांची गुरू थिमप्पा रामदासी यांच्याशी भेट झाली. गुरूंनी त्यांना गुरुमंत्र दिला आणि सोलापूरला जाऊन तिथे कार्य उभे करण्यास सांगितले.",
-        note: "पुढच्या वाटचालीला दिशा मिळाली",
+        title: "शंकर महाराजांचे वास्तव्य",
+        place: "शुभराय मठ",
+        text: "श्री शंकर महाराज तब्बल सत्तावीस वर्षे मठात वास्तव्यास राहिले आणि अंगावर साधी घोंगडी पांघरत असत. ते व शुभांगी माईंचे आजोबा 'एका नाण्याच्या दोन बाजू' असे म्हटले जात.",
+        note: "गुरु-शिष्याचे अतूट नाते",
     },
     {
         num: "०७",
-        title: "सोलापुरात विसावा",
-        place: "बेगमपेठ, सोलापूर",
-        text: "सोलापुरात आल्यावर सुरुवातीला ते हत्ती बावडीजवळ बसत, जिथे गावकरी कपडे धूत असत. त्यांचे शांत तेज पाहून गावकऱ्यांनी बेगमपेठेत त्यांच्यासाठी एक लहानसे मंदिर बांधले.",
-        note: "इथूनच मठाची सुरुवात झाली",
+        title: "खिचडीचा अखेरचा घास",
+        place: "शुभराय मठ",
+        text: "देह ठेवण्यापूर्वी श्री शंकर महाराजांनी शुभांगी माईंच्या आजोबांना आपल्या खिचडीचा एक घास स्वहस्ते भरवला — गुरू-शिष्याच्या ऋणानुबंधाची ती अखेरची पाऊलखूण ठरली.",
+        note: "निरोपातही जपलेली माया",
     },
     {
         num: "०८",
-        title: "वारकरी परंपरेची सुरुवात",
-        place: "सोलापूर",
-        text: "सोलापुरात त्यांनी वारकरी पंथाचे बीज रोवले. इ.स. १७८५ च्या आषाढी एकादशीला त्यांच्या हस्ते पहिला अभिषेक झाला. तीच परंपरा आज आठ पिढ्यांनंतरही शुभराय मठात अखंड सुरू आहे.",
-        note: "इ.स. १७८५ पासून आजतागायत अखंड सुरू",
+        title: "जनू काकांना संन्यासदीक्षा",
+        place: "शुभराय मठ",
+        text: "श्री शंकर महाराजांनी आपल्या शिष्य जनू काकांना संन्यासदीक्षा दिली. पुढे जनू काकांच्या देहत्यागानंतर त्यांचे अंत्यसंस्कारही महाराजांनी स्वतः, त्यांच्या समक्ष पूर्ण केले.",
+        note: "शिष्यासाठी केलेली अखेरची सेवा",
+    },
+    {
+        num: "०९",
+        title: "शांत निर्वाणाचा क्षण",
+        place: "शुभराय मठ",
+        text: "शुभांगी माईंच्या आईच्या निर्वाणसमयी एका हाताला त्यांचे वडील व दुसऱ्या हाताला शंकर महाराज होते. एका खोलीतून दुसऱ्या खोलीत जावे, इतक्या शांतपणे त्यांनी आईला अखेरचा निरोप दिला.",
+        note: "शांत, समाधानी निर्वाण",
+    },
+    {
+        num: "१०",
+        title: "करुणेचा धडा",
+        place: "शुभराय मठ",
+        text: "एका माणसाने दगड मारून गाईला रक्तबंबाळ केले. शंकर महाराजांनी त्याला स्वतःच्या डोक्यावर दगड ठेवून तुळशीभोवती प्रदक्षिणा घालायला लावली आणि तेव्हाच त्याला उःशाप व क्षमा मिळाली.",
+        note: "मुक्या जिवांप्रती करुणा",
     },
 ]
 
 const N = CHAPTERS.length
+
+/* Static devotional cards that fill the gold corner space beside the heading
+   on desktop — drawn from the mūrtis and vārsā the section itself recounts */
+const CORNER_CARDS = [
+    {
+        side: "left",
+        title: "गाभाऱ्यातील मूर्ती",
+        text: "पांडुरंग, स्वामी समर्थ, राम-लक्ष्मण-सीता-हनुमान आणि एकाच लाकडी ओंडक्यातून कोरलेली गणराय मूर्ती.",
+        tag: "मुख्य गाभारा",
+    },
+    {
+        side: "right",
+        title: "जतन केलेल्या पादुका",
+        text: "स्वामी समर्थ, शंकर महाराज, शुभराय महाराज व जयकृष्ण बुवा यांच्या पवित्र पादुका आजही मठात पूजिल्या जातात.",
+        tag: "श्रद्धेचा वारसा",
+    },
+]
 
 /* Kalash (सुवर्ण कलश) finial that crowns each arch */
 const Kalash = () => (
@@ -127,13 +158,48 @@ export default function OurStory() {
             <div className="mandir__mandala" aria-hidden="true"></div>
             <div className="mandir__haze" aria-hidden="true"></div>
 
+            {/* Desktop corner cards filling the upper-left / upper-right gold space */}
+            {CORNER_CARDS.map((card) => (
+                <aside
+                    key={card.side}
+                    className={`mandir__corner-card mandir__corner-card--${card.side}`}
+                    lang="mr"
+                >
+                    <svg className="mandir__corner-card__kalash" viewBox="0 0 40 54" aria-hidden="true">
+                        <path d="M20 0l2.4 6.2L20 9.4 17.6 6.2 20 0Z" fill="currentColor" />
+                        <rect x="18.7" y="9" width="2.6" height="7" rx="1.3" fill="currentColor" />
+                        <path d="M12 17h16l-2 4H14l-2-4Z" fill="currentColor" />
+                        <path d="M20 21c6.2 0 10 4.3 10 9.6 0 6-4.6 10.4-10 10.4s-10-4.4-10-10.4C10 25.3 13.8 21 20 21Z" fill="currentColor" />
+                        <path d="M9 43h22l-2.5 5h-17L9 43Z" fill="currentColor" />
+                    </svg>
+                    <h3 className="mandir__corner-card__title">{card.title}</h3>
+                    <p className="mandir__corner-card__text">{card.text}</p>
+                    <span className="mandir__corner-card__rule" aria-hidden="true"></span>
+                    <span className="mandir__corner-card__tag">{card.tag}</span>
+                </aside>
+            ))}
+
+            {/* Decorative elephants flanking the arch carousel, trunks (sond) gently swaying */}
+            <img
+                src="assets/images/resources/elephant-1.png"
+                alt=""
+                aria-hidden="true"
+                className="mandir__elephant mandir__elephant--left"
+            />
+            <img
+                src="assets/images/resources/elephant-2.png"
+                alt=""
+                aria-hidden="true"
+                className="mandir__elephant mandir__elephant--right"
+            />
+
             <div className="container">
                 <div className="section-title text-center sec-title-animation animation-style1 mandir__head">
                     <div className="section-title__tagline-box">
-                        <span className="section-title__tagline" lang="mr">आमची कहाणी</span>
+                        <span className="section-title__tagline" lang="mr">मठाच्या स्मृती</span>
                     </div>
                     <h2 className="section-title__title title-animation" lang="mr">
-                        शुभराय महाराजांचा <span>प्रवास</span>
+                        शिष्य, संत आणि <span>चमत्कार</span>
                     </h2>
                 </div>
 
@@ -162,16 +228,18 @@ export default function OurStory() {
                                     <span className="mandir__glow" aria-hidden="true"></span>
                                     <Kalash />
                                     <div className="mandir__face">
-                                        <h3 className="mandir__arch-title" lang="mr">{c.title}</h3>
-                                        {c.place && (
-                                            <span className="mandir__place" lang="mr">
-                                                <i className="icon-pin" aria-hidden="true"></i> {c.place}
-                                            </span>
-                                        )}
-                                        <p lang="mr">{c.text}</p>
-                                        {c.note && (
-                                            <span className="mandir__note" lang="mr">{c.note}</span>
-                                        )}
+                                        <div className="mandir__scroll">
+                                            <h3 className="mandir__arch-title" lang="mr">{c.title}</h3>
+                                            {c.place && (
+                                                <span className="mandir__place" lang="mr">
+                                                    <i className="icon-pin" aria-hidden="true"></i> {c.place}
+                                                </span>
+                                            )}
+                                            <p lang="mr">{c.text}</p>
+                                            {c.note && (
+                                                <span className="mandir__note" lang="mr">{c.note}</span>
+                                            )}
+                                        </div>
                                     </div>
                                     <span className="mandir__base" aria-hidden="true"></span>
                                 </article>

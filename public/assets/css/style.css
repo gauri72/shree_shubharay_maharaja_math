@@ -2242,8 +2242,16 @@ ul {
   pointer-events: none;
   background-image: url("../images/backgrounds/section-bg.png");
   background-repeat: repeat;
-  background-size: 780px auto;
+  /* tile at the artwork's native width so the flower motifs match the
+     size used in the Legacy section (section-bg-2 @ 1672px) */
+  background-size: 1672px auto;
   opacity: 0.25;
+}
+
+@media (max-width: 991px) {
+  .welcome-one::before {
+    background-size: 1100px auto;
+  }
 }
 
 .welcome-one > * {
@@ -2265,6 +2273,22 @@ ul {
   .divine-border--welcome-vertical,
   .welcome-one__corner {
     display: none;
+  }
+
+  /* keep the section content clear of both viewport edges */
+  .welcome-one .container {
+    padding-left: 18px;
+    padding-right: 18px;
+  }
+
+  .welcome-one__inner .row {
+    margin-left: 0;
+    margin-right: 0;
+  }
+
+  .welcome-one__inner .row > [class*="col-"] {
+    padding-left: 0;
+    padding-right: 0;
   }
 }
 
@@ -7299,7 +7323,10 @@ ul {
 
 .main-slider .main-slider__carousel,
 .main-slider .swiper-slide {
-  min-height: 760px;
+  /* height follows the hero artwork's aspect ratio so the whole image shows
+     edge-to-edge with nothing cropped */
+  min-height: 0;
+  aspect-ratio: 1672 / 941;
 }
 
 .main-slider .main-slider__carousel {
@@ -7317,8 +7344,11 @@ ul {
   position: absolute;
   inset: 0;
   background-repeat: no-repeat;
-  background-size: cover;
-  background-position: 90% center;
+  /* the hero artwork is shown whole, uncropped, with the maroon backdrop
+     filling any residual sliver */
+  background-size: contain;
+  background-position: center;
+  background-color: #3D0A0C;
   z-index: 1;
 }
 
@@ -7625,7 +7655,8 @@ ul {
 @media (max-width: 1199px) {
   .main-slider .main-slider__carousel,
   .main-slider .swiper-slide {
-    min-height: 640px;
+    min-height: 0;
+    aspect-ratio: 1672 / 941;
   }
 
   .main-slider-charoli {
@@ -7641,11 +7672,12 @@ ul {
 @media (max-width: 991px) {
   .main-slider .main-slider__carousel,
   .main-slider .swiper-slide {
-    min-height: 480px;
+    min-height: 0;
+    aspect-ratio: 1672 / 941;
   }
 
   .main-slider-media {
-    background-size: cover;
+    background-size: contain;
   }
 
   .main-slider-charoli {
@@ -7699,14 +7731,15 @@ ul {
 
   .main-slider .main-slider__carousel,
   .main-slider .swiper-slide {
-    min-height: 280px;
-    height: 280px;
+    min-height: 0;
+    height: auto;
+    aspect-ratio: 1672 / 941;
     width: 100%;
     flex-shrink: 0;
   }
 
   .main-slider-media {
-    background-size: cover;
+    background-size: contain;
     background-position: center;
   }
 
@@ -7795,6 +7828,11 @@ ul {
 
 .welcome-one .section-title__title span {
   color: #3D0A0C;
+}
+
+/* the mobile-only heading line break is hidden above 767px */
+.welcome-one__title-break {
+  display: none;
 }
 
 .welcome-one__content .text {
@@ -8095,23 +8133,52 @@ ul {
   }
 }
 
-/* Mobile: reduce spacing further and stack the stat list */
+/* Mobile: keep all three stats on one row, icon stacked above the text */
 @media (max-width: 767px) {
   .welcome-one__content .list-item {
-    flex-wrap: wrap;
-    row-gap: 20px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-auto-rows: min-content;
+    align-items: start;
+    gap: 8px;
+    margin-left: 0;
+    margin-right: 0;
   }
 
-  .welcome-one__content .list-item li {
-    flex: 0 0 100%;
+  .welcome-one__content .list-item li,
+  .welcome-one__content .list-item li + li {
+    display: flex;
+    min-width: 0;
     flex-direction: column;
+    align-items: center;
     text-align: center;
     padding: 0;
+    margin-top: 0;
+  }
+
+  .welcome-one__content .list-item li .icon {
+    width: 48px;
+    height: 48px;
+    font-size: 24px;
+    flex: 0 0 auto;
   }
 
   .welcome-one__content .list-item li .title {
     margin-left: 0;
-    margin-top: 14px;
+    margin-top: 8px;
+    flex: 0 0 auto;
+  }
+
+  .welcome-one__content .list-item li .title h4 {
+    font-size: 14px;
+    line-height: 18px;
+  }
+
+  .welcome-one__content .list-item li .title h3 {
+    font-size: 13px;
+    line-height: 17px;
+    margin-top: 3px;
+    word-break: break-word;
   }
 
   .welcome-one__content .btn-box {
@@ -8338,8 +8405,16 @@ ul {
   pointer-events: none;
   background-image: url("../images/backgrounds/section-bg.png");
   background-repeat: repeat;
-  background-size: 780px auto;
+  /* tile at the artwork's native width so the flower motifs match the
+     size used in the Legacy section (section-bg-2 @ 1672px) */
+  background-size: 1672px auto;
   opacity: 0.25;
+}
+
+@media (max-width: 991px) {
+  .found-one__bg::before {
+    background-size: 1100px auto;
+  }
 }
 
 /* Namaste line-art sketch reads directly on the gold background — undo the dark-bg invert filter */
@@ -9457,10 +9532,18 @@ ul {
   inset: 0;
   background-image: url("../images/backgrounds/section-bg-2.png");
   background-repeat: repeat;
-  background-size: 1120px auto;
+  /* tile at the artwork's native width so the flower motifs match the
+     size used in the Legacy section (section-bg-2 @ 1672px) */
+  background-size: 1672px auto;
   opacity: 0.5;
   pointer-events: none;
   z-index: 0;
+}
+
+@media (max-width: 991px) {
+  .event-one::before {
+    background-size: 1100px auto;
+  }
 }
 
 .event-one > .container {
@@ -10057,7 +10140,9 @@ ul {
 /* Shubharay Math — Mantra Strip (between header and hero) */
 .mantra-strip {
   position: relative;
-  background: #3D0A0C;
+  /* hero-image palette: bg maroon #620208, edge maroon #4D0601 */
+  background:
+    radial-gradient(120% 140% at 50% 0%, #660309 0%, #620208 55%, #550106 100%);
   overflow: hidden;
   padding: 9px 0;
 }
@@ -10067,7 +10152,13 @@ ul {
   left: 0;
   right: 0;
   height: 3px;
-  background-color: #F2A90A;
+  /* hero border gold, softened into a centre-weighted rule */
+  background: linear-gradient(90deg,
+    rgba(217, 152, 42, 0) 0%,
+    #D9982A 18%,
+    #E9B45A 50%,
+    #D9982A 82%,
+    rgba(217, 152, 42, 0) 100%);
 }
 
 .mantra-strip__marquee {
@@ -10128,9 +10219,10 @@ ul {
   font-weight: 400;
   font-size: 21px;
   letter-spacing: 0.4px;
-  color: #FFF6E4;
+  color: #FBF1DC; /* warm ivory on hero maroon */
   white-space: nowrap;
   padding: 0 20px;
+  transition: color 300ms ease;
 }
 
 .mantra-strip__icon {
@@ -10138,7 +10230,17 @@ ul {
   align-items: center;
   justify-content: center;
   flex-shrink: 0;
-  color: #E8C766;
+  color: #D9982A; /* hero border gold */
+  transition: color 300ms ease;
+}
+
+/* hover — marquee pauses (below) and the hovered verse warms to gold */
+.mantra-strip__item:hover .mantra-strip__text {
+  color: #E9B45A;
+}
+
+.mantra-strip__item:hover .mantra-strip__icon {
+  color: #E9B45A;
 }
 
 @keyframes mantraStripScroll {
@@ -10216,15 +10318,179 @@ ul {
   inset: 0;
   background-image: url("../images/backgrounds/section-bg-2.png");
   background-repeat: repeat;
-  background-size: 1120px auto;
+  /* tile at the artwork's native width so the flower motifs match the
+     size used in the Mandir section (section-bg @ 1672px) */
+  background-size: 1672px auto;
   opacity: 0.5;
   pointer-events: none;
   z-index: 0;
 }
 
+@media (max-width: 991px) {
+  .legacy-One::before {
+    background-size: 1100px auto;
+  }
+}
+
 .legacy-One > .legacy-book-stage {
   position: relative;
   z-index: 1;
+}
+
+/* --- Desktop diya-pillars: in .legacy-book-stage, hugging the book's left /
+   right edges with a minimal gap, vertically centred on the book --- */
+.legacy-One__aside {
+  display: none;
+}
+
+@media (min-width: 1200px) {
+  .legacy-One__aside {
+    display: block;
+    position: absolute;
+    top: 50%;                 /* centred on the stage = the book's height */
+    width: clamp(280px, 24vw, 520px);
+    height: auto;
+    z-index: 0;
+    pointer-events: none;
+    transform-origin: 50% 100%;
+    filter:
+      drop-shadow(0 24px 40px rgba(0, 0, 0, 0.55))
+      drop-shadow(0 0 34px rgba(242, 169, 10, 0.32));
+    opacity: 1;
+    transition:
+      opacity 520ms ease,
+      transform 640ms cubic-bezier(0.34, 1.56, 0.64, 1),
+      filter 520ms ease;
+  }
+
+  /* The pillars are only ever visible while the book is CLOSED, when the cover
+     renders as a single page ~half the book's width (≈ 300px each side of
+     centre). Hug that closed-cover edge with a minimal 6px gap. */
+  .legacy-One__aside--left {
+    left: calc(50% - 300px - 6px);
+    transform: translate(-100%, -50%) rotate(0deg) scale(1);
+  }
+  .legacy-One__aside--right {
+    right: calc(50% - 300px - 6px);
+    transform: translate(100%, -50%) rotate(0deg) scale(1);
+  }
+
+  /* book CLOSED → the pillar "lights up": drops from above, small floor bounce,
+     a bright flare as the flame catches, then a slow idle breathe */
+  .legacy-One--book-closed .legacy-One__aside--left {
+    animation:
+      legacyPillarLight 1000ms cubic-bezier(0.16, 1.02, 0.3, 1) both,
+      legacyPillarBreatheL 5.4s ease-in-out 1100ms infinite;
+  }
+  .legacy-One--book-closed .legacy-One__aside--right {
+    animation:
+      legacyPillarLightR 1000ms cubic-bezier(0.16, 1.02, 0.3, 1) 140ms both,
+      legacyPillarBreatheR 5.4s ease-in-out 1240ms infinite;
+  }
+
+  /* book OPEN → the pillar is "snuffed out": glow dies, it drops straight down
+     with a squash and fades — quick and vertical */
+  .legacy-One--book-open .legacy-One__aside {
+    animation: none;
+    opacity: 0;
+  }
+  .legacy-One--book-open .legacy-One__aside--left {
+    transform: translate(-100%, 10%) scaleY(0.62) scaleX(1.08);
+    filter: drop-shadow(0 10px 18px rgba(0,0,0,0.5)) drop-shadow(0 0 4px rgba(242,169,10,0.05));
+    transition:
+      opacity 300ms ease 60ms,
+      transform 380ms cubic-bezier(0.5, 0, 0.9, 0.2),
+      filter 240ms ease;
+  }
+  .legacy-One--book-open .legacy-One__aside--right {
+    transform: translate(100%, 10%) scaleY(0.62) scaleX(1.08);
+    filter: drop-shadow(0 10px 18px rgba(0,0,0,0.5)) drop-shadow(0 0 4px rgba(242,169,10,0.05));
+    transition:
+      opacity 300ms ease 60ms,
+      transform 380ms cubic-bezier(0.5, 0, 0.9, 0.2),
+      filter 240ms ease;
+  }
+}
+
+/* --- ADD: drop in from above → floor bounce → flame flares up → settle --- */
+@keyframes legacyPillarLight {
+  0% {
+    opacity: 0;
+    transform: translate(-100%, -50%) translateY(-90px) scaleY(1.12) scaleX(0.92);
+    filter: drop-shadow(0 24px 40px rgba(0,0,0,0)) drop-shadow(0 0 0 rgba(242,169,10,0));
+  }
+  45% {
+    opacity: 1;
+    transform: translate(-100%, -50%) translateY(0) scaleY(0.9) scaleX(1.08);
+    filter: drop-shadow(0 18px 30px rgba(0,0,0,0.5)) drop-shadow(0 0 18px rgba(242,169,10,0.25));
+  }
+  62% {
+    transform: translate(-100%, -50%) translateY(-12px) scaleY(1.05) scaleX(0.97);
+    filter: drop-shadow(0 26px 44px rgba(0,0,0,0.55)) drop-shadow(0 0 64px rgba(255,205,90,0.75));
+  }
+  80% {
+    transform: translate(-100%, -50%) translateY(0) scaleY(0.98) scaleX(1.02);
+  }
+  100% {
+    opacity: 1;
+    transform: translate(-100%, -50%) translateY(0) scaleY(1) scaleX(1);
+    filter: drop-shadow(0 24px 40px rgba(0,0,0,0.55)) drop-shadow(0 0 34px rgba(242,169,10,0.32));
+  }
+}
+@keyframes legacyPillarLightR {
+  0% {
+    opacity: 0;
+    transform: translate(100%, -50%) translateY(-90px) scaleY(1.12) scaleX(0.92);
+    filter: drop-shadow(0 24px 40px rgba(0,0,0,0)) drop-shadow(0 0 0 rgba(242,169,10,0));
+  }
+  45% {
+    opacity: 1;
+    transform: translate(100%, -50%) translateY(0) scaleY(0.9) scaleX(1.08);
+    filter: drop-shadow(0 18px 30px rgba(0,0,0,0.5)) drop-shadow(0 0 18px rgba(242,169,10,0.25));
+  }
+  62% {
+    transform: translate(100%, -50%) translateY(-12px) scaleY(1.05) scaleX(0.97);
+    filter: drop-shadow(0 26px 44px rgba(0,0,0,0.55)) drop-shadow(0 0 64px rgba(255,205,90,0.75));
+  }
+  80% {
+    transform: translate(100%, -50%) translateY(0) scaleY(0.98) scaleX(1.02);
+  }
+  100% {
+    opacity: 1;
+    transform: translate(100%, -50%) translateY(0) scaleY(1) scaleX(1);
+    filter: drop-shadow(0 24px 40px rgba(0,0,0,0.55)) drop-shadow(0 0 34px rgba(242,169,10,0.32));
+  }
+}
+
+/* idle breathe — gentle scale + glow swell, no lateral drift */
+@keyframes legacyPillarBreatheL {
+  0%, 100% {
+    transform: translate(-100%, -50%) scale(1);
+    filter: drop-shadow(0 24px 40px rgba(0,0,0,0.55)) drop-shadow(0 0 26px rgba(242,169,10,0.26));
+  }
+  50% {
+    transform: translate(-100%, -50%) scale(1.028);
+    filter: drop-shadow(0 24px 40px rgba(0,0,0,0.55)) drop-shadow(0 0 46px rgba(255,200,80,0.5));
+  }
+}
+@keyframes legacyPillarBreatheR {
+  0%, 100% {
+    transform: translate(100%, -50%) scale(1);
+    filter: drop-shadow(0 24px 40px rgba(0,0,0,0.55)) drop-shadow(0 0 26px rgba(242,169,10,0.26));
+  }
+  50% {
+    transform: translate(100%, -50%) scale(1.028);
+    filter: drop-shadow(0 24px 40px rgba(0,0,0,0.55)) drop-shadow(0 0 46px rgba(255,200,80,0.5));
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .legacy-One__aside,
+  .legacy-One--book-closed .legacy-One__aside,
+  .legacy-One--book-open .legacy-One__aside {
+    animation: none;
+    transition: opacity 200ms ease;
+  }
 }
 
 @media (max-width: 767px) {
@@ -10674,13 +10940,13 @@ ul {
 
 .legacy-book-page__cta {
   position: relative;
-  z-index: 1;
+  z-index: 5;
   margin-top: 10px;
   display: inline-flex;
   align-items: center;
   gap: 10px;
   padding: 18px 44px;
-  border: none;
+  border: 2px solid #3D0A0C;
   border-radius: 999px;
   background: #3D0A0C;
   color: #F3D68A;
@@ -10688,24 +10954,88 @@ ul {
   font-weight: 700;
   letter-spacing: 0.4px;
   cursor: pointer;
+  overflow: hidden;
+  isolation: isolate;
   box-shadow: 0 8px 18px rgba(0, 0, 0, 0.3);
-  transition: transform 200ms ease, box-shadow 200ms ease, background-color 200ms ease;
+  transition: color 320ms ease, border-color 320ms ease,
+    transform 240ms cubic-bezier(0.34, 1.3, 0.64, 1), box-shadow 240ms ease;
+}
+
+/* react-pageflip's drag handler (checkTarget) only ignores targets whose
+   tagName is "button"/"a". If a click lands on any nested element (span, <i>
+   icon), that element becomes event.target, the library starts a flip-drag and
+   calls preventDefault() on mousedown — which suppresses the button's click in
+   Chrome (Safari still synthesizes it). Neutralise every descendant so the
+   <button> itself is always the target. */
+.legacy-book-page__cta * {
+  pointer-events: none;
+}
+
+/* ivory sheet that sweeps out to fill the pill on hover */
+.legacy-book-page__cta::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background: linear-gradient(120deg, #FFFDF6 0%, #FFF8E7 55%, #F6E7C2 100%);
+  border-radius: inherit;
+  transform: scale(0);
+  transform-origin: center;
+  transition: transform 420ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.legacy-book-page__cta-label {
+  position: relative;
 }
 
 .legacy-book-page__cta-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
   width: 22px;
   height: 22px;
   flex: 0 0 auto;
+  font-size: 14px;
+  color: currentColor;
+  transition: transform 320ms cubic-bezier(0.34, 1.3, 0.64, 1);
 }
 
-.legacy-book-page__cta:hover {
-  background-color: #3D0A0C;
-  transform: translateY(-2px);
-  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.35);
+/* hover: ivory fill, deep-maroon text, gold rim */
+.legacy-book-page__cta:hover,
+.legacy-book-page__cta:focus-visible {
+  color: #3D0A0C;
+  border-color: #C8971B;
+  transform: translateY(-3px);
+  box-shadow:
+    0 16px 30px rgba(61, 10, 12, 0.4),
+    0 0 0 4px rgba(255, 248, 231, 0.35);
+}
+
+.legacy-book-page__cta:hover::before,
+.legacy-book-page__cta:focus-visible::before {
+  transform: scale(1.15);
+}
+
+.legacy-book-page__cta:hover .legacy-book-page__cta-icon,
+.legacy-book-page__cta:focus-visible .legacy-book-page__cta-icon {
+  transform: translateX(5px);
+}
+
+.legacy-book-page__cta:focus-visible {
+  outline: 3px solid rgba(61, 10, 12, 0.4);
+  outline-offset: 3px;
 }
 
 .legacy-book-page__cta:active {
-  transform: translateY(0);
+  transform: translateY(-1px) scale(0.98);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .legacy-book-page__cta,
+  .legacy-book-page__cta::before,
+  .legacy-book-page__cta-icon {
+    transition-duration: 1ms;
+  }
 }
 
 /* Desktop only: when the book is fully closed (front cover / back cover), react-pageflip
@@ -10737,38 +11067,45 @@ ul {
     filter: drop-shadow(0 26px 40px rgba(0, 0, 0, 0.45));
   }
 
-  /* the closed cover glides in with a soft settle rather than a hard snap */
+  /* the closed cover drops onto the stand with a firm double-tap settle */
   .legacy-book-stage--closed .legacy-book {
-    animation: legacyBookSettle 720ms cubic-bezier(0.22, 1, 0.36, 1);
+    animation: legacyBookSettle 760ms cubic-bezier(0.3, 1.3, 0.5, 1);
   }
 }
 
-/* Book itself: a gentle lid-lift when opening, a settling close when the cover returns */
+/* Book itself: a swinging-open pivot when opening, a decisive shut when closing */
 .legacy-book--closed {
-  animation: legacyBookClose 600ms cubic-bezier(0.34, 1.4, 0.64, 1);
+  animation: legacyBookClose 620ms cubic-bezier(0.36, 0, 0.2, 1.2);
 }
 
 .legacy-book--opened {
-  animation: legacyBookOpen 700ms cubic-bezier(0.34, 1.4, 0.64, 1);
+  animation: legacyBookOpen 820ms cubic-bezier(0.22, 1, 0.3, 1);
 }
 
-/* Closed-cover settle: a brief rise-and-return so the book feels set down, not teleported */
+/* Closed-cover settle: two quick vertical taps, like a book dropped flat */
 @keyframes legacyBookSettle {
-  0%   { transform: rotateX(11deg) rotateY(0deg) scale(0.985); }
-  45%  { transform: rotateX(7deg) rotateY(0deg) scale(1.015); }
-  100% { transform: rotateX(11deg) rotateY(0deg) scale(1); }
+  0%   { transform: rotateX(11deg) translateY(-26px) scale(1.02); }
+  40%  { transform: rotateX(11deg) translateY(0) scale(0.97); }
+  60%  { transform: rotateX(11deg) translateY(-8px) scale(1.01); }
+  80%  { transform: rotateX(11deg) translateY(0) scale(0.995); }
+  100% { transform: rotateX(11deg) translateY(0) scale(1); }
 }
 
+/* Opening: the cover swings back on its spine (rotateY), tips toward the reader
+   (rotateX eases out), and the whole book pushes forward briefly */
 @keyframes legacyBookOpen {
-  0% { transform: rotateX(11deg) rotateY(0deg) scale(1); }
-  40% { transform: rotateX(2deg) rotateY(-6deg) scale(1.03); }
-  100% { transform: rotateX(11deg) rotateY(0deg) scale(1); }
+  0%   { transform: perspective(2200px) rotateX(11deg) rotateY(0deg) scale(1); }
+  35%  { transform: perspective(2200px) rotateX(4deg) rotateY(-14deg) scale(1.05); }
+  70%  { transform: perspective(2200px) rotateX(9deg) rotateY(3deg) scale(1.01); }
+  100% { transform: perspective(2200px) rotateX(11deg) rotateY(0deg) scale(1); }
 }
 
+/* Closing: the cover slaps shut — swings in from the other side, small recoil */
 @keyframes legacyBookClose {
-  0% { transform: rotateX(11deg) rotateY(6deg) scale(1.03); }
-  50% { transform: rotateX(6deg) rotateY(0deg) scale(0.985); }
-  100% { transform: rotateX(11deg) rotateY(0deg) scale(1); }
+  0%   { transform: perspective(2200px) rotateX(11deg) rotateY(16deg) scale(1.04); }
+  55%  { transform: perspective(2200px) rotateX(13deg) rotateY(-4deg) scale(0.975); }
+  78%  { transform: perspective(2200px) rotateX(10deg) rotateY(2deg) scale(1.008); }
+  100% { transform: perspective(2200px) rotateX(11deg) rotateY(0deg) scale(1); }
 }
 
 /* Keep the closed book centred, but drop the decorative lift/tilt/settle */
@@ -10867,6 +11204,10 @@ ul {
     min-height: 0;
   }
 
+  .legacy-One > .section-title {
+    margin-bottom: 24px;
+  }
+
   .legacy-book-stage {
     flex-direction: column;
     gap: 20px;
@@ -10963,6 +11304,10 @@ ul {
 }
 
 @media (max-width: 767px) {
+  .legacy-One > .section-title {
+    margin-bottom: 18px;
+  }
+
   .legacy-book-stage {
     flex-direction: column;
     gap: 16px;
@@ -11175,8 +11520,16 @@ ul {
   pointer-events: none;
   background-image: url("../images/backgrounds/section-bg.png");
   background-repeat: repeat;
-  background-size: 780px auto;
+  /* tile at the artwork's native width so the flower motifs match the
+     size used in the Legacy section (section-bg-2 @ 1672px) */
+  background-size: 1672px auto;
   opacity: 0.25;
+}
+
+@media (max-width: 991px) {
+  .home-gallery__bg::before {
+    background-size: 1100px auto;
+  }
 }
 
 .home-gallery__bg::after {
@@ -11189,9 +11542,89 @@ ul {
     radial-gradient(circle at 90% 88%, rgba(61, 10, 12, 0.12), transparent 42%);
 }
 
+/* Title block with peacock-feather borders flanking it, left & right */
+.home-gallery__title-wrap {
+  position: relative;
+}
+
+.home-gallery__feather {
+  position: absolute;
+  top: 50%;
+  width: clamp(220px, 26vw, 460px);
+  height: auto;
+  max-width: none;
+  z-index: 2;
+  pointer-events: none;
+  opacity: 0;
+  transform-origin: center center;
+  filter: drop-shadow(0 8px 20px rgba(61, 10, 12, 0.25));
+}
+
+/* sit in the gutter but overlap the title edge so overflow:hidden won't clip */
+.home-gallery__feather--left {
+  right: 84%;
+  transform: translate(50%, -50%);
+  animation: homeGalleryFeatherInLeft 1.1s cubic-bezier(0.22, 1, 0.36, 1) 0.15s forwards,
+             homeGalleryFeatherDrift 9s ease-in-out 1.3s infinite;
+}
+
+.home-gallery__feather--right {
+  left: 84%;
+  transform: translate(-50%, -50%) scaleX(-1);
+  animation: homeGalleryFeatherInRight 1.1s cubic-bezier(0.22, 1, 0.36, 1) 0.15s forwards,
+             homeGalleryFeatherDriftMirror 9s ease-in-out 1.9s infinite;
+}
+
+@keyframes homeGalleryFeatherInLeft {
+  from { opacity: 0; transform: translate(72%, -50%) scale(0.8); }
+  to   { opacity: 1; transform: translate(50%, -50%) scale(1); }
+}
+
+@keyframes homeGalleryFeatherInRight {
+  from { opacity: 0; transform: translate(-72%, -50%) scale(0.8) scaleX(-1); }
+  to   { opacity: 1; transform: translate(-50%, -50%) scale(1) scaleX(-1); }
+}
+
+@keyframes homeGalleryFeatherDrift {
+  0%, 100% { transform: translate(50%, -50%) rotate(-1.5deg); }
+  50%      { transform: translate(50%, -54%) rotate(1.5deg); }
+}
+
+@keyframes homeGalleryFeatherDriftMirror {
+  0%, 100% { transform: translate(-50%, -50%) scaleX(-1) rotate(-1.5deg); }
+  50%      { transform: translate(-50%, -54%) scaleX(-1) rotate(1.5deg); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .home-gallery__feather--left  { animation: none; opacity: 1; transform: translate(50%, -50%); }
+  .home-gallery__feather--right { animation: none; opacity: 1; transform: translate(-50%, -50%) scaleX(-1); }
+}
+
+/* hide only where the heading itself gets tight */
+@media only screen and (max-width: 767px) {
+  .home-gallery__feather {
+    display: none;
+  }
+}
+
 /* Section title — matches Found section ink treatment on gold */
 .home-gallery .section-title {
-  margin-bottom: 55px;
+  margin-bottom: 48px;
+}
+
+.home-gallery .section-title__tagline-box {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+}
+
+/* small ornamental rule on each side of the eyebrow tagline */
+.home-gallery .section-title__tagline-box::before,
+.home-gallery .section-title__tagline-box::after {
+  content: "";
+  width: 34px;
+  height: 1px;
+  background: linear-gradient(to right, transparent, rgba(61, 10, 12, 0.55), transparent);
 }
 
 .home-gallery .section-title__tagline {
@@ -11228,12 +11661,13 @@ ul {
 .home-gallery__item {
   position: relative;
   overflow: hidden;
-  border-radius: 4px;
-  box-shadow: 0 22px 55px rgba(61, 10, 12, 0.28);
+  border-radius: 6px;
+  box-shadow: 0 18px 44px rgba(61, 10, 12, 0.26);
   line-height: 0;
   opacity: 0;
   transform: translateY(46px) scale(0.96);
   animation: homeGalleryReveal 0.9s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+  transition: transform 500ms cubic-bezier(0.22, 1, 0.36, 1), box-shadow 500ms ease;
 }
 
 .home-gallery__item:nth-child(1) { animation-delay: 0.05s; }
@@ -11345,7 +11779,9 @@ ul {
 
 /* Hover state */
 .home-gallery__item:hover {
-  box-shadow: 0 30px 70px rgba(61, 10, 12, 0.42);
+  transform: translateY(-6px) scale(1);
+  box-shadow: 0 34px 74px rgba(61, 10, 12, 0.44);
+  z-index: 3;
 }
 
 .home-gallery__item:hover .home-gallery__media img {
@@ -11376,9 +11812,94 @@ ul {
   transform: scaleX(1);
 }
 
-/* CTA button — maroon/gold, matching the Found section */
+/* CTA row — button centred, a decorative peacock resting on each side.
+   The peacocks are anchored to the baseline of the button so no dead
+   space collects beneath them. */
 .home-gallery__btn-box {
-  margin-top: 58px;
+  margin-top: 44px;
+  position: relative;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  gap: clamp(16px, 5vw, 90px);
+  min-height: clamp(120px, 15vw, 200px);
+}
+
+.home-gallery__btn-box .home-gallery__btn.thm-btn {
+  position: relative;
+  z-index: 2;
+  margin-bottom: clamp(20px, 3vw, 44px);
+}
+
+/* Peacocks flanking the CTA — sized to the row, feet on the baseline */
+.home-gallery__peacock {
+  flex: 0 1 auto;
+  width: clamp(180px, 24vw, 360px);
+  height: auto;
+  align-self: flex-end;
+  pointer-events: none;
+  transform-origin: bottom center;
+  filter: drop-shadow(0 14px 26px rgba(61, 10, 12, 0.3));
+  opacity: 0;
+}
+
+/* left peacock mirrored so the pair face away from each other */
+.home-gallery__peacock--left {
+  transform: scaleX(-1);
+  animation: homeGalleryPeacockRiseL 1s cubic-bezier(0.22, 1, 0.36, 1) 0.15s forwards,
+             homeGalleryPeacockSwayL 4.5s ease-in-out 1.2s infinite;
+}
+
+.home-gallery__peacock--right {
+  transform: none;
+  animation: homeGalleryPeacockRiseR 1s cubic-bezier(0.22, 1, 0.36, 1) 0.3s forwards,
+             homeGalleryPeacockSwayR 4.5s ease-in-out 1.6s infinite;
+}
+
+/* entrance — unfurl: rise from the baseline while gently scaling up */
+@keyframes homeGalleryPeacockRiseL {
+  from { opacity: 0; transform: scaleX(-1) translateY(34px) scale(0.82); }
+  to   { opacity: 1; transform: scaleX(-1) translateY(0)    scale(1); }
+}
+@keyframes homeGalleryPeacockRiseR {
+  from { opacity: 0; transform: translateY(34px) scale(0.82); }
+  to   { opacity: 1; transform: translateY(0)    scale(1); }
+}
+
+/* idle — a slow, elegant courtship sway: lean + breathe, pivoting on the feet.
+   No vertical bounce, so the baseline stays flush and the section reads calm. */
+@keyframes homeGalleryPeacockSwayL {
+  0%, 100% { transform: scaleX(-1) rotate(-3deg) scale(1); }
+  50%      { transform: scaleX(-1) rotate(3deg)  scale(1.03); }
+}
+@keyframes homeGalleryPeacockSwayR {
+  0%, 100% { transform: rotate(3deg)  scale(1); }
+  50%      { transform: rotate(-3deg) scale(1.03); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .home-gallery__peacock {
+    animation: none;
+    opacity: 1;
+  }
+  .home-gallery__peacock--left  { transform: scaleX(-1); }
+  .home-gallery__peacock--right { transform: none; }
+}
+
+@media only screen and (max-width: 767px) {
+  .home-gallery__btn-box {
+    min-height: 0;
+    gap: 10px;
+  }
+  .home-gallery__peacock {
+    width: 110px;
+  }
+}
+
+@media only screen and (max-width: 479px) {
+  .home-gallery__peacock {
+    display: none;
+  }
 }
 
 .home-gallery__btn.thm-btn {
@@ -11502,10 +12023,16 @@ ul {
 .found-one,
 .legacy-One,
 .event-one,
-.home-gallery,
 .cta-one {
   padding-top: 100px;
   padding-bottom: 100px;
+}
+
+/* Gallery carries decorative peacocks at the base, so it needs less
+   breathing room below than the text sections. */
+.home-gallery {
+  padding-top: 100px;
+  padding-bottom: 56px;
 }
 
 @media only screen and (min-width: 992px) and (max-width: 1199px) {
@@ -11513,11 +12040,11 @@ ul {
   .found-one,
   .legacy-One,
   .event-one,
-  .home-gallery,
   .cta-one {
     padding-top: 100px;
     padding-bottom: 100px;
   }
+  .home-gallery { padding: 100px 0 48px; }
 }
 
 @media only screen and (min-width: 768px) and (max-width: 991px) {
@@ -11525,11 +12052,11 @@ ul {
   .found-one,
   .legacy-One,
   .event-one,
-  .home-gallery,
   .cta-one {
     padding-top: 80px;
     padding-bottom: 80px;
   }
+  .home-gallery { padding: 80px 0 44px; }
 }
 
 @media only screen and (max-width: 767px) {
@@ -11537,10 +12064,47 @@ ul {
   .found-one,
   .legacy-One,
   .event-one,
-  .home-gallery,
   .cta-one {
     padding-top: 60px;
     padding-bottom: 60px;
+  }
+  .home-gallery { padding: 60px 0 48px; }
+}
+
+/* Welcome section — tighter vertical spacing on tablet & mobile.
+   (Effective spacing = section padding + the inner content/inner padding
+   added by the responsive block above, so both are trimmed.) */
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+  .welcome-one {
+    padding-top: 48px;
+    padding-bottom: 48px;
+  }
+  .welcome-one__content {
+    padding-top: 24px;
+  }
+  .welcome-one__inner {
+    padding-bottom: 24px;
+  }
+}
+
+@media only screen and (max-width: 767px) {
+  .welcome-one {
+    padding-top: 36px;
+    padding-bottom: 36px;
+  }
+  .welcome-one__content {
+    padding-top: 20px;
+  }
+  .welcome-one__inner {
+    padding-bottom: 20px;
+  }
+
+  /* break the heading onto two lines */
+  .welcome-one .section-title__title {
+    white-space: normal;
+  }
+  .welcome-one__title-break {
+    display: inline;
   }
 }
 
@@ -11660,6 +12224,894 @@ ul {
 .donation-one__btn:hover span {
   background-color: #3D0A0C;
   color: #FFFFFF;
+}
+
+/*==================================================================
+    HOME — LEGACY SECTION — colour scheme keyed to the hero image.
+    Palette (sampled from slider-v1-img-1.jpg):
+      --lg-gold      #D9982A   (hero's L/R gold borders)
+      --lg-gold-lite #E9B45A   (bright tint — hovers / active states)
+      --lg-gold-pale #F0CE93   (soft gold — small text on maroon)
+      --lg-maroon    #620208   (field behind the idol)
+      --lg-maroon-dk #4D0601   (hero's outer edges)
+      --lg-maroon-2  #7A1418   (mid maroon — radial highlights on medallions)
+      --lg-cream     #FBF1DC   (warm ivory — headline + button text)
+    Section chrome (background, borders, corners, cover, arrows, diya glow)
+    is re-keyed; the book's parchment PAGES keep their cream/ink for
+    readability. Static + hover/focus + tablet + mobile all covered.
+==================================================================*/
+:root {
+  --lg-gold: #D9982A;
+  --lg-gold-lite: #E9B45A;
+  --lg-gold-pale: #F0CE93;
+  --lg-maroon: #620208;
+  --lg-maroon-dk: #4D0601;
+  --lg-maroon-2: #7A1418;
+  --lg-cream: #FBF1DC;
+}
+
+/* ---- Section background ---- */
+.legacy-One {
+  background-color: var(--lg-maroon);
+}
+
+.legacy-One::before {
+  /* keep the enlarged floral tile; nudge opacity for the deeper maroon */
+  opacity: 0.42;
+}
+
+/* ---- Section title ---- */
+.legacy-One .section-title__tagline {
+  color: var(--lg-gold);
+}
+
+.legacy-One .section-title__title {
+  color: var(--lg-cream);
+}
+
+/* ---- Ornamental gold frame: borders + corners ----
+   (only the base colour is retuned; the Om/swastik motif SVG layered on
+   top via background-image is left intact) */
+.divine-border--legacy,
+.divine-border--legacy-vertical,
+.legacy-One__corner {
+  background-color: var(--lg-gold);
+}
+
+/* ---- Diya-pillar glow (desktop) — retint warm gold to the hero gold ---- */
+@media (min-width: 1200px) {
+  .legacy-One__aside {
+    filter:
+      drop-shadow(0 24px 40px rgba(0, 0, 0, 0.55))
+      drop-shadow(0 0 34px rgba(233, 180, 90, 0.34));
+  }
+}
+
+/* ---- Book page photo frame ---- */
+.legacy-book-page__photo-frame,
+.legacy-book-page__photo-frame::before,
+.legacy-book-page__photo-frame::after {
+  border-color: var(--lg-maroon);
+}
+
+/* ---- Cover symbol ring ---- */
+.legacy-book-page__cover-symbol {
+  background: rgba(98, 2, 8, 0.10);
+  border-color: var(--lg-maroon);
+}
+
+/* ---- "पोथी उघडा" CTA on the cover ---- */
+.legacy-book-page__cta {
+  border-color: var(--lg-maroon-dk);
+  background: var(--lg-maroon);
+  color: var(--lg-gold-pale);
+}
+
+.legacy-book-page__cta::before {
+  background: linear-gradient(120deg, #FFFDF6 0%, var(--lg-cream) 55%, #F1E0BC 100%);
+}
+
+.legacy-book-page__cta:hover,
+.legacy-book-page__cta:focus-visible {
+  color: var(--lg-maroon);
+  border-color: var(--lg-gold);
+  box-shadow:
+    0 16px 30px rgba(76, 6, 1, 0.42),
+    0 0 0 4px rgba(251, 241, 220, 0.35);
+}
+
+.legacy-book-page__cta:focus-visible {
+  outline-color: rgba(98, 2, 8, 0.45);
+}
+
+/* ---- Prev / next arrows — maroon medallion, gold ring ---- */
+.legacy-book-arrow {
+  border-color: var(--lg-gold);
+  background: radial-gradient(circle at 35% 30%, var(--lg-maroon-2) 0%, var(--lg-maroon) 60%, var(--lg-maroon-dk) 100%);
+  color: var(--lg-gold-pale);
+}
+
+.legacy-book-arrow::before {
+  border-color: rgba(233, 180, 90, 0.55);
+}
+
+.legacy-book-arrow__icon {
+  stroke: var(--lg-gold-pale);
+}
+
+.legacy-book-arrow:hover:not(:disabled) {
+  border-color: var(--lg-cream);
+  animation: legacyArrowPulseHero 1.6s ease-in-out infinite;
+}
+
+@keyframes legacyArrowPulseHero {
+  0%, 100% { box-shadow: 0 10px 24px rgba(0, 0, 0, 0.5), inset 0 1px 0 rgba(255, 255, 255, 0.2), 0 0 0 0 rgba(233, 180, 90, 0.5); }
+  50%      { box-shadow: 0 10px 24px rgba(0, 0, 0, 0.5), inset 0 1px 0 rgba(255, 255, 255, 0.2), 0 0 0 8px rgba(233, 180, 90, 0); }
+}
+
+/*==================================================================
+    HOME — WELCOME SECTION — colour scheme keyed to the hero image.
+    Palette (sampled from slider-v1-img-1.jpg):
+      --hero-gold      #D9982A   (hero's L/R gold borders)
+      --hero-gold-lite #E9B45A   (bright tint — hovers/accents)
+      --hero-gold-trim #E8C766 -> #D9982A   (fine trim/keylines)
+      --hero-maroon    #620208   (field behind the idol)
+      --hero-maroon-dk #4D0601   (hero's outer edges)
+      --hero-ink       #2C0405   (near-black maroon — body copy on gold)
+      --hero-cream     #FBF1DC   (warm ivory — text on maroon)
+    Only colour + hover; layout/spacing/animation untouched.
+    Applies to desktop, tablet and mobile (no size media-queries needed —
+    the base rules below cascade through the existing responsive blocks).
+==================================================================*/
+:root {
+  --wl-gold: #D9982A;
+  --wl-gold-lite: #E9B45A;
+  --wl-maroon: #620208;
+  --wl-maroon-dk: #4D0601;
+  --wl-ink: #2C0405;
+  --wl-cream: #FBF1DC;
+}
+
+/* ---- Section background: hero gold field ---- */
+.welcome-one {
+  background-color: var(--wl-gold);
+  background-image: linear-gradient(180deg, #E0A238 0%, var(--wl-gold) 45%, #CE8E24 100%);
+}
+
+/* soft radial vignette orbs -> maroon-tinted to match the hero depth */
+.welcome-one__orb--1 {
+  background: radial-gradient(circle, rgba(76, 6, 1, 0.14) 0%, rgba(76, 6, 1, 0) 70%);
+}
+.welcome-one__orb--2 {
+  background: radial-gradient(circle, rgba(76, 6, 1, 0.16) 0%, rgba(76, 6, 1, 0) 72%);
+}
+
+/* ---- Ornamental maroon borders / corners ---- */
+.divine-border--welcome,
+.divine-border--welcome-vertical,
+.welcome-one__corner {
+  background-color: var(--wl-maroon-dk);
+}
+
+/* ---- Headings + body copy on the gold field ---- */
+.welcome-one .section-title__tagline {
+  color: var(--wl-ink);
+}
+
+.welcome-one .section-title__title {
+  color: var(--wl-ink);
+}
+
+.welcome-one .section-title__title span {
+  color: var(--wl-maroon);
+}
+
+.welcome-one__content .text,
+.welcome-one__content .text p {
+  color: var(--wl-ink);
+}
+
+.welcome-one__content .text p.color {
+  color: var(--wl-maroon);
+}
+
+/* ---- Stat list: icon tiles + hover ---- */
+.welcome-one__content .list-item li .icon {
+  color: var(--wl-maroon);
+  background-color: #FFFFFF;
+  border: 1px solid rgba(217, 152, 42, 0.75);
+  box-shadow: 0 6px 16px rgba(44, 4, 5, 0.18);
+}
+
+.welcome-one__content .list-item li .icon::before {
+  background-color: var(--wl-maroon);
+}
+
+.welcome-one__content .list-item li:hover .icon {
+  color: var(--wl-gold-lite);
+  background-color: transparent;
+  border-color: var(--wl-maroon);
+}
+
+.welcome-one__content .list-item li .title h4 {
+  color: var(--wl-maroon);
+}
+
+.welcome-one__content .list-item li .title h3 {
+  color: var(--wl-ink);
+}
+
+/* ---- Primary button on gold (maroon fill, gold chip) ---- */
+.welcome-one .thm-btn {
+  background-color: var(--wl-maroon);
+  border-color: var(--wl-maroon-dk);
+  color: var(--wl-cream);
+  box-shadow: 0 8px 20px rgba(44, 4, 5, 0.35);
+}
+
+.welcome-one .thm-btn::after {
+  background-color: var(--wl-ink);
+}
+
+.welcome-one .thm-btn span {
+  background-color: var(--wl-gold);
+  color: var(--wl-ink);
+}
+
+.welcome-one .thm-btn:hover,
+.welcome-one .thm-btn:focus-visible {
+  border-color: var(--wl-ink);
+  color: var(--wl-gold-lite);
+}
+
+.welcome-one .thm-btn:hover span {
+  background-color: var(--wl-cream);
+  color: var(--wl-ink);
+}
+
+/* ---- Visit / Darshan card: maroon panel, gold trim ---- */
+.visit-card {
+  background: linear-gradient(160deg, #7A1418 0%, #560106 60%, var(--wl-maroon-dk) 100%);
+  border-top: 3px solid var(--wl-gold);
+  box-shadow:
+    0 24px 55px rgba(20, 4, 5, 0.45),
+    0 8px 20px rgba(46, 8, 9, 0.35),
+    inset 0 1px 0 rgba(217, 152, 42, 0.18);
+}
+
+.visit-card:hover {
+  box-shadow:
+    0 30px 65px rgba(20, 4, 5, 0.5),
+    0 10px 24px rgba(46, 8, 9, 0.4),
+    inset 0 1px 0 rgba(233, 180, 90, 0.28);
+}
+
+.visit-card__header {
+  border-bottom-color: rgba(217, 152, 42, 0.32);
+}
+
+.visit-card__header h3,
+.visit-card__address p {
+  color: var(--wl-cream);
+}
+
+.visit-card__icon {
+  background-color: rgba(217, 152, 42, 0.16);
+  color: var(--wl-gold);
+}
+
+.visit-card__timings li {
+  border-bottom-color: rgba(217, 152, 42, 0.26);
+}
+
+.visit-card__label {
+  color: #E9CBA0;
+}
+
+.visit-card__value,
+.visit-card__address i,
+.visit-card__phone i {
+  color: var(--wl-gold);
+}
+
+.visit-card__divider {
+  background-color: rgba(217, 152, 42, 0.26);
+}
+
+.visit-card__phone {
+  color: var(--wl-cream);
+}
+
+.visit-card__phone:hover,
+.visit-card__phone:focus-visible {
+  color: var(--wl-gold-lite);
+}
+
+/* ---- Visit-card button: gold fill on the maroon panel ---- */
+.welcome-one .visit-card .thm-btn {
+  background-color: var(--wl-gold);
+  border-color: var(--wl-gold-lite);
+  color: var(--wl-ink);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+}
+
+.welcome-one .visit-card .thm-btn::after {
+  background-color: var(--wl-cream);
+}
+
+.welcome-one .visit-card .thm-btn span {
+  background-color: var(--wl-maroon);
+  color: var(--wl-gold);
+}
+
+.welcome-one .visit-card .thm-btn:hover,
+.welcome-one .visit-card .thm-btn:focus-visible {
+  border-color: var(--wl-cream);
+  color: var(--wl-ink);
+}
+
+.welcome-one .visit-card .thm-btn:hover span {
+  background-color: var(--wl-ink);
+  color: var(--wl-cream);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .visit-card {
+    transition: none;
+  }
+  .visit-card:hover {
+    transform: none;
+  }
+}
+
+/*==================================================================
+    HEADER — colour scheme keyed to the home hero image.
+    Sampled from public/assets/images/slider/slider-v1-img-1.jpg:
+      --hdr-gold      #D9982A  (avg of the hero's left & right gold borders)
+      --hdr-gold-lite #E9B45A  (bright tint — interactive states on maroon)
+      --hdr-maroon    #620208  (deep field behind the idol)
+      --hdr-maroon-dk #4D0601  (darker maroon at the hero's outer edges)
+      --hdr-ink       #3A0405  (near-black maroon — text on the gold bar)
+      --hdr-cream     #FBF1DC  (warm ivory — text on maroon)
+    Layout, spacing and animations unchanged; static + hover + focus
+    colours restyled for desktop, sticky, tablet and mobile.
+==================================================================*/
+:root {
+  --hdr-gold: #D9982A;
+  --hdr-gold-lite: #E9B45A;
+  --hdr-maroon: #620208;
+  --hdr-maroon-dk: #4D0601;
+  --hdr-ink: #3A0405;
+  --hdr-cream: #FBF1DC;
+}
+
+/* ---- Top utility bar (address + socials) ---- */
+.main-header .main-menu__top {
+  background-color: var(--hdr-maroon);
+  background-image: linear-gradient(180deg, var(--hdr-maroon) 0%, #560106 100%);
+  border-bottom: 1px solid rgba(217, 152, 42, 0.45);
+}
+
+.main-header .main-menu__contact-list li .icon i,
+.main-header .main-menu__contact-list li .text p,
+.main-header .main-menu__contact-list li .text p a,
+.main-header .main-menu__social-title {
+  color: var(--hdr-cream);
+}
+
+.main-header .main-menu__contact-list li:before {
+  background-color: rgba(251, 241, 220, 0.35);
+}
+
+.main-header .main-menu__contact-list li .text p a:hover,
+.main-header .main-menu__contact-list li .text p a:focus-visible {
+  color: var(--hdr-gold-lite);
+}
+
+.main-header .main-menu__social a {
+  border-color: rgba(217, 152, 42, 0.45);
+  color: var(--hdr-cream);
+}
+
+.main-header .main-menu__social a::before {
+  background: var(--hdr-gold);
+}
+
+.main-header .main-menu__social a:hover,
+.main-header .main-menu__social a:focus-visible {
+  color: var(--hdr-ink);
+  border-color: transparent;
+}
+
+/* ---- Ornamental divider strip ---- */
+.main-header .divine-border,
+.stricky-header .divine-border {
+  background-color: var(--hdr-maroon-dk);
+}
+
+/* ---- Main nav bar (the gold band) ---- */
+.main-header .main-menu__wrapper,
+.stricky-header .main-menu__wrapper {
+  background-color: var(--hdr-gold);
+  background-image: linear-gradient(180deg, #E0A238 0%, var(--hdr-gold) 55%, #CE8E24 100%);
+}
+
+.stricky-header.stricky-fixed {
+  box-shadow: 0 10px 40px -8px rgba(58, 4, 5, 0.45);
+}
+
+/* logo lockup */
+.main-header .shubharay-logo__img,
+.stricky-header .shubharay-logo__img {
+  border-color: var(--hdr-maroon-dk);
+  box-shadow: 0 4px 14px rgba(58, 4, 5, 0.30);
+}
+
+.main-header .shubharay-logo__title,
+.stricky-header .shubharay-logo__title {
+  color: var(--hdr-ink);
+}
+
+/* nav links — static */
+.main-header .main-menu .main-menu__list>li>a,
+.stricky-header .main-menu__list>li>a,
+.main-header .main-menu .main-menu__list>li.dropdown>a:after,
+.stricky-header .main-menu__list>li.dropdown>a:after {
+  color: var(--hdr-ink);
+}
+
+.main-header .main-menu .main-menu__list>li>a::before,
+.stricky-header .main-menu__list>li>a::before {
+  background-color: rgba(58, 4, 5, 0.12);
+}
+
+/* nav links — hover / current / focus */
+.main-header .main-menu .main-menu__list>li.current>a,
+.main-header .main-menu .main-menu__list>li:hover>a,
+.main-header .main-menu .main-menu__list>li>a:focus-visible,
+.stricky-header .main-menu__list>li.current>a,
+.stricky-header .main-menu__list>li:hover>a,
+.stricky-header .main-menu__list>li>a:focus-visible,
+.main-header .main-menu .main-menu__list>li.current>a::after,
+.main-header .main-menu .main-menu__list>li:hover>a::after,
+.stricky-header .main-menu__list>li.current>a::after,
+.stricky-header .main-menu__list>li:hover>a::after {
+  color: var(--hdr-maroon);
+}
+
+/* dropdown panels — maroon with gold hover */
+.main-menu .main-menu__list>li>ul,
+.main-menu .main-menu__list>li>ul>li>ul,
+.stricky-header .main-menu__list>li>ul,
+.stricky-header .main-menu__list>li>ul>li>ul,
+.main-menu .main-menu__list>li>ul>li>ul::before,
+.stricky-header .main-menu__list>li>ul>li>ul::before {
+  background-color: var(--hdr-maroon);
+  border-top: 2px solid var(--hdr-gold);
+}
+
+.main-menu .main-menu__list>li>ul>li+li,
+.stricky-header .main-menu__list>li>ul>li+li,
+.main-menu .main-menu__list>li>ul>li>ul>li+li,
+.stricky-header .main-menu__list>li>ul>li>ul>li+li {
+  border-top-color: rgba(251, 241, 220, 0.10);
+}
+
+.main-menu .main-menu__list>li>ul>li>a,
+.main-menu .main-menu__list>li>ul>li>ul>li>a,
+.stricky-header .main-menu__list>li>ul>li>a,
+.stricky-header .main-menu__list>li>ul>li>ul>li>a {
+  color: rgba(251, 241, 220, 0.80);
+}
+
+.main-menu .main-menu__list>li>ul>li>a:hover,
+.main-menu .main-menu__list>li>ul>li>ul>li>a:hover,
+.main-menu .main-menu__list>li>ul>li>a:focus-visible,
+.main-menu .main-menu__list>li>ul>li>ul>li>a:focus-visible,
+.stricky-header .main-menu__list>li>ul>li>a:hover,
+.stricky-header .main-menu__list>li>ul>li>ul>li>a:hover,
+.main-menu .main-menu__list>li>ul>li.dropdown:hover>a::before,
+.stricky-header .main-menu__list>li>ul>li.dropdown:hover>a::before {
+  color: var(--hdr-gold-lite);
+}
+
+/* call block */
+.main-header .main-menu__call,
+.stricky-header .main-menu__call {
+  border-right-color: rgba(58, 4, 5, 0.22);
+}
+
+.main-header .main-menu__call-icon,
+.stricky-header .main-menu__call-icon {
+  background-color: var(--hdr-maroon);
+  color: var(--hdr-cream);
+}
+
+.main-header .main-menu__call-icon:hover,
+.stricky-header .main-menu__call-icon:hover {
+  background-color: var(--hdr-ink);
+  color: var(--hdr-gold-lite);
+}
+
+.main-header .main-menu__call-sub-title,
+.stricky-header .main-menu__call-sub-title,
+.main-header .main-menu__call-number a,
+.stricky-header .main-menu__call-number a {
+  color: var(--hdr-ink);
+}
+
+.main-header .main-menu__call-number a:hover,
+.stricky-header .main-menu__call-number a:hover,
+.main-header .main-menu__call-number a:focus-visible,
+.stricky-header .main-menu__call-number a:focus-visible {
+  color: var(--hdr-maroon);
+}
+
+/* CTA button — maroon fill, gold slide-in on hover */
+.main-header .main-menu__btn-box .thm-btn,
+.stricky-header .main-menu__btn-box .thm-btn {
+  background-color: var(--hdr-maroon);
+  border-color: var(--hdr-maroon-dk);
+  color: var(--hdr-cream);
+}
+
+.main-header .main-menu__btn-box .thm-btn span,
+.stricky-header .main-menu__btn-box .thm-btn span {
+  background-color: var(--hdr-gold);
+  color: var(--hdr-ink);
+}
+
+.main-header .main-menu__btn-box .thm-btn:hover:after,
+.stricky-header .main-menu__btn-box .thm-btn:hover:after {
+  background-color: var(--hdr-ink);
+}
+
+.main-header .main-menu__btn-box .thm-btn:hover,
+.stricky-header .main-menu__btn-box .thm-btn:hover,
+.main-header .main-menu__btn-box .thm-btn:focus-visible,
+.stricky-header .main-menu__btn-box .thm-btn:focus-visible {
+  border-color: var(--hdr-ink);
+  color: var(--hdr-gold-lite);
+}
+
+.main-header .main-menu__btn-box .thm-btn:hover span,
+.stricky-header .main-menu__btn-box .thm-btn:hover span {
+  background-color: var(--hdr-cream);
+  color: var(--hdr-ink);
+}
+
+/* ---- Tablet / mobile (<1200px): hamburger + drawer trigger ---- */
+@media (max-width: 1199px) {
+  .main-header .main-menu .mobile-nav__toggler,
+  .stricky-header .main-menu .mobile-nav__toggler {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    background-color: var(--hdr-maroon);
+    color: var(--hdr-cream);
+    font-size: 20px;
+  }
+
+  .main-header .main-menu .mobile-nav__toggler:hover,
+  .stricky-header .main-menu .mobile-nav__toggler:hover,
+  .main-header .main-menu .mobile-nav__toggler:focus-visible,
+  .stricky-header .main-menu .mobile-nav__toggler:focus-visible {
+    background-color: var(--hdr-ink);
+    color: var(--hdr-gold-lite);
+  }
+
+  .mobile-nav__buttons a {
+    color: var(--hdr-maroon);
+  }
+}
+
+/* ---- Mobile drawer panel ---- */
+.mobile-nav__content {
+  background-color: var(--hdr-maroon);
+}
+
+.shubharay-logo--mobile .shubharay-logo__img {
+  border-color: var(--hdr-gold);
+}
+
+.shubharay-logo--mobile .shubharay-logo__title {
+  color: var(--hdr-cream);
+}
+
+.mobile-nav__close {
+  color: var(--hdr-cream);
+  background-color: rgba(251, 241, 220, 0.12);
+}
+
+.mobile-nav__close:hover,
+.mobile-nav__close:focus-visible {
+  background-color: var(--hdr-gold);
+  color: var(--hdr-ink);
+}
+
+.mobile-nav__content .main-menu__list>li:not(:last-child),
+.mobile-nav__content .main-menu__list>li>ul>li:not(:last-child),
+.mobile-nav__content .main-menu__list>li>ul>li>ul>li:not(:last-child),
+.mobile-nav__container {
+  border-color: rgba(251, 241, 220, 0.15);
+}
+
+.mobile-nav__content .main-menu__list>li>a,
+.mobile-nav__content .main-menu__list>li>ul>li>a,
+.mobile-nav__content .main-menu__list>li>ul>li>ul>li>a,
+.mobile-nav__contact li a,
+.mobile-nav__social a {
+  color: var(--hdr-cream);
+}
+
+.mobile-nav__content .main-menu__list>li>a:hover,
+.mobile-nav__content .main-menu__list>li>ul>li>a:hover,
+.mobile-nav__content .main-menu__list>li>ul>li>ul>li>a:hover,
+.mobile-nav__content .main-menu__list>li>a:focus-visible,
+.mobile-nav__contact li a:hover,
+.mobile-nav__social a:hover,
+.mobile-nav__social a:focus-visible {
+  color: var(--hdr-gold-lite);
+}
+
+.mobile-nav__content .main-menu__list>li>button,
+.mobile-nav__content .main-menu__list>li>ul>li>button {
+  color: var(--hdr-cream);
+}
+
+.mobile-nav__contact li>i {
+  color: var(--hdr-ink);
+  background-color: var(--hdr-gold);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .main-header .main-menu .main-menu__list>li.current>a,
+  .main-header .main-menu .main-menu__list>li:hover>a,
+  .stricky-header .main-menu__list>li.current>a,
+  .stricky-header .main-menu__list>li:hover>a {
+    transform: none;
+  }
+}
+
+/*==================================================================
+    HOME — SADHANA SECTION (.found-one) — colour scheme keyed to the
+    hero image.  Palette (sampled from slider-v1-img-1.jpg):
+      --sd-gold      #D9982A   (hero's L/R gold borders)
+      --sd-gold-lite #E9B45A   (bright tint — hovers / active states)
+      --sd-gold-pale #F0CE93   (soft gold on maroon)
+      --sd-maroon    #620208   (field behind the idol)
+      --sd-maroon-dk #4D0601   (hero's outer edges)
+      --sd-ink       #2C0405   (near-black maroon — copy on gold)
+      --sd-cream     #FBF1DC   (warm ivory — text on maroon)
+    Section chrome (gold field, ornamental borders/corners, cards,
+    buttons) re-keyed. Static + hover/focus + tablet + mobile covered
+    (the existing @media blocks only touch sizes, so they inherit).
+==================================================================*/
+:root {
+  --sd-gold: #D9982A;
+  --sd-gold-lite: #E9B45A;
+  --sd-gold-pale: #F0CE93;
+  --sd-maroon: #620208;
+  --sd-maroon-dk: #4D0601;
+  --sd-ink: #2C0405;
+  --sd-cream: #FBF1DC;
+}
+
+/* ---- Gold field ---- */
+.found-one,
+.found-one__bg {
+  background-color: var(--sd-gold);
+}
+
+.found-one__bg {
+  background-image: linear-gradient(180deg, #E0A238 0%, var(--sd-gold) 45%, #CE8E24 100%);
+}
+
+/* ---- Ornamental maroon borders + corners ---- */
+.divine-border--found,
+.divine-border--found-vertical {
+  background-color: var(--sd-maroon-dk);
+}
+
+.found-one__corner {
+  background-color: var(--sd-maroon-dk);
+}
+
+.found-one__corner--gold {
+  background-color: var(--sd-gold);
+}
+
+/* ---- Section title on the gold field ---- */
+.found-one .section-title__tagline {
+  color: var(--sd-ink);
+}
+
+.found-one .section-title__title {
+  color: var(--sd-ink);
+}
+
+.found-one .section-title__title span {
+  color: var(--sd-maroon);
+}
+
+/* ---- Cards ---- */
+.found-one__single {
+  background-color: #FFFFFF;
+  border: 1px solid rgba(217, 152, 42, 0.5);
+  box-shadow: 0 14px 34px rgba(44, 4, 5, 0.14);
+  transition: transform 300ms ease, box-shadow 300ms ease, border-color 300ms ease;
+}
+
+.found-one__single:hover {
+  transform: translateY(-4px);
+  border-color: var(--sd-gold);
+  box-shadow: 0 22px 46px rgba(44, 4, 5, 0.22);
+}
+
+.found-one__title a {
+  color: var(--sd-ink);
+}
+
+.found-one__title a:hover,
+.found-one__title a:focus-visible {
+  color: var(--sd-maroon);
+}
+
+.found-one .found-one__text {
+  color: #2b2b2b;
+}
+
+.found-one__highlight {
+  border-top-color: rgba(98, 2, 8, 0.15);
+  color: var(--sd-maroon);
+}
+
+.found-one__highlight i {
+  color: var(--sd-maroon);
+}
+
+/* ---- Button on the gold field: maroon fill, gold chip ---- */
+.found-one__btn-box .thm-btn {
+  background-color: var(--sd-maroon);
+  border-color: var(--sd-maroon-dk);
+  color: var(--sd-cream);
+  box-shadow: 0 8px 20px rgba(44, 4, 5, 0.35);
+}
+
+.found-one__btn-box .thm-btn::after {
+  background-color: var(--sd-ink);
+}
+
+.found-one__btn-box .thm-btn span {
+  background-color: var(--sd-gold);
+  color: var(--sd-ink);
+}
+
+.found-one__btn-box .thm-btn:hover,
+.found-one__btn-box .thm-btn:focus-visible {
+  border-color: var(--sd-ink);
+  color: var(--sd-gold-lite);
+}
+
+.found-one__btn-box .thm-btn:hover span {
+  background-color: var(--sd-cream);
+  color: var(--sd-ink);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .found-one__single,
+  .found-one__single:hover {
+    transform: none;
+    transition: none;
+  }
+}
+
+/*==================================================================
+    HOME — UPCOMING EVENTS SECTION (.event-one) — colour scheme keyed
+    to the hero image.  Palette (sampled from slider-v1-img-1.jpg):
+      --ev-gold      #D9982A   (hero's L/R gold borders)
+      --ev-gold-lite #E9B45A   (bright tint — hovers / active states)
+      --ev-gold-pale #F0CE93   (soft gold on maroon)
+      --ev-maroon    #620208   (field behind the idol)
+      --ev-maroon-dk #4D0601   (hero's outer edges)
+      --ev-ink       #2C0405   (near-black maroon — copy on cards)
+      --ev-cream     #FBF1DC   (warm ivory — text on maroon)
+    Static + hover/focus + tablet + mobile covered (existing @media
+    blocks only touch spacing, so they inherit these colours).
+==================================================================*/
+:root {
+  --ev-gold: #D9982A;
+  --ev-gold-lite: #E9B45A;
+  --ev-gold-pale: #F0CE93;
+  --ev-maroon: #620208;
+  --ev-maroon-dk: #4D0601;
+  --ev-ink: #2C0405;
+  --ev-cream: #FBF1DC;
+}
+
+/* ---- Maroon field ---- */
+.event-one {
+  background-color: var(--ev-maroon);
+}
+
+.event-one::before {
+  opacity: 0.42;
+}
+
+/* ---- Section title ---- */
+.event-one .section-title__tagline {
+  color: var(--ev-gold);
+}
+
+.event-one .section-title__title {
+  color: var(--ev-cream);
+}
+
+/* ---- Ornamental gold frame: borders + corners ----
+   (base colour retuned; the Om/swastik motif SVG on top is left intact) */
+.divine-border--event,
+.divine-border--event-vertical,
+.event-one__corner {
+  background-color: var(--ev-gold);
+}
+
+/* ---- Cards ---- */
+.event-one__single {
+  background-color: #FFFFFF;
+  border: 1px solid rgba(217, 152, 42, 0.5);
+  box-shadow: 0 14px 34px rgba(44, 4, 5, 0.14);
+}
+
+.event-one__single:hover {
+  border-color: var(--ev-gold);
+  box-shadow: 0 24px 52px rgba(44, 4, 5, 0.24);
+}
+
+.event-one__img::after {
+  background-color: var(--ev-maroon);
+}
+
+.event-one .event-one__date .icon-calender {
+  color: var(--ev-gold);
+}
+
+.event-one__title a {
+  color: var(--ev-ink);
+}
+
+.event-one__title a:hover,
+.event-one__title a:focus-visible {
+  color: var(--ev-maroon);
+}
+
+/* ---- "View all events" button — gold fill on the maroon field ---- */
+.event-one__btn {
+  background-color: var(--ev-gold);
+  border-color: var(--ev-gold-lite);
+  color: var(--ev-ink);
+}
+
+.event-one__btn::after {
+  background-color: var(--ev-cream);
+}
+
+.event-one__btn span {
+  background-color: var(--ev-maroon);
+  color: var(--ev-gold);
+}
+
+.event-one__btn:hover,
+.event-one__btn:focus-visible {
+  border-color: var(--ev-cream);
+  color: var(--ev-ink);
+}
+
+.event-one__btn:hover span {
+  background-color: var(--ev-ink);
+  color: var(--ev-cream);
 }
 
 /* The End */

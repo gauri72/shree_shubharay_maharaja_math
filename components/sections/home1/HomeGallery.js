@@ -28,11 +28,26 @@ export default function HomeGallery() {
             <div className="home-gallery__bg"></div>
 
             <div className="container">
-                <div className="section-title text-center sec-title-animation animation-style1">
-                    <div className="section-title__tagline-box">
-                        <span className="section-title__tagline">क्षणचित्रे</span>
+                <div className="home-gallery__title-wrap">
+                    {/* Peacock-feather borders flanking the heading, left & right */}
+                    <img
+                        className="home-gallery__feather home-gallery__feather--left"
+                        src="assets/images/resources/feather-border.png"
+                        alt=""
+                        aria-hidden="true"
+                    />
+                    <img
+                        className="home-gallery__feather home-gallery__feather--right"
+                        src="assets/images/resources/feather-border.png"
+                        alt=""
+                        aria-hidden="true"
+                    />
+                    <div className="section-title text-center sec-title-animation animation-style1">
+                        <div className="section-title__tagline-box">
+                            <span className="section-title__tagline">क्षणचित्रे</span>
+                        </div>
+                        <h2 className="section-title__title title-animation">परंपरेची <span>पवित्र झलक</span></h2>
                     </div>
-                    <h2 className="section-title__title title-animation">परंपरेची <span>पवित्र झलक</span></h2>
                 </div>
 
                 <div className="home-gallery__grid">
@@ -58,9 +73,21 @@ export default function HomeGallery() {
                 </div>
 
                 <div className="home-gallery__btn-box found-one__btn-box text-center wow fadeInUp" data-wow-delay="200ms">
+                    <img
+                        className="home-gallery__peacock home-gallery__peacock--left"
+                        src="assets/images/resources/peacock-border.png"
+                        alt=""
+                        aria-hidden="true"
+                    />
                     <Link href="/gallery" className="home-gallery__btn thm-btn">
                         संपूर्ण दालन पाहा<span><i className="icon-arrow-right"></i></span>
                     </Link>
+                    <img
+                        className="home-gallery__peacock home-gallery__peacock--right"
+                        src="assets/images/resources/peacock-border.png"
+                        alt=""
+                        aria-hidden="true"
+                    />
                 </div>
             </div>
         </section>

@@ -1,5 +1,5 @@
 'use client'
-import { Autoplay, Navigation } from "swiper/modules"
+import { Autoplay, EffectFade } from "swiper/modules"
 import { Swiper, SwiperSlide } from "swiper/react"
 
 const images = [
@@ -8,31 +8,29 @@ const images = [
 ]
 
 const swiperOptions = {
-    modules: [Autoplay, Navigation],
-    effect: "slide",
-    speed: 1000,
+    modules: [Autoplay, EffectFade],
+    effect: "fade",
+    fadeEffect: { crossFade: true },
+    speed: 1200,
     slidesPerView: 1,
     loop: true,
+    allowTouchMove: false,
     autoplay: {
         delay: 5000,
         disableOnInteraction: false,
-    },
-    navigation: {
-        nextEl: '.h1n',
-        prevEl: '.h1p',
     },
 }
 
 export default function Banner() {
     return (
         <section className="main-slider">
-            <Swiper
-                {...swiperOptions}
-                className="main-slider__carousel"
-            >
+            <Swiper {...swiperOptions} className="main-slider__carousel">
                 {images.map((src, index) => (
                     <SwiperSlide key={index}>
-                        <div className="main-slider-media" style={{ backgroundImage: `url(${src})` }}></div>
+                        <div
+                            className="main-slider-media"
+                            style={{ backgroundImage: `url(${src})` }}
+                        ></div>
                     </SwiperSlide>
                 ))}
             </Swiper>
