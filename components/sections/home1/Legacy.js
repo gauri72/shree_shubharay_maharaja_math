@@ -232,9 +232,9 @@ export default function Legacy() {
                             height={isMobile ? 720 : 720}
                             size="stretch"
                             minWidth={isTablet ? 400 : isMobile ? 340 : 220}
-                            maxWidth={isTablet ? 460 : isMobile ? 460 : 900}
+                            maxWidth={isTablet ? 560 : isMobile ? 460 : 900}
                             minHeight={256}
-                            maxHeight={isMobile ? 720 : 880}
+                            maxHeight={isTablet ? 820 : isMobile ? 720 : 880}
                             showCover={true}
                             maxShadowOpacity={0.65}
                             flippingTime={800}

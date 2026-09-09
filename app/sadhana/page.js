@@ -1,7 +1,7 @@
 import Layout from "@/components/layout/Layout"
 
 export const metadata = {
-    title: 'Sadhana — Shubharay Math',
+    title: 'Sadhana — Shubharay Maharaja Math',
     description: 'Explore the daily sadhana, spiritual practices and disciplines followed at Shri Shubharay Maharaj Math.',
 }
 

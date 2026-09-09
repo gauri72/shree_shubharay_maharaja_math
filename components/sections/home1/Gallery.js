@@ -1,6 +1,7 @@
 'use client'
 
-const images = Array.from({ length: 12 }, (_, i) => `assets/images/temple/temple-${i + 1}.png`)
+const TEMPLE_PHOTO_COUNT = 8
+const images = Array.from({ length: TEMPLE_PHOTO_COUNT }, (_, i) => `assets/images/temple/temple-${i + 1}.png`)
 
 export default function Gallery() {
     return (

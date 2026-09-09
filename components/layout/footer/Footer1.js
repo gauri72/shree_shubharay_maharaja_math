@@ -15,9 +15,9 @@ export default function Footer1() {
                                 <div className="footer-widget__about">
                                     <div className="footer-widget__about-logo">
                                         <Link href="/" className="shubharay-logo">
-                                            <img src="assets/images/resources/shubharay-maharaj.jpg" alt="Shubharay Math" className="shubharay-logo__img"/>
+                                            <img src="assets/images/resources/shubharay-maharaj.jpg" alt="Shubharay Maharaja Math" className="shubharay-logo__img"/>
                                             <span className="shubharay-logo__text">
-                                                <span className="shubharay-logo__title">श्री शुभराय मठ</span>
+                                                <span className="shubharay-logo__title">श्री शुभराय महाराज मठ</span>
                                             </span>
                                         </Link>
                                     </div>
@@ -46,7 +46,7 @@ export default function Footer1() {
                                         <li><Link href="/about"><i className="icon-arrow-right"></i><span>आमच्याविषयी</span></Link></li>
                                         <li><Link href="/sadhana"><i className="icon-arrow-right"></i><span>नित्य साधना</span></Link></li>
                                         <li><Link href="/gallery"><i className="icon-arrow-right"></i><span>छायाचित्र दालन</span></Link></li>
-                                        <li><Link href="/events"><i className="icon-arrow-right"></i><span>आगामी उत्सव</span></Link></li>
+                                        <li><Link href="/contact"><i className="icon-arrow-right"></i><span>दर्शन व संपर्क</span></Link></li>
                                     </ul>
                                 </div>
                             </div>
@@ -87,7 +87,7 @@ export default function Footer1() {
                         <div className="col-xl-12">
                             <div className="site-footer__bottom-inner">
                                 <div className="site-footer__copyright">
-                                    <p className="site-footer__copyright-text">Copyright &copy; {year} <Link href="/">Shubharay Math</Link>.<br className="site-footer__copyright-break"/> All Rights Reserved.</p>
+                                    <p className="site-footer__copyright-text">Copyright &copy; {year} <Link href="/">Shubharay Maharaja Math</Link>.<br className="site-footer__copyright-break"/> All Rights Reserved.</p>
                                 </div>
                                 <div className="site-footer__credit">
                                     <p className="site-footer__credit-text">Designed &amp; Developed by <Link href="mailto:kolekargauri8@gmail.com" className="site-footer__credit-name">Gauri Kolekar</Link></p>

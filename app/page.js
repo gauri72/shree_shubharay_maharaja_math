@@ -3,11 +3,13 @@ import MantraStrip from "@/components/sections/home1/MantraStrip"
 import Banner from "@/components/sections/home1/Banner"
 import Welcome from "@/components/sections/home1/Welcome"
 import Gallery from "@/components/sections/home1/Gallery"
-import HomeGallery from "@/components/sections/home1/HomeGallery"
+// Bottom gallery mosaic hidden on the home page for now.
+// import HomeGallery from "@/components/sections/home1/HomeGallery"
 import Legacy from "@/components/sections/home1/Legacy"
 import Cta from "@/components/sections/home1/Cta"
 import Found from "@/components/sections/home1/Found"
-import Event from "@/components/sections/home1/Event"
+// Events not offered on the site for now — section hidden on the home page.
+// import Event from "@/components/sections/home1/Event"
 
 export default function Home() {
 
@@ -20,8 +22,6 @@ export default function Home() {
                 <Welcome />
                 <Legacy />
                 <Found />
-                <Event />
-                <HomeGallery />
                 <Cta />
             </Layout>
 

@@ -1,7 +1,7 @@
 import Layout from "@/components/layout/Layout"
 
 export const metadata = {
-    title: 'Privacy Policy — Shubharay Math',
+    title: 'Privacy Policy — Shubharay Maharaja Math',
     description: 'Read how Shri Shubharay Maharaj Math collects, uses and protects your information.',
 }
 

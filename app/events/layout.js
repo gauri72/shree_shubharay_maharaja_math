@@ -1,5 +1,5 @@
 export const metadata = {
-    title: 'Events — Shubharay Math',
+    title: 'Events — Shubharay Maharaja Math',
     description: 'See upcoming events, satsangs and utsavs at Shri Shubharay Maharaj Math.',
 }
 

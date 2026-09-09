@@ -1,7 +1,7 @@
 import Layout from "@/components/layout/Layout"
 
 export const metadata = {
-    title: 'Terms of Service — Shubharay Math',
+    title: 'Terms of Service — Shubharay Maharaja Math',
     description: 'The terms and conditions for using the Shri Shubharay Maharaj Math website.',
 }
 

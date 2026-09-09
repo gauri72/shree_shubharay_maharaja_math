@@ -8,7 +8,7 @@ import 'swiper/css/effect-fade';
 import { dmSans, libreBaskerville, yatraOne } from '@/lib/font'
 export const metadata = {
     title: {
-        default: 'श्री शुभराय मठ',
+        default: 'श्री शुभराय महाराज मठ',
         template: '%s',
     },
     description: 'Shri Shubharay Maharaj Math — a spiritual home dedicated to devotion, seva and community upliftment in Solapur.',

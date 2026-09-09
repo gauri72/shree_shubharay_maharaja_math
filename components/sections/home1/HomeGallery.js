@@ -60,7 +60,7 @@ export default function HomeGallery() {
                             <div className="home-gallery__media">
                                 <img
                                     src={item.src}
-                                    alt={`श्री शुभराय मठ — ${item.label}`}
+                                    alt={`श्री शुभराय महाराज मठ — ${item.label}`}
                                     style={{ objectPosition: item.position || "center" }}
                                 />
                             </div>

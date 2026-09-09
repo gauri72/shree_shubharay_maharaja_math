@@ -8,9 +8,9 @@ export default function HeaderNavRow({ isMobileMenu, handleMobileMenu }) {
             <div className="main-menu__left">
                 <div className="main-menu__logo main-menu__logo--shubharay">
                     <Link href="/" className="shubharay-logo">
-                        <img src="assets/images/resources/shubharay-maharaj.jpg" alt="Shubharay Math" className="shubharay-logo__img"/>
+                        <img src="assets/images/resources/shubharay-maharaj.jpg" alt="Shubharay Maharaja Math" className="shubharay-logo__img"/>
                         <span className="shubharay-logo__text">
-                            <span className="shubharay-logo__title">श्री शुभराय मठ</span>
+                            <span className="shubharay-logo__title">श्री शुभराय महाराज मठ</span>
                         </span>
                     </Link>
                 </div>
