@@ -1466,6 +1466,158 @@
     color: #3D0A0C;
 }
 
+/*==================================================================
+    ABOUT — "ABOUT US" SECTION (.about-One--ornate) — colour scheme
+    keyed to the HOME hero image.  Palette (sampled from
+    slider-v1-img-1.jpg):
+      --au-gold      #D9982A   (hero's L/R gold borders)
+      --au-gold-lite #E9B45A   (bright tint — hovers / active states)
+      --au-maroon    #620208   (field behind the idol)
+      --au-maroon-dk #4D0601   (hero's outer edges)
+      --au-ink       #2C0405   (near-black maroon — copy on the gold field)
+      --au-cream     #FBF1DC   (warm ivory — text on maroon)
+    All rules below are scoped to .about-One--ornate so the other
+    About-page variants are untouched.  Static + hover/focus + the
+    existing responsive @media blocks (size-only) all inherit.
+==================================================================*/
+.about-One--ornate {
+    --au-gold: #D9982A;
+    --au-gold-lite: #E9B45A;
+    --au-maroon: #620208;
+    --au-maroon-dk: #4D0601;
+    --au-ink: #2C0405;
+    --au-cream: #FBF1DC;
+}
+
+/* ---- Gold field + floral texture ---- */
+.about-One.about-One--ornate {
+    background-color: var(--au-gold);
+    background-image: linear-gradient(180deg, #E0A238 0%, var(--au-gold) 45%, #CE8E24 100%);
+}
+
+/* ---- Ornamental maroon border strips + corners ----
+   (base colour retuned; the Om/swastik motif SVG on top is left intact) */
+.about-One--ornate .divine-border--about,
+.about-One--ornate .divine-border--about-vertical,
+.about-One--ornate .about-One__corner {
+    background-color: var(--au-maroon-dk);
+}
+
+/* ---- Section title on the gold panel ---- */
+.about-One--ornate .section-title__tagline {
+    color: var(--au-ink);
+}
+
+.about-One--ornate .section-title__title {
+    color: var(--au-ink);
+    text-shadow: 0 1px 0 rgba(251, 241, 220, 0.5);
+}
+
+/* ---- "240+ years" stat card — maroon panel ---- */
+.about-One--ornate .about-One__provide-box {
+    background-color: var(--au-maroon);
+    box-shadow: 0 18px 40px rgba(44, 4, 5, 0.30);
+    transition: transform 300ms ease, box-shadow 300ms ease;
+}
+
+.about-One--ornate .about-One__provide-box:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 24px 50px rgba(44, 4, 5, 0.40);
+}
+
+.about-One--ornate .about-One__provide-icon span,
+.about-One--ornate .about-One__provide-count h3,
+.about-One--ornate .about-One__provide-count span,
+.about-One--ornate .about-One__provide-count-text {
+    color: var(--au-gold);
+}
+
+.about-One--ornate .about-One__provide-count h3 {
+    -webkit-text-fill-color: var(--au-gold);
+}
+
+/* ---- Devotional verse ---- */
+.about-One--ornate .tabs-content__inner p[lang="mr"] {
+    color: var(--au-ink);
+    text-shadow: 0 1px 0 rgba(251, 241, 220, 0.5);
+}
+
+/* ---- Vision / Mission tab buttons ---- */
+.about-One--ornate .tab-buttons .tab-btn span {
+    color: var(--au-ink);
+    border-color: rgba(44, 4, 5, 0.35);
+}
+
+.about-One--ornate .tab-buttons .tab-btn span:before {
+    background-color: var(--au-maroon);
+}
+
+.about-One--ornate .tab-buttons .tab-btn:hover span,
+.about-One--ornate .tab-buttons .tab-btn span:focus-visible {
+    color: var(--au-maroon);
+    border-color: var(--au-maroon);
+}
+
+.about-One--ornate .tab-buttons .tab-btn.active-btn span {
+    color: var(--au-gold-lite);
+    border-color: var(--au-maroon);
+}
+
+/* ---- Location / "need help" block ---- */
+.about-One--ornate .about-One__need-help .icon span {
+    color: var(--au-maroon);
+}
+
+.about-One--ornate .about-One__need-help .content p {
+    color: rgba(44, 4, 5, 0.75);
+}
+
+.about-One--ornate .about-One__need-help .content h4 a {
+    color: var(--au-ink);
+    transition: color 250ms ease;
+}
+
+.about-One--ornate .about-One__need-help .content h4 a:hover,
+.about-One--ornate .about-One__need-help .content h4 a:focus-visible {
+    color: var(--au-maroon);
+}
+
+/* ---- CTA button — maroon fill, gold chip ---- */
+.about-One--ornate .about-One__btn-box .thm-btn {
+    background-color: var(--au-maroon);
+    border-color: var(--au-maroon-dk);
+    color: var(--au-cream);
+    box-shadow: 0 8px 20px rgba(44, 4, 5, 0.35);
+}
+
+.about-One--ornate .about-One__btn-box .thm-btn::after {
+    background-color: var(--au-ink);
+}
+
+.about-One--ornate .about-One__btn-box .thm-btn span {
+    background-color: var(--au-gold);
+    color: var(--au-ink);
+}
+
+.about-One--ornate .about-One__btn-box .thm-btn:hover,
+.about-One--ornate .about-One__btn-box .thm-btn:focus-visible {
+    border-color: var(--au-ink);
+    color: var(--au-gold-lite);
+}
+
+.about-One--ornate .about-One__btn-box .thm-btn:hover span {
+    background-color: var(--au-cream);
+    color: var(--au-ink);
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .about-One--ornate .about-One__provide-box,
+    .about-One--ornate .about-One__provide-box:hover {
+        transform: none;
+        transition: none;
+    }
+}
+
 
 /*==============================================
     Our Story — मंदिर कमान (temple-arch) 3D coverflow
@@ -2211,4 +2363,214 @@
     .mandir__glow,
     .mandir__arch.is-active .mandir__kalash { animation: none; }
     .mandir__arch { transition: opacity 200ms ease; }
+}
+
+/*==================================================================
+    ABOUT — OUR STORY (.mandir) — colour scheme keyed to the HOME
+    hero image.  Palette (sampled from slider-v1-img-1.jpg):
+      --ms-gold      #D9982A   (hero's L/R gold borders)
+      --ms-gold-lite #E9B45A   (bright tint — hovers / active states)
+      --ms-gold-pale #F0CE93   (soft gold on maroon)
+      --ms-maroon    #620208   (field behind the idol)
+      --ms-maroon-2  #7A1418   (mid maroon — radial highlight in the arches)
+      --ms-maroon-dk #4D0601   (hero's outer edges)
+      --ms-ink       #2C0405   (near-black maroon — copy on the gold field)
+      --ms-cream     #FBF1DC   (warm ivory — text inside the maroon arches)
+    Section chrome (gold field, ornamental borders/corners, 3D arches,
+    nav arrows, chapter dots, corner cards) re-keyed.  Static +
+    hover/focus + responsive all inherit — the existing @media blocks
+    only change sizes.
+==================================================================*/
+.mandir {
+    --ms-gold: #D9982A;
+    --ms-gold-lite: #E9B45A;
+    --ms-gold-pale: #F0CE93;
+    --ms-maroon: #620208;
+    --ms-maroon-2: #7A1418;
+    --ms-maroon-dk: #4D0601;
+    --ms-ink: #2C0405;
+    --ms-cream: #FBF1DC;
+}
+
+/* ---- Gold field ---- */
+.mandir {
+    background-color: var(--ms-gold);
+    background-image: linear-gradient(180deg, #E0A238 0%, var(--ms-gold) 45%, #CE8E24 100%);
+}
+
+/* mandala halo — maroon spokes to match the hero maroon */
+.mandir__mandala {
+    background:
+        repeating-conic-gradient(from 0deg,
+            rgba(76, 6, 1, 0.16) 0deg 1.6deg,
+            rgba(76, 6, 1, 0) 1.6deg 10deg);
+}
+
+/* warm halo behind the focus arch — ivory */
+.mandir__haze {
+    background: radial-gradient(ellipse, rgba(251, 241, 220, 0.5) 0%, transparent 70%);
+}
+
+/* ---- Section title ---- */
+.mandir .section-title__tagline {
+    color: var(--ms-ink);
+}
+
+.mandir .section-title__title {
+    color: var(--ms-ink);
+}
+
+.mandir .section-title__title span {
+    color: var(--ms-maroon);
+}
+
+/* ---- Ornamental maroon border strips + corners ----
+   (only the base colour is retuned; the Om/swastik motif SVG on top
+   stays; it still reads on the deeper maroon) */
+.mandir .divine-border--about,
+.mandir .divine-border--about-vertical,
+.mandir .about-One__corner {
+    background-color: var(--ms-maroon-dk);
+}
+
+/* ---- 3D arches — maroon niche, gold frame ---- */
+.mandir__face {
+    background:
+        radial-gradient(120% 80% at 50% 12%, var(--ms-maroon-2) 0%, var(--ms-maroon) 52%, var(--ms-maroon-dk) 100%);
+    border-color: var(--ms-gold);
+    box-shadow:
+        0 0 0 6px rgba(76, 6, 1, 0.20),
+        inset 0 1px 0 rgba(251, 241, 220, 0.35),
+        inset 0 0 0 1px rgba(217, 152, 42, 0.32),
+        inset 0 34px 60px rgba(0, 0, 0, 0.45),
+        inset 0 -30px 50px rgba(217, 152, 42, 0.12),
+        0 40px 72px rgba(44, 4, 5, 0.5);
+}
+
+.mandir__face::before {
+    border-color: rgba(217, 152, 42, 0.40);
+}
+
+.mandir__face::after {
+    background: radial-gradient(ellipse, rgba(217, 152, 42, 0.4) 0%, transparent 70%);
+}
+
+.mandir__scroll {
+    scrollbar-color: rgba(217, 152, 42, 0.5) transparent;
+}
+
+.mandir__scroll::-webkit-scrollbar-thumb {
+    background: rgba(217, 152, 42, 0.5);
+}
+
+/* golden halo behind the active arch — ivory bloom */
+.mandir__glow {
+    background:
+        radial-gradient(ellipse at 50% 30%, rgba(251, 241, 220, 0.85) 0%, rgba(240, 206, 147, 0.35) 34%, rgba(240, 206, 147, 0) 70%);
+}
+
+/* kalash finial */
+.mandir__kalash {
+    color: var(--ms-maroon-dk);
+    filter: drop-shadow(0 3px 8px rgba(0, 0, 0, 0.4)) drop-shadow(0 0 10px rgba(240, 206, 147, 0.6));
+}
+
+/* arch base plinth */
+.mandir__base {
+    background: linear-gradient(180deg, var(--ms-gold) 0%, #a06d13 55%, var(--ms-maroon-dk) 100%);
+    box-shadow: 0 12px 26px rgba(44, 4, 5, 0.5);
+}
+
+/* ---- Arch content ---- */
+.mandir__arch-title {
+    color: var(--ms-cream);
+}
+
+.mandir__place {
+    background: rgba(217, 152, 42, 0.14);
+    border-color: rgba(217, 152, 42, 0.40);
+    color: var(--ms-gold-lite);
+}
+
+.mandir__face p {
+    color: var(--ms-cream);
+}
+
+.mandir__note {
+    border-top-color: rgba(217, 152, 42, 0.28);
+    color: var(--ms-gold-lite);
+}
+
+/* ---- Nav arrows — maroon on gold ---- */
+.mandir__nav {
+    background: rgba(76, 6, 1, 0.10);
+    border-color: rgba(76, 6, 1, 0.40);
+    color: var(--ms-maroon);
+}
+
+.mandir__nav:hover,
+.mandir__nav:focus-visible {
+    background: var(--ms-maroon);
+    color: var(--ms-gold-lite);
+}
+
+/* ---- Chapter dots ---- */
+.mandir__dot {
+    border-color: rgba(76, 6, 1, 0.28);
+    color: rgba(76, 6, 1, 0.62);
+}
+
+.mandir__dot:hover,
+.mandir__dot:focus-visible {
+    border-color: var(--ms-maroon);
+    color: var(--ms-maroon);
+}
+
+.mandir__dot.is-active {
+    background: var(--ms-maroon);
+    border-color: var(--ms-maroon);
+    color: var(--ms-gold-lite);
+}
+
+@media (min-width: 992px) {
+    .mandir__dot {
+        background: rgba(217, 152, 42, 0.9);
+        border-color: rgba(76, 6, 1, 0.40);
+    }
+    .mandir__dot.is-active {
+        background: var(--ms-maroon);
+    }
+}
+
+/* ---- Corner story cards (>=1360px) ---- */
+@media (min-width: 1360px) {
+    .mandir__corner-card {
+        color: var(--ms-cream);
+        background:
+            radial-gradient(120% 80% at 50% 12%, var(--ms-maroon-2) 0%, var(--ms-maroon) 54%, var(--ms-maroon-dk) 100%);
+        border-color: var(--ms-gold);
+        box-shadow:
+            inset 0 1px 0 rgba(251, 241, 220, 0.32),
+            inset 0 0 0 1px rgba(217, 152, 42, 0.28),
+            inset 0 24px 44px rgba(0, 0, 0, 0.42),
+            0 30px 54px rgba(44, 4, 5, 0.44);
+    }
+    .mandir__corner-card::before {
+        border-color: rgba(217, 152, 42, 0.40);
+    }
+    .mandir__corner-card__kalash {
+        color: var(--ms-gold);
+    }
+    .mandir__corner-card__title {
+        color: var(--ms-cream);
+    }
+    .mandir__corner-card__text {
+        color: var(--ms-gold-pale);
+    }
+    .mandir__corner-card__rule {
+        background: rgba(217, 152, 42, 0.40);
+    }
+    .mandir__corner-card__tag {
+        color: var(--ms-gold-lite);
+    }
 }
