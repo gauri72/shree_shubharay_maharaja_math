@@ -7892,6 +7892,29 @@ ul {
   background-color: #3D0A0C;
 }
 
+/* Mission / Vision tabs on the re-keyed About Us section — the select /
+   hover fill uses the hero image's brighter red #7A1418. Scoped to
+   .about-One--ornate and placed after the module-css import so it wins. */
+.about-One--ornate .about-One__tab-box .tab-buttons .tab-btn span:before {
+  background-color: #7A1418;
+}
+
+.about-One--ornate .about-One__tab-box .tab-buttons .tab-btn.active-btn span,
+.about-One--ornate .about-One__tab-box .tab-buttons .tab-btn:hover span {
+  color: #E9B45A;
+  border-color: #7A1418;
+}
+
+.about-One--ornate .about-One__tab-box .tab-buttons .tab-btn:hover span:before {
+  transform: scaleY(1);
+}
+
+.about-One--ornate .about-One__tab-box .tab-buttons .tab-btn:focus-visible {
+  outline: 2px solid #7A1418;
+  outline-offset: 3px;
+  border-radius: 12px;
+}
+
 .about-One__btn-box .thm-btn {
   background-color: #3D0A0C;
   border-color: #3D0A0C;

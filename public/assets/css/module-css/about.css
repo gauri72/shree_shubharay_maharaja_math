@@ -1433,25 +1433,8 @@
     text-shadow: 0 1px 0 rgba(255, 248, 231, 0.5);
 }
 
-/* Tab buttons recoloured to sit with the gold panel / maroon border */
-.about-One--ornate .tab-buttons .tab-btn span {
-    color: #3D0A0C;
-    border-color: rgba(61, 10, 12, 0.35);
-}
-
-.about-One--ornate .tab-buttons .tab-btn span:before {
-    background-color: #3D0A0C;
-}
-
-.about-One--ornate .tab-buttons .tab-btn:hover span {
-    color: #3D0A0C;
-    border-color: #3D0A0C;
-}
-
-.about-One--ornate .tab-buttons .tab-btn.active-btn span {
-    color: #F2A90A;
-    border-color: #3D0A0C;
-}
+/* (Mission / Vision tab buttons are re-keyed to the hero palette in the
+   .about-One--ornate colour block further down.) */
 
 /* Need-help block */
 .about-One--ornate .about-One__need-help .icon span {
@@ -1542,25 +1525,55 @@
     text-shadow: 0 1px 0 rgba(251, 241, 220, 0.5);
 }
 
-/* ---- Vision / Mission tab buttons ---- */
+/* ---- Mission / Vision tab buttons ----
+   select / hover fill uses the hero image's brighter red #7A1418 */
+.about-One--ornate {
+    --au-red-select: #7A1418;
+}
+
+.about-One--ornate .tab-buttons .tab-btn {
+    border-radius: 12px;
+}
+
 .about-One--ornate .tab-buttons .tab-btn span {
     color: var(--au-ink);
-    border-color: rgba(44, 4, 5, 0.35);
+    background-color: transparent;
+    border-color: rgba(44, 4, 5, 0.30);
+    transition: color 260ms ease, border-color 260ms ease, background-color 260ms ease;
 }
 
 .about-One--ornate .tab-buttons .tab-btn span:before {
-    background-color: var(--au-maroon);
+    background-color: var(--au-red-select);
 }
 
-.about-One--ornate .tab-buttons .tab-btn:hover span,
-.about-One--ornate .tab-buttons .tab-btn span:focus-visible {
-    color: var(--au-maroon);
-    border-color: var(--au-maroon);
+/* hover — the red fill sweeps up (base :before scaleY), gold-lite label */
+.about-One--ornate .tab-buttons .tab-btn:hover span {
+    color: var(--au-gold-lite);
+    border-color: var(--au-red-select);
+    background-color: transparent;
 }
 
+.about-One--ornate .tab-buttons .tab-btn:hover span:before {
+    transform: scaleY(1);
+}
+
+/* selected tab — red fill held, gold-lite label */
 .about-One--ornate .tab-buttons .tab-btn.active-btn span {
     color: var(--au-gold-lite);
-    border-color: var(--au-maroon);
+    border-color: var(--au-red-select);
+    background-color: transparent;
+    box-shadow: 0 8px 20px rgba(44, 4, 5, 0.28);
+}
+
+/* keyboard focus ring on the clickable list item */
+.about-One--ornate .tab-buttons .tab-btn:focus-visible {
+    outline: 2px solid var(--au-red-select);
+    outline-offset: 3px;
+    border-radius: 12px;
+}
+
+.about-One--ornate .about-One__tab-box .tabs-content__inner p[lang="mr"] {
+    text-shadow: none;
 }
 
 /* ---- Location / "need help" block ---- */
