@@ -6413,8 +6413,41 @@ ul {
     rgba(var(--footer-accent-rgb), 0) 100%);
 }
 
+/*==================================================================
+    FOOTER LAYOUT — fluid CSS grid.
+    The four widgets flow 4 -> 2 -> 1 columns automatically via
+    auto-fit + minmax, so there are NO per-column media queries.
+    A single `--pad` scale drives vertical rhythm at each width.
+==================================================================*/
+.site-footer--shubharay {
+  --footer-pad-y: clamp(44px, 7vw, 76px);
+  --footer-gap: clamp(28px, 4vw, 56px);
+}
+
 .site-footer--shubharay .site-footer__top-inner {
-  padding: 50px 0 20px;
+  display: block;
+  padding: var(--footer-pad-y) 0 calc(var(--footer-pad-y) * 0.7);
+}
+
+.site-footer--shubharay .site-footer__grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: var(--footer-gap);
+  align-items: start;
+}
+
+/* keep the About column a touch wider than the rest when there's room */
+@media (min-width: 1100px) {
+  .site-footer--shubharay .site-footer__grid {
+    grid-template-columns: 1.6fr 1fr 1fr 1.3fr;
+  }
+}
+
+/* the widgets themselves: reset all the template's arbitrary desktop
+   margins/offsets — the grid gap is the only spacing now */
+.site-footer--shubharay .footer-widget {
+  margin: 0;
+  padding: 0;
 }
 
 .site-footer--shubharay .footer-widget__about {
@@ -6428,33 +6461,35 @@ ul {
   line-height: 1.9;
 }
 
-.footer-widget__about-logo .shubharay-logo {
+.site-footer--shubharay .footer-widget__about-logo {
   display: flex;
   align-items: center;
-  gap: 16px;
+  gap: clamp(12px, 1.6vw, 16px);
+  text-decoration: none;
 }
 
-.footer-widget__about-logo .shubharay-logo__img {
-  width: 88px;
-  height: 88px;
-  min-width: 88px;
+.site-footer--shubharay .footer-widget__about-logo .shubharay-logo__img {
+  width: clamp(64px, 8vw, 84px);
+  height: clamp(64px, 8vw, 84px);
+  min-width: clamp(64px, 8vw, 84px);
   border-radius: 50%;
   object-fit: cover;
   object-position: top center;
   border: 3px solid var(--footer-accent);
 }
 
-.footer-widget__about-logo .shubharay-logo__text {
+.site-footer--shubharay .footer-widget__about-logo .shubharay-logo__text {
   display: flex;
   align-items: center;
-  line-height: 1;
+  line-height: 1.25;
+  min-width: 0;
 }
 
-.footer-widget__about-logo .shubharay-logo__title {
-  font-size: 34px;
+.site-footer--shubharay .footer-widget__about-logo .shubharay-logo__title {
+  font-size: clamp(22px, 3vw, 30px);
   font-weight: 700;
   color: var(--footer-text);
-  white-space: nowrap;
+  white-space: normal;
   letter-spacing: 0.2px;
 }
 
@@ -6673,14 +6708,30 @@ ul {
 }
 
 .site-footer--shubharay .footer-widget__contact .site-footer__social {
-  margin-top: 18px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 22px;
 }
 
 .site-footer--shubharay .site-footer__social a {
+  width: 42px;
+  height: 42px;
+  margin: 0;
+  border-radius: 50%;
+  font-size: 16px;
   color: var(--footer-text);
   border: 1px solid rgba(var(--footer-accent-rgb), 0.45);
   background-color: rgba(0, 0, 0, 0.22);
-  transition: background-color 200ms ease, color 200ms ease, border-color 200ms ease;
+  transition: background-color 200ms ease, color 200ms ease, border-color 200ms ease, transform 200ms ease;
+}
+
+.site-footer--shubharay .site-footer__social a + a {
+  margin-left: 0;
+}
+
+.site-footer--shubharay .site-footer__social a:hover {
+  transform: translateY(-2px);
 }
 
 .site-footer--shubharay .site-footer__social a:before {
@@ -6695,239 +6746,126 @@ ul {
   border-color: var(--footer-accent-hover);
 }
 
+/*==================================================================
+    FOOTER BOTTOM BAR — copyright · legal links · credit.
+    Three flex children on one row at desktop; they wrap and centre
+    on their own on narrow screens. No `order` hacks, no <br> toggle.
+==================================================================*/
 .site-footer--shubharay .site-footer__bottom {
   border-top: 1px solid rgba(var(--footer-text-rgb), 0.15);
 }
 
 .site-footer--shubharay .site-footer__bottom-inner {
-  justify-content: space-between;
+  display: flex;
   align-items: center;
-  gap: 16px;
+  justify-content: space-between;
   flex-wrap: wrap;
-  padding: 16px 0;
+  gap: 10px 28px;
+  padding: 20px 0;
 }
 
-.site-footer--shubharay .site-footer__copyright {
-  top: 0;
-  order: 1;
-  flex: 1 1 auto;
+.site-footer--shubharay .site-footer__copyright-text,
+.site-footer--shubharay .site-footer__credit-text {
+  margin: 0;
+  font-size: 13.5px;
+  line-height: 1.6;
 }
 
-.site-footer--shubharay .site-footer__credit {
-  order: 2;
-  flex: 1 1 auto;
-  text-align: center;
+.site-footer--shubharay .site-footer__copyright-text {
+  color: var(--footer-text);
 }
 
 .site-footer--shubharay .site-footer__credit-text {
-  margin: 0;
-  font-size: 13px;
   color: var(--footer-text-muted);
 }
 
 .site-footer--shubharay .site-footer__credit-name {
   font-weight: 700;
   color: var(--footer-accent);
+  transition: color 200ms ease;
 }
 
-.site-footer--shubharay .site-footer__bottom-menu-box {
-  top: 0;
-  order: 3;
-  flex: 1 1 auto;
+.site-footer--shubharay .site-footer__credit-name:hover,
+.site-footer--shubharay .site-footer__credit-name:focus-visible {
+  color: var(--footer-accent-hover);
 }
 
 .site-footer--shubharay .site-footer__bottom-menu {
-  justify-content: flex-end;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 6px 20px;
+  margin: 0;
 }
 
-/* Tablet + mobile responsiveness */
-.site-footer--shubharay .site-footer__copyright-break {
-  display: none;
-}
-
+/* ---- Responsive: single centred column at <= 991px ---- */
 @media (max-width: 991px) {
-  .site-footer--shubharay .site-footer__top-inner {
-    padding: 36px 0 26px;
+  .site-footer--shubharay .site-footer__grid {
+    text-align: center;
+    justify-items: center;
   }
 
-  .site-footer--shubharay .site-footer__top-inner .row > div {
-    margin-bottom: 32px;
-  }
-
-  .site-footer--shubharay .site-footer__top-inner .row > div:last-child {
-    margin-bottom: 0;
-  }
-
-  .site-footer--shubharay .footer-widget__about,
-  .site-footer--shubharay .footer-widget__services,
-  .site-footer--shubharay .footer-widget__links,
-  .site-footer--shubharay .footer-widget__contact {
+  .site-footer--shubharay .footer-widget {
     display: flex;
     flex-direction: column;
     align-items: center;
-    text-align: center;
+    width: 100%;
+    max-width: 420px;
   }
 
   .site-footer--shubharay .footer-widget__about-text {
-    max-width: 360px;
-    margin-left: auto;
-    margin-right: auto;
-  }
-
-  .site-footer--shubharay .footer-widget__about-logo .shubharay-logo__text {
-    align-items: center;
-    text-align: center;
+    max-width: 46ch;
   }
 
   .site-footer--shubharay .footer-widget__title-ornament {
     align-self: center;
   }
 
-  .site-footer--shubharay .footer-widget__services-list--icon li,
-  .site-footer--shubharay .footer-widget__services-list--icon li a {
+  .site-footer--shubharay .footer-widget__services-list li,
+  .site-footer--shubharay .footer-widget__services-list li a,
+  .site-footer--shubharay .footer-widget__contact-list li {
     justify-content: center;
   }
 
-  .site-footer--shubharay .footer-widget__contact-list li,
-  .site-footer--shubharay .footer-widget__contact-list--multiline {
-    justify-content: center;
-  }
-
-  .site-footer--shubharay .footer-widget__contact-list--multiline p {
+  .site-footer--shubharay .footer-widget__contact-list li p {
     text-align: center;
   }
 
-  .site-footer--shubharay .footer-widget__contact .site-footer__social {
+  .site-footer--shubharay .site-footer__social {
     justify-content: center;
   }
 
   .site-footer--shubharay .site-footer__bottom-inner {
     flex-direction: column;
     text-align: center;
+    gap: 12px;
+    padding: 22px 0;
+  }
+
+  .site-footer--shubharay .site-footer__bottom-menu {
+    justify-content: center;
+  }
+}
+
+/* Tablet only — left-align the Contact widget's address block
+   (heading, ornament and the rest of the footer stay centred). */
+@media (min-width: 768px) and (max-width: 991px) {
+  .site-footer--shubharay .footer-widget__contact-list li {
+    justify-content: flex-start;
+  }
+
+  .site-footer--shubharay .footer-widget__contact-list li p {
+    text-align: left;
+  }
+}
+
+@media (max-width: 480px) {
+  .site-footer--shubharay .footer-widget__contact-list li {
+    flex-direction: column;
     gap: 8px;
-    padding: 18px 0;
-  }
-
-  .site-footer--shubharay .site-footer__copyright {
-    order: 1;
-    text-align: center;
-  }
-
-  .site-footer--shubharay .site-footer__bottom-menu-box {
-    order: 2;
-  }
-
-  .site-footer--shubharay .site-footer__credit {
-    order: 3;
-  }
-
-  .site-footer--shubharay .site-footer__bottom-menu {
-    flex-wrap: wrap;
-    row-gap: 8px;
-    justify-content: center;
   }
 }
 
-/* Tablet — stack the four footer widgets in a single centred column.
-   The markup is col-md-6, which puts them in a ragged 2x2 grid where the
-   tall widgets (About, Contact) leave the short ones (Seva, Quick Links)
-   floating with big gaps. One column keeps the rhythm even. */
-@media only screen and (min-width: 768px) and (max-width: 991px) {
-  .site-footer--shubharay .site-footer__top-inner .row > [class*="col-"] {
-    flex: 0 0 100%;
-    max-width: 100%;
-  }
-
-  .site-footer--shubharay .site-footer__top-inner .row > div {
-    margin-bottom: 34px;
-  }
-
-  .site-footer--shubharay .site-footer__top-inner .row > div:last-child {
-    margin-bottom: 0;
-  }
-
-  .site-footer--shubharay .footer-widget__about-text {
-    max-width: 460px;
-  }
-}
-
-@media (max-width: 767px) {
-  .site-footer--shubharay .site-footer__top-inner {
-    padding: 32px 0 6px;
-  }
-
-  .site-footer--shubharay .site-footer__top-inner .row > div {
-    margin-bottom: 8px;
-  }
-
-  .site-footer--shubharay .site-footer__top-inner .row > div:first-child {
-    margin-bottom: -14px;
-  }
-
-  .site-footer--shubharay .site-footer__top-inner .row > div:last-child {
-    margin-bottom: 24px;
-  }
-
-  .site-footer--shubharay .footer-widget__about-logo {
-    margin-bottom: 12px;
-  }
-
-  .site-footer--shubharay .footer-widget__about-logo .shubharay-logo__text {
-    align-items: center;
-    text-align: center;
-  }
-
-  .site-footer--shubharay .footer-widget__title {
-    margin-bottom: 6px;
-  }
-
-  .site-footer--shubharay .footer-widget__title-ornament {
-    margin-top: 0;
-    margin-bottom: 14px;
-  }
-
-  .site-footer--shubharay .footer-widget__services-list li+li {
-    margin-top: 8px;
-  }
-
-  .site-footer--shubharay .footer-widget__contact-list li+li {
-    margin-top: 10px;
-  }
-
-  .site-footer--shubharay .footer-widget__contact .site-footer__social {
-    margin-top: 12px;
-  }
-
-  .site-footer--shubharay .site-footer__copyright-break {
-    display: block;
-  }
-
-  .site-footer--shubharay .site-footer__bottom-inner {
-    flex-direction: column;
-    text-align: center;
-    gap: 10px;
-    padding: 16px 0;
-  }
-
-  .site-footer--shubharay .site-footer__copyright {
-    order: 1;
-    text-align: center;
-  }
-
-  .site-footer--shubharay .site-footer__bottom-menu-box {
-    order: 2;
-  }
-
-  .site-footer--shubharay .site-footer__credit {
-    order: 3;
-  }
-
-  .site-footer--shubharay .site-footer__bottom-menu {
-    justify-content: center;
-    flex-wrap: wrap;
-    row-gap: 6px;
-  }
-}
 
 /* Shubharay Math banner — desktop full-bleed, mobile/tablet stacked card */
 .sr-only {
@@ -10000,13 +9938,13 @@ ul {
     pointer-events: none;
     transform-origin: 50% 100%;
     filter:
-      drop-shadow(0 24px 40px rgba(0, 0, 0, 0.55))
-      drop-shadow(0 0 34px rgba(242, 169, 10, 0.32));
+      drop-shadow(0 24px 40px rgba(0, 0, 0, 0.5))
+      drop-shadow(0 0 30px rgba(242, 169, 10, 0.28));
     opacity: 1;
     transition:
-      opacity 520ms ease,
-      transform 640ms cubic-bezier(0.34, 1.56, 0.64, 1),
-      filter 520ms ease;
+      opacity 900ms ease,
+      transform 900ms cubic-bezier(0.22, 1, 0.36, 1),
+      filter 900ms ease;
   }
 
   /* The pillars are only ever visible while the book is CLOSED, when the cover
@@ -10014,119 +9952,119 @@ ul {
      centre). Hug that closed-cover edge with a minimal 6px gap. */
   .legacy-One__aside--left {
     left: calc(50% - 300px - 6px);
-    transform: translate(-100%, -50%) rotate(0deg) scale(1);
+    transform: translate(-100%, -50%);
   }
   .legacy-One__aside--right {
     right: calc(50% - 300px - 6px);
-    transform: translate(100%, -50%) rotate(0deg) scale(1);
+    transform: translate(100%, -50%);
   }
 
-  /* book CLOSED → the pillar "lights up": drops from above, small floor bounce,
-     a bright flare as the flame catches, then a slow idle breathe */
+  /* book CLOSED → the samai settles in: a slow, weighted fade-and-rise
+     (no bounce, no squash), then an unhurried flame glow — the glow
+     pulses in intensity only, the lamp itself never scales. */
   .legacy-One--book-closed .legacy-One__aside--left {
     animation:
-      legacyPillarLight 1000ms cubic-bezier(0.16, 1.02, 0.3, 1) both,
-      legacyPillarBreatheL 5.4s ease-in-out 1100ms infinite;
+      legacyPillarLight 1400ms cubic-bezier(0.22, 1, 0.36, 1) both,
+      legacyPillarFlameL 7s ease-in-out 1600ms infinite;
   }
   .legacy-One--book-closed .legacy-One__aside--right {
     animation:
-      legacyPillarLightR 1000ms cubic-bezier(0.16, 1.02, 0.3, 1) 140ms both,
-      legacyPillarBreatheR 5.4s ease-in-out 1240ms infinite;
+      legacyPillarLightR 1400ms cubic-bezier(0.22, 1, 0.36, 1) 220ms both,
+      legacyPillarFlameR 7s ease-in-out 2000ms infinite;
   }
 
-  /* book OPEN → the pillar is "snuffed out": glow dies, it drops straight down
-     with a squash and fades — quick and vertical */
+  /* book OPEN → the samai recedes: the glow dims and it eases down and
+     out, calmly — no squash, no snap. */
   .legacy-One--book-open .legacy-One__aside {
     animation: none;
-    opacity: 0;
   }
   .legacy-One--book-open .legacy-One__aside--left {
-    transform: translate(-100%, 10%) scaleY(0.62) scaleX(1.08);
-    filter: drop-shadow(0 10px 18px rgba(0,0,0,0.5)) drop-shadow(0 0 4px rgba(242,169,10,0.05));
+    opacity: 0;
+    transform: translate(-100%, -42%);
+    filter: drop-shadow(0 16px 26px rgba(0, 0, 0, 0.45)) drop-shadow(0 0 6px rgba(242, 169, 10, 0.06));
     transition:
-      opacity 300ms ease 60ms,
-      transform 380ms cubic-bezier(0.5, 0, 0.9, 0.2),
-      filter 240ms ease;
+      opacity 620ms ease,
+      transform 720ms cubic-bezier(0.4, 0, 0.2, 1),
+      filter 520ms ease;
   }
   .legacy-One--book-open .legacy-One__aside--right {
-    transform: translate(100%, 10%) scaleY(0.62) scaleX(1.08);
-    filter: drop-shadow(0 10px 18px rgba(0,0,0,0.5)) drop-shadow(0 0 4px rgba(242,169,10,0.05));
+    opacity: 0;
+    transform: translate(100%, -42%);
+    filter: drop-shadow(0 16px 26px rgba(0, 0, 0, 0.45)) drop-shadow(0 0 6px rgba(242, 169, 10, 0.06));
     transition:
-      opacity 300ms ease 60ms,
-      transform 380ms cubic-bezier(0.5, 0, 0.9, 0.2),
-      filter 240ms ease;
+      opacity 620ms ease,
+      transform 720ms cubic-bezier(0.4, 0, 0.2, 1),
+      filter 520ms ease;
   }
 }
 
-/* --- ADD: drop in from above → floor bounce → flame flares up → settle --- */
+/* entrance — a slow, weighted fade + rise; the flame glow eases up
+   alongside it. No scaling of the lamp, no overshoot. */
 @keyframes legacyPillarLight {
   0% {
     opacity: 0;
-    transform: translate(-100%, -50%) translateY(-90px) scaleY(1.12) scaleX(0.92);
-    filter: drop-shadow(0 24px 40px rgba(0,0,0,0)) drop-shadow(0 0 0 rgba(242,169,10,0));
+    transform: translate(-100%, -50%) translateY(26px);
+    filter: drop-shadow(0 14px 26px rgba(0, 0, 0, 0.2)) drop-shadow(0 0 0 rgba(242, 169, 10, 0));
   }
-  45% {
+  60% {
     opacity: 1;
-    transform: translate(-100%, -50%) translateY(0) scaleY(0.9) scaleX(1.08);
-    filter: drop-shadow(0 18px 30px rgba(0,0,0,0.5)) drop-shadow(0 0 18px rgba(242,169,10,0.25));
-  }
-  62% {
-    transform: translate(-100%, -50%) translateY(-12px) scaleY(1.05) scaleX(0.97);
-    filter: drop-shadow(0 26px 44px rgba(0,0,0,0.55)) drop-shadow(0 0 64px rgba(255,205,90,0.75));
-  }
-  80% {
-    transform: translate(-100%, -50%) translateY(0) scaleY(0.98) scaleX(1.02);
   }
   100% {
     opacity: 1;
-    transform: translate(-100%, -50%) translateY(0) scaleY(1) scaleX(1);
-    filter: drop-shadow(0 24px 40px rgba(0,0,0,0.55)) drop-shadow(0 0 34px rgba(242,169,10,0.32));
+    transform: translate(-100%, -50%) translateY(0);
+    filter: drop-shadow(0 24px 40px rgba(0, 0, 0, 0.5)) drop-shadow(0 0 30px rgba(242, 169, 10, 0.28));
   }
 }
 @keyframes legacyPillarLightR {
   0% {
     opacity: 0;
-    transform: translate(100%, -50%) translateY(-90px) scaleY(1.12) scaleX(0.92);
-    filter: drop-shadow(0 24px 40px rgba(0,0,0,0)) drop-shadow(0 0 0 rgba(242,169,10,0));
+    transform: translate(100%, -50%) translateY(26px);
+    filter: drop-shadow(0 14px 26px rgba(0, 0, 0, 0.2)) drop-shadow(0 0 0 rgba(242, 169, 10, 0));
   }
-  45% {
+  60% {
     opacity: 1;
-    transform: translate(100%, -50%) translateY(0) scaleY(0.9) scaleX(1.08);
-    filter: drop-shadow(0 18px 30px rgba(0,0,0,0.5)) drop-shadow(0 0 18px rgba(242,169,10,0.25));
-  }
-  62% {
-    transform: translate(100%, -50%) translateY(-12px) scaleY(1.05) scaleX(0.97);
-    filter: drop-shadow(0 26px 44px rgba(0,0,0,0.55)) drop-shadow(0 0 64px rgba(255,205,90,0.75));
-  }
-  80% {
-    transform: translate(100%, -50%) translateY(0) scaleY(0.98) scaleX(1.02);
   }
   100% {
     opacity: 1;
-    transform: translate(100%, -50%) translateY(0) scaleY(1) scaleX(1);
-    filter: drop-shadow(0 24px 40px rgba(0,0,0,0.55)) drop-shadow(0 0 34px rgba(242,169,10,0.32));
+    transform: translate(100%, -50%) translateY(0);
+    filter: drop-shadow(0 24px 40px rgba(0, 0, 0, 0.5)) drop-shadow(0 0 30px rgba(242, 169, 10, 0.28));
   }
 }
 
-/* idle breathe — gentle scale + glow swell, no lateral drift */
-@keyframes legacyPillarBreatheL {
+/* idle flame — the glow softly swells and eases back; the lamp is
+   perfectly still. Slow (7s), asymmetric so it never feels metronomic. */
+@keyframes legacyPillarFlameL {
   0%, 100% {
-    transform: translate(-100%, -50%) scale(1);
-    filter: drop-shadow(0 24px 40px rgba(0,0,0,0.55)) drop-shadow(0 0 26px rgba(242,169,10,0.26));
+    filter:
+      drop-shadow(0 24px 40px rgba(0, 0, 0, 0.5))
+      drop-shadow(0 0 24px rgba(242, 169, 10, 0.24));
   }
-  50% {
-    transform: translate(-100%, -50%) scale(1.028);
-    filter: drop-shadow(0 24px 40px rgba(0,0,0,0.55)) drop-shadow(0 0 46px rgba(255,200,80,0.5));
+  40% {
+    filter:
+      drop-shadow(0 24px 40px rgba(0, 0, 0, 0.5))
+      drop-shadow(0 0 40px rgba(255, 198, 92, 0.42));
+  }
+  70% {
+    filter:
+      drop-shadow(0 24px 40px rgba(0, 0, 0, 0.5))
+      drop-shadow(0 0 30px rgba(248, 184, 74, 0.32));
   }
 }
-@keyframes legacyPillarBreatheR {
+@keyframes legacyPillarFlameR {
   0%, 100% {
-    transform: translate(100%, -50%) scale(1);
-    filter: drop-shadow(0 24px 40px rgba(0,0,0,0.55)) drop-shadow(0 0 26px rgba(242,169,10,0.26));
+    filter:
+      drop-shadow(0 24px 40px rgba(0, 0, 0, 0.5))
+      drop-shadow(0 0 24px rgba(242, 169, 10, 0.24));
   }
-  50% {
-    transform: translate(100%, -50%) scale(1.028);
-    filter: drop-shadow(0 24px 40px rgba(0,0,0,0.55)) drop-shadow(0 0 46px rgba(255,200,80,0.5));
+  40% {
+    filter:
+      drop-shadow(0 24px 40px rgba(0, 0, 0, 0.5))
+      drop-shadow(0 0 40px rgba(255, 198, 92, 0.42));
+  }
+  70% {
+    filter:
+      drop-shadow(0 24px 40px rgba(0, 0, 0, 0.5))
+      drop-shadow(0 0 30px rgba(248, 184, 74, 0.32));
   }
 }
 

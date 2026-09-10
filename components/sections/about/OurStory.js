@@ -155,7 +155,6 @@ export default function OurStory() {
             <div className="divine-border--about divine-border--about-bottom" role="presentation"></div>
 
             <div className="mandir__bg" aria-hidden="true"></div>
-            <div className="mandir__mandala" aria-hidden="true"></div>
             <div className="mandir__haze" aria-hidden="true"></div>
 
             {/* Desktop corner cards filling the upper-left / upper-right gold space */}
