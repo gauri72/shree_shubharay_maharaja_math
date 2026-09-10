@@ -1,6 +1,6 @@
 'use client'
 
-const MANTRAS = [
+const DEFAULT_MANTRAS = [
     "श्री पांडुरंग प्रसन्न",
     "श्री शुभराय महाराज प्रसन्न",
 ]
@@ -20,9 +20,12 @@ const Divider = () => (
     </span>
 )
 
-export default function MantraStrip() {
-    const items = Array.from({ length: REPEAT_COUNT * MANTRAS.length }, (_, i) => MANTRAS[i % MANTRAS.length])
-    const fullLabel = MANTRAS.join(' । ')
+export default function MantraStrip({ mantras = DEFAULT_MANTRAS }) {
+    const items = Array.from(
+        { length: REPEAT_COUNT * mantras.length },
+        (_, i) => mantras[i % mantras.length]
+    )
+    const fullLabel = mantras.join(' । ')
 
     return (
         <div className="mantra-strip" role="img" aria-label={fullLabel}>

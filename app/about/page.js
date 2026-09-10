@@ -3,7 +3,13 @@ import Layout from "@/components/layout/Layout"
 import Link from "next/link"
 import { useState } from "react"
 import Legacy from "@/components/sections/home1/Legacy"
+import MantraStrip from "@/components/sections/home1/MantraStrip"
 import OurStory from "@/components/sections/about/OurStory"
+
+const ABOUT_MANTRAS = [
+    "गुरुने दिला ज्ञानरूपी वसा",
+    "आम्ही चालवू हा पुढे वारसा",
+]
 import Cta from "@/components/sections/home1/Cta"
 import { SITE_ADDRESS_MR_LINE1, SITE_ADDRESS_MR_LINE2, SITE_MAP_URL } from "@/lib/siteInfo"
 
@@ -17,9 +23,15 @@ export default function Home() {
         <>
         <Layout headerStyle={1} footerStyle={1}>
 
+       {/*Mantra Strip (between header and breadcrumb) */}
+       <MantraStrip mantras={ABOUT_MANTRAS} />
+
        {/*Breadcrumb Bg Section Start */}
-       <section className="breadcrumb-bg-section">
+       <section className="breadcrumb-bg-section breadcrumb-bg-section--padada">
             <img src="assets/images/backgrounds/breadcrumb-bg.png" alt="" className="breadcrumb-bg-section__img"/>
+            <span className="breadcrumb-bg-section__padada-shadow" aria-hidden="true"></span>
+            <span className="breadcrumb-bg-section__padada" aria-hidden="true"></span>
+            <span className="breadcrumb-bg-section__padada-scallop" aria-hidden="true"></span>
        </section>
        {/*Breadcrumb Bg Section End */}
 
