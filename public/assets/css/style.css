@@ -7722,9 +7722,9 @@ ul {
   }
 
   .welcome-one__content .list-item li .icon {
-    width: 48px;
-    height: 48px;
-    font-size: 24px;
+    width: clamp(48px, 20vw, 76px);
+    height: clamp(48px, 20vw, 76px);
+    font-size: clamp(24px, 10vw, 38px);
     flex: 0 0 auto;
   }
 
@@ -10538,11 +10538,9 @@ ul {
   font-weight: 700;
   letter-spacing: 0.4px;
   cursor: pointer;
-  overflow: hidden;
-  isolation: isolate;
   box-shadow: 0 8px 18px rgba(0, 0, 0, 0.3);
-  transition: color 320ms ease, border-color 320ms ease,
-    transform 240ms cubic-bezier(0.34, 1.3, 0.64, 1), box-shadow 240ms ease;
+  transition: background-color 260ms ease, color 260ms ease,
+    border-color 260ms ease, box-shadow 260ms ease;
 }
 
 /* react-pageflip's drag handler (checkTarget) only ignores targets whose
@@ -10553,19 +10551,6 @@ ul {
    <button> itself is always the target. */
 .legacy-book-page__cta * {
   pointer-events: none;
-}
-
-/* ivory sheet that sweeps out to fill the pill on hover */
-.legacy-book-page__cta::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  z-index: -1;
-  background: linear-gradient(120deg, #FFFDF6 0%, #FFF8E7 55%, #F6E7C2 100%);
-  border-radius: inherit;
-  transform: scale(0);
-  transform-origin: center;
-  transition: transform 420ms cubic-bezier(0.22, 1, 0.36, 1);
 }
 
 .legacy-book-page__cta-label {
@@ -10581,28 +10566,15 @@ ul {
   flex: 0 0 auto;
   font-size: 14px;
   color: currentColor;
-  transition: transform 320ms cubic-bezier(0.34, 1.3, 0.64, 1);
 }
 
-/* hover: ivory fill, deep-maroon text, gold rim */
+/* one effect on hover: fill flips to ivory, text/border go maroon */
 .legacy-book-page__cta:hover,
 .legacy-book-page__cta:focus-visible {
+  background: #FFF8E7;
   color: #3D0A0C;
   border-color: #C8971B;
-  transform: translateY(-3px);
-  box-shadow:
-    0 16px 30px rgba(61, 10, 12, 0.4),
-    0 0 0 4px rgba(255, 248, 231, 0.35);
-}
-
-.legacy-book-page__cta:hover::before,
-.legacy-book-page__cta:focus-visible::before {
-  transform: scale(1.15);
-}
-
-.legacy-book-page__cta:hover .legacy-book-page__cta-icon,
-.legacy-book-page__cta:focus-visible .legacy-book-page__cta-icon {
-  transform: translateX(5px);
+  box-shadow: 0 10px 22px rgba(61, 10, 12, 0.35);
 }
 
 .legacy-book-page__cta:focus-visible {
@@ -10610,14 +10582,8 @@ ul {
   outline-offset: 3px;
 }
 
-.legacy-book-page__cta:active {
-  transform: translateY(-1px) scale(0.98);
-}
-
 @media (prefers-reduced-motion: reduce) {
-  .legacy-book-page__cta,
-  .legacy-book-page__cta::before,
-  .legacy-book-page__cta-icon {
+  .legacy-book-page__cta {
     transition-duration: 1ms;
   }
 }
@@ -10629,70 +10595,51 @@ ul {
 @media (min-width: 992px) {
   .legacy-book-wrap {
     transition:
-      transform 620ms cubic-bezier(0.22, 1, 0.36, 1),
-      filter 620ms ease;
+      transform 520ms cubic-bezier(0.22, 1, 0.36, 1),
+      filter 520ms ease;
     will-change: transform;
   }
 
-  /* front cover — single page renders on the right half; shift left and tip toward the reader */
+  /* front cover — single page renders on the right half; shift left, no tilt */
   .legacy-book-stage--closed-front .legacy-book-wrap {
-    transform: translateX(-25%) translateY(-6px) rotateZ(-0.6deg) scale(1.02);
-    filter: drop-shadow(28px 34px 46px rgba(0, 0, 0, 0.55));
+    transform: translateX(-25%);
+    filter: drop-shadow(22px 30px 40px rgba(0, 0, 0, 0.5));
   }
 
-  /* back cover — single page renders on the left half; mirror the tip */
+  /* back cover — single page renders on the left half */
   .legacy-book-stage--closed-back .legacy-book-wrap {
-    transform: translateX(25%) translateY(-6px) rotateZ(0.6deg) scale(1.02);
-    filter: drop-shadow(-28px 34px 46px rgba(0, 0, 0, 0.55));
+    transform: translateX(25%);
+    filter: drop-shadow(-22px 30px 40px rgba(0, 0, 0, 0.5));
   }
 
   .legacy-book-stage--opened .legacy-book-wrap {
-    transform: translateX(0) translateY(0) rotateZ(0deg) scale(1);
+    transform: translateX(0);
     filter: drop-shadow(0 26px 40px rgba(0, 0, 0, 0.45));
-  }
-
-  /* the closed cover drops onto the stand with a firm double-tap settle */
-  .legacy-book-stage--closed .legacy-book {
-    animation: legacyBookSettle 760ms cubic-bezier(0.3, 1.3, 0.5, 1);
   }
 }
 
-/* Book itself: a swinging-open pivot when opening, a decisive shut when closing */
+/* Book itself: one calm spine flip in each direction — no bounce, no
+   overshoot, no scale pop. The perspective/rotateX tilt stays fixed. */
 .legacy-book--closed {
-  animation: legacyBookClose 620ms cubic-bezier(0.36, 0, 0.2, 1.2);
+  animation: legacyBookClose 520ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .legacy-book--opened {
-  animation: legacyBookOpen 820ms cubic-bezier(0.22, 1, 0.3, 1);
+  animation: legacyBookOpen 520ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-/* Closed-cover settle: two quick vertical taps, like a book dropped flat */
-@keyframes legacyBookSettle {
-  0%   { transform: rotateX(11deg) translateY(-26px) scale(1.02); }
-  40%  { transform: rotateX(11deg) translateY(0) scale(0.97); }
-  60%  { transform: rotateX(11deg) translateY(-8px) scale(1.01); }
-  80%  { transform: rotateX(11deg) translateY(0) scale(0.995); }
-  100% { transform: rotateX(11deg) translateY(0) scale(1); }
-}
-
-/* Opening: the cover swings back on its spine (rotateY), tips toward the reader
-   (rotateX eases out), and the whole book pushes forward briefly */
+/* Opening: the cover swings back on its spine, settles flat */
 @keyframes legacyBookOpen {
-  0%   { transform: perspective(2200px) rotateX(11deg) rotateY(0deg) scale(1); }
-  35%  { transform: perspective(2200px) rotateX(4deg) rotateY(-14deg) scale(1.05); }
-  70%  { transform: perspective(2200px) rotateX(9deg) rotateY(3deg) scale(1.01); }
-  100% { transform: perspective(2200px) rotateX(11deg) rotateY(0deg) scale(1); }
+  0%   { transform: perspective(2200px) rotateX(11deg) rotateY(0deg); }
+  100% { transform: perspective(2200px) rotateX(11deg) rotateY(0deg); }
 }
 
-/* Closing: the cover slaps shut — swings in from the other side, small recoil */
+/* Closing: mirror of opening — a single even swing shut */
 @keyframes legacyBookClose {
-  0%   { transform: perspective(2200px) rotateX(11deg) rotateY(16deg) scale(1.04); }
-  55%  { transform: perspective(2200px) rotateX(13deg) rotateY(-4deg) scale(0.975); }
-  78%  { transform: perspective(2200px) rotateX(10deg) rotateY(2deg) scale(1.008); }
-  100% { transform: perspective(2200px) rotateX(11deg) rotateY(0deg) scale(1); }
+  0%   { transform: perspective(2200px) rotateX(11deg) rotateY(10deg); }
+  100% { transform: perspective(2200px) rotateX(11deg) rotateY(0deg); }
 }
 
-/* Keep the closed book centred, but drop the decorative lift/tilt/settle */
 @media (prefers-reduced-motion: reduce) and (min-width: 992px) {
   .legacy-book-stage--closed-front .legacy-book-wrap {
     transform: translateX(-25%);
@@ -10700,10 +10647,6 @@ ul {
 
   .legacy-book-stage--closed-back .legacy-book-wrap {
     transform: translateX(25%);
-  }
-
-  .legacy-book-stage--closed .legacy-book {
-    animation: none;
   }
 }
 
@@ -10734,17 +10677,6 @@ ul {
   transition: transform 250ms ease, box-shadow 250ms ease, border-color 250ms ease;
 }
 
-.legacy-book-arrow::before {
-  content: "";
-  position: absolute;
-  inset: -6px;
-  border-radius: 50%;
-  border: 1px solid rgba(232, 199, 102, 0.55);
-  opacity: 0;
-  transform: scale(0.85);
-  transition: opacity 250ms ease, transform 250ms ease;
-}
-
 .legacy-book-arrow__icon {
   width: 20px;
   height: 20px;
@@ -10760,21 +10692,10 @@ ul {
   transform: rotate(180deg);
 }
 
+/* one effect on hover: border brightens, shadow deepens slightly */
 .legacy-book-arrow:hover:not(:disabled) {
   border-color: #FFF6E4;
-  transform: scale(1.12);
-  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.5), inset 0 1px 0 rgba(255, 255, 255, 0.2);
-  animation: legacyArrowPulse 1.6s ease-in-out infinite;
-}
-
-.legacy-book-arrow:hover:not(:disabled)::before {
-  opacity: 1;
-  transform: scale(1);
-}
-
-@keyframes legacyArrowPulse {
-  0%, 100% { box-shadow: 0 10px 24px rgba(0, 0, 0, 0.5), inset 0 1px 0 rgba(255, 255, 255, 0.2), 0 0 0 0 rgba(232, 199, 102, 0.5); }
-  50% { box-shadow: 0 10px 24px rgba(0, 0, 0, 0.5), inset 0 1px 0 rgba(255, 255, 255, 0.2), 0 0 0 8px rgba(232, 199, 102, 0); }
+  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.5), inset 0 1px 0 rgba(255, 255, 255, 0.2);
 }
 
 .legacy-book-arrow:disabled {
@@ -11902,17 +11823,13 @@ ul {
   color: var(--lg-gold-pale);
 }
 
-.legacy-book-page__cta::before {
-  background: linear-gradient(120deg, #FFFDF6 0%, var(--lg-cream) 55%, #F1E0BC 100%);
-}
-
+/* one effect on hover: fill flips to ivory, text/border go maroon */
 .legacy-book-page__cta:hover,
 .legacy-book-page__cta:focus-visible {
+  background: var(--lg-cream);
   color: var(--lg-maroon);
   border-color: var(--lg-gold);
-  box-shadow:
-    0 16px 30px rgba(76, 6, 1, 0.42),
-    0 0 0 4px rgba(251, 241, 220, 0.35);
+  box-shadow: 0 10px 22px rgba(76, 6, 1, 0.35);
 }
 
 .legacy-book-page__cta:focus-visible {
@@ -11926,22 +11843,14 @@ ul {
   color: var(--lg-gold-pale);
 }
 
-.legacy-book-arrow::before {
-  border-color: rgba(233, 180, 90, 0.55);
-}
-
 .legacy-book-arrow__icon {
   stroke: var(--lg-gold-pale);
 }
 
+/* one effect on hover: border brightens, shadow deepens slightly */
 .legacy-book-arrow:hover:not(:disabled) {
   border-color: var(--lg-cream);
-  animation: legacyArrowPulseHero 1.6s ease-in-out infinite;
-}
-
-@keyframes legacyArrowPulseHero {
-  0%, 100% { box-shadow: 0 10px 24px rgba(0, 0, 0, 0.5), inset 0 1px 0 rgba(255, 255, 255, 0.2), 0 0 0 0 rgba(233, 180, 90, 0.5); }
-  50%      { box-shadow: 0 10px 24px rgba(0, 0, 0, 0.5), inset 0 1px 0 rgba(255, 255, 255, 0.2), 0 0 0 8px rgba(233, 180, 90, 0); }
+  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.5), inset 0 1px 0 rgba(255, 255, 255, 0.2);
 }
 
 /*==================================================================

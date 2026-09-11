@@ -4,6 +4,7 @@ import Link from "next/link"
 import { useState } from "react"
 import Legacy from "@/components/sections/home1/Legacy"
 import MantraStrip from "@/components/sections/home1/MantraStrip"
+import Gallery from "@/components/sections/home1/Gallery"
 import OurStory from "@/components/sections/about/OurStory"
 
 const ABOUT_MANTRAS = [
@@ -35,6 +36,8 @@ export default function Home() {
        </section>
        {/*Breadcrumb Bg Section End */}
 
+       <Gallery />
+
        {/*About One Start */}
        <section className="about-One about-One--ornate">
             {/* Maroon Om/swastik ornamental border framing the gold About section */}
@@ -65,7 +68,7 @@ export default function Home() {
                                     </div>
                                     <div className="about-One__provide-content">
                                         <div className="about-One__provide-count count-box">
-                                            <h3 className="count-text">240</h3>
+                                            <h3 className="count-text">२४०</h3>
                                             <span>+</span>
                                         </div>
                                         <p className="about-One__provide-count-text" lang="mr">वर्षांचा अखंड वारसा</p>
