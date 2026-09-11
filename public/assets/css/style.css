@@ -9145,6 +9145,22 @@ ul {
   text-shadow: none;
 }
 
+/* Welcome-style gold field (see .welcome-one) swapped in for the
+   section's original maroon bg; border/corners switched to the maroon
+   Welcome frame in JSX. Content colours (tagline, cards, button, etc.)
+   are keyed to the hero palette in the dedicated block further down
+   this file (search "HOME — UPCOMING EVENTS SECTION") — kept in one
+   place to avoid the two blocks drifting out of sync. */
+.event-one--welcome-bg {
+  background-color: #F2A90A;
+  background-image: linear-gradient(180deg, #E0A238 0%, #F2A90A 45%, #CE8E24 100%);
+}
+
+.event-one--welcome-bg::before {
+  background-image: url("../images/backgrounds/section-bg.png");
+  opacity: 0.25;
+}
+
 /* Ornamental border — gold strip with maroon Om/swastik motif, framing the maroon event section */
 .divine-border--event {
   position: absolute;
@@ -12477,86 +12493,154 @@ ul {
   --ev-cream: #FBF1DC;
 }
 
-/* ---- Maroon field ---- */
-.event-one {
-  background-color: var(--ev-maroon);
+/* ---- Corner ornaments: jap-mala (left) + parayan (right), same gentle
+   bob as the matching Aamchi Sadhana shapes ---- */
+.event-one__shape-1,
+.event-one__shape-2 {
+  position: absolute;
+  top: 60px;
+  z-index: 1;
+  pointer-events: none;
 }
 
+.event-one__shape-1 {
+  left: 260px;
+}
+
+.event-one__shape-2 {
+  right: 260px;
+}
+
+.event-one__shape-1 img,
+.event-one__shape-2 img {
+  width: 240px;
+  height: auto;
+}
+
+@media (max-width: 1440px) {
+  .event-one__shape-1 {
+    left: 190px;
+  }
+  .event-one__shape-2 {
+    right: 190px;
+  }
+  .event-one__shape-1 img,
+  .event-one__shape-2 img {
+    width: 190px;
+  }
+}
+
+@media (max-width: 1199px) {
+  .event-one__shape-1 {
+    left: 120px;
+  }
+  .event-one__shape-2 {
+    right: 120px;
+  }
+  .event-one__shape-1 img,
+  .event-one__shape-2 img {
+    width: 130px;
+  }
+}
+
+@media (max-width: 991px) {
+  .event-one__shape-1,
+  .event-one__shape-2 {
+    display: none;
+  }
+}
+
+/* ---- Section field ----
+   The section now uses the Welcome-style gold field (.event-one--welcome-bg,
+   defined earlier); this hero-keyed palette drives everything ON TOP of
+   it (cards, text, button), not the field itself. */
 .event-one::before {
   opacity: 0.42;
 }
 
-/* ---- Section title ---- */
-.event-one .section-title__tagline {
-  color: var(--ev-gold);
+.event-one--welcome-bg .section-title__tagline {
+  color: var(--ev-maroon-dk);
+  font-size: 19px;
 }
 
-.event-one .section-title__title {
-  color: var(--ev-cream);
+.event-one--welcome-bg .section-title__title {
+  color: var(--ev-ink);
 }
 
-/* ---- Ornamental gold frame: borders + corners ----
-   (base colour retuned; the Om/swastik motif SVG on top is left intact) */
-.divine-border--event,
-.divine-border--event-vertical,
-.event-one__corner {
-  background-color: var(--ev-gold);
+/* ---- Ornamental maroon frame (.divine-border--welcome / .welcome-one__corner)
+   is set where it's defined — nothing to re-key here since the border/
+   corners now use the Welcome maroon frame, not the old gold event frame. */
+
+/* ---- Cards: deep maroon on the gold field, cream text, gold accents ---- */
+.event-one--welcome-bg .event-one__single {
+  background-color: var(--ev-maroon-dk);
+  border: 1px solid rgba(217, 152, 42, 0.35);
+  box-shadow: 0 14px 34px rgba(44, 4, 5, 0.28);
 }
 
-/* ---- Cards ---- */
-.event-one__single {
-  background-color: #FFFFFF;
-  border: 1px solid rgba(217, 152, 42, 0.5);
-  box-shadow: 0 14px 34px rgba(44, 4, 5, 0.14);
-}
-
-.event-one__single:hover {
+.event-one--welcome-bg .event-one__single:hover {
   border-color: var(--ev-gold);
-  box-shadow: 0 24px 52px rgba(44, 4, 5, 0.24);
+  box-shadow: 0 24px 52px rgba(44, 4, 5, 0.4);
 }
 
-.event-one__img::after {
-  background-color: var(--ev-maroon);
-}
-
-.event-one .event-one__date .icon-calender {
-  color: var(--ev-gold);
-}
-
-.event-one__title a {
-  color: var(--ev-ink);
-}
-
-.event-one__title a:hover,
-.event-one__title a:focus-visible {
-  color: var(--ev-maroon);
-}
-
-/* ---- "View all events" button — gold fill on the maroon field ---- */
-.event-one__btn {
-  background-color: var(--ev-gold);
-  border-color: var(--ev-gold-lite);
-  color: var(--ev-ink);
-}
-
-.event-one__btn::after {
-  background-color: var(--ev-cream);
-}
-
-.event-one__btn span {
-  background-color: var(--ev-maroon);
-  color: var(--ev-gold);
-}
-
-.event-one__btn:hover,
-.event-one__btn:focus-visible {
-  border-color: var(--ev-cream);
-  color: var(--ev-ink);
-}
-
-.event-one__btn:hover span {
+.event-one--welcome-bg .event-one__img::after {
   background-color: var(--ev-ink);
+  opacity: 0.22;
+}
+
+.event-one--welcome-bg .event-one__single:hover .event-one__img::after {
+  opacity: 0.1;
+}
+
+.event-one--welcome-bg .event-one__date {
+  color: var(--ev-gold-pale);
+}
+
+.event-one--welcome-bg .event-one .event-one__date .icon-calender {
+  color: var(--ev-gold);
+}
+
+.event-one--welcome-bg .event-one__title a {
   color: var(--ev-cream);
+}
+
+.event-one--welcome-bg .event-one__title a:hover,
+.event-one--welcome-bg .event-one__title a:focus-visible {
+  color: var(--ev-gold);
+}
+
+.event-one--welcome-bg .event-one__text {
+  color: var(--ev-gold-pale);
+}
+
+/* ---- "View all events" button — the CTA sits directly on the gold
+   field (not on a card), so it takes a deep-maroon fill for contrast,
+   matching the section's maroon border/cards instead of blending into
+   the gold behind it ---- */
+.event-one--welcome-bg .event-one__btn {
+  background-color: var(--ev-maroon-dk);
+  border-color: var(--ev-maroon-dk);
+  color: var(--ev-cream);
+}
+
+.event-one--welcome-bg .event-one__btn::after {
+  background-color: var(--ev-ink);
+}
+
+.event-one--welcome-bg .event-one__btn span {
+  background-color: var(--ev-gold);
+  color: var(--ev-ink);
+}
+
+.event-one--welcome-bg .event-one__btn:hover,
+.event-one--welcome-bg .event-one__btn:focus-visible {
+  border-color: var(--ev-ink);
+  color: var(--ev-cream);
+}
+
+.event-one--welcome-bg .event-one__btn:hover span {
+  background-color: var(--ev-cream);
+  color: var(--ev-ink);
 }
 
 /*==================================================================

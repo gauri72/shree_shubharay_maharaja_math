@@ -1,7 +1,7 @@
 import Layout from "@/components/layout/Layout"
 import MantraStrip from "@/components/sections/home1/MantraStrip"
 import Gallery from "@/components/sections/home1/Gallery"
-import Found from "@/components/sections/home1/Found"
+import Event from "@/components/sections/home1/Event"
 import Cta from "@/components/sections/home1/Cta"
 
 const SADHANA_MANTRAS = [
@@ -34,7 +34,7 @@ export default function Sadhana() {
 
                 <Gallery />
 
-                <Found />
+                <Event />
 
                 <Cta />
 

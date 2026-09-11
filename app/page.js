@@ -7,9 +7,7 @@ import Gallery from "@/components/sections/home1/Gallery"
 // import HomeGallery from "@/components/sections/home1/HomeGallery"
 import Legacy from "@/components/sections/home1/Legacy"
 import Cta from "@/components/sections/home1/Cta"
-import Found from "@/components/sections/home1/Found"
-// Events not offered on the site for now — section hidden on the home page.
-// import Event from "@/components/sections/home1/Event"
+import Event from "@/components/sections/home1/Event"
 
 export default function Home() {
 
@@ -21,7 +19,7 @@ export default function Home() {
                 <Gallery />
                 <Welcome />
                 <Legacy />
-                <Found />
+                <Event />
                 <Cta />
             </Layout>
 
