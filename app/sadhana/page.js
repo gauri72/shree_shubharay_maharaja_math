@@ -4,6 +4,12 @@ import Gallery from "@/components/sections/home1/Gallery"
 import Found from "@/components/sections/home1/Found"
 import Cta from "@/components/sections/home1/Cta"
 
+const SADHANA_MANTRAS = [
+    "गुरु भजनी",
+    "मोर नाचतो अंगणी",
+    "पायाकडे पाहुनी",
+]
+
 export const metadata = {
     title: 'Sadhana — Shubharay Maharaja Math',
     description: 'Explore the daily sadhana, spiritual practices and disciplines followed at Shri Shubharay Maharaj Math.',
@@ -15,11 +21,11 @@ export default function Sadhana() {
             <Layout headerStyle={1} footerStyle={1}>
 
                 {/*Mantra Strip (between header and breadcrumb) */}
-                <MantraStrip />
+                <MantraStrip mantras={SADHANA_MANTRAS} />
 
                 {/*Breadcrumb Bg Section Start */}
                 <section className="breadcrumb-bg-section breadcrumb-bg-section--padada">
-                    <img src="assets/images/backgrounds/breadcrumb-bg.png" alt="" className="breadcrumb-bg-section__img"/>
+                    <img src="assets/images/backgrounds/breadcrumb-bg-sadhana.png" alt="" className="breadcrumb-bg-section__img"/>
                     <span className="breadcrumb-bg-section__padada-shadow" aria-hidden="true"></span>
                     <span className="breadcrumb-bg-section__padada" aria-hidden="true"></span>
                     <span className="breadcrumb-bg-section__padada-scallop" aria-hidden="true"></span>

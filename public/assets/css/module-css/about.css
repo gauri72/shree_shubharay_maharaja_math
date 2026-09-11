@@ -2253,10 +2253,10 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    background: rgba(61, 10, 12, 0.1);
-    border: 1px solid rgba(61, 10, 12, 0.4);
+    background: rgba(61, 10, 12, 0.85);
+    border: 1px solid rgba(61, 10, 12, 0.9);
     border-radius: 50%;
-    color: #3D0A0C;
+    color: #F2A90A;
     font-size: 14px;
     cursor: pointer;
     transition: background-color 300ms ease, color 300ms ease, transform 300ms ease;
@@ -2568,9 +2568,9 @@
 
 /* ---- Nav arrows — maroon on gold ---- */
 .mandir__nav {
-    background: rgba(76, 6, 1, 0.10);
-    border-color: rgba(76, 6, 1, 0.40);
-    color: var(--ms-maroon);
+    background: rgba(76, 6, 1, 0.85);
+    border-color: rgba(76, 6, 1, 0.9);
+    color: var(--ms-gold-lite);
 }
 
 .mandir__nav:hover,
