@@ -11,7 +11,7 @@ const SADHANA_MANTRAS = [
 ]
 
 export const metadata = {
-    title: 'Sadhana — Shubharay Maharaja Math',
+    title: 'कार्यक्रम — श्री शुभराय महाराज मठ',
     description: 'Explore the daily sadhana, spiritual practices and disciplines followed at Shri Shubharay Maharaj Math.',
 }
 

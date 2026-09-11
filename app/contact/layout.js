@@ -1,5 +1,5 @@
 export const metadata = {
-    title: 'Contact Us — Shubharay Maharaja Math',
+    title: 'संपर्क — श्री शुभराय महाराज मठ',
     description: 'Get in touch with Shri Shubharay Maharaj Math — address, phone number and contact form.',
 }
 

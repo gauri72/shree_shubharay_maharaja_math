@@ -10,7 +10,7 @@ const SEVA = [
 
 const QUICK_LINKS = [
     { href: "/about", label: "आमच्याविषयी" },
-    { href: "/sadhana", label: "नित्य साधना" },
+    { href: "/sadhana", label: "आगामी कार्यक्रम" },
     { href: "/gallery", label: "छायाचित्र दालन" },
     { href: "/contact", label: "दर्शन व संपर्क" },
 ]
