@@ -12749,7 +12749,7 @@ ul {
 @media (max-width: 991px) {
   .featured-events__flag,
   .featured-events__flag img {
-    max-width: 260px;
+    max-width: 340px;
   }
 }
 
@@ -12854,6 +12854,328 @@ ul {
     bottom: 12px;
     font-size: 12px;
     padding: 6px 14px;
+  }
+}
+
+/*==================================================================
+    SADHANA — ALL EVENTS SECTION (.all-events) — deep maroon field with
+    a gold Om/swastik strip border (same visual language as Legacy/
+    Found), styled as a plain, minimalist grid: circular image + name,
+    no card chrome. Colour scheme keyed to the shared hero palette
+    (--ev-*), consistent with Upcoming/Featured Events on this page.
+==================================================================*/
+.all-events {
+  position: relative;
+  overflow: hidden;
+  padding: 100px 0;
+}
+
+.all-events--welcome-bg {
+  background-color: var(--ev-maroon);
+}
+
+.all-events--welcome-bg::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  background-image: url("../images/backgrounds/section-bg-2.png");
+  background-repeat: repeat;
+  background-size: 1672px auto;
+  opacity: 0.42;
+}
+
+@media (max-width: 991px) {
+  .all-events--welcome-bg::before {
+    background-size: 1100px auto;
+  }
+}
+
+.all-events > .container {
+  position: relative;
+  z-index: 1;
+}
+
+.all-events .section-title__tagline {
+  color: var(--ev-gold);
+  font-weight: 700;
+}
+
+.all-events .section-title__title {
+  color: var(--ev-cream);
+  text-shadow: none;
+}
+
+/* ---- Ornamental border — gold strip with maroon Om/swastik motif ---- */
+.divine-border--all-events {
+  position: absolute;
+  left: 0;
+  right: 0;
+  z-index: 3;
+  height: 30px;
+  background-color: var(--ev-gold);
+  background-image:
+    radial-gradient(circle at 50% 50%, rgba(61, 10, 12, 0.12) 0%, transparent 70%),
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='30' viewBox='0 0 100 30'%3E%3Cg fill='%23620208'%3E%3Ctext x='25' y='22' font-size='19' text-anchor='middle' font-family='Noto Sans Devanagari, Arial, sans-serif'%3E%E0%A5%90%3C/text%3E%3C/g%3E%3Cg transform='translate(75 15)' stroke='%23620208' stroke-width='2.4' stroke-linecap='square' fill='none'%3E%3Cpath d='M0 -8 L0 8 M-8 0 L8 0'/%3E%3Cpath d='M0 -8 L5 -8'/%3E%3Cpath d='M8 0 L8 5'/%3E%3Cpath d='M0 8 L-5 8'/%3E%3Cpath d='M-8 0 L-8 -5'/%3E%3C/g%3E%3Cg fill='%23620208' opacity='0.85'%3E%3Ccircle cx='0' cy='15' r='1.6'/%3E%3Ccircle cx='50' cy='15' r='1.6'/%3E%3Ccircle cx='100' cy='15' r='1.6'/%3E%3C/g%3E%3C/svg%3E");
+  background-repeat: repeat-x, repeat-x;
+  background-position: center, center;
+  background-size: 100% 100%, 100px 30px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.32);
+}
+
+.divine-border--all-events-top {
+  top: 0;
+}
+
+.divine-border--all-events-bottom {
+  bottom: 0;
+}
+
+.divine-border--all-events-vertical {
+  position: absolute;
+  top: 30px;
+  bottom: 30px;
+  z-index: 2;
+  width: 30px;
+  background-color: var(--ev-gold);
+  background-image:
+    radial-gradient(circle at 50% 50%, rgba(61, 10, 12, 0.12) 0%, transparent 70%),
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='30' height='100' viewBox='0 0 30 100'%3E%3Cg fill='%23620208'%3E%3Ctext x='15' y='32' font-size='19' text-anchor='middle' font-family='Noto Sans Devanagari, Arial, sans-serif'%3E%E0%A5%90%3C/text%3E%3C/g%3E%3Cg transform='translate(15 75)' stroke='%23620208' stroke-width='2.4' stroke-linecap='square' fill='none'%3E%3Cpath d='M0 -8 L0 8 M-8 0 L8 0'/%3E%3Cpath d='M0 -8 L5 -8'/%3E%3Cpath d='M8 0 L8 5'/%3E%3Cpath d='M0 8 L-5 8'/%3E%3Cpath d='M-8 0 L-8 -5'/%3E%3C/g%3E%3Cg fill='%23620208' opacity='0.85'%3E%3Ccircle cx='15' cy='0' r='1.6'/%3E%3Ccircle cx='15' cy='50' r='1.6'/%3E%3Ccircle cx='15' cy='100' r='1.6'/%3E%3C/g%3E%3C/svg%3E");
+  background-repeat: repeat-y, repeat-y;
+  background-position: top center, top center;
+  background-size: 100% 100%, 30px 100px;
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.32);
+}
+
+.divine-border--all-events-left {
+  left: 0;
+}
+
+.divine-border--all-events-right {
+  right: 0;
+}
+
+.all-events__corner {
+  position: absolute;
+  z-index: 4;
+  width: 30px;
+  height: 30px;
+  background-color: var(--ev-gold);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.32);
+  pointer-events: none;
+}
+
+.all-events__corner--tl {
+  top: 0;
+  left: 0;
+}
+
+.all-events__corner--tr {
+  top: 0;
+  right: 0;
+}
+
+.all-events__corner--bl {
+  bottom: 0;
+  left: 0;
+}
+
+.all-events__corner--br {
+  bottom: 0;
+  right: 0;
+}
+
+@media (max-width: 767px) {
+  .divine-border--all-events-vertical,
+  .all-events__corner {
+    display: none;
+  }
+}
+
+/* ---- Large-photo cards with an ornate gold "nameplate" banner
+   overlapping the bottom edge of each image — a temple-poster/festival-
+   card treatment: big imagery is the hero, the nameplate is a distinct
+   designed element (not just a caption). ---- */
+.all-events__carousel-wrap {
+  position: relative;
+  padding: 0 64px;
+}
+
+.all-events__carousel {
+  padding: 8px 0 56px;
+  overflow: hidden;
+}
+
+.all-events__carousel .swiper-slide {
+  height: auto;
+}
+
+.all-events__card {
+  position: relative;
+  height: 100%;
+}
+
+.all-events__photo {
+  position: relative;
+  overflow: hidden;
+  aspect-ratio: 3 / 4;
+  border-radius: 10px;
+  border: 1px solid rgba(217, 152, 42, 0.4);
+  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.45);
+}
+
+.all-events__photo::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(44, 4, 5, 0) 55%, rgba(44, 4, 5, 0.85) 100%);
+  pointer-events: none;
+}
+
+.all-events__photo img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  transition: transform 600ms ease;
+}
+
+.all-events__card:hover .all-events__photo img {
+  transform: scale(1.08);
+}
+
+/* the nameplate: a gold banner that overlaps the photo's bottom edge,
+   with a maroon Om/swastik-style ornament flanking the name on each
+   side — echoes the section's own border motif in miniature */
+.all-events__plate {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  width: 88%;
+  margin: -30px auto 0;
+  padding: 14px 16px;
+  background: linear-gradient(155deg, var(--ev-gold-lite) 0%, var(--ev-gold) 60%, var(--ev-maroon-dk) 130%);
+  border-radius: 8px;
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.4), inset 0 1px 0 rgba(255, 255, 255, 0.35);
+  transition: transform 350ms ease;
+}
+
+.all-events__card:hover .all-events__plate {
+  transform: translateY(-4px);
+}
+
+.all-events__plate-ornament {
+  flex: 0 0 auto;
+  width: 16px;
+  height: 2px;
+  background-color: var(--ev-ink);
+  position: relative;
+}
+
+.all-events__plate-ornament::before {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 6px;
+  height: 6px;
+  transform: translate(-50%, -50%) rotate(45deg);
+  border: 2px solid var(--ev-ink);
+  background: transparent;
+}
+
+.all-events__title {
+  margin: 0;
+  font-size: 19px;
+  font-weight: 700;
+  letter-spacing: 0.2px;
+  color: var(--ev-ink);
+  white-space: nowrap;
+}
+
+/* ---- Nav arrows: plain gold circles flanking the carousel ---- */
+.all-events__nav {
+  position: absolute;
+  top: calc(50% - 28px);
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  border: none;
+  background-color: var(--ev-gold);
+  color: var(--ev-ink);
+  font-size: 16px;
+  cursor: pointer;
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.4);
+  transition: background-color 250ms ease, transform 250ms ease;
+}
+
+.all-events__nav:hover {
+  background-color: var(--ev-gold-lite);
+  transform: scale(1.06);
+}
+
+.all-events__nav--prev {
+  left: 0;
+}
+
+.all-events__nav--prev i {
+  transform: rotate(180deg);
+}
+
+.all-events__nav--next {
+  right: 0;
+}
+
+.all-events__nav.swiper-button-disabled {
+  opacity: 0.4;
+  cursor: default;
+  pointer-events: none;
+}
+
+/* ---- Pagination dots: gold, matching the section palette ---- */
+.all-events__pagination {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+
+.all-events__pagination .swiper-pagination-bullet {
+  width: 9px;
+  height: 9px;
+  margin: 0;
+  background-color: rgba(251, 241, 220, 0.4);
+  opacity: 1;
+  transition: background-color 250ms ease, transform 250ms ease;
+}
+
+.all-events__pagination .swiper-pagination-bullet-active {
+  background-color: var(--ev-gold);
+  transform: scale(1.2);
+}
+
+@media (max-width: 767px) {
+  .all-events__carousel-wrap {
+    padding: 0 8px;
+  }
+  .all-events__nav {
+    display: none;
+  }
+  .all-events__title {
+    font-size: 17px;
   }
 }
 

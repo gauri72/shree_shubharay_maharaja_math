@@ -32,7 +32,7 @@ export default function FeaturedEvents() {
 
             <div className="container">
                 <div className="featured-events__head">
-                    <span className="featured-events__flag featured-events__flag--left float-bob-y" aria-hidden="true">
+                    <span className="featured-events__flag featured-events__flag--left" aria-hidden="true">
                         <img src="assets/images/resources/orange-flag.png" alt=""/>
                     </span>
                     <div className="section-title text-center sec-title-animation animation-style1">
@@ -41,7 +41,7 @@ export default function FeaturedEvents() {
                         </div>
                         <h2 className="section-title__title title-animation">श्रद्धेचे मुख्य पर्व</h2>
                     </div>
-                    <span className="featured-events__flag featured-events__flag--right float-bob-y" aria-hidden="true">
+                    <span className="featured-events__flag featured-events__flag--right" aria-hidden="true">
                         <img src="assets/images/resources/orange-flag.png" alt=""/>
                     </span>
                 </div>
@@ -56,7 +56,6 @@ export default function FeaturedEvents() {
                             <div className="featured-events__single">
                                 <div className="featured-events__img">
                                     <img src={event.img} alt={event.title}/>
-                                    <span className="featured-events__date">{event.date}</span>
                                 </div>
                                 <div className="featured-events__content">
                                     <h3 className="featured-events__title"><Link href="/sadhana">{event.title}</Link></h3>
