@@ -76,6 +76,23 @@ const CHAPTERS = [
 
 const N = CHAPTERS.length
 
+/* Static devotional cards that fill the gold corner space beside the heading
+   on desktop — drawn from the mūrtis and vārsā the section itself recounts */
+const CORNER_CARDS = [
+    {
+        side: "left",
+        title: "गाभाऱ्यातील मूर्ती",
+        text: "पांडुरंग, स्वामी समर्थ, राम-लक्ष्मण-सीता-हनुमान आणि एकाच लाकडी ओंडक्यातून कोरलेली गणराय मूर्ती.",
+        tag: "मुख्य गाभारा",
+    },
+    {
+        side: "right",
+        title: "जतन केलेल्या पादुका",
+        text: "स्वामी समर्थ, शंकर महाराज, शुभराय महाराज व जयकृष्ण बुवा यांच्या पवित्र पादुका आजही मठात पूजिल्या जातात.",
+        tag: "श्रद्धेचा वारसा",
+    },
+]
+
 /* Kalash (सुवर्ण कलश) finial that crowns each arch */
 const Kalash = () => (
     <svg className="mandir__kalash" viewBox="0 0 40 54" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
@@ -139,6 +156,27 @@ export default function OurStory() {
 
             <div className="mandir__bg" aria-hidden="true"></div>
             <div className="mandir__haze" aria-hidden="true"></div>
+
+            {/* Desktop corner cards filling the upper-left / upper-right gold space */}
+            {CORNER_CARDS.map((card) => (
+                <aside
+                    key={card.side}
+                    className={`mandir__corner-card mandir__corner-card--${card.side}`}
+                    lang="mr"
+                >
+                    <svg className="mandir__corner-card__kalash" viewBox="0 0 40 54" aria-hidden="true">
+                        <path d="M20 0l2.4 6.2L20 9.4 17.6 6.2 20 0Z" fill="currentColor" />
+                        <rect x="18.7" y="9" width="2.6" height="7" rx="1.3" fill="currentColor" />
+                        <path d="M12 17h16l-2 4H14l-2-4Z" fill="currentColor" />
+                        <path d="M20 21c6.2 0 10 4.3 10 9.6 0 6-4.6 10.4-10 10.4s-10-4.4-10-10.4C10 25.3 13.8 21 20 21Z" fill="currentColor" />
+                        <path d="M9 43h22l-2.5 5h-17L9 43Z" fill="currentColor" />
+                    </svg>
+                    <h3 className="mandir__corner-card__title">{card.title}</h3>
+                    <p className="mandir__corner-card__text">{card.text}</p>
+                    <span className="mandir__corner-card__rule" aria-hidden="true"></span>
+                    <span className="mandir__corner-card__tag">{card.tag}</span>
+                </aside>
+            ))}
 
             {/* Decorative elephants flanking the arch carousel, trunks (sond) gently swaying */}
             <img

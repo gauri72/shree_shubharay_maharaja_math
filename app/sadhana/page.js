@@ -1,13 +1,13 @@
 import Layout from "@/components/layout/Layout"
 import MantraStrip from "@/components/sections/home1/MantraStrip"
 import Gallery from "@/components/sections/home1/Gallery"
+import FeaturedEvents from "@/components/sections/home1/FeaturedEvents"
 import Event from "@/components/sections/home1/Event"
 import Cta from "@/components/sections/home1/Cta"
 
 const SADHANA_MANTRAS = [
-    "गुरु भजनी",
-    "मोर नाचतो अंगणी",
-    "पायाकडे पाहुनी",
+    "गुरुर्ब्रह्मा गुरुर्विष्णुः गुरुर्देवो महेश्वरः",
+    "गुरुः साक्षात् परब्रह्म तस्मै श्री गुरवे नमः",
 ]
 
 export const metadata = {
@@ -33,6 +33,8 @@ export default function Sadhana() {
                 {/*Breadcrumb Bg Section End */}
 
                 <Gallery />
+
+                <FeaturedEvents />
 
                 <Event />
 
