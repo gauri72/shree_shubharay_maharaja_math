@@ -8,7 +8,7 @@ const allEvents = [
     { img: "assets/images/event/event-3.png", title: "श्री दत्त महाराज जयंती" },
     { img: "assets/images/event/event-4.png", title: "श्री गुरुपौर्णिमा उत्सव" },
     { img: "assets/images/event/event-5.png", title: "श्री जनू काका जयंती आणि पुण्यतिथी" },
-    { img: "assets/images/event/event-6.png", title: "श्री मधू बुवा जयंती आणि पुण्यतिथी" },
+    { img: "assets/images/event/event-6.png", title: "श्री मधू बुवा जयंती आणि पुण्यतिथी", zoom: true },
     { img: "assets/images/event/event-7.png", title: "श्री शुभांगी माई वाढदिवस" },
 ]
 
@@ -68,7 +68,7 @@ export default function AllEvents() {
                             <SwiperSlide key={index}>
                                 <div className="all-events__card">
                                     <div className="all-events__photo">
-                                        <img src={event.img} alt={event.title}/>
+                                        <img src={event.img} alt={event.title} className={event.zoom ? "all-events__photo-img--zoom" : ""}/>
                                     </div>
                                     <div className="all-events__plate">
                                         <h3 className="all-events__title">{event.title}</h3>
