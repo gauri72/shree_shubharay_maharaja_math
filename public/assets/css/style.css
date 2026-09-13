@@ -594,13 +594,13 @@ ul {
   width: 48px;
   height: 48px;
   border-radius: 50%;
-  background-color: #F2A90A;
+  background-color: #D9982A;
   border: none;
   position: fixed;
   bottom: 30px;
   right: 30px;
   z-index: 999992;
-  color: #3D0A0C;
+  color: #2C0405;
   font-size: 18px;
   cursor: pointer;
   opacity: 0;
@@ -610,13 +610,13 @@ ul {
 }
 
 .scroll-to-top:hover {
-  background-color: #3D0A0C;
-  color: #F2A90A;
+  background-color: #620208;
+  color: #D9982A;
   transform: translateY(-4px);
 }
 
 .scroll-to-top:focus-visible {
-  outline: 3px solid #3D0A0C;
+  outline: 3px solid #620208;
   outline-offset: 3px;
 }
 
@@ -635,20 +635,20 @@ ul {
 
 .scroll-to-top__ring-track {
   fill: none;
-  stroke: rgba(61, 10, 12, 0.2);
+  stroke: rgba(44, 4, 5, 0.2);
   stroke-width: 3;
 }
 
 .scroll-to-top__ring-progress {
   fill: none;
-  stroke: #3D0A0C;
+  stroke: #2C0405;
   stroke-width: 3;
   stroke-linecap: round;
   transition: stroke-dashoffset 0.15s ease-out, stroke 0.3s ease;
 }
 
 .scroll-to-top:hover .scroll-to-top__ring-progress {
-  stroke: #F2A90A;
+  stroke: #D9982A;
 }
 
 .scroll-to-top i {
@@ -12905,6 +12905,61 @@ ul {
 .all-events .section-title__title {
   color: var(--ev-cream);
   text-shadow: none;
+}
+
+.all-events__title-row {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 60px;
+}
+
+.all-events__title-inner {
+  flex: 0 1 auto;
+}
+
+.all-events__toran {
+  flex: 1 1 0;
+  max-width: 420px;
+  width: 100%;
+  height: auto;
+  opacity: 0.95;
+}
+
+.all-events__toran--left {
+  justify-self: end;
+}
+
+@media (max-width: 1199px) {
+  .all-events__toran {
+    max-width: 300px;
+  }
+}
+
+@media (max-width: 991px) {
+  .all-events__toran {
+    max-width: 200px;
+  }
+}
+
+@media (max-width: 767px) {
+  .all-events__title-row {
+    gap: 20px;
+  }
+
+  .all-events__toran {
+    max-width: 120px;
+  }
+}
+
+@media (max-width: 575px) {
+  .all-events__title-row {
+    gap: 12px;
+  }
+
+  .all-events__toran {
+    max-width: 72px;
+  }
 }
 
 /* ---- Ornamental border — gold strip with maroon Om/swastik motif ---- */

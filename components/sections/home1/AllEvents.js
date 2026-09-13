@@ -3,13 +3,13 @@ import { Autoplay, Navigation, Pagination } from "swiper/modules"
 import { Swiper, SwiperSlide } from "swiper/react"
 
 const allEvents = [
-    { img: "assets/images/event/event-list--1-1.jpg", title: "गुढीपाडवा" },
-    { img: "assets/images/event/event-list--1-2.jpg", title: "रामनवमी" },
-    { img: "assets/images/event/event-list--1-3.jpg", title: "गुरुपौर्णिमा" },
-    { img: "assets/images/event/event-list--1-4.jpg", title: "आषाढी एकादशी" },
-    { img: "assets/images/event/event-list--1-5.jpg", title: "गणेश चतुर्थी" },
-    { img: "assets/images/event/event-list--1-6.jpg", title: "कार्तिकी एकादशी" },
-    { img: "assets/images/event/event-list--1-1.jpg", title: "दत्त जयंती" },
+    { img: "assets/images/event/event-1.png", title: "श्री शुभराय महाराज पुण्यतिथी" },
+    { img: "assets/images/event/event-2.png", title: "श्री शंकर महाराज प्रकट दिन आणि पुण्यतिथी" },
+    { img: "assets/images/event/event-3.png", title: "श्री दत्त महाराज जयंती" },
+    { img: "assets/images/event/event-4.png", title: "श्री गुरुपौर्णिमा उत्सव" },
+    { img: "assets/images/event/event-5.png", title: "श्री जनू काका जयंती आणि पुण्यतिथी" },
+    { img: "assets/images/event/event-6.png", title: "श्री मधू बुवा जयंती आणि पुण्यतिथी" },
+    { img: "assets/images/event/event-7.png", title: "श्री शुभांगी माई वाढदिवस" },
 ]
 
 const swiperOptions = {
@@ -51,11 +51,15 @@ export default function AllEvents() {
             <div className="divine-border--all-events divine-border--all-events-bottom" role="presentation"></div>
 
             <div className="container">
-                <div className="section-title text-center sec-title-animation animation-style1">
-                    <div className="section-title__tagline-box">
-                        <span className="section-title__tagline">वार्षिक कार्यक्रम</span>
+                <div className="section-title text-center sec-title-animation animation-style1 all-events__title-row">
+                    <img src="assets/images/resources/toran.png" alt="" className="all-events__toran all-events__toran--left" aria-hidden="true"/>
+                    <div className="all-events__title-inner">
+                        <div className="section-title__tagline-box">
+                            <span className="section-title__tagline">वार्षिक उत्सव</span>
+                        </div>
+                        <h2 className="section-title__title title-animation">सर्व पर्व</h2>
                     </div>
-                    <h2 className="section-title__title title-animation">सर्व उत्सव</h2>
+                    <img src="assets/images/resources/toran.png" alt="" className="all-events__toran all-events__toran--right" aria-hidden="true"/>
                 </div>
 
                 <div className="all-events__carousel-wrap">
@@ -67,9 +71,7 @@ export default function AllEvents() {
                                         <img src={event.img} alt={event.title}/>
                                     </div>
                                     <div className="all-events__plate">
-                                        <span className="all-events__plate-ornament" aria-hidden="true"></span>
                                         <h3 className="all-events__title">{event.title}</h3>
-                                        <span className="all-events__plate-ornament all-events__plate-ornament--right" aria-hidden="true"></span>
                                     </div>
                                 </div>
                             </SwiperSlide>
