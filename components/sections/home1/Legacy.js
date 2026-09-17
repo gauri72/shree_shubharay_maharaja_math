@@ -214,12 +214,15 @@ export default function Legacy() {
                 {/* Desktop diya-pillars hugging the book's left/right edges —
                     they rise in when the book is closed, recede when it opens */}
                 {["left", "right"].map((side) => (
-                    <img
+                    <video
                         key={side}
-                        src="assets/images/resources/diya-pillar.png"
-                        alt=""
+                        src="assets/images/resources/diya-pillar.mov"
                         aria-hidden="true"
                         className={`legacy-One__aside legacy-One__aside--${side}`}
+                        autoPlay
+                        loop
+                        muted
+                        playsInline
                     />
                 ))}
 

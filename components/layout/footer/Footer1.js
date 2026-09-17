@@ -1,5 +1,5 @@
 import Link from "next/link"
-import { SITE_PHONE_DISPLAY_MR, SITE_PHONE_TEL, SITE_ADDRESS_MR_LINE1, SITE_ADDRESS_MR_LINE2, SITE_MAP_URL, SOCIAL_LINKS } from "@/lib/siteInfo"
+import { SITE_PHONE_DISPLAY_MR, SITE_PHONE_TEL, SITE_ADDRESS_MR_LINE1, SITE_ADDRESS_MR_LINE2, SITE_MAP_URL } from "@/lib/siteInfo"
 
 const SEVA = [
     "नित्य दर्शन व आरती",
@@ -13,14 +13,6 @@ const QUICK_LINKS = [
     { href: "/sadhana", label: "आगामी कार्यक्रम" },
     { href: "/gallery", label: "छायाचित्र दालन" },
     { href: "/contact", label: "दर्शन व संपर्क" },
-]
-
-const SOCIALS = [
-    { href: SOCIAL_LINKS.whatsapp, label: "WhatsApp", icon: "fab fa-whatsapp" },
-    { href: SOCIAL_LINKS.facebook, label: "Facebook", icon: "icon-facebook" },
-    { href: SOCIAL_LINKS.youtube, label: "YouTube", icon: "fab fa-youtube" },
-    { href: SOCIAL_LINKS.instagram, label: "Instagram", icon: "icon-instagram" },
-    { href: SOCIAL_LINKS.twitter, label: "Twitter", icon: "icon-twitter" },
 ]
 
 export default function Footer1() {
@@ -81,19 +73,6 @@ export default function Footer1() {
                                     </p>
                                 </li>
                             </ul>
-                            <div className="site-footer__social" aria-label="Social media">
-                                {SOCIALS.map((s) => (
-                                    <Link
-                                        key={s.label}
-                                        href={s.href}
-                                        target="_blank"
-                                        rel="noopener noreferrer"
-                                        aria-label={s.label}
-                                    >
-                                        <i className={s.icon}></i>
-                                    </Link>
-                                ))}
-                            </div>
                         </div>
 
                     </div>

@@ -8,8 +8,7 @@ import Gallery from "@/components/sections/home1/Gallery"
 import OurStory from "@/components/sections/about/OurStory"
 
 const ABOUT_MANTRAS = [
-    "गुरुने दिला ज्ञानरूपी वसा",
-    "आम्ही चालवू हा पुढे वारसा",
+    "ज्ञानोबा माऊली तुकाराम",
 ]
 import Cta from "@/components/sections/home1/Cta"
 import { SITE_ADDRESS_MR_LINE1, SITE_ADDRESS_MR_LINE2, SITE_MAP_URL } from "@/lib/siteInfo"
@@ -25,7 +24,7 @@ export default function Home() {
         <Layout headerStyle={1} footerStyle={1}>
 
        {/*Mantra Strip (between header and breadcrumb) */}
-       <MantraStrip mantras={ABOUT_MANTRAS} />
+       <MantraStrip />
 
        {/*Breadcrumb Bg Section Start */}
        <section className="breadcrumb-bg-section breadcrumb-bg-section--padada">
@@ -161,6 +160,8 @@ export default function Home() {
         <OurStory />
 
         <Cta />
+
+        <MantraStrip mantras={ABOUT_MANTRAS} />
 
         </Layout>
         </>

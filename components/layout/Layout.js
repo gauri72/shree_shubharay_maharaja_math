@@ -17,7 +17,7 @@ import Footer1 from './footer/Footer1'
 import Footer2 from './footer/Footer2'
 import Footer3 from "./footer/Footer3"
 
-export default function Layout({ headerStyle, footerStyle, headTitle, breadcrumbTitle, children, wrapperCls }) {
+export default function Layout({ headerStyle, footerStyle, headTitle, breadcrumbTitle, breadcrumbBgImage, children, wrapperCls, mantraStrip }) {
     const [scroll, setScroll] = useState(0)
     const [scrollProgress, setScrollProgress] = useState(0)
     // Mobile Menu
@@ -78,7 +78,9 @@ export default function Layout({ headerStyle, footerStyle, headTitle, breadcrumb
                 <Sidebar isSidebar={isSidebar} handleSidebar={handleSidebar} />
                 <SearchPopup isPopup={isPopup} handlePopup={handlePopup} />
 
-                {breadcrumbTitle && <Breadcrumb breadcrumbTitle={breadcrumbTitle} />}
+                {mantraStrip}
+
+                {breadcrumbTitle && <Breadcrumb breadcrumbTitle={breadcrumbTitle} bgImage={breadcrumbBgImage} />}
 
                 {children}
 

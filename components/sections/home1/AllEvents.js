@@ -4,9 +4,9 @@ import { Swiper, SwiperSlide } from "swiper/react"
 
 const allEvents = [
     { img: "assets/images/event/event-1.png", title: "श्री शुभराय महाराज पुण्यतिथी" },
-    { img: "assets/images/event/event-2.png", title: "श्री शंकर महाराज प्रकट दिन आणि पुण्यतिथी" },
+    { img: "assets/images/event/event-2.png", title: "श्री शंकर महाराज प्रकट दिन आणि पुण्यतिथी", zoom: true },
     { img: "assets/images/event/event-3.png", title: "श्री दत्त महाराज जयंती" },
-    { img: "assets/images/event/event-4.png", title: "श्री गुरुपौर्णिमा उत्सव" },
+    { img: "assets/images/event/event-4.png", title: "श्री गुरुपौर्णिमा उत्सव", zoom: true },
     { img: "assets/images/event/event-5.png", title: "श्री जनू काका जयंती आणि पुण्यतिथी" },
     { img: "assets/images/event/event-6.png", title: "श्री मधू बुवा जयंती आणि पुण्यतिथी", zoom: true },
     { img: "assets/images/event/event-7.png", title: "श्री शुभांगी माई वाढदिवस" },

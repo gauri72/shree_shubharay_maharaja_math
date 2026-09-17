@@ -7,8 +7,7 @@ import Event from "@/components/sections/home1/Event"
 import Cta from "@/components/sections/home1/Cta"
 
 const SADHANA_MANTRAS = [
-    "गुरुर्ब्रह्मा गुरुर्विष्णुः गुरुर्देवो महेश्वरः",
-    "गुरुः साक्षात् परब्रह्म तस्मै श्री गुरवे नमः",
+    "ज्ञानोबा माऊली तुकाराम",
 ]
 
 export const metadata = {
@@ -22,7 +21,7 @@ export default function Sadhana() {
             <Layout headerStyle={1} footerStyle={1}>
 
                 {/*Mantra Strip (between header and breadcrumb) */}
-                <MantraStrip mantras={SADHANA_MANTRAS} />
+                <MantraStrip />
 
                 {/*Breadcrumb Bg Section Start */}
                 <section className="breadcrumb-bg-section breadcrumb-bg-section--padada">
@@ -42,6 +41,8 @@ export default function Sadhana() {
                 <Event />
 
                 <Cta />
+
+                <MantraStrip mantras={SADHANA_MANTRAS} />
 
             </Layout>
         </>

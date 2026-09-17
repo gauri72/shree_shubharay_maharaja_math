@@ -1,5 +1,6 @@
 'use client'
 import Link from "next/link"
+import LoopingFlagVideo from "@/components/elements/LoopingFlagVideo"
 
 const events = [
     {
@@ -36,18 +37,20 @@ export default function Event() {
             <span className="welcome-one__corner welcome-one__corner--bl" aria-hidden="true"></span>
             <span className="welcome-one__corner welcome-one__corner--br" aria-hidden="true"></span>
             <div className="divine-border--welcome divine-border--welcome-bottom" role="presentation"></div>
-            <div className="event-one__shape-1 float-bob-y" aria-hidden="true">
-                <img src="assets/images/shapes/found-one-shape-1-mala.png" alt=""/>
-            </div>
-            <div className="event-one__shape-2 float-bob-y" aria-hidden="true">
-                <img src="assets/images/shapes/found-one-shape-2-parayan.png" alt=""/>
-            </div>
             <div className="container">
-                <div className="section-title text-center sec-title-animation animation-style1">
-                    <div className="section-title__tagline-box">
-                        <span className="section-title__tagline">उत्सव-परंपरा</span>
+                <div className="event-one__head">
+                    <span className="event-one__flag event-one__flag--left" aria-hidden="true">
+                        <LoopingFlagVideo src="assets/images/resources/orange-flag.mov" />
+                    </span>
+                    <div className="section-title text-center sec-title-animation animation-style1">
+                        <div className="section-title__tagline-box">
+                            <span className="section-title__tagline">उत्सव-परंपरा</span>
+                        </div>
+                        <h2 className="section-title__title title-animation">मठातील आगामी उत्सव</h2>
                     </div>
-                    <h2 className="section-title__title title-animation">मठातील आगामी उत्सव व पर्वदिन</h2>
+                    <span className="event-one__flag event-one__flag--right" aria-hidden="true">
+                        <LoopingFlagVideo src="assets/images/resources/orange-flag.mov" />
+                    </span>
                 </div>
                 <div className="row">
                     {events.map((event, index) => (

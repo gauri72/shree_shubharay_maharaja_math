@@ -1,5 +1,5 @@
 import Link from "next/link"
-export default function Breadcrumb({ breadcrumbTitle }) {
+export default function Breadcrumb({ breadcrumbTitle, bgImage }) {
     return (
         <>
          
@@ -22,7 +22,7 @@ export default function Breadcrumb({ breadcrumbTitle }) {
                     <circle cx="32" cy="24" r="2.5" fill="#F2A90A"/>
                 </svg>
             </div>
-            <div className="page-header__bg" style={{ backgroundImage: ' url(assets/images/backgrounds/page-header-bg.jpg)' }} >
+            <div className="page-header__bg" style={{ backgroundImage: `url(${bgImage || 'assets/images/backgrounds/page-header-bg.jpg'})` }} >
             </div>
             <div className="container">
                 <div className="page-header__inner">

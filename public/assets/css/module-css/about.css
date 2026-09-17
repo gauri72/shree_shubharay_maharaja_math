@@ -1857,6 +1857,7 @@
 
 .mandir__elephant--right {
     right: clamp(-30px, 1vw, 44px);
+    transform: scaleX(-1);
 }
 
 /* desktop — pinned to the very bottom corners, as large as the corner allows */
@@ -1866,8 +1867,16 @@
         bottom: 0;
         opacity: 1;
     }
-    .mandir__elephant--left { left: clamp(-80px, -3vw, -8px); }
-    .mandir__elephant--right { right: clamp(-80px, -3vw, -8px); }
+    .mandir__elephant--left {
+        left: -180px;
+        width: 750px;
+        z-index: 1;
+    }
+    .mandir__elephant--right {
+        right: -180px;
+        width: 750px;
+        z-index: 1;
+    }
 }
 
 /* tablet & mobile — the carousel fills the width, so let them peek over the
@@ -2007,6 +2016,20 @@
         right: 40px;
     }
 
+    .mandir__corner-card--bottom-left,
+    .mandir__corner-card--bottom-right {
+        top: auto;
+        bottom: 40px;
+    }
+
+    .mandir__corner-card--bottom-left {
+        left: 40px;
+    }
+
+    .mandir__corner-card--bottom-right {
+        right: 40px;
+    }
+
     .mandir__corner-card__kalash {
         display: block;
         margin: 0 auto 12px;
@@ -2050,10 +2073,19 @@
 @media (min-width: 1560px) {
     .mandir__corner-card {
         width: clamp(320px, 22vw, 380px);
+    }
+    .mandir__corner-card--left,
+    .mandir__corner-card--right {
         top: 48px;
+    }
+    .mandir__corner-card--bottom-left,
+    .mandir__corner-card--bottom-right {
+        bottom: 48px;
     }
     .mandir__corner-card--left { left: 48px; }
     .mandir__corner-card--right { right: 48px; }
+    .mandir__corner-card--bottom-left { left: 48px; }
+    .mandir__corner-card--bottom-right { right: 48px; }
     .mandir__corner-card__title { font-size: 20px; }
     .mandir__corner-card__text { font-size: 14.5px; }
 }

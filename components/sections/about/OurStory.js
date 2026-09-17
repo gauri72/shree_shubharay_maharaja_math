@@ -93,6 +93,21 @@ const CORNER_CARDS = [
     },
 ]
 
+const BOTTOM_CORNER_CARDS = [
+    {
+        side: "bottom-left",
+        title: "नित्य आरती",
+        text: "दररोज सकाळ-संध्याकाळ होणारी आरती हा मठातील भाविकांच्या दिनचर्येचा अविभाज्य भाग आहे.",
+        tag: "रोजची उपासना",
+    },
+    {
+        side: "bottom-right",
+        title: "वार्षिक उत्सव",
+        text: "आषाढी एकादशी, कार्तिकी एकादशी, दसरा व दिवाळीसारखे उत्सव मठात मोठ्या भक्तिभावाने साजरे केले जातात.",
+        tag: "उत्सव-परंपरा",
+    },
+]
+
 /* Kalash (सुवर्ण कलश) finial that crowns each arch */
 const Kalash = () => (
     <svg className="mandir__kalash" viewBox="0 0 40 54" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
@@ -178,19 +193,26 @@ export default function OurStory() {
                 </aside>
             ))}
 
-            {/* Decorative elephants flanking the arch carousel, trunks (sond) gently swaying */}
-            <img
-                src="assets/images/resources/elephant-1.png"
-                alt=""
-                aria-hidden="true"
-                className="mandir__elephant mandir__elephant--left"
-            />
-            <img
-                src="assets/images/resources/elephant-2.png"
-                alt=""
-                aria-hidden="true"
-                className="mandir__elephant mandir__elephant--right"
-            />
+            {/* Desktop corner cards filling the lower-left / lower-right gold space, angled outward */}
+            {BOTTOM_CORNER_CARDS.map((card) => (
+                <aside
+                    key={card.side}
+                    className={`mandir__corner-card mandir__corner-card--${card.side}`}
+                    lang="mr"
+                >
+                    <svg className="mandir__corner-card__kalash" viewBox="0 0 40 54" aria-hidden="true">
+                        <path d="M20 0l2.4 6.2L20 9.4 17.6 6.2 20 0Z" fill="currentColor" />
+                        <rect x="18.7" y="9" width="2.6" height="7" rx="1.3" fill="currentColor" />
+                        <path d="M12 17h16l-2 4H14l-2-4Z" fill="currentColor" />
+                        <path d="M20 21c6.2 0 10 4.3 10 9.6 0 6-4.6 10.4-10 10.4s-10-4.4-10-10.4C10 25.3 13.8 21 20 21Z" fill="currentColor" />
+                        <path d="M9 43h22l-2.5 5h-17L9 43Z" fill="currentColor" />
+                    </svg>
+                    <h3 className="mandir__corner-card__title">{card.title}</h3>
+                    <p className="mandir__corner-card__text">{card.text}</p>
+                    <span className="mandir__corner-card__rule" aria-hidden="true"></span>
+                    <span className="mandir__corner-card__tag">{card.tag}</span>
+                </aside>
+            ))}
 
             <div className="container">
                 <div className="section-title text-center sec-title-animation animation-style1 mandir__head">
