@@ -1,6 +1,8 @@
 import Link from "next/link"
 import { SITE_PHONE_DISPLAY_MR, SITE_PHONE_TEL, SITE_ADDRESS_MR_LINE1, SITE_ADDRESS_MR_LINE2, SITE_MAP_URL } from "@/lib/siteInfo"
 
+const SITE_EMAIL = "shubharaymath@gmail.com"
+
 const SEVA = [
     "नित्य दर्शन व आरती",
     "अन्नदान व भोजनसेवा",
@@ -63,6 +65,10 @@ export default function Footer1() {
                                 <li>
                                     <span className="icon"><span className="icon-call"></span></span>
                                     <p><Link href={SITE_PHONE_TEL}>{SITE_PHONE_DISPLAY_MR}</Link></p>
+                                </li>
+                                <li>
+                                    <span className="icon"><span className="fas fa-envelope"></span></span>
+                                    <p><Link href={`mailto:${SITE_EMAIL}`}>{SITE_EMAIL}</Link></p>
                                 </li>
                                 <li className="footer-widget__contact-list--multiline">
                                     <span className="icon"><span className="icon-pin-two"></span></span>

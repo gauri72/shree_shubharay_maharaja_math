@@ -12,7 +12,10 @@ import Cta from "@/components/sections/home1/Cta"
 import Event from "@/components/sections/home1/Event"
 
 const CLOSING_MANTRAS = [
-    "ज्ञानोबा माऊली तुकाराम",
+    "सदा सर्वदा योग तुझा घडावा",
+    "तुझे कारणी देह माझा पडावा",
+    "उपेक्षू नको गुणवंता अनंता",
+    "रघूनायका मागणे हेचि आता",
 ]
 
 export default function Home() {

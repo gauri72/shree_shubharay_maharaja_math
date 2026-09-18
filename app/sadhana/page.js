@@ -7,7 +7,10 @@ import Event from "@/components/sections/home1/Event"
 import Cta from "@/components/sections/home1/Cta"
 
 const SADHANA_MANTRAS = [
-    "ज्ञानोबा माऊली तुकाराम",
+    "सदा सर्वदा योग तुझा घडावा",
+    "तुझे कारणी देह माझा पडावा",
+    "उपेक्षू नको गुणवंता अनंता",
+    "रघूनायका मागणे हेचि आता",
 ]
 
 export const metadata = {

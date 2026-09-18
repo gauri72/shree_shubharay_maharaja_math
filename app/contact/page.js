@@ -21,7 +21,10 @@ const INITIAL_FORM = { name: "", email: "", phone: "", message: "" }
 const FORMSPREE_ENDPOINT = "https://formspree.io/f/xnpnqgoq"
 
 const CONTACT_MANTRAS = [
-    "ज्ञानोबा माऊली तुकाराम",
+    "सदा सर्वदा योग तुझा घडावा",
+    "तुझे कारणी देह माझा पडावा",
+    "उपेक्षू नको गुणवंता अनंता",
+    "रघूनायका मागणे हेचि आता",
 ]
 
 const CONTACT_FAQS = [

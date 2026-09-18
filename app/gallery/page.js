@@ -7,7 +7,10 @@ import Cta from "@/components/sections/home1/Cta"
 const images = Array.from({ length: 10 }, (_, i) => `assets/images/temple/temple-${i + 1}.png`)
 
 const GALLERY_MANTRAS = [
-    "ज्ञानोबा माऊली तुकाराम",
+    "सदा सर्वदा योग तुझा घडावा",
+    "तुझे कारणी देह माझा पडावा",
+    "उपेक्षू नको गुणवंता अनंता",
+    "रघूनायका मागणे हेचि आता",
 ]
 
 export default function GalleryPage() {

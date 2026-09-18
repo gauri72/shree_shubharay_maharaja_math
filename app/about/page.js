@@ -8,7 +8,10 @@ import Gallery from "@/components/sections/home1/Gallery"
 import OurStory from "@/components/sections/about/OurStory"
 
 const ABOUT_MANTRAS = [
-    "ज्ञानोबा माऊली तुकाराम",
+    "सदा सर्वदा योग तुझा घडावा",
+    "तुझे कारणी देह माझा पडावा",
+    "उपेक्षू नको गुणवंता अनंता",
+    "रघूनायका मागणे हेचि आता",
 ]
 import Cta from "@/components/sections/home1/Cta"
 import { SITE_ADDRESS_MR_LINE1, SITE_ADDRESS_MR_LINE2, SITE_MAP_URL } from "@/lib/siteInfo"

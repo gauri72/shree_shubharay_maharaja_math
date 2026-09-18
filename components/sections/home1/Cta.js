@@ -1,5 +1,6 @@
 'use client'
 import Link from "next/link"
+import TrimmedLoopVideo from "@/components/elements/TrimmedLoopVideo"
 export default function Cta() {
     return (
         <>
@@ -16,6 +17,18 @@ export default function Cta() {
             <span className="event-one__corner event-one__corner--br" aria-hidden="true"></span>
             <div className="divine-border--event divine-border--event-bottom" role="presentation"></div>
             <div className="cta-one__bg" style={{ backgroundImage: ' url(assets/images/backgrounds/cta-one-bg.jpg)' }} ></div>
+
+            <TrimmedLoopVideo
+                src="assets/images/resources/elephant.mov"
+                className="cta-one__elephant cta-one__elephant--left"
+                trimSeconds={7}
+            />
+            <TrimmedLoopVideo
+                src="assets/images/resources/elephant.mov"
+                className="cta-one__elephant cta-one__elephant--right"
+                trimSeconds={7}
+            />
+
             <div className="container">
                 <div className="cta-one__inner">
                     <div className="cta-one__title-box sec-title-animation animation-style1 wow fadeInUp" data-wow-delay="100ms">

@@ -6655,9 +6655,9 @@ ul {
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 38px;
-  height: 38px;
-  min-width: 38px;
+  width: 36px;
+  height: 36px;
+  min-width: 36px;
   border-radius: 50%;
   background-color: var(--footer-accent);
 }
@@ -6667,12 +6667,12 @@ ul {
 }
 
 .site-footer--shubharay .footer-widget__contact-list li .icon span {
-  font-size: 15px;
+  font-size: 14px;
   color: #FBF1DC;
 }
 
 .site-footer--shubharay .footer-widget__contact-list li p {
-  font-size: 16px;
+  font-size: 15.5px;
   line-height: 1.7;
 }
 
@@ -6731,22 +6731,6 @@ ul {
   position: relative;
 }
 
-/* Same maroon + gold Om-chain strip as the header's .divine-border,
-   placed at the very bottom of the footer, below copyright/credit. */
-.site-footer--shubharay .site-footer__bottom::after {
-  content: "";
-  display: block;
-  width: 100%;
-  height: 18px;
-  background-color: #4D0601;
-  background-image:
-    linear-gradient(180deg, rgba(232, 199, 102, 0.16) 0%, transparent 70%),
-    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='72' height='18' viewBox='0 0 72 18'%3E%3Cg fill='none' stroke='%23E8C766' stroke-width='1.6'%3E%3Cpath d='M0 9 C6 9 6 3.6 12 3.6 C18 3.6 18 9 24 9 C18 9 18 14.4 12 14.4 C6 14.4 6 9 0 9 Z'/%3E%3Cpath d='M24 9 C30 9 30 3.6 36 3.6 C42 3.6 42 9 48 9 C42 9 42 14.4 36 14.4 C30 14.4 30 9 24 9 Z'/%3E%3Cpath d='M48 9 C54 9 54 3.6 60 3.6 C66 3.6 66 9 72 9 C66 9 66 14.4 60 14.4 C54 14.4 54 9 48 9 Z'/%3E%3C/g%3E%3Cg fill='%23E8C766'%3E%3Ccircle cx='12' cy='9' r='2.2'/%3E%3Ccircle cx='36' cy='9' r='2.2'/%3E%3Ccircle cx='60' cy='9' r='2.2'/%3E%3Ccircle cx='0' cy='9' r='1.5'/%3E%3Ccircle cx='24' cy='9' r='1.5'/%3E%3Ccircle cx='48' cy='9' r='1.5'/%3E%3Ccircle cx='72' cy='9' r='1.5'/%3E%3C/g%3E%3C/svg%3E");
-  background-repeat: repeat-x, repeat-x;
-  background-position: center, center;
-  background-size: 100% 100%, 72px 18px;
-}
-
 .site-footer--shubharay .site-footer__bottom-inner {
   display: flex;
   align-items: center;
@@ -6769,7 +6753,7 @@ ul {
 }
 
 .site-footer--shubharay .site-footer__credit-text {
-  color: rgba(251, 241, 220, 0.72);
+  color: #FFFFFF;
 }
 
 .site-footer--shubharay .site-footer__credit-name,
@@ -9457,12 +9441,64 @@ ul {
 .cta-one__bg {
   opacity: 0.22;
   z-index: 0;
-  background-position: center 75%;
+  background-position: center 50%;
 }
 
 .cta-one .container {
   position: relative;
   z-index: 1;
+}
+
+.cta-one__elephant {
+  position: absolute;
+  bottom: 0;
+  display: block;
+  width: clamp(460px, 46vw, 640px);
+  aspect-ratio: 4 / 3;
+  z-index: 0;
+  pointer-events: none;
+  opacity: 0.85;
+  /* Notch out the body where it would pass behind the 30px Om/swastik
+     vertical border, but leave the bottom (legs) showing full-width. */
+  clip-path: polygon(60px 0, 100% 0, 100% 100%, 0 100%, 0 24%, 60px 24%);
+}
+
+.cta-one__elephant--left {
+  left: -165px;
+}
+
+.cta-one__elephant--right {
+  right: -165px;
+  transform: scaleX(-1);
+}
+
+/* Hidden on tablet and mobile — the elephants are a desktop-only flourish. */
+@media (max-width: 991px) {
+  .cta-one__elephant.trimmed-loop-video {
+    display: none;
+  }
+}
+
+/* TrimmedLoopVideo: two stacked <video>s crossfaded to mask the
+   restart-to-0 seek, so the trimmed loop plays without a visible pause. */
+.trimmed-loop-video {
+  position: relative;
+  display: block;
+}
+
+.trimmed-loop-video__video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  object-position: bottom;
+  transition: opacity 450ms linear;
+}
+
+.cta-one__elephant.trimmed-loop-video {
+  position: absolute;
 }
 
 .cta-one__tagline {
@@ -12181,10 +12217,10 @@ ul {
   border-color: transparent;
 }
 
-/* ---- Ornamental divider strip ---- */
+/* ---- Ornamental divider strip (removed) ---- */
 .main-header .divine-border,
 .stricky-header .divine-border {
-  background-color: var(--hdr-maroon-dk);
+  display: none;
 }
 
 /* ---- Main nav bar (the gold band) ---- */
