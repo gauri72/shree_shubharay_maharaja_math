@@ -6747,6 +6747,10 @@ ul {
   line-height: 1.6;
 }
 
+.site-footer--shubharay .site-footer__copyright-break {
+  display: none;
+}
+
 .site-footer--shubharay .site-footer__copyright-text,
 .site-footer--shubharay .site-footer__bottom-menu li a {
   color: #FBF1DC;
@@ -6822,6 +6826,10 @@ ul {
     text-align: center;
     gap: 12px;
     padding: 22px 0;
+  }
+
+  .site-footer--shubharay .site-footer__copyright-break {
+    display: block;
   }
 
   .site-footer--shubharay .site-footer__bottom-menu {

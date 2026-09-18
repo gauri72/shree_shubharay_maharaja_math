@@ -89,7 +89,7 @@ export default function Footer1() {
                 <div className="container">
                     <div className="site-footer__bottom-inner">
                         <p className="site-footer__copyright-text">
-                            Copyright &copy; {year} <Link href="/">Shubharay Maharaja Math</Link>. All Rights Reserved.
+                            Copyright &copy; {year} <Link href="/">Shubharay Maharaja Math</Link>.<br className="site-footer__copyright-break" /> All Rights Reserved.
                         </p>
                         <ul className="list-unstyled site-footer__bottom-menu">
                             <li><Link href="/privacy-policy">Privacy Policy</Link></li>
