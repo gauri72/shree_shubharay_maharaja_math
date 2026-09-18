@@ -1,5 +1,5 @@
 'use client'
-import { Autoplay, Navigation, Pagination } from "swiper/modules"
+import { Autoplay, Navigation } from "swiper/modules"
 import { Swiper, SwiperSlide } from "swiper/react"
 
 const allEvents = [
@@ -13,7 +13,7 @@ const allEvents = [
 ]
 
 const swiperOptions = {
-    modules: [Autoplay, Pagination, Navigation],
+    modules: [Autoplay, Navigation],
     slidesPerView: 3,
     spaceBetween: 32,
     loop: true,
@@ -24,10 +24,6 @@ const swiperOptions = {
     navigation: {
         nextEl: '.all-events__nav--next',
         prevEl: '.all-events__nav--prev',
-    },
-    pagination: {
-        el: '.all-events__pagination',
-        clickable: true,
     },
     breakpoints: {
         0: { slidesPerView: 1 },
@@ -52,14 +48,14 @@ export default function AllEvents() {
 
             <div className="container">
                 <div className="section-title text-center sec-title-animation animation-style1 all-events__title-row">
-                    <img src="assets/images/resources/toran.png" alt="" className="all-events__toran all-events__toran--left" aria-hidden="true"/>
+                    <video src="assets/images/resources/toran.mov" className="all-events__toran all-events__toran--left" aria-hidden="true" muted loop playsInline autoPlay/>
                     <div className="all-events__title-inner">
                         <div className="section-title__tagline-box">
                             <span className="section-title__tagline">वार्षिक उत्सव</span>
                         </div>
                         <h2 className="section-title__title title-animation">सर्व पर्व</h2>
                     </div>
-                    <img src="assets/images/resources/toran.png" alt="" className="all-events__toran all-events__toran--right" aria-hidden="true"/>
+                    <video src="assets/images/resources/toran.mov" className="all-events__toran all-events__toran--right" aria-hidden="true" muted loop playsInline autoPlay/>
                 </div>
 
                 <div className="all-events__carousel-wrap">
@@ -84,8 +80,6 @@ export default function AllEvents() {
                     <button type="button" className="all-events__nav all-events__nav--next" aria-label="Next">
                         <i className="icon-arrow-right"></i>
                     </button>
-
-                    <div className="all-events__pagination"></div>
                 </div>
             </div>
         </section>

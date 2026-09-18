@@ -3,7 +3,8 @@ import MantraStrip from "@/components/sections/home1/MantraStrip"
 import Gallery from "@/components/sections/home1/Gallery"
 import FeaturedEvents from "@/components/sections/home1/FeaturedEvents"
 import AllEvents from "@/components/sections/home1/AllEvents"
-import Event from "@/components/sections/home1/Event"
+// Upcoming events section hidden on the Sadhana page for now.
+// import Event from "@/components/sections/home1/Event"
 import Cta from "@/components/sections/home1/Cta"
 
 const SADHANA_MANTRAS = [
@@ -37,11 +38,11 @@ export default function Sadhana() {
 
                 <Gallery />
 
-                <FeaturedEvents />
-
                 <AllEvents />
 
-                <Event />
+                <FeaturedEvents />
+
+                {/* <Event /> */}
 
                 <Cta />
 

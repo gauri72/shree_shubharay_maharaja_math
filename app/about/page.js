@@ -2,7 +2,6 @@
 import Layout from "@/components/layout/Layout"
 import Link from "next/link"
 import { useState } from "react"
-import Legacy from "@/components/sections/home1/Legacy"
 import MantraStrip from "@/components/sections/home1/MantraStrip"
 import Gallery from "@/components/sections/home1/Gallery"
 import OurStory from "@/components/sections/about/OurStory"
@@ -157,8 +156,6 @@ export default function Home() {
             </div>
         </section>
         {/*About One End */}
-
-        <Legacy />
 
         <OurStory />
 

@@ -1,7 +1,7 @@
 import Link from "next/link"
 import { SITE_PHONE_DISPLAY_MR, SITE_PHONE_TEL, SITE_ADDRESS_MR_LINE1, SITE_ADDRESS_MR_LINE2, SITE_MAP_URL } from "@/lib/siteInfo"
 
-const SITE_EMAIL = "shubharaymath@gmail.com"
+const SITE_EMAIL = "xyz@gmail.com"
 
 const SEVA = [
     "नित्य दर्शन व आरती",

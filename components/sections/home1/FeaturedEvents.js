@@ -34,7 +34,7 @@ export default function FeaturedEvents() {
             <div className="container">
                 <div className="featured-events__head">
                     <span className="featured-events__flag featured-events__flag--left" aria-hidden="true">
-                        <LoopingFlagVideo src="assets/images/resources/orange-flag.mov" />
+                        <LoopingFlagVideo src="assets/images/resources/varkari.mov" />
                     </span>
                     <div className="section-title text-center sec-title-animation animation-style1">
                         <div className="section-title__tagline-box">
@@ -43,7 +43,7 @@ export default function FeaturedEvents() {
                         <h2 className="section-title__title title-animation">श्रद्धेचे मुख्य पर्व</h2>
                     </div>
                     <span className="featured-events__flag featured-events__flag--right" aria-hidden="true">
-                        <LoopingFlagVideo src="assets/images/resources/orange-flag.mov" />
+                        <LoopingFlagVideo src="assets/images/resources/varkari.mov" />
                     </span>
                 </div>
 

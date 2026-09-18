@@ -1147,16 +1147,15 @@
     z-index: 1;
 }
 
-/* Floral pattern on its own low-opacity layer. Tile at the artwork's native
-   width (section-bg.png is 1672px wide) so the flower motifs match the size
-   used in the Legacy section. */
+/* Floral pattern on its own low-opacity layer — section-bg-2.png, same
+   tile size and opacity as the Legacy section's maroon-field texture. */
 .about-One__bg {
     position: absolute;
     inset: 0;
-    background-image: url("../../images/backgrounds/section-bg.png");
+    background-image: url("../../images/backgrounds/section-bg-2.png");
     background-repeat: repeat;
     background-size: 1672px auto;
-    opacity: 0.25;
+    opacity: 0.5;
     z-index: 0;
     pointer-events: none;
 }
@@ -1623,41 +1622,61 @@
     existing responsive @media blocks (size-only) all inherit.
 ==================================================================*/
 .about-One--ornate {
+    /* Reversed from the original: maroon field with gold accents/borders,
+       matching the same palette family used on Legacy and the header. */
     --au-gold: #D9982A;
     --au-gold-lite: #E9B45A;
     --au-maroon: #620208;
     --au-maroon-dk: #4D0601;
-    --au-ink: #2C0405;
-    --au-cream: #FBF1DC;
+    --au-ink: #FBF1DC;
+    --au-cream: #2C0405;
 }
 
-/* ---- Gold field + floral texture ---- */
+/* ---- Maroon field + floral texture ---- */
 .about-One.about-One--ornate {
+    background-color: var(--au-maroon);
+    background-image: linear-gradient(180deg, #660309 0%, var(--au-maroon) 45%, #4D0601 100%);
+}
+
+/* ---- Ornamental gold border strips + corners ----
+   Same treatment as Legacy's gold-on-maroon border: gold field with a
+   maroon Om/swastik glyph (the original strip's glyph was gold-on-gold
+   here and vanished, so the glyph image is re-keyed too, not just the
+   base colour). */
+.about-One--ornate .divine-border--about {
     background-color: var(--au-gold);
-    background-image: linear-gradient(180deg, #E0A238 0%, var(--au-gold) 45%, #CE8E24 100%);
+    background-image:
+        radial-gradient(circle at 50% 50%, rgba(61, 10, 12, 0.14) 0%, transparent 70%),
+        url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='30' viewBox='0 0 100 30'%3E%3Cg fill='%235C1012'%3E%3Ctext x='25' y='22' font-size='19' text-anchor='middle' font-family='Noto Sans Devanagari, Arial, sans-serif'%3E%E0%A5%90%3C/text%3E%3C/g%3E%3Cg transform='translate(75 15)' stroke='%235C1012' stroke-width='2.4' stroke-linecap='square' fill='none'%3E%3Cpath d='M0 -8 L0 8 M-8 0 L8 0'/%3E%3Cpath d='M0 -8 L5 -8'/%3E%3Cpath d='M8 0 L8 5'/%3E%3Cpath d='M0 8 L-5 8'/%3E%3Cpath d='M-8 0 L-8 -5'/%3E%3C/g%3E%3Cg fill='%235C1012' opacity='0.85'%3E%3Ccircle cx='0' cy='15' r='1.6'/%3E%3Ccircle cx='50' cy='15' r='1.6'/%3E%3Ccircle cx='100' cy='15' r='1.6'/%3E%3C/g%3E%3C/svg%3E");
 }
 
-/* ---- Ornamental maroon border strips + corners ----
-   (base colour retuned; the Om/swastik motif SVG on top is left intact) */
-.about-One--ornate .divine-border--about,
-.about-One--ornate .divine-border--about-vertical,
+.about-One--ornate .divine-border--about-vertical {
+    background-color: var(--au-gold);
+    background-image:
+        radial-gradient(circle at 50% 50%, rgba(61, 10, 12, 0.14) 0%, transparent 70%),
+        url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='30' height='100' viewBox='0 0 30 100'%3E%3Cg fill='%235C1012'%3E%3Ctext x='15' y='32' font-size='19' text-anchor='middle' font-family='Noto Sans Devanagari, Arial, sans-serif'%3E%E0%A5%90%3C/text%3E%3C/g%3E%3Cg transform='translate(15 75)' stroke='%235C1012' stroke-width='2.4' stroke-linecap='square' fill='none'%3E%3Cpath d='M0 -8 L0 8 M-8 0 L8 0'/%3E%3Cpath d='M0 -8 L5 -8'/%3E%3Cpath d='M8 0 L8 5'/%3E%3Cpath d='M0 8 L-5 8'/%3E%3Cpath d='M-8 0 L-8 -5'/%3E%3C/g%3E%3Cg fill='%235C1012' opacity='0.85'%3E%3Ccircle cx='15' cy='0' r='1.6'/%3E%3Ccircle cx='15' cy='50' r='1.6'/%3E%3Ccircle cx='15' cy='100' r='1.6'/%3E%3C/g%3E%3C/svg%3E");
+}
+
 .about-One--ornate .about-One__corner {
-    background-color: var(--au-maroon-dk);
+    background-color: var(--au-gold);
 }
 
-/* ---- Section title on the gold panel ---- */
-.about-One--ornate .section-title__tagline {
+/* ---- Section title on the maroon panel ----
+   Boosted to .about-One.about-One--ornate (two classes on the same
+   element) so this outranks the unscoped .about-One rule in style.css,
+   which loads later in the cascade at equal specificity otherwise. */
+.about-One.about-One--ornate .section-title__tagline {
     color: var(--au-ink);
 }
 
-.about-One--ornate .section-title__title {
+.about-One.about-One--ornate .section-title__title {
     color: var(--au-ink);
     text-shadow: 0 1px 0 rgba(251, 241, 220, 0.5);
 }
 
-/* ---- "240+ years" stat card — maroon panel ---- */
+/* ---- "240+ years" stat card — gold panel (now stands out on the maroon field) ---- */
 .about-One--ornate .about-One__provide-box {
-    background-color: var(--au-maroon);
+    background-color: var(--au-gold);
     box-shadow: 0 18px 40px rgba(44, 4, 5, 0.30);
     transition: transform 300ms ease, box-shadow 300ms ease;
 }
@@ -1671,11 +1690,11 @@
 .about-One--ornate .about-One__provide-count h3,
 .about-One--ornate .about-One__provide-count span,
 .about-One--ornate .about-One__provide-count-text {
-    color: var(--au-gold);
+    color: var(--au-cream);
 }
 
 .about-One--ornate .about-One__provide-count h3 {
-    -webkit-text-fill-color: var(--au-gold);
+    -webkit-text-fill-color: var(--au-cream);
 }
 
 /* ---- Devotional verse ---- */
@@ -1694,21 +1713,23 @@
     border-radius: 12px;
 }
 
-.about-One--ornate .tab-buttons .tab-btn span {
+/* Matched to .about-One__tab-box .tab-buttons .tab-btn span's specificity
+   in style.css (4 classes) so this wins instead of the unscoped base rule. */
+.about-One--ornate .about-One__tab-box .tab-buttons .tab-btn span {
     color: var(--au-ink);
     background-color: transparent;
-    border-color: rgba(44, 4, 5, 0.30);
+    border-color: rgba(251, 241, 220, 0.30);
     transition: color 260ms ease, border-color 260ms ease, background-color 260ms ease;
 }
 
 .about-One--ornate .tab-buttons .tab-btn span:before {
-    background-color: var(--au-red-select);
+    background-color: var(--au-gold);
 }
 
-/* hover — the red fill sweeps up (base :before scaleY), gold-lite label */
-.about-One--ornate .tab-buttons .tab-btn:hover span {
-    color: var(--au-gold-lite);
-    border-color: var(--au-red-select);
+/* hover — the gold fill sweeps up (base :before scaleY), maroon-ink label */
+.about-One--ornate .about-One__tab-box .tab-buttons .tab-btn:hover span {
+    color: var(--au-cream);
+    border-color: var(--au-gold);
     background-color: transparent;
 }
 
@@ -1716,17 +1737,17 @@
     transform: scaleY(1);
 }
 
-/* selected tab — red fill held, gold-lite label */
-.about-One--ornate .tab-buttons .tab-btn.active-btn span {
-    color: var(--au-gold-lite);
-    border-color: var(--au-red-select);
+/* selected tab — gold fill held, maroon-ink label */
+.about-One--ornate .about-One__tab-box .tab-buttons .tab-btn.active-btn span {
+    color: var(--au-cream);
+    border-color: var(--au-gold);
     background-color: transparent;
     box-shadow: 0 8px 20px rgba(44, 4, 5, 0.28);
 }
 
 /* keyboard focus ring on the clickable list item */
 .about-One--ornate .tab-buttons .tab-btn:focus-visible {
-    outline: 2px solid var(--au-red-select);
+    outline: 2px solid var(--au-gold);
     outline-offset: 3px;
     border-radius: 12px;
 }
@@ -1737,11 +1758,11 @@
 
 /* ---- Location / "need help" block ---- */
 .about-One--ornate .about-One__need-help .icon span {
-    color: var(--au-maroon);
+    color: var(--au-gold);
 }
 
 .about-One--ornate .about-One__need-help .content p {
-    color: rgba(44, 4, 5, 0.75);
+    color: rgba(251, 241, 220, 0.75);
 }
 
 .about-One--ornate .about-One__need-help .content h4 a {
@@ -1751,35 +1772,37 @@
 
 .about-One--ornate .about-One__need-help .content h4 a:hover,
 .about-One--ornate .about-One__need-help .content h4 a:focus-visible {
-    color: var(--au-maroon);
+    color: var(--au-gold-lite);
 }
 
-/* ---- CTA button — maroon fill, gold chip ---- */
+/* ---- CTA button — gold fill, maroon chip.
+   Hover matches the CTA section's own primary button (.cta-one__btn-1):
+   white sweep, dark maroon-ink label, chip flips to maroon-bg/white-icon. ---- */
 .about-One--ornate .about-One__btn-box .thm-btn {
-    background-color: var(--au-maroon);
-    border-color: var(--au-maroon-dk);
+    background-color: var(--au-gold);
+    border-color: var(--au-gold-lite);
     color: var(--au-cream);
     box-shadow: 0 8px 20px rgba(44, 4, 5, 0.35);
 }
 
 .about-One--ornate .about-One__btn-box .thm-btn::after {
-    background-color: var(--au-ink);
+    background-color: #FFFFFF;
 }
 
 .about-One--ornate .about-One__btn-box .thm-btn span {
-    background-color: var(--au-gold);
+    background-color: var(--au-maroon);
     color: var(--au-ink);
 }
 
 .about-One--ornate .about-One__btn-box .thm-btn:hover,
 .about-One--ornate .about-One__btn-box .thm-btn:focus-visible {
-    border-color: var(--au-ink);
-    color: var(--au-gold-lite);
+    border-color: #FFFFFF;
+    color: var(--au-cream);
 }
 
 .about-One--ornate .about-One__btn-box .thm-btn:hover span {
-    background-color: var(--au-cream);
-    color: var(--au-ink);
+    background-color: var(--au-maroon);
+    color: #FFFFFF;
 }
 
 @media (prefers-reduced-motion: reduce) {
