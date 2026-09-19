@@ -13785,4 +13785,784 @@ ul {
   }
 }
 
+/*==================================================================
+    GALLERY PAGE — PHOTO + VIDEO GRID SECTIONS
+    Same gold-on-maroon Om/swastik framing as .all-events (--ev-* palette
+    is already global via :root). Photo grid is a light CSS masonry
+    (one column shifted down); video grid is a uniform card grid with a
+    YouTube thumbnail, play badge and gold nameplate; clicking a video
+    opens a full-screen lightbox with an embedded, autoplaying player.
+==================================================================*/
+.gallery-grid {
+  position: relative;
+  overflow: hidden;
+  background-color: var(--ev-maroon);
+  padding: 100px 0;
+}
+
+.gallery-grid::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  background-image: url("../images/backgrounds/section-bg-2.png");
+  background-repeat: repeat;
+  background-size: 1672px auto;
+  opacity: 0.42;
+}
+
+.gallery-grid > .container {
+  position: relative;
+  z-index: 1;
+}
+
+.gallery-grid .section-title__tagline {
+  color: var(--ev-gold);
+  font-weight: 700;
+}
+
+.gallery-grid .section-title__title {
+  color: var(--ev-cream);
+  text-shadow: none;
+}
+
+/* ---- Video Gallery: gold field instead of maroon (opposite of the
+   Photo Gallery above it), same maroon Om/swastik border either way
+   since .divine-border--all-events is already gold-with-maroon-glyph. ---- */
+.gallery-grid--video {
+  background-color: var(--ev-gold);
+}
+
+.gallery-grid--video::before {
+  background-image: url("../images/backgrounds/section-bg.png");
+  opacity: 0.25;
+}
+
+.gallery-grid--video .section-title__tagline {
+  color: var(--ev-maroon);
+}
+
+.gallery-grid--video .section-title__title {
+  color: var(--ev-ink);
+}
+
+/* Om/swastik border re-keyed to a maroon field (matching the maroon
+   used across the rest of the site) instead of the shared gold field,
+   since this section already has a gold background of its own. The
+   glyph itself is recoloured gold so it stays visible on maroon. */
+.gallery-grid--video .divine-border--all-events,
+.gallery-grid--video .divine-border--all-events-vertical,
+.gallery-grid--video .all-events__corner {
+  background-color: var(--ev-maroon);
+}
+
+.gallery-grid--video .divine-border--all-events {
+  background-image:
+    radial-gradient(circle at 50% 50%, rgba(217, 152, 42, 0.14) 0%, transparent 70%),
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='30' viewBox='0 0 100 30'%3E%3Cg fill='%23D9982A'%3E%3Ctext x='25' y='22' font-size='19' text-anchor='middle' font-family='Noto Sans Devanagari, Arial, sans-serif'%3E%E0%A5%90%3C/text%3E%3C/g%3E%3Cg transform='translate(75 15)' stroke='%23D9982A' stroke-width='2.4' stroke-linecap='square' fill='none'%3E%3Cpath d='M0 -8 L0 8 M-8 0 L8 0'/%3E%3Cpath d='M0 -8 L5 -8'/%3E%3Cpath d='M8 0 L8 5'/%3E%3Cpath d='M0 8 L-5 8'/%3E%3Cpath d='M-8 0 L-8 -5'/%3E%3C/g%3E%3Cg fill='%23D9982A' opacity='0.85'%3E%3Ccircle cx='0' cy='15' r='1.6'/%3E%3Ccircle cx='50' cy='15' r='1.6'/%3E%3Ccircle cx='100' cy='15' r='1.6'/%3E%3C/g%3E%3C/svg%3E");
+}
+
+.gallery-grid--video .divine-border--all-events-vertical {
+  background-image:
+    radial-gradient(circle at 50% 50%, rgba(217, 152, 42, 0.14) 0%, transparent 70%),
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='30' height='100' viewBox='0 0 30 100'%3E%3Cg fill='%23D9982A'%3E%3Ctext x='15' y='32' font-size='19' text-anchor='middle' font-family='Noto Sans Devanagari, Arial, sans-serif'%3E%E0%A5%90%3C/text%3E%3C/g%3E%3Cg transform='translate(15 75)' stroke='%23D9982A' stroke-width='2.4' stroke-linecap='square' fill='none'%3E%3Cpath d='M0 -8 L0 8 M-8 0 L8 0'/%3E%3Cpath d='M0 -8 L5 -8'/%3E%3Cpath d='M8 0 L8 5'/%3E%3Cpath d='M0 8 L-5 8'/%3E%3Cpath d='M-8 0 L-8 -5'/%3E%3C/g%3E%3Cg fill='%23D9982A' opacity='0.85'%3E%3Ccircle cx='15' cy='0' r='1.6'/%3E%3Ccircle cx='15' cy='50' r='1.6'/%3E%3Ccircle cx='15' cy='100' r='1.6'/%3E%3C/g%3E%3C/svg%3E");
+}
+
+@media (max-width: 1199px) {
+  .gallery-grid {
+    padding: 90px 0;
+  }
+}
+
+@media (max-width: 991px) {
+  .gallery-grid {
+    padding: 70px 0;
+  }
+}
+
+@media (max-width: 767px) {
+  .gallery-grid {
+    padding: 60px 0;
+  }
+}
+
+/* ---- Photo gallery: 3-per-row grid. Camera-viewfinder corners sit
+   directly on the photo itself (not on a border margin), matching the
+   Video Gallery's card treatment. No captions/text anywhere — pure
+   image display. A brief white "shutter flash" plays on click before
+   the lightbox opens, which itself has a swipeable image, prev/next
+   arrows, and a thumbnail filmstrip for quick jumping. ---- */
+.photo-masonry {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 22px;
+}
+
+@media (max-width: 1199px) {
+  .photo-masonry {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 575px) {
+  .photo-masonry {
+    grid-template-columns: 1fr;
+    gap: 18px;
+  }
+}
+
+.photo-masonry__item {
+  position: relative;
+  display: block;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  margin: 0;
+  padding: 0;
+  border: 14px solid var(--ev-gold);
+  cursor: pointer;
+  overflow: hidden;
+  box-shadow: 0 14px 30px rgba(0, 0, 0, 0.35);
+  transition: transform 300ms ease, box-shadow 300ms ease;
+}
+
+@media (max-width: 767px) {
+  .photo-masonry__item {
+    border-width: 9px;
+  }
+}
+
+.photo-masonry__item:hover,
+.photo-masonry__item:focus-visible {
+  transform: translateY(-5px);
+  box-shadow: 0 22px 42px rgba(0, 0, 0, 0.48);
+  outline: none;
+}
+
+.photo-masonry__item img {
+  position: relative;
+  z-index: 0;
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Shutter-click flash: a brief white pulse over the tile on click,
+   mimicking a camera shutter firing before the lightbox opens. */
+.photo-masonry__flash {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  background-color: #FFFFFF;
+  animation: photoShutterFlash 260ms ease-out forwards;
+  pointer-events: none;
+}
+
+@keyframes photoShutterFlash {
+  0% { opacity: 0.9; }
+  100% { opacity: 0; }
+}
+
+/* ---- Photo lightbox: full-screen dim backdrop, swipeable full-res
+   image, prev/next navigation, and a thumbnail filmstrip. ---- */
+.photo-lightbox {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+  background-color: rgba(20, 2, 3, 0.9);
+  animation: galleryLightboxFade 250ms ease;
+}
+
+.photo-lightbox__inner {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 18px;
+  max-width: 1100px;
+  max-height: 92vh;
+  width: 100%;
+  touch-action: pan-y;
+}
+
+.photo-lightbox__img {
+  max-width: 100%;
+  max-height: 72vh;
+  width: auto;
+  height: auto;
+  border-radius: 6px;
+  box-shadow: 0 30px 80px rgba(0, 0, 0, 0.6);
+}
+
+.photo-lightbox__close {
+  position: absolute;
+  top: -44px;
+  right: 0;
+  width: 36px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  border-radius: 50%;
+  background-color: var(--ev-gold);
+  color: var(--ev-ink);
+  font-size: 24px;
+  line-height: 1;
+  cursor: pointer;
+  transition: background-color 200ms ease, transform 200ms ease;
+}
+
+.photo-lightbox__close:hover {
+  background-color: var(--ev-gold-lite);
+  transform: scale(1.08);
+}
+
+.photo-lightbox__nav {
+  position: absolute;
+  top: calc(36vh);
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+  transform: translateY(-50%);
+  border: none;
+  border-radius: 50%;
+  background-color: var(--ev-gold);
+  color: var(--ev-ink);
+  font-size: 18px;
+  cursor: pointer;
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.45);
+  transition: background-color 200ms ease, transform 200ms ease;
+}
+
+.photo-lightbox__nav:hover {
+  background-color: var(--ev-gold-lite);
+}
+
+.photo-lightbox__nav--prev {
+  left: -20px;
+  transform: translateY(-50%) rotate(180deg);
+}
+
+.photo-lightbox__nav--prev:hover {
+  transform: translateY(-50%) rotate(180deg) scale(1.08);
+}
+
+.photo-lightbox__nav--next {
+  right: -20px;
+}
+
+.photo-lightbox__nav--next:hover {
+  transform: translateY(-50%) scale(1.08);
+}
+
+/* Thumbnail filmstrip */
+.photo-lightbox__thumbs {
+  display: flex;
+  gap: 10px;
+  max-width: 100%;
+  overflow-x: auto;
+  padding: 4px;
+}
+
+.photo-lightbox__thumb {
+  flex: 0 0 auto;
+  width: 64px;
+  height: 40px;
+  padding: 0;
+  border: 2px solid transparent;
+  border-radius: 4px;
+  overflow: hidden;
+  cursor: pointer;
+  opacity: 0.55;
+  transition: opacity 200ms ease, border-color 200ms ease;
+}
+
+.photo-lightbox__thumb img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.photo-lightbox__thumb:hover {
+  opacity: 0.85;
+}
+
+.photo-lightbox__thumb.is-active {
+  opacity: 1;
+  border-color: var(--ev-gold);
+}
+
+@media (max-width: 575px) {
+  .photo-lightbox {
+    padding: 12px;
+  }
+
+  .photo-lightbox__close {
+    top: -38px;
+    width: 32px;
+    height: 32px;
+    font-size: 20px;
+  }
+
+  .photo-lightbox__nav {
+    width: 38px;
+    height: 38px;
+    font-size: 14px;
+  }
+
+  .photo-lightbox__nav--prev {
+    left: -6px;
+  }
+
+  .photo-lightbox__nav--next {
+    right: -6px;
+  }
+
+  .photo-lightbox__thumb {
+    width: 48px;
+    height: 30px;
+  }
+}
+
+/* ---- Video gallery: uniform cards matching the Photo Gallery's
+   bordered-margin pattern. Extra-thick maroon border padding-ring;
+   gold viewfinder corners sit ON the border ring itself (not
+   overlapping the thumbnail). A brief white "shutter flash" plays on
+   click before the lightbox opens, which has prev/next navigation, a
+   thumbnail filmstrip, and swipe support — mirroring Photo Gallery. ---- */
+.video-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 32px;
+}
+
+@media (max-width: 1199px) {
+  .video-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 575px) {
+  .video-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.video-grid__item {
+  position: relative;
+  display: block;
+  overflow: hidden;
+  aspect-ratio: 16 / 9;
+  padding: 0;
+  border: 14px solid var(--ev-maroon);
+  background-color: var(--ev-maroon);
+  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.35);
+  cursor: pointer;
+  transition: transform 350ms ease, box-shadow 350ms ease;
+}
+
+@media (max-width: 767px) {
+  .video-grid__item {
+    border-width: 9px;
+  }
+}
+
+.video-grid__item:hover,
+.video-grid__item:focus-visible {
+  transform: translateY(-4px);
+  box-shadow: 0 24px 50px rgba(0, 0, 0, 0.45);
+  outline: none;
+}
+
+/* Camera-corner brackets sit directly on the thumbnail image. */
+.video-grid__border {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  pointer-events: none;
+}
+
+.video-grid__corner {
+  position: absolute;
+  width: 24px;
+  height: 24px;
+  border: 3px solid var(--ev-gold);
+  opacity: 0.95;
+  transition: width 300ms ease, height 300ms ease, border-color 300ms ease;
+}
+
+.video-grid__corner--tl { top: 12px; left: 12px; border-right: none; border-bottom: none; }
+.video-grid__corner--tr { top: 12px; right: 12px; border-left: none; border-bottom: none; }
+.video-grid__corner--bl { bottom: 12px; left: 12px; border-right: none; border-top: none; }
+.video-grid__corner--br { bottom: 12px; right: 12px; border-left: none; border-top: none; }
+
+.video-grid__item:hover .video-grid__corner,
+.video-grid__item:focus-visible .video-grid__corner {
+  width: 32px;
+  height: 32px;
+  border-color: var(--ev-gold-lite);
+}
+
+.video-grid__item img {
+  position: relative;
+  z-index: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 500ms ease;
+}
+
+.video-grid__item:hover img {
+  transform: scale(1.06);
+}
+
+.video-grid__overlay {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  background: linear-gradient(180deg, rgba(44, 4, 5, 0.05) 0%, rgba(44, 4, 5, 0.1) 60%, rgba(44, 4, 5, 0.8) 100%);
+}
+
+.video-grid__play {
+  position: absolute;
+  z-index: 1;
+  left: 50%;
+  bottom: 20px;
+  transform: translateX(-50%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: var(--ev-gold);
+  color: var(--ev-ink);
+  font-size: 14px;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.4);
+  transition: transform 300ms ease, background-color 300ms ease;
+}
+
+.video-grid__item:hover .video-grid__play {
+  transform: translateX(-50%) scale(1.12);
+  background-color: var(--ev-gold-lite);
+}
+
+.video-grid__flash {
+  position: absolute;
+  inset: 0;
+  z-index: 3;
+  background-color: #FFFFFF;
+  animation: photoShutterFlash 260ms ease-out forwards;
+  pointer-events: none;
+}
+
+/* ---- Lightbox: full-screen dim backdrop, autoplaying embed, prev/next
+   navigation, and a thumbnail filmstrip. ---- */
+.video-lightbox {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+  background-color: rgba(20, 2, 3, 0.88);
+  animation: galleryLightboxFade 250ms ease;
+}
+
+@keyframes galleryLightboxFade {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.video-lightbox__inner {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 18px;
+  max-width: 960px;
+  max-height: 92vh;
+  width: 100%;
+  touch-action: pan-y;
+}
+
+.video-lightbox__frame {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 30px 80px rgba(0, 0, 0, 0.6);
+}
+
+.video-lightbox__frame iframe {
+  width: 100%;
+  height: 100%;
+  display: block;
+  border: 0;
+}
+
+.video-lightbox__close {
+  position: absolute;
+  top: -44px;
+  right: 0;
+  width: 36px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  border-radius: 50%;
+  background-color: var(--ev-gold);
+  color: var(--ev-ink);
+  font-size: 24px;
+  line-height: 1;
+  cursor: pointer;
+  transition: background-color 200ms ease, transform 200ms ease;
+}
+
+.video-lightbox__close:hover {
+  background-color: var(--ev-gold-lite);
+  transform: scale(1.08);
+}
+
+.video-lightbox__nav {
+  position: absolute;
+  top: 40%;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+  transform: translateY(-50%);
+  border: none;
+  border-radius: 50%;
+  background-color: var(--ev-gold);
+  color: var(--ev-ink);
+  font-size: 18px;
+  cursor: pointer;
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.45);
+  transition: background-color 200ms ease, transform 200ms ease;
+}
+
+.video-lightbox__nav:hover {
+  background-color: var(--ev-gold-lite);
+}
+
+.video-lightbox__nav--prev {
+  left: -20px;
+  transform: translateY(-50%) rotate(180deg);
+}
+
+.video-lightbox__nav--prev:hover {
+  transform: translateY(-50%) rotate(180deg) scale(1.08);
+}
+
+.video-lightbox__nav--next {
+  right: -20px;
+}
+
+.video-lightbox__nav--next:hover {
+  transform: translateY(-50%) scale(1.08);
+}
+
+.video-lightbox__thumbs {
+  display: flex;
+  gap: 10px;
+  max-width: 100%;
+  overflow-x: auto;
+  padding: 4px;
+}
+
+.video-lightbox__thumb {
+  flex: 0 0 auto;
+  width: 64px;
+  height: 40px;
+  padding: 0;
+  border: 2px solid transparent;
+  border-radius: 4px;
+  overflow: hidden;
+  cursor: pointer;
+  opacity: 0.55;
+  transition: opacity 200ms ease, border-color 200ms ease;
+}
+
+.video-lightbox__thumb img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.video-lightbox__thumb:hover {
+  opacity: 0.85;
+}
+
+.video-lightbox__thumb.is-active {
+  opacity: 1;
+  border-color: var(--ev-gold);
+}
+
+@media (max-width: 575px) {
+  .video-lightbox {
+    padding: 12px;
+  }
+
+  .video-lightbox__close {
+    top: -38px;
+    width: 32px;
+    height: 32px;
+    font-size: 20px;
+  }
+
+  .video-lightbox__nav {
+    width: 38px;
+    height: 38px;
+    font-size: 14px;
+  }
+
+  .video-lightbox__nav--prev {
+    left: -6px;
+  }
+
+  .video-lightbox__nav--next {
+    right: -6px;
+  }
+
+  .video-lightbox__thumb {
+    width: 48px;
+    height: 30px;
+  }
+}
+
+/* ---- Video Gallery decoration: peacock/floral strips flanking the
+   heading on the left and right (desktop only — too busy to keep
+   legible once the heading has to wrap at narrower widths). ---- */
+.video-gallery__head {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 50px;
+  /* the section-title's own 52px margin-bottom is moved out here so
+     centering the flex row aligns the peacocks to the visible text,
+     not to "text + trailing margin" as one taller box. */
+  margin-bottom: 52px;
+}
+
+.video-gallery__head .section-title {
+  flex: 1 1 auto;
+  min-width: 0;
+  max-width: 720px;
+  margin-bottom: 0;
+}
+
+/* Photo Gallery's feathers sit closer to the heading than the Video
+   Gallery's peacock strips (scoped override — doesn't touch the
+   shared .video-gallery__head gap used by Video Gallery). */
+.gallery-grid--photo .video-gallery__head {
+  gap: 18px;
+}
+
+.gallery-grid--photo .section-title__title,
+.gallery-grid--video .section-title__title {
+  white-space: nowrap;
+}
+
+/* Tighter heading-to-content gap on tablet/mobile for both galleries
+   (desktop's 52px is unaffected). */
+@media (max-width: 991px) {
+  .video-gallery__head {
+    margin-bottom: 30px;
+  }
+}
+
+@media (max-width: 575px) {
+  .video-gallery__head {
+    margin-bottom: 20px;
+  }
+}
+
+.gallery-grid__peacock {
+  display: block;
+  flex: 0 0 auto;
+  width: 380px;
+  /* The source PNG is 866x288 with the peacock/floral artwork living in
+     rows 56-240 (184px tall) — a plain transparent margin above and
+     below. Rendered as a background-image (not <img>+object-fit) so the
+     crop is pixel-exact: scale the FULL image to 380px-wide, then shift
+     it up by the scaled top-margin so only the artwork band shows,
+     with no partial cropping of the peacocks' feet/tails at the bottom. */
+  height: calc(380px * 184 / 866);
+  background-image: url("../images/resources/peacock-border.png");
+  background-repeat: no-repeat;
+  background-size: 380px calc(380px * 288 / 866);
+  background-position: 0 calc(-380px * 56 / 866);
+  opacity: 0.95;
+  pointer-events: none;
+}
+
+/* The artwork's peacocks face left by default. Flip the left-side
+   strip so its birds face right (toward the text); the right-side
+   strip keeps its natural left-facing orientation — so both strips'
+   peacocks point inward, toward the heading. Each strip is also
+   nudged 75px further toward the centre from its default flex
+   position (translateX, so it doesn't disturb the flex/gap math). */
+.gallery-grid__peacock--left {
+  transform: scaleX(-1) translateX(-75px);
+}
+
+.gallery-grid__peacock--right {
+  transform: translateX(-75px);
+}
+
+@media (max-width: 1199px) {
+  .gallery-grid__peacock {
+    display: none;
+  }
+}
+
+/* ---- Photo Gallery decoration: a single peacock feather flanking the
+   heading on each side (feather-border.png has no transparent padding
+   to crop, unlike the peacock strip, so a plain background-image at
+   its native ratio is enough). The artwork's "eye" sits on the right
+   with the quill trailing left — so the left-side feather keeps its
+   natural orientation (eye already points inward, toward the text)
+   and the right-side one is flipped so its eye also points inward. ---- */
+.gallery-grid__feather {
+  display: block;
+  flex: 0 0 auto;
+  width: 260px;
+  aspect-ratio: 790 / 316;
+  background-image: url("../images/resources/feather-border.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+  opacity: 0.95;
+  pointer-events: none;
+}
+
+.gallery-grid__feather--left {
+  transform: translateX(150px);
+}
+
+.gallery-grid__feather--right {
+  transform: scaleX(-1) translateX(150px);
+}
+
+@media (max-width: 1199px) {
+  .gallery-grid__feather {
+    display: none;
+  }
+}
+
 /* The End */

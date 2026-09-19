@@ -2,7 +2,7 @@ import Link from "next/link"
 export default function Donate() {
     return (
         <>
-       
+
        {/*Donate One Start */}
        <section className="donate-one pdt">
             <div className="container">
@@ -12,14 +12,14 @@ export default function Donate() {
                             <div className="donate-one__single-bg"
                                 style={{ backgroundImage: ' url(assets/images/backgrounds/donate-one-single-bg.jpg)' }} >
                             </div>
-                            <h3 className="donate-one__title"><Link href="/about">A Legacy In Art</Link>
+                            <h3 className="donate-one__title"><Link href="/about">कलेचा वारसा</Link>
                             </h3>
-                            <p className="donate-one__text">The Math is home to nearly 500 paintings created by
-                                Shri Shubharay Maharaj himself, one of the largest collections<br/> by a single
-                                artist in India — sacred works depicting the life of Lord Krishna.
+                            <p className="donate-one__text">मठात श्री शुभराय महाराजांनी स्वतः रेखाटलेली जवळपास ५००
+                                चित्रे जतन केलेली आहेत — भारतातील एकाच कलाकाराच्या सर्वात मोठ्या संग्रहांपैकी एक,<br/>
+                                भगवान श्रीकृष्णाचे जीवन चित्रित करणारी ही पवित्र कलाकृती.
                             </p>
                             <div className="donate-one__btn-box">
-                                <Link href="/about" className="donate-one__btn thm-btn">Know More<span><i
+                                <Link href="/about" className="donate-one__btn thm-btn">अधिक जाणून घ्या<span><i
                                             className="icon-arrow-right"></i></span></Link>
                             </div>
                         </div>
@@ -29,13 +29,13 @@ export default function Donate() {
                             <div className="donate-one__single-bg"
                                 style={{ backgroundImage: ' url(assets/images/backgrounds/donate-one-single-bg-two.jpg)' }} >
                             </div>
-                            <h3 className="donate-one__title"><Link href="/sadhana">A Scholar Of Many Arts</Link></h3>
-                            <p className="donate-one__text">Beyond his paintings, Shri Shubharay Maharaj was also
-                                a revered poet and philosopher. His verses and writings are still<br/> preserved
-                                today, a testament to a life devoted equally to learning and devotion.
+                            <h3 className="donate-one__title"><Link href="/sadhana">बहुआयामी विद्वान</Link></h3>
+                            <p className="donate-one__text">चित्रकलेव्यतिरिक्त श्री शुभराय महाराज एक आदरणीय कवी आणि
+                                तत्त्वज्ञही होते. त्यांच्या रचना आणि लेखन आजही<br/> जतन केले गेले आहे — ज्ञान व
+                                भक्तीला समर्पित जीवनाचा एक जिवंत पुरावा.
                             </p>
                             <div className="donate-one__btn-box">
-                                <Link href="/sadhana" className="donate-one__btn thm-btn">Get Involved<span><i
+                                <Link href="/sadhana" className="donate-one__btn thm-btn">सहभागी व्हा<span><i
                                             className="icon-arrow-right"></i></span></Link>
                             </div>
                         </div>
@@ -44,7 +44,7 @@ export default function Donate() {
             </div>
         </section>
         {/*Donate One End */}
-           
+
         </>
     )
 }

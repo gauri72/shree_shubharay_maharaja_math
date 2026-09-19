@@ -17,6 +17,11 @@ export const metadata = {
 export default function RootLayout({ children }) {
     return (
         <html lang="en" className={`${dmSans.variable} ${libreBaskerville.variable} ${yatraOne.variable}`}>
+            <head>
+                {/* Speeds up the Video Gallery's YouTube thumbnails/embeds */}
+                <link rel="preconnect" href="https://img.youtube.com" />
+                <link rel="preconnect" href="https://www.youtube-nocookie.com" />
+            </head>
             <body>{children}</body>
         </html>
     )
