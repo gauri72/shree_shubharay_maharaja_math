@@ -6,9 +6,12 @@ import { useState } from "react"
 import MantraStrip from "@/components/sections/home1/MantraStrip"
 import Gallery from "@/components/sections/home1/Gallery"
 import Cta from "@/components/sections/home1/Cta"
+import TrimmedLoopVideo from "@/components/elements/TrimmedLoopVideo"
 import {
     SITE_ADDRESS_MR_LINE1,
     SITE_ADDRESS_MR_LINE2,
+    SITE_EMAIL,
+    SITE_EMAIL_MAILTO,
     SITE_MAP_URL,
     SITE_PHONE_DISPLAY_MR,
     SITE_PHONE_TEL,
@@ -125,6 +128,11 @@ export default function Home() {
             <div className="contact-one__bg" role="presentation"></div>
             <div className="container">
                 <div className="contact-one__inner">
+                    <TrimmedLoopVideo
+                        src="assets/images/resources/namaste.mov"
+                        className="contact-one__namaste"
+                        trimSeconds={7}
+                    />
                     <div className="section-title text-left sec-title-animation animation-style2">
                         <div className="section-title__tagline-box">
                             <span className="section-title__tagline" lang="mr">आमच्याशी संपर्क साधा</span>
@@ -233,12 +241,18 @@ export default function Home() {
             <div className="divine-border--contact-two divine-border--contact-two-bottom" role="presentation"></div>
             <div className="contact-two__bg" role="presentation"></div>
             <div className="container">
-                <div className="section-title text-center sec-title-animation animation-style2">
+                <div className="section-title text-center sec-title-animation animation-style2 contact-two__section-title">
+                    <div className="contact-two__shape contact-two__shape--left float-bob-y" aria-hidden="true">
+                        <img src="assets/images/shapes/found-one-shape-1-mala.png" alt=""/>
+                    </div>
                     <div className="section-title__tagline-box">
                         <span className="section-title__tagline" lang="mr">मठाचे स्थान</span>
                     </div>
                     <h2 className="section-title__title title-animation" lang="mr">मठापर्यंत पोहोचण्याचा मार्ग
                     </h2>
+                    <div className="contact-two__shape contact-two__shape--right float-bob-y" aria-hidden="true">
+                        <img src="assets/images/shapes/found-one-shape-2-parayan.png" alt=""/>
+                    </div>
                 </div>
                 <div className="row">
                     <div className="col-xl-8 col-lg-7">
@@ -255,20 +269,29 @@ export default function Home() {
                             <ul className="contact-two__contact-list list-unstyled">
                                 <li>
                                     <div className="icon">
-                                        <span className="icon-pin-two"></span>
-                                    </div>
-                                    <div className="content">
-                                        <h4 lang="mr">पत्ता</h4>
-                                        <p lang="mr"><Link href={SITE_MAP_URL} target="_blank" rel="noopener noreferrer">{SITE_ADDRESS_MR_LINE1} {SITE_ADDRESS_MR_LINE2}</Link></p>
-                                    </div>
-                                </li>
-                                <li>
-                                    <div className="icon">
                                         <span className="icon-call"></span>
                                     </div>
                                     <div className="content">
                                         <h4 lang="mr">दूरध्वनी क्रमांक</h4>
                                         <p lang="mr"><Link href={SITE_PHONE_TEL}>{SITE_PHONE_DISPLAY_MR}</Link></p>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div className="icon">
+                                        <span className="icon-envelope"></span>
+                                    </div>
+                                    <div className="content">
+                                        <h4 lang="mr">ईमेल</h4>
+                                        <p><Link href={SITE_EMAIL_MAILTO}>{SITE_EMAIL}</Link></p>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div className="icon">
+                                        <span className="icon-pin-two"></span>
+                                    </div>
+                                    <div className="content">
+                                        <h4 lang="mr">पत्ता</h4>
+                                        <p lang="mr"><Link href={SITE_MAP_URL} target="_blank" rel="noopener noreferrer">{SITE_ADDRESS_MR_LINE1} {SITE_ADDRESS_MR_LINE2}</Link></p>
                                     </div>
                                 </li>
                             </ul>
@@ -279,8 +302,8 @@ export default function Home() {
         </section>
         {/*Contact Two End*/}
 
-        {/*Contact Faq Start*/}
-        <section className="contact-faq">
+        {/*Contact Faq Start — hidden for now, kept in place, not deleted */}
+        {false && <section className="contact-faq">
             <div className="divine-border--contact-faq divine-border--contact-faq-top" role="presentation"></div>
             <div className="divine-border--contact-faq-vertical divine-border--contact-faq-left" role="presentation"></div>
             <div className="divine-border--contact-faq-vertical divine-border--contact-faq-right" role="presentation"></div>
@@ -370,7 +393,7 @@ export default function Home() {
                     </div>
                 </div>
             </div>
-        </section>
+        </section>}
         {/*Contact Faq End*/}
 
         <Cta />
